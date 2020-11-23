@@ -1,0 +1,34 @@
+Necessário para o processador e o SO:
+
+- MMU (Unidade de gerenciamento de memória)
+	Transcreve endereço virtual para endereço real e é responsável pela alocação das páginas em memória principal ou em disco
+- Processador:
+	- Mutex em registrador de operações escalonáveis ou não
+	- Sinalizador de conclusão de instrução
+- Unidade de interrupção:
+	** Fazer a entrada de dados ter um registrador intermediário e lançar uma interrupção de sistema
+	- Lançada pelo processador quando acabarem as instruções, pela unidade de entrada quando tiver os dados prontos, ou pelo processador quando tiver uma saída de dados
+	
+- Estados dos processos:
+	- Em execução
+	- Pronto
+	- Bloqueado
+	
+- Unidade de escalonamento:
+	- Contar as interrupções lançadas pelo relógio para contar o tempo "quantum"
+		50MHz = 2*10^(-8) = 20ns
+		Contar a cada 1us? = 1*10^(-6)
+	- Toda vez que for lançada uma interrupção de sistema essa unidade vai entrar em um estado de que tem que tratar algo, quando for lançada uma sinalização de conclusão de instrução essa unidade vai avaliar, se pode escalonar de acordo com o registrador mutex
+	- Se for sinalização de fim de programa pode escalonar
+	- Se já passou o tempo "quantum" do processo é só esperar o registrador mutex ter um valor válido
+	- Se pode escalonar:
+		- Troca o estado do processo
+		- Empilha todos os registradores usando as páginas
+		- Troca para o próximo processo da fila
+		
+		
+		
+TAMANHO DA MEMÓRIA SECUNDÁRIA DA MINHA MÁQUINA: 62209 posições	=> Tempo de leitura = 4*20ns; Tempo de escrita = 4*20ns
+TAMANHO DA MEMÓRIA PRINCIPAL DA MINHA MÁQUINA: 4096 posições 	=> Tempo de leitura = 2*20ns; Tempo de escrita = 2*20ns
+
+**PRECISO DA INSTRUÇÃO DE SLEEP => Criar uma unidade de controle de sleep recebendo valores de quantidade de ms e contando ate que se chege nessa quantidade, quando chegar essa unidade vai lançar uma interrupção de sistema. POSSO TRATAR COMO UM INTERRUPÇÃO DE ENTRADA PARA O SO.

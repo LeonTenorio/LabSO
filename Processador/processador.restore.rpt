@@ -1,0 +1,159 @@
+Restore Archived Project report for processador
+Mon Nov 23 10:23:03 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Mon Nov 23 10:23:03 2020 ;
+; Revision Name                   ; processador                           ;
+; Top-level Entity Name           ; apresentacao                          ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.qar' into the '/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/' directory
+Info: Generated report 'processador.restore.rpt'
+Info (23030): Evaluation of Tcl script /home/leon/intelFPGA/18.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 1025 megabytes
+    Info: Processing ended: Mon Nov 23 10:23:03 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++---------------------------------+
+; Files Restored                  ;
++---------------------------------+
+; File Name                       ;
++---------------------------------+
+; qar_info.json                   ;
+; Waveform.vwf                    ;
+; Waveform1.vwf                   ;
+; Waveform10.vwf                  ;
+; Waveform11.vwf                  ;
+; Waveform12.vwf                  ;
+; Waveform13.vwf                  ;
+; Waveform14.vwf                  ;
+; Waveform15.vwf                  ;
+; Waveform16.vwf                  ;
+; Waveform17.vwf                  ;
+; Waveform18.vwf                  ;
+; Waveform19.vwf                  ;
+; Waveform2.vwf                   ;
+; Waveform20.vwf                  ;
+; Waveform21.vwf                  ;
+; Waveform22.vwf                  ;
+; Waveform23.vwf                  ;
+; Waveform24.vwf                  ;
+; Waveform25.vwf                  ;
+; Waveform26.vwf                  ;
+; Waveform27.vwf                  ;
+; Waveform28.vwf                  ;
+; Waveform29.vwf                  ;
+; Waveform3.vwf                   ;
+; Waveform30.vwf                  ;
+; Waveform31.vwf                  ;
+; Waveform32.vwf                  ;
+; Waveform33.vwf                  ;
+; Waveform34.vwf                  ;
+; Waveform35.vwf                  ;
+; Waveform36.vwf                  ;
+; Waveform37.vwf                  ;
+; Waveform38.vwf                  ;
+; Waveform39.vwf                  ;
+; Waveform4.vwf                   ;
+; Waveform40.vwf                  ;
+; Waveform41.vwf                  ;
+; Waveform42.vwf                  ;
+; Waveform43.vwf                  ;
+; Waveform44.vwf                  ;
+; Waveform45.vwf                  ;
+; Waveform46.vwf                  ;
+; Waveform47.vwf                  ;
+; Waveform48.vwf                  ;
+; Waveform49.vwf                  ;
+; Waveform5.vwf                   ;
+; Waveform50.vwf                  ;
+; Waveform51.vwf                  ;
+; Waveform52.vwf                  ;
+; Waveform53.vwf                  ;
+; Waveform54.vwf                  ;
+; Waveform55.vwf                  ;
+; Waveform56.vwf                  ;
+; Waveform57.vwf                  ;
+; Waveform58.vwf                  ;
+; Waveform59.vwf                  ;
+; Waveform6.vwf                   ;
+; Waveform60.vwf                  ;
+; Waveform61.vwf                  ;
+; Waveform7.vwf                   ;
+; Waveform8.vwf                   ;
+; Waveform9.vwf                   ;
+; alu.v                           ;
+; apresentacao.v                  ;
+; bc_registers.v                  ;
+; byte_to_bcd.v                   ;
+; dado_bcd.v                      ;
+; data_inst.v                     ;
+; display.v                       ;
+; est_button_deb.vwf              ;
+; in_out_module.v                 ;
+; memory.v                        ;
+; mux_op_b.v                      ;
+; mux_rd.v                        ;
+; mux_wd.v                        ;
+; press_button.v                  ;
+; processador.qpf                 ;
+; processador.qsf                 ;
+; processador.v                   ;
+; processador_simulacao_final.vwf ;
+; saida_display.v                 ;
+; udcpc.v                         ;
+; unit_control.v                  ;
+; unit_process.v                  ;
+; assignment_defaults.qdf         ;
++---------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
