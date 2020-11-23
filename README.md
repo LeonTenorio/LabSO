@@ -10,6 +10,6 @@
                            UC: Laboratório de Sistemas Operacionais - 2S2020
                                    ICT UNIFESP - São José dos Campos
 
-                                               Author:
+                                               Autor:
                                         Leon Tenório da Silva
 -------------------------------------------------------------------------------------------------------------
