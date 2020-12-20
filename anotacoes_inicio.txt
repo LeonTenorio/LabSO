@@ -1,34 +1,35 @@
+NOVAS INSTRUÇÕES: GETTIME, LOCK, RELEASE, BEGIN_WRITE_PROGRAM (alternar o barramento da memória principal, de memória principal para memória de programa, escrever lá igual se escreve em RAM) e END_WRITE_PROGRAM
+
+
 Necessário para o processador e o SO:
 
 - MMU (Unidade de gerenciamento de memória)
 	Transcreve endereço virtual para endereço real e é responsável pela alocação das páginas em memória principal ou em disco
 - Processador:
-	- Mutex em registrador de operações escalonáveis ou não
 	- Sinalizador de conclusão de instrução
-- Unidade de interrupção:
-	** Fazer a entrada de dados ter um registrador intermediário e lançar uma interrupção de sistema
-	- Lançada pelo processador quando acabarem as instruções, pela unidade de entrada quando tiver os dados prontos, ou pelo processador quando tiver uma saída de dados
+	- Criação de uma unidade de interrupção:
+		- Essa unidade terá que ter como ser resetada
+		- Executará um código (passando por cima da memória de programa) quando tiver que executar
+		- Terá uma instrução de bloqueio de mutex para não escalona (LOCK e RELEASE)
+		- Terá uma forma de serem carregadas instruções a ela uma unica vez
+		- Tratará o momento de escalonar (fim de programa ou tempo quantum) de acordo com o sinalizador de conclusão de instrução
+		- Contar as interrupções lançadas pelo relógio para contar o tempo "quantum"
+			50MHz = 2*10^(-8) = 20ns => Se uma instrução for executada em média em 4 ciclos 80ns = 0.08us
+			Contar a cada 10us? => Daria tempo de serem executadas 120 instruções
+		- Ter como obter o tempo ligado em ms
+	**INTRUÇÕES:
+		- GETTIME
+		- LOCK
+		- RELEASE
+		
+	**PENSAMENTO DE FUNCIONAMENTO:
+		- A unidade de interrução executaria um pequeno código de programa que substitui linha por linha da memória de programa do processador a partir de um registrador de kernel
+		- O ato de escalonar seria essa unidade chamar o kernel de SO para escalonamento, esse executaria em memória de programa (mutável) alternado o valor desse registrador de kernel, finalizaria o processo (atômico???) lançando interrupção o que colocaria em execução a unidade de interrupção que utilizaria o valor desse registrador de kernel para substituir a memória de programa e colocar lá o próximo programa a executar, antes de seu fim, sempre, a unidade de interrupção substituiria o registrador de kernel por um registrador específico que é o endereço do escalonador de processos do SO.
 	
 - Estados dos processos:
 	- Em execução
 	- Pronto
 	- Bloqueado
-	
-- Unidade de escalonamento:
-	- Contar as interrupções lançadas pelo relógio para contar o tempo "quantum"
-		50MHz = 2*10^(-8) = 20ns
-		Contar a cada 1us? = 1*10^(-6)
-	- Toda vez que for lançada uma interrupção de sistema essa unidade vai entrar em um estado de que tem que tratar algo, quando for lançada uma sinalização de conclusão de instrução essa unidade vai avaliar, se pode escalonar de acordo com o registrador mutex
-	- Se for sinalização de fim de programa pode escalonar
-	- Se já passou o tempo "quantum" do processo é só esperar o registrador mutex ter um valor válido
-	- Se pode escalonar:
-		- Troca o estado do processo
-		- Empilha todos os registradores usando as páginas
-		- Troca para o próximo processo da fila
-		
-		
 		
 TAMANHO DA MEMÓRIA SECUNDÁRIA DA MINHA MÁQUINA: 62209 posições	=> Tempo de leitura = 4*20ns; Tempo de escrita = 4*20ns
 TAMANHO DA MEMÓRIA PRINCIPAL DA MINHA MÁQUINA: 4096 posições 	=> Tempo de leitura = 2*20ns; Tempo de escrita = 2*20ns
-
-**PRECISO DA INSTRUÇÃO DE SLEEP => Criar uma unidade de controle de sleep recebendo valores de quantidade de ms e contando ate que se chege nessa quantidade, quando chegar essa unidade vai lançar uma interrupção de sistema. POSSO TRATAR COMO UM INTERRUPÇÃO DE ENTRADA PARA O SO.
