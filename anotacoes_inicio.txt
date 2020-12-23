@@ -1,4 +1,7 @@
-NOVAS INSTRUÇÕES: GETTIME, LOCK, RELEASE, BEGIN_WRITE_PROGRAM (alternar o barramento da memória principal, de memória principal para memória de programa, escrever lá igual se escreve em RAM) e END_WRITE_PROGRAM
+NOVAS INSTRUÇÕES: 
+	Hardware de interrupções: GETTIME (ms), LOCK, RELEASE, SETQUANTUM, GETQUANTUM (ciclos)
+	Memória de programa: GETPC, SETPC, STORE (mesma STORE da memória principal, ela vai tomar conta do barramento)
+	No processador: SETHI, SETLO
 
 
 Necessário para o processador e o SO:
