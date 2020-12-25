@@ -11,7 +11,7 @@ input[31:0] write_ra;
 
 input reg_write;
 
-input[2:0] loc_write;
+input[1:0] loc_write;
 
 reg[31:0] registers[31:0];
 reg[31:0] reg_hi;
@@ -29,26 +29,19 @@ begin
 	if(reg_write==1)
 	begin
 		case(loc_write)
-			3'b000://Escrita nos 31 registradores normais
+			2'b00://Escrita nos 31 registradores normais
 			begin
-				registers[rd] = write_data;
+				if(rd<5'b11111)
+					registers[rd] = write_data;
 			end
-			3'b001://Escrita em hi e lo
+			2'b01://Escrita em hi e lo
 			begin
 				reg_hi = write_hi;
 				reg_lo = write_lo;
 			end
-			3'b010://Escrita em "ra" que eh por BL
+			2'b10://Escrita em "ra" que eh "registers[31]"
 			begin
 				registers[5'd31] = write_ra;
-			end
-			3'b011://Escrita em HI por SETHI
-			begin
-				reg_hi = write_data;
-			end
-			3'b100://Escrita em LO por SETLO
-			begin
-				reg_lo = write_data;
 			end
 			default:
 			begin

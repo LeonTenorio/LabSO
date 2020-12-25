@@ -34,5 +34,6 @@ Necessário para o processador e o SO:
 	- Pronto
 	- Bloqueado
 		
-TAMANHO DA MEMÓRIA SECUNDÁRIA DA MINHA MÁQUINA: 62209 posições	=> Tempo de leitura = 4*20ns; Tempo de escrita = 4*20ns
+TAMANHO DA MEMÓRIA SECUNDÁRIA DA MINHA MÁQUINA: 32768 posições	=> Tempo de leitura = 4*20ns; Tempo de escrita = 4*20ns
+						8 trilhas, 32 setores, 128 valores cada setor
 TAMANHO DA MEMÓRIA PRINCIPAL DA MINHA MÁQUINA: 4096 posições 	=> Tempo de leitura = 2*20ns; Tempo de escrita = 2*20ns

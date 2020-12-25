@@ -21,7 +21,7 @@ begin
 			write_data = read;
 		3'b010://LI
 			write_data = $signed(inst9_31);
-		3'b011://MOV
+		3'b011://MOV, SETHI, SETLO
 			write_data = a;
 		3'b100://MFHI
 			write_data = bc_hi;

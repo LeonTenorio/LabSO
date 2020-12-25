@@ -7,7 +7,7 @@ output reg pc_write,
 input in_ready,
 output reg[1:0] pc_orig,
 output reg[1:0] rd_orig,
-output reg[1:0] loc_write,
+output reg[2:0] loc_write,
 output reg[1:0] op_b,
 output reg[2:0] branch_comp,
 output reg[2:0] write_d_sel,
@@ -192,7 +192,7 @@ always @(opcode, operation, opcode_operation)
 begin
 	pc_orig = 2'b00;
 	rd_orig = 2'b00;
-	loc_write = 2'b00;
+	loc_write = 3'b000;
 	op_b = 2'b00;
 	branch_comp = 3'b000;
 	write_d_sel = 3'b000;
@@ -238,15 +238,19 @@ begin
 		rd_orig = 2'b00;
 	
 	if(opcode==4'b0001)//Todas operacoes da ULA
-		loc_write = 2'b00;
+		loc_write = 3'b000;
 	else if(opcode_operation==8'b01000001)//BL
-		loc_write = 2'b10;
+		loc_write = 3'b010;
+	else if(opcode_operation==8'b10000011)//SETHI
+		loc_write = 3'b011;
+	else if(opcode_operation==8'b10000100)//SETLO
+		loc_write = 3'b100;
 	else if(opcode==4'b0010)//MULT
-		loc_write = 2'b01;
+		loc_write = 3'b001;
 	else if(opcode==4'b0011)//DIV
-		loc_write = 2'b01;
+		loc_write = 3'b001;
 	else
-		loc_write = 2'b00;
+		loc_write = 3'b000;
 	
 	if(opcode==4'b0101)//STORE
 		op_b = 2'b01;
@@ -292,6 +296,10 @@ begin
 		write_d_sel = 3'b100;
 	else if(opcode_operation==8'b10000010)//MFLO
 		write_d_sel = 3'b101;
+	else if(opcode_operation==8'b10000011)//SETHI
+		write_d_sel = 3'b011;
+	else if(opcode_operation==8'b10000100)//SETLO
+		write_d_sel = 3'b011;
 	else if(opcode==4'b1001)//IN
 		write_d_sel = 3'b110;
 	

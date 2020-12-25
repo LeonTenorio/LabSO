@@ -12,8 +12,8 @@ wire reg_write, mem_write, in_req, pc_write;
 wire in_ready;
 wire new_out;	
 
-wire[1:0] pc_orig, rd_orig, loc_write, loc_read, op_b;
-wire[2:0] branch_comp, write_d_sel;
+wire[1:0] pc_orig, rd_orig, loc_read, op_b;
+wire[2:0] branch_comp, write_d_sel, loc_write;
 wire[3:0] alu_op;
 
 unit_process unit_process(
