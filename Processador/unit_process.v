@@ -1,4 +1,5 @@
 module unit_process(
+input bios_controll,
 input reg_write,
 input mem_write,
 input in_req,
@@ -22,6 +23,9 @@ output[3:0] enter_out);
 
 parameter um = 32'd1;
 parameter zero = 32'd0;
+
+reg write_mem = 0;
+reg write_inst = 0;
 
 reg[31:0] pc;
 reg[0:31] reg_inst;
@@ -47,7 +51,9 @@ begin
 	pc = zero;
 end
 
-data_inst data_inst(.pc(pc), .instruction(instruction), .clk(clk));
+reg[31:0] data_inst_address;
+
+data_inst data_inst(.address(data_inst_address), .write_data(read2), .write(write_inst), .instruction(instruction), .clk(clk));
 
 udcpc udcpc(.pc(pc), 
 .inst(instruction), 
@@ -114,7 +120,7 @@ alu alu(.a(read1),
 
 memory memory(.adress(alu_result), 
 .write_data(read2), 
-.mem_write(mem_write), 
+.mem_write(write_mem), 
 .read(read), 
 .clk(clk));
 
@@ -136,6 +142,38 @@ always @(posedge clk)
 begin
 	if(pc_write==1)
 		pc = prox_pc;
+end
+
+always @(bios_controll, mem_write)
+begin
+	if(bios_controll)
+	begin
+		if(mem_write)
+		begin
+			write_mem = 0;
+			write_inst = 1;
+		end
+	end
+	else
+	begin
+		if(mem_write)
+		begin
+			write_mem = 1;
+			write_inst = 0;
+		end
+	end
+end
+
+always @(pc, bios_controll)
+begin
+	if(bios_controll)
+	begin
+		data_inst_address = alu_result;
+	end
+	else
+	begin
+		data_inst_address = pc;
+	end
 end
 
 	assign {opcode, operation} = instruction[0:7];

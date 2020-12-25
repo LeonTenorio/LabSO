@@ -236,6 +236,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "bios_controll",
+					"strict" : false
+				},
+				{
 					"name" : "valor[1]",
 					"strict" : false
 				},
@@ -244,11 +248,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "valor[3]",
-					"strict" : false
-				},
-				{
-					"name" : "valor[2]",
+					"name" : "valor[5]",
 					"strict" : false
 				},
 				{
@@ -256,7 +256,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "valor[5]",
+					"name" : "valor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "valor[2]",
 					"strict" : false
 				},
 				{

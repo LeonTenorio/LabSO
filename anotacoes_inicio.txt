@@ -1,5 +1,5 @@
 NOVAS INSTRUÇÕES: 
-	Hardware de interrupções: GETTIME (ms), LOCK, RELEASE, SETQUANTUM, GETQUANTUM (ciclos)
+	Hardware de interrupções: GETTIME (ms), LOCK, RELEASE, SETQUANTUM, GETQUANTUM (ciclos), UNBLOCKINST
 	Memória de programa: GETPC, SETPC, STORE (mesma STORE da memória principal, ela vai tomar conta do barramento)
 	No processador: SETHI, SETLO
 

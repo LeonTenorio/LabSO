@@ -1,8 +1,12 @@
-module data_inst(pc, instruction, clk);
+module data_inst(address, write_data, write, instruction, clk);
 
 input clk;
 
-input[31:0] pc;
+input write;
+
+input[31:0] write_data;
+
+input[31:0] address;
 
 output reg[0:31] instruction;//DATA INST sera a unica em EM BIG ENDIAN
 
@@ -10,6 +14,10 @@ reg[0:31] registers[255:0];//As instrucoes armazenadas tambem estao em BIG ENDIA
 
 always @(posedge clk)
 begin	
+	if(write)
+	begin
+		registers[address] <= write_data;
+	end
 	/*ALGORITMO DE TESTE*/
 	//FIBONNACI
 	//REG[0] terah o valor da entrada
@@ -232,7 +240,7 @@ end
 
 always @(negedge clk)
 begin
-	if(pc<32'd256)
-		instruction <= registers[pc];
+	if(address<32'd256)
+		instruction <= registers[address];
 end
 endmodule 
