@@ -6,6 +6,8 @@ input in_req,
 input new_out,
 input pc_write,
 output in_ready,
+output reg[31:0] bios_pc,
+input[0:31] bios_inst,
 input[1:0] pc_orig,
 input[1:0] rd_orig,
 input[1:0] loc_write,
@@ -27,13 +29,14 @@ parameter zero = 32'd0;
 reg write_mem = 0;
 reg write_inst = 0;
 
-reg[31:0] pc;
+reg[31:0] pc = 32'd0;
+//reg[31:0] bios_pc = 32'd0;
 reg[0:31] reg_inst;
 reg[31:0] write_ra;
 
 wire[3:0] inst4_7;
 wire[4:0] rd_select;
-wire[0:31] instruction;
+wire[0:31] internal_inst;
 wire[31:0] read1, read2, prox_pc, wd_select, alu_result, alu_hi, alu_lo, b_select, read, e_data;
 wire[4:0] inst4_8, inst8_12, inst13_17, inst18_22;
 wire[8:0] inst23_31;
@@ -46,16 +49,15 @@ wire[31:0] bc_lo;
 
 wire[0:23] lixo1;
 
-initial 
-begin
-	pc = zero;
-end
-
 reg[31:0] data_inst_address;
 
-data_inst data_inst(.address(data_inst_address), .write_data(read2), .write(write_inst), .instruction(instruction), .clk(clk));
+reg[31:0] process_pc;
 
-udcpc udcpc(.pc(pc), 
+reg[0:31] instruction;
+
+data_inst data_inst(.address(data_inst_address), .write_data(read2), .write(write_inst), .instruction(internal_inst), .clk(clk));
+
+udcpc udcpc(.pc(process_pc), 
 .inst(instruction), 
 .pc_orig(pc_orig), 
 .branch_comp(branch_comp), 
@@ -135,13 +137,32 @@ in_out_module in_out_module(.p_data(read1),
 .enter_in(enter_in), 
 .enter_out(enter_out));
 
-always @(pc)
-	write_ra <= pc + um;
+always @(clk)
+begin
+	if(bios_controll)
+	begin
+		write_ra <= bios_pc + um;
+	end
+	else
+	begin
+		write_ra <= pc + um;
+	end
+end
+	
 
 always @(posedge clk)
 begin
 	if(pc_write==1)
-		pc = prox_pc;
+	begin
+		if(bios_controll)
+		begin
+			bios_pc = prox_pc;
+		end
+		else
+		begin
+			pc = prox_pc;
+		end
+	end
 end
 
 always @(bios_controll, mem_write)
@@ -164,7 +185,7 @@ begin
 	end
 end
 
-always @(pc, bios_controll)
+always @(clk)//pc, bios_controll, alu_result
 begin
 	if(bios_controll)
 	begin
@@ -173,6 +194,30 @@ begin
 	else
 	begin
 		data_inst_address = pc;
+	end
+end
+
+always @(clk)//bios_controll, pc, bios_pc
+begin
+	if(bios_controll)
+	begin
+		process_pc = bios_pc;
+	end
+	else
+	begin
+		process_pc = pc;
+	end
+end
+
+always @(clk)//bios_controll, bios_inst, internal_inst
+begin
+	if(bios_controll)
+	begin
+		instruction = bios_inst;
+	end
+	else
+	begin
+		instruction = internal_inst;
 	end
 end
 

@@ -4,6 +4,134 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "bios_pc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[8]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[9]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[10]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[11]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[12]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[13]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[14]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[15]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[16]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[17]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[18]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[19]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[20]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[21]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[22]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[23]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[24]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[25]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[26]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[27]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[28]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[29]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[30]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_pc[31]",
+					"strict" : false
+				},
+				{
 					"name" : "done_inst",
 					"strict" : false
 				},
@@ -232,19 +360,139 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
 					"name" : "bios_controll",
 					"strict" : false
 				},
 				{
-					"name" : "valor[1]",
+					"name" : "bios_inst[31]",
 					"strict" : false
 				},
 				{
-					"name" : "valor[0]",
+					"name" : "bios_inst[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[30]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[29]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[28]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[27]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[26]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[25]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[24]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[23]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[22]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[21]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[20]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[19]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[18]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[17]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[16]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[15]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[14]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[13]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[12]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[11]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[10]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[9]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[8]",
 					"strict" : false
 				},
 				{
@@ -252,7 +500,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "valor[4]",
+					"name" : "valor[1]",
 					"strict" : false
 				},
 				{
@@ -261,6 +509,14 @@
 				},
 				{
 					"name" : "valor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "valor[0]",
 					"strict" : false
 				},
 				{

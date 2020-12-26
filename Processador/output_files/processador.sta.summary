@@ -3,111 +3,75 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -126.193
-TNS   : -223936.070
+Slack : -128.437
+TNS   : -200519.307
 
-Type  : Slow 1200mV 85C Model Setup 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -3.493
-TNS   : -77.747
+Type  : Slow 1200mV 85C Model Setup 'bios_controll'
+Slack : -8.571
+TNS   : -215.616
 
-Type  : Slow 1200mV 85C Model Setup 'press_button:press_button|estado.01'
-Slack : -2.976
-TNS   : -15.094
-
-Type  : Slow 1200mV 85C Model Hold 'processador:processador|unit_control:unit_control|estado.D'
-Slack : 0.382
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Hold 'bios_controll'
+Slack : -1.075
+TNS   : -5.206
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.401
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'press_button:press_button|estado.01'
-Slack : 0.804
+Slack : 0.385
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -11602.107
+TNS   : -11643.227
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -1.285
-TNS   : -33.410
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'press_button:press_button|estado.01'
-Slack : -1.285
-TNS   : -7.710
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bios_controll'
+Slack : -3.000
+TNS   : -176.550
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -113.791
-TNS   : -205409.984
+Slack : -115.955
+TNS   : -184305.107
 
-Type  : Slow 1200mV 0C Model Setup 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -3.240
-TNS   : -72.145
+Type  : Slow 1200mV 0C Model Setup 'bios_controll'
+Slack : -8.065
+TNS   : -199.435
 
-Type  : Slow 1200mV 0C Model Setup 'press_button:press_button|estado.01'
-Slack : -2.791
-TNS   : -14.313
+Type  : Slow 1200mV 0C Model Hold 'bios_controll'
+Slack : -0.926
+TNS   : -5.282
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.352
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'processador:processador|unit_control:unit_control|estado.D'
-Slack : 0.369
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'press_button:press_button|estado.01'
-Slack : 0.748
+Slack : 0.338
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -11599.291
+TNS   : -11640.411
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -1.285
-TNS   : -33.410
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'press_button:press_button|estado.01'
-Slack : -1.285
-TNS   : -7.710
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bios_controll'
+Slack : -3.000
+TNS   : -160.732
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -62.377
-TNS   : -112268.211
+Slack : -63.659
+TNS   : -100949.234
 
-Type  : Fast 1200mV 0C Model Setup 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -1.738
-TNS   : -40.223
+Type  : Fast 1200mV 0C Model Setup 'bios_controll'
+Slack : -4.667
+TNS   : -125.803
 
-Type  : Fast 1200mV 0C Model Setup 'press_button:press_button|estado.01'
-Slack : -1.499
-TNS   : -7.827
+Type  : Fast 1200mV 0C Model Hold 'bios_controll'
+Slack : -0.563
+TNS   : -2.612
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.179
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'processador:processador|unit_control:unit_control|estado.D'
-Slack : 0.349
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'press_button:press_button|estado.01'
-Slack : 0.887
+Slack : 0.171
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -9612.898
+TNS   : -9604.082
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -1.000
-TNS   : -26.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'press_button:press_button|estado.01'
-Slack : -1.000
-TNS   : -6.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bios_controll'
+Slack : -3.000
+TNS   : -152.953
 
 ------------------------------------------------------------
