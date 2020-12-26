@@ -156,6 +156,10 @@ begin
 				reg_write = 1;
 			else if(opcode_operation==8'b01000001)//BL
 				reg_write = 1;
+			else if(opcode_operation==8'b10000011)//SETHI
+				reg_write = 1;
+			else if(opcode_operation==8'b10000100)//SETLO
+				reg_write = 1;
 			else
 				reg_write = 0;
 			
