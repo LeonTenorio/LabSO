@@ -368,10 +368,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[6]",
-					"strict" : false
-				},
-				{
 					"name" : "bios_inst[5]",
 					"strict" : false
 				},
@@ -388,7 +384,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[1]",
+					"name" : "bios_inst[7]",
 					"strict" : false
 				},
 				{
@@ -396,7 +392,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[7]",
+					"name" : "bios_inst[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[1]",
 					"strict" : false
 				},
 				{
@@ -496,18 +496,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "valor[4]",
-					"strict" : false
-				},
-				{
-					"name" : "valor[0]",
-					"strict" : false
-				},
-				{
-					"name" : "valor[2]",
-					"strict" : false
-				},
-				{
 					"name" : "valor[5]",
 					"strict" : false
 				},
@@ -517,6 +505,18 @@
 				},
 				{
 					"name" : "valor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "valor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "valor[0]",
 					"strict" : false
 				},
 				{

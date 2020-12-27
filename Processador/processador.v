@@ -1,5 +1,8 @@
 module processador(
 input bios_controll,
+input bios_write_pc,
+input[31:0] bios_info,
+output[31:0] processor_info,
 input clk,
 input wake_up,
 output[31:0] bios_pc,
@@ -21,6 +24,9 @@ wire[3:0] alu_op;
 
 unit_process unit_process(
 .bios_controll(bios_controll),
+.bios_write_pc(bios_write_pc),
+.bios_info(bios_info),
+.processor_info(processor_info),
 .reg_write(reg_write),
 .mem_write(mem_write),
 .in_req(in_req),

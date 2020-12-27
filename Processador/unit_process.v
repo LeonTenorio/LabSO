@@ -1,6 +1,8 @@
 module unit_process(
 input bios_controll,
 input bios_write_pc,
+input[31:0] bios_info,
+output[31:0] processor_info,
 input reg_write,
 input mem_write,
 input in_req,
@@ -14,7 +16,7 @@ input[1:0] rd_orig,
 input[1:0] loc_write,
 input[1:0] op_b,
 input[2:0] branch_comp,
-input[2:0] write_d_sel,
+input[3:0] write_d_sel,
 input[3:0] alu_op,
 output[0:3] opcode,
 output[0:3] operation,
@@ -91,6 +93,7 @@ mux_wd mux_wd(.inst9_31(inst9_31),
 .bc_lo(bc_lo),
 .write_d_sel(write_d_sel),
 .pc(pc), 
+.bios_info(bios_info),
 .write_data(wd_select));
 
 bc_registers bc_registers(.rs(inst8_12), 
@@ -233,5 +236,6 @@ begin
 end
 
 	assign {opcode, operation} = instruction[0:7];
+	assign processor_info = read1;
 	
 endmodule 

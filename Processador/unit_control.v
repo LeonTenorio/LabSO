@@ -10,7 +10,7 @@ output reg[1:0] rd_orig,
 output reg[2:0] loc_write,
 output reg[1:0] op_b,
 output reg[2:0] branch_comp,
-output reg[2:0] write_d_sel,
+output reg[3:0] write_d_sel,
 output reg[3:0] alu_op,
 input[0:3] opcode,
 input[0:3] operation,
@@ -158,6 +158,10 @@ begin
 				reg_write = 1;
 			else if(opcode_operation==8'b00000010)//GETPC
 				reg_write = 1;
+			else if(opcode_operation==8'b10110000)//GETTIME
+				reg_write = 1;
+			else if(opcode_operation==8'b10110011)//GETQUANTUM
+				reg_write = 1;
 			else
 				reg_write = 0;
 			
@@ -197,7 +201,7 @@ begin
 	loc_write = 3'b000;
 	op_b = 2'b00;
 	branch_comp = 3'b000;
-	write_d_sel = 3'b000;
+	write_d_sel = 4'b0000;
 	alu_op = 4'b0000;
 	
 	if(opcode_operation==8'b01000000)//B
@@ -291,25 +295,29 @@ begin
 	end
 	
 	if(opcode==4'b0001)//Todas operacoes da ula
-		write_d_sel = 3'b000;
+		write_d_sel = 4'b0000;
 	else if(opcode==4'b0110)//LOAD
-		write_d_sel = 3'b001;
+		write_d_sel = 4'b0001;
 	else if(opcode==4'b0111)//LI
-		write_d_sel = 3'b010;
+		write_d_sel = 4'b0010;
 	else if(opcode_operation==8'b10000000)//MOV
-		write_d_sel = 3'b011;
+		write_d_sel = 4'b0011;
 	else if(opcode_operation==8'b10000001)//MFHI
-		write_d_sel = 3'b100;
+		write_d_sel = 4'b0100;
 	else if(opcode_operation==8'b10000010)//MFLO
-		write_d_sel = 3'b101;
+		write_d_sel = 4'b0101;
 	else if(opcode_operation==8'b10000011)//SETHI
-		write_d_sel = 3'b011;
+		write_d_sel = 4'b0011;
 	else if(opcode_operation==8'b10000100)//SETLO
-		write_d_sel = 3'b011;
+		write_d_sel = 4'b0011;
 	else if(opcode_operation==8'b00000010)//GETPC
-		write_d_sel = 3'b111;
+		write_d_sel = 4'b0111;
 	else if(opcode==4'b1001)//IN
-		write_d_sel = 3'b110;
+		write_d_sel = 4'b0110;
+	else if(opcode_operation==8'b10110000)//GETTIME
+		write_d_sel = 4'b1000;
+	else if(opcode_operation==8'b10110011)//GETQUANTUM
+		write_d_sel = 4'b1000;
 	
 	if(opcode==4'b0001)//Todas as operacoes da ULA
 	begin
