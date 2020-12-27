@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Sat Dec 26 20:56:41 2020
+Sun Dec 27 11:35:15 2020
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -72,13 +72,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 26 20:56:41 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 27 11:35:14 2020       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; apresentacao                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 19,524                                      ;
-;     Total combinational functions  ; 12,039                                      ;
+; Total logic elements               ; 19,490                                      ;
+;     Total combinational functions  ; 12,005                                      ;
 ;     Dedicated logic registers      ; 8,807                                       ;
 ; Total registers                    ; 8807                                        ;
 ; Total pins                         ; 130                                         ;
@@ -188,9 +188,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.8%      ;
-;     Processor 3            ;   0.6%      ;
-;     Processor 4            ;   0.6%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processor 3            ;   0.5%      ;
+;     Processor 4            ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -249,16 +249,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 19,524    ;
+; Estimated Total logic elements              ; 19,490    ;
 ;                                             ;           ;
-; Total combinational functions               ; 12039     ;
+; Total combinational functions               ; 12005     ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 8791      ;
-;     -- 3 input functions                    ; 2911      ;
-;     -- <=2 input functions                  ; 337       ;
+;     -- 4 input functions                    ; 9755      ;
+;     -- 3 input functions                    ; 1911      ;
+;     -- <=2 input functions                  ; 339       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 10573     ;
+;     -- normal mode                          ; 10539     ;
 ;     -- arithmetic mode                      ; 1466      ;
 ;                                             ;           ;
 ; Total registers                             ; 8807      ;
@@ -272,8 +272,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 8807      ;
-; Total fan-out                               ; 70630     ;
-; Average fan-out                             ; 3.34      ;
+; Total fan-out                               ; 71490     ;
+; Average fan-out                             ; 3.39      ;
 +---------------------------------------------+-----------+
 
 
@@ -282,11 +282,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                           ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |apresentacao                                   ; 12039 (1)           ; 8807 (0)                  ; 131072      ; 8            ; 0       ; 4         ; 130  ; 0            ; |apresentacao                                                                                                                                                                                 ; apresentacao        ; work         ;
+; |apresentacao                                   ; 12005 (1)           ; 8807 (0)                  ; 131072      ; 8            ; 0       ; 4         ; 130  ; 0            ; |apresentacao                                                                                                                                                                                 ; apresentacao        ; work         ;
 ;    |press_button:press_button|                  ; 91 (91)             ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|press_button:press_button                                                                                                                                                       ; press_button        ; work         ;
-;    |processador:processador|                    ; 11501 (0)           ; 8713 (0)                  ; 131072      ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador                                                                                                                                                         ; processador         ; work         ;
-;       |unit_control:unit_control|               ; 73 (73)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_control:unit_control                                                                                                                               ; unit_control        ; work         ;
-;       |unit_process:unit_process|               ; 11428 (76)          ; 8704 (64)                 ; 131072      ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process                                                                                                                               ; unit_process        ; work         ;
+;    |processador:processador|                    ; 11467 (0)           ; 8713 (0)                  ; 131072      ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador                                                                                                                                                         ; processador         ; work         ;
+;       |unit_control:unit_control|               ; 71 (71)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_control:unit_control                                                                                                                               ; unit_control        ; work         ;
+;       |unit_process:unit_process|               ; 11396 (76)          ; 8704 (64)                 ; 131072      ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process                                                                                                                               ; unit_process        ; work         ;
 ;          |alu:alu|                              ; 2913 (725)          ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu                                                                                                                       ; alu                 ; work         ;
 ;             |lpm_divide:Div0|                   ; 1048 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
 ;                |lpm_divide_hkm:auto_generated|  ; 1048 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; lpm_divide_hkm      ; work         ;
@@ -300,15 +300,15 @@ refer to the applicable agreement for further details.
 ;                         |add_sub_8pc:add_sub_1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc         ; work         ;
 ;             |lpm_mult:Mult0|                    ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_mult:Mult0                                                                                                        ; lpm_mult            ; work         ;
 ;                |mult_7dt:auto_generated|        ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; mult_7dt            ; work         ;
-;          |bc_registers:bc_registers|            ; 2585 (2585)         ; 1216 (1216)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|bc_registers:bc_registers                                                                                                     ; bc_registers        ; work         ;
-;          |data_inst:data_inst|                  ; 5314 (5314)         ; 7392 (7392)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|data_inst:data_inst                                                                                                           ; data_inst           ; work         ;
+;          |bc_registers:bc_registers|            ; 2557 (2557)         ; 1216 (1216)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|bc_registers:bc_registers                                                                                                     ; bc_registers        ; work         ;
+;          |data_inst:data_inst|                  ; 5311 (5311)         ; 7392 (7392)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|data_inst:data_inst                                                                                                           ; data_inst           ; work         ;
 ;          |in_out_module:in_out_module|          ; 144 (144)           ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                   ; in_out_module       ; work         ;
 ;          |memory:memory|                        ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|memory:memory                                                                                                                 ; memory              ; work         ;
 ;             |altsyncram:data_rtl_0|             ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|memory:memory|altsyncram:data_rtl_0                                                                                           ; altsyncram          ; work         ;
 ;                |altsyncram_c9d1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|memory:memory|altsyncram:data_rtl_0|altsyncram_c9d1:auto_generated                                                            ; altsyncram_c9d1     ; work         ;
 ;          |mux_op_b:mux_op_b|                    ; 62 (62)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|mux_op_b:mux_op_b                                                                                                             ; mux_op_b            ; work         ;
 ;          |mux_rd:mux_rd|                        ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|mux_rd:mux_rd                                                                                                                 ; mux_rd              ; work         ;
-;          |mux_wd:mux_wd|                        ; 142 (142)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|mux_wd:mux_wd                                                                                                                 ; mux_wd              ; work         ;
+;          |mux_wd:mux_wd|                        ; 141 (141)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|mux_wd:mux_wd                                                                                                                 ; mux_wd              ; work         ;
 ;          |udcpc:udcpc|                          ; 182 (182)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|udcpc:udcpc                                                                                                                   ; udcpc               ; work         ;
 ;    |saida_display:saida_display|                ; 446 (0)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|saida_display:saida_display                                                                                                                                                     ; saida_display       ; work         ;
 ;       |dado_bcd:dado_bcd|                       ; 390 (390)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|saida_display:saida_display|dado_bcd:dado_bcd                                                                                                                                   ; dado_bcd            ; work         ;
@@ -1285,17 +1285,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; No         ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|Mux5            ;
 ; 7:1                ; 10 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |apresentacao|processador:processador|unit_process:unit_process|mux_wd:mux_wd|Mux6                          ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |apresentacao|press_button:press_button|Selector2                                                           ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |apresentacao|processador:processador|unit_control:unit_control|write_d_sel[2]                              ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |apresentacao|processador:processador|unit_control:unit_control|write_d_sel[2]                              ;
 ; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux16                               ;
 ; 21:1               ; 8 bits    ; 112 LEs       ; 72 LEs               ; 40 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux8                                ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |apresentacao|processador:processador|unit_control:unit_control|Selector6                                   ;
-; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux24                               ;
-; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux6                                ;
-; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux29                               ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux25                               ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux4                                ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux28                               ;
 ; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux2                                ;
 ; 18:1               ; 8 bits    ; 96 LEs        ; 16 LEs               ; 80 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|udcpc:udcpc|prox_pc[26]                     ;
 ; 18:1               ; 10 bits   ; 120 LEs       ; 20 LEs               ; 100 LEs                ; No         ; |apresentacao|processador:processador|unit_process:unit_process|udcpc:udcpc|prox_pc[16]                     ;
-; 18:1               ; 14 bits   ; 168 LEs       ; 28 LEs               ; 140 LEs                ; No         ; |apresentacao|processador:processador|unit_process:unit_process|udcpc:udcpc|prox_pc[13]                     ;
+; 18:1               ; 14 bits   ; 168 LEs       ; 28 LEs               ; 140 LEs                ; No         ; |apresentacao|processador:processador|unit_process:unit_process|udcpc:udcpc|prox_pc[12]                     ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 22 LEs               ; 10 LEs                 ; No         ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|Mux0                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
 
@@ -1622,13 +1622,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processador:processador|unit_process:unit_process"                                                                                                                                   ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; loc_write ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (2 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:processador|unit_process:unit_process"                                                                                                                                       ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                          ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; loc_write     ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (2 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; bios_write_pc ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                     ;
++---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -1655,22 +1656,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 52                          ;
 ;     SCLR              ; 64                          ;
 ;     plain             ; 1167                        ;
-; cycloneiii_lcell_comb ; 12055                       ;
+; cycloneiii_lcell_comb ; 12021                       ;
 ;     arith             ; 1466                        ;
 ;         2 data inputs ; 194                         ;
 ;         3 data inputs ; 1272                        ;
-;     normal            ; 10589                       ;
+;     normal            ; 10555                       ;
 ;         0 data inputs ; 61                          ;
 ;         1 data inputs ; 23                          ;
-;         2 data inputs ; 75                          ;
-;         3 data inputs ; 1639                        ;
-;         4 data inputs ; 8791                        ;
+;         2 data inputs ; 77                          ;
+;         3 data inputs ; 639                         ;
+;         4 data inputs ; 9755                        ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 127.50                      ;
-; Average LUT depth     ; 30.61                       ;
+; Average LUT depth     ; 30.53                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1679,7 +1680,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:09     ;
+; Top            ; 00:01:03     ;
 +----------------+--------------+
 
 
@@ -1689,7 +1690,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat Dec 26 20:55:08 2020
+    Info: Processing started: Sun Dec 27 11:33:48 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1730,33 +1731,65 @@ Info (12021): Found 1 design units, including 1 entities, in source file apresen
 Info (12127): Elaborating entity "apresentacao" for the top level hierarchy
 Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v Line: 34
 Info (12128): Elaborating entity "unit_process" for hierarchy "processador:processador|unit_process:unit_process" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 45
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(143): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 143
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(145): variable "bios_pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 145
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(149): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 149
-Warning (10240): Verilog HDL Always Construct warning at unit_process.v(169): inferring latch(es) for variable "write_mem", which holds its previous value in one or more paths through the always construct File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 169
-Warning (10240): Verilog HDL Always Construct warning at unit_process.v(169): inferring latch(es) for variable "write_inst", which holds its previous value in one or more paths through the always construct File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 169
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(191): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 191
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(193): variable "alu_result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 193
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(197): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 197
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(203): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 203
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(205): variable "bios_pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 205
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(209): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 209
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(215): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 215
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(217): variable "bios_inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 217
-Warning (10235): Verilog HDL Always Construct warning at unit_process.v(221): variable "internal_inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 221
-Info (10041): Inferred latch for "write_inst" at unit_process.v(181) File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 181
-Info (10041): Inferred latch for "write_mem" at unit_process.v(181) File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 181
-Info (12128): Elaborating entity "data_inst" for hierarchy "processador:processador|unit_process:unit_process|data_inst:data_inst" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 58
-Info (12128): Elaborating entity "udcpc" for hierarchy "processador:processador|unit_process:unit_process|udcpc:udcpc" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 75
-Info (12128): Elaborating entity "mux_rd" for hierarchy "processador:processador|unit_process:unit_process|mux_rd:mux_rd" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 82
-Info (12128): Elaborating entity "mux_wd" for hierarchy "processador:processador|unit_process:unit_process|mux_wd:mux_wd" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 93
-Info (12128): Elaborating entity "bc_registers" for hierarchy "processador:processador|unit_process:unit_process|bc_registers:bc_registers" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 108
-Info (12128): Elaborating entity "mux_op_b" for hierarchy "processador:processador|unit_process:unit_process|mux_op_b:mux_op_b" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 115
-Info (12128): Elaborating entity "alu" for hierarchy "processador:processador|unit_process:unit_process|alu:alu" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 122
-Info (12128): Elaborating entity "memory" for hierarchy "processador:processador|unit_process:unit_process|memory:memory" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 128
-Info (12128): Elaborating entity "in_out_module" for hierarchy "processador:processador|unit_process:unit_process|in_out_module:in_out_module" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 139
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(144): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 144
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(146): variable "bios_pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 146
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(150): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 150
+Warning (10240): Verilog HDL Always Construct warning at unit_process.v(174): inferring latch(es) for variable "write_mem", which holds its previous value in one or more paths through the always construct File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 174
+Warning (10240): Verilog HDL Always Construct warning at unit_process.v(174): inferring latch(es) for variable "write_inst", which holds its previous value in one or more paths through the always construct File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 174
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(196): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 196
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(198): variable "alu_result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 198
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(202): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 202
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(208): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 208
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(210): variable "bios_pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 210
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(214): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 214
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(220): variable "bios_controll" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 220
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(222): variable "bios_inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 222
+Warning (10235): Verilog HDL Always Construct warning at unit_process.v(226): variable "internal_inst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 226
+Info (10041): Inferred latch for "write_inst" at unit_process.v(186) File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 186
+Info (10041): Inferred latch for "write_mem" at unit_process.v(186) File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 186
+Info (12128): Elaborating entity "data_inst" for hierarchy "processador:processador|unit_process:unit_process|data_inst:data_inst" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 59
+Info (12128): Elaborating entity "udcpc" for hierarchy "processador:processador|unit_process:unit_process|udcpc:udcpc" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 76
+Info (12128): Elaborating entity "mux_rd" for hierarchy "processador:processador|unit_process:unit_process|mux_rd:mux_rd" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 83
+Info (12128): Elaborating entity "mux_wd" for hierarchy "processador:processador|unit_process:unit_process|mux_wd:mux_wd" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 94
+Info (12128): Elaborating entity "bc_registers" for hierarchy "processador:processador|unit_process:unit_process|bc_registers:bc_registers" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 109
+Info (12128): Elaborating entity "mux_op_b" for hierarchy "processador:processador|unit_process:unit_process|mux_op_b:mux_op_b" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 116
+Info (12128): Elaborating entity "alu" for hierarchy "processador:processador|unit_process:unit_process|alu:alu" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 123
+Info (12128): Elaborating entity "memory" for hierarchy "processador:processador|unit_process:unit_process|memory:memory" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 129
+Info (12128): Elaborating entity "in_out_module" for hierarchy "processador:processador|unit_process:unit_process|in_out_module:in_out_module" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 140
 Info (12128): Elaborating entity "unit_control" for hierarchy "processador:processador|unit_control:unit_control" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(143): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 143
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(145): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 145
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(147): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 147
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(149): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 149
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(151): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 151
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(153): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 153
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(155): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(164): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 164
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(169): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 169
 Info (10264): Verilog HDL Case Statement information at unit_control.v(113): all case item expressions in this case statement are onehot File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 113
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(224): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 224
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(226): variable "operation" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 226
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(231): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 231
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(233): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 233
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(237): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 237
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(239): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 239
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(244): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 244
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(254): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 254
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(256): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 256
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(261): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 261
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(263): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 263
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(274): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 274
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(276): variable "operation" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 276
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(293): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 293
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(295): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 295
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(297): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 297
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(311): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 311
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(314): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 314
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(316): variable "operation" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 316
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(335): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 335
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(337): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 337
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(339): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 339
+Warning (10235): Verilog HDL Always Construct warning at unit_control.v(341): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 341
 Info (12128): Elaborating entity "saida_display" for hierarchy "saida_display:saida_display" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v Line: 47
 Warning (12125): Using design file dado_bcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: dado_bcd File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/dado_bcd.v Line: 1
@@ -1764,21 +1797,21 @@ Info (12128): Elaborating entity "dado_bcd" for hierarchy "saida_display:saida_d
 Info (12128): Elaborating entity "display" for hierarchy "saida_display:saida_display|display:disp1" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/saida_display.v Line: 28
 Info (12128): Elaborating entity "press_button" for hierarchy "press_button:press_button" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v Line: 53
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[3] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[1] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[2] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[0] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[3] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[1] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[2] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[0] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
     Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|in_out_module:in_out_module|Mux0 File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 15
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[22] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[21] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[20] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[19] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[18] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[17] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[16] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[15] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[14] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
-    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[13] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 56
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[22] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[21] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[20] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[19] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[18] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[17] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[16] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[15] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[14] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
+    Warning (19017): Found clock multiplexer processador:processador|unit_process:unit_process|instruction[13] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 57
 Warning (276027): Inferred dual-clock RAM node "processador:processador|unit_process:unit_process|memory:memory|data_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "processador:processador|unit_process:unit_process|memory:memory|data_rtl_0" 
@@ -1858,26 +1891,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 222 buffer(s)
     Info (13019): Ignored 222 SOFT buffer(s)
-Warning (13012): Latch processador:processador|unit_process:unit_process|write_inst has unsafe behavior File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 30
+Warning (13012): Latch processador:processador|unit_process:unit_process|write_inst has unsafe behavior File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 31
     Warning (13013): Ports D and ENA on the latch are fed by the same signal bios_controll File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v Line: 2
-Warning (13012): Latch processador:processador|unit_process:unit_process|write_mem has unsafe behavior File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 29
+Warning (13012): Latch processador:processador|unit_process:unit_process|write_mem has unsafe behavior File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 30
     Warning (13013): Ports D and ENA on the latch are fed by the same signal bios_controll File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v Line: 2
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/output_files/processador.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 19732 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 19698 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 41 input pins
     Info (21059): Implemented 89 output pins
-    Info (21061): Implemented 19562 logic cells
+    Info (21061): Implemented 19528 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
-    Info: Peak virtual memory: 1118 megabytes
-    Info: Processing ended: Sat Dec 26 20:56:41 2020
-    Info: Elapsed time: 00:01:33
-    Info: Total CPU time (on all processors): 00:02:01
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 70 warnings
+    Info: Peak virtual memory: 1120 megabytes
+    Info: Processing ended: Sun Dec 27 11:35:15 2020
+    Info: Elapsed time: 00:01:27
+    Info: Total CPU time (on all processors): 00:01:56
 
 
 +------------------------------------------+

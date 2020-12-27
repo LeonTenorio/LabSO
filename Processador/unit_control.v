@@ -102,7 +102,7 @@ begin
 		done_inst = 0;
 end
 
-always @(estado, opcode, operation, opcode_operation)
+always @(estado, opcode_operation)
 begin
 	reg_write = 0;
 	mem_write = 0;
@@ -150,15 +150,11 @@ begin
 				reg_write = 1;
 			else if(opcode==4'b0111)//LI
 				reg_write = 1;
-			else if(opcode==4'b1000)//MOV, MFHI, MFLO
+			else if(opcode==4'b1000)//MOV, MFHI, MFLO, SETHI, SETLO
 				reg_write = 1;
 			else if(opcode==4'b1001)//IN
 				reg_write = 1;
 			else if(opcode_operation==8'b01000001)//BL
-				reg_write = 1;
-			else if(opcode_operation==8'b10000011)//SETHI
-				reg_write = 1;
-			else if(opcode_operation==8'b10000100)//SETLO
 				reg_write = 1;
 			else if(opcode_operation==8'b00000010)//GETPC
 				reg_write = 1;
@@ -194,7 +190,7 @@ begin
 	endcase
 end
 
-always @(opcode, operation, opcode_operation)
+always @(opcode_operation)
 begin
 	pc_orig = 2'b00;
 	rd_orig = 2'b00;

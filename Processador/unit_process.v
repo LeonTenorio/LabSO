@@ -1,5 +1,6 @@
 module unit_process(
 input bios_controll,
+input bios_write_pc,
 input reg_write,
 input mem_write,
 input in_req,
@@ -157,6 +158,10 @@ begin
 	begin
 		if(bios_controll)
 		begin
+			if(bios_write_pc)
+			begin
+				pc = read1;
+			end
 			bios_pc = prox_pc;
 		end
 		else

@@ -1,5 +1,5 @@
 Flow report for processador
-Sat Dec 26 21:40:54 2020
+Sun Dec 27 11:56:30 2020
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Dec 26 21:40:16 2020       ;
+; Flow Status                        ; Successful - Sun Dec 27 11:55:37 2020       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; apresentacao                                ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 16,225 / 114,480 ( 14 % )                   ;
-;     Total combinational functions  ; 12,040 / 114,480 ( 11 % )                   ;
+; Total logic elements               ; 16,137 / 114,480 ( 14 % )                   ;
+;     Total combinational functions  ; 12,006 / 114,480 ( 10 % )                   ;
 ;     Dedicated logic registers      ; 8,807 / 114,480 ( 8 % )                     ;
 ; Total registers                    ; 8807                                        ;
 ; Total pins                         ; 130 / 529 ( 25 % )                          ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/26/2020 20:55:09 ;
+; Start date & time ; 12/27/2020 11:33:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+--------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+--------------+------------+
-; COMPILER_SIGNATURE_ID               ; 9447189658861.160902690908129          ; --            ; --           ; --         ;
+; COMPILER_SIGNATURE_ID               ; 180747809987198.160907962907959        ; --            ; --           ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --           ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --           ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --           ; --         ;
@@ -94,11 +94,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:29     ; 1.0                     ; 1103 MB             ; 00:01:57                           ;
-; Fitter               ; 00:43:25     ; 1.0                     ; 2052 MB             ; 00:47:30                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 847 MB              ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:38     ; 2.9                     ; 1395 MB             ; 00:00:47                           ;
-; Total                ; 00:45:37     ; --                      ; --                  ; 00:50:19                           ;
+; Analysis & Synthesis ; 00:01:23     ; 1.0                     ; 1104 MB             ; 00:01:52                           ;
+; Fitter               ; 00:20:14     ; 1.0                     ; 1993 MB             ; 00:23:47                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 847 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:53     ; 3.4                     ; 1507 MB             ; 00:01:01                           ;
+; Total                ; 00:22:34     ; --                      ; --                  ; 00:26:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
