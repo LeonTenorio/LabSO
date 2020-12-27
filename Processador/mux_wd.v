@@ -6,6 +6,7 @@ input[31:0] a,
 input[31:0] e_data,
 input[31:0] bc_hi,
 input[31:0] bc_lo,
+input[31:0] pc,
 input[2:0] write_d_sel,
 output reg[31:0] write_data);
 
@@ -29,6 +30,8 @@ begin
 			write_data = bc_lo;
 		3'b110://IN
 			write_data = e_data;
+		3'b111://GETPC
+			write_data = pc;
 		default:
 			write_data = zero;
 	endcase

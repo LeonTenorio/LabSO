@@ -368,7 +368,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[1]",
+					"name" : "bios_inst[6]",
 					"strict" : false
 				},
 				{
@@ -388,15 +388,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[6]",
-					"strict" : false
-				},
-				{
-					"name" : "bios_inst[7]",
+					"name" : "bios_inst[1]",
 					"strict" : false
 				},
 				{
 					"name" : "bios_inst[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[7]",
 					"strict" : false
 				},
 				{

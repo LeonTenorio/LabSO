@@ -160,6 +160,8 @@ begin
 				reg_write = 1;
 			else if(opcode_operation==8'b10000100)//SETLO
 				reg_write = 1;
+			else if(opcode_operation==8'b00000010)//GETPC
+				reg_write = 1;
 			else
 				reg_write = 0;
 			
@@ -234,6 +236,8 @@ begin
 		rd_orig = 2'b00;
 	else if(opcode==4'b1000)//MOV, MFHI, MFLO
 		rd_orig = 2'b00;
+	else if(opcode_operation==8'b00000010)//GETPC
+		rd_orig = 2'b00;
 	else if(opcode==4'b1001)//IN
 		rd_orig = 2'b11;
 	else if(opcode==4'b0111)//LI
@@ -242,6 +246,8 @@ begin
 		rd_orig = 2'b00;
 	
 	if(opcode==4'b0001)//Todas operacoes da ULA
+		loc_write = 3'b000;
+	else if(opcode_operation==8'b00000010)//GETPC
 		loc_write = 3'b000;
 	else if(opcode_operation==8'b01000001)//BL
 		loc_write = 3'b010;
@@ -304,6 +310,8 @@ begin
 		write_d_sel = 3'b011;
 	else if(opcode_operation==8'b10000100)//SETLO
 		write_d_sel = 3'b011;
+	else if(opcode_operation==8'b00000010)//GETPC
+		write_d_sel = 3'b111;
 	else if(opcode==4'b1001)//IN
 		write_d_sel = 3'b110;
 	

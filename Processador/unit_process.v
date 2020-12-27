@@ -88,7 +88,8 @@ mux_wd mux_wd(.inst9_31(inst9_31),
 .e_data(e_data), 
 .bc_hi(bc_hi),
 .bc_lo(bc_lo),
-.write_d_sel(write_d_sel), 
+.write_d_sel(write_d_sel),
+.pc(pc), 
 .write_data(wd_select));
 
 bc_registers bc_registers(.rs(inst8_12), 

@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -128.437
-TNS   : -200519.307
+Slack : -127.349
+TNS   : -204234.865
 
 Type  : Slow 1200mV 85C Model Setup 'bios_controll'
-Slack : -8.571
-TNS   : -215.616
+Slack : -9.133
+TNS   : -202.363
 
 Type  : Slow 1200mV 85C Model Hold 'bios_controll'
-Slack : -1.075
-TNS   : -5.206
+Slack : -2.179
+TNS   : -5.563
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.385
+Slack : 0.323
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -24,22 +24,22 @@ TNS   : -11643.227
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bios_controll'
 Slack : -3.000
-TNS   : -176.550
+TNS   : -249.782
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -115.955
-TNS   : -184305.107
+Slack : -114.908
+TNS   : -187033.978
 
 Type  : Slow 1200mV 0C Model Setup 'bios_controll'
-Slack : -8.065
-TNS   : -199.435
+Slack : -8.492
+TNS   : -187.072
 
 Type  : Slow 1200mV 0C Model Hold 'bios_controll'
-Slack : -0.926
-TNS   : -5.282
+Slack : -2.048
+TNS   : -5.577
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.338
+Slack : 0.195
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -48,30 +48,30 @@ TNS   : -11640.411
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bios_controll'
 Slack : -3.000
-TNS   : -160.732
+TNS   : -222.980
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -63.659
-TNS   : -100949.234
+Slack : -63.229
+TNS   : -101526.842
 
 Type  : Fast 1200mV 0C Model Setup 'bios_controll'
-Slack : -4.667
-TNS   : -125.803
+Slack : -4.674
+TNS   : -117.697
 
 Type  : Fast 1200mV 0C Model Hold 'bios_controll'
-Slack : -0.563
-TNS   : -2.612
+Slack : -1.129
+TNS   : -3.517
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.171
+Slack : 0.114
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -9604.082
+TNS   : -9494.273
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bios_controll'
 Slack : -3.000
-TNS   : -152.953
+TNS   : -170.384
 
 ------------------------------------------------------------
