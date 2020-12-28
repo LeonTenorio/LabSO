@@ -3,6 +3,7 @@ input bios_controll,
 input bios_write_pc,
 input[31:0] bios_info,
 output[31:0] processor_info,
+output[0:7] opcode_operation,
 input clk,
 input wake_up,
 output[31:0] bios_pc,
@@ -69,5 +70,7 @@ unit_control unit_control(
 .wake_up(wake_up),
 .clk(clk),
 .done_inst(done_inst));
+
+	assign opcode_operation = {opcode, operation};
 	
 endmodule 
