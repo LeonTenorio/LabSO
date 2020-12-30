@@ -1,11 +1,5 @@
 
-State Machine - |apresentacao|press_button:press_button|estado
-Name estado.00 estado.10 estado.01 
-estado.00 0 0 0 
-estado.01 1 0 1 
-estado.10 1 1 0 
-
-State Machine - |apresentacao|processador:processador|unit_control:unit_control|estado
+State Machine - |processador|unit_control:unit_control|estado
 Name estado.Halt estado.E estado.D estado.C estado.B estado.A estado.Inv 
 estado.Inv 0 0 0 0 0 0 0 
 estado.A 0 0 0 0 0 1 1 
