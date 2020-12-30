@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Mon Dec 28 20:35:18 2020
+Wed Dec 30 12:04:07 2020
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 28 20:35:18 2020       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 30 12:04:06 2020       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; apresentacao                                ;
@@ -190,7 +190,7 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.7%      ;
-;     Processor 3            ;   0.6%      ;
+;     Processor 3            ;   0.5%      ;
 ;     Processor 4            ;   0.5%      ;
 +----------------------------+-------------+
 
@@ -1692,7 +1692,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:40     ;
+; Top            ; 00:01:08     ;
 +----------------+--------------+
 
 
@@ -1702,7 +1702,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 28 20:34:24 2020
+    Info: Processing started: Wed Dec 30 12:02:36 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1918,10 +1918,10 @@ Info (21057): Implemented 19698 device resources after synthesis - the final res
     Info (21064): Implemented 32 RAM segments
     Info (21062): Implemented 8 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 1125 megabytes
-    Info: Processing ended: Mon Dec 28 20:35:18 2020
-    Info: Elapsed time: 00:00:54
-    Info: Total CPU time (on all processors): 00:01:10
+    Info: Peak virtual memory: 1102 megabytes
+    Info: Processing ended: Wed Dec 30 12:04:07 2020
+    Info: Elapsed time: 00:01:31
+    Info: Total CPU time (on all processors): 00:01:59
 
 
 +------------------------------------------+

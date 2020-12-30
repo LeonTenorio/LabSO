@@ -3,75 +3,39 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -127.411
-TNS   : -212653.888
-
-Type  : Slow 1200mV 85C Model Setup 'bios_controll'
-Slack : -11.118
-TNS   : -197.520
-
-Type  : Slow 1200mV 85C Model Hold 'bios_controll'
-Slack : -5.712
-TNS   : -6.652
+Slack : -0.817
+TNS   : -4.139
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.383
+Slack : 0.405
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -11643.227
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bios_controll'
-Slack : -3.000
-TNS   : -166.399
+TNS   : -15.850
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -114.940
-TNS   : -194747.875
-
-Type  : Slow 1200mV 0C Model Setup 'bios_controll'
-Slack : -10.469
-TNS   : -182.329
-
-Type  : Slow 1200mV 0C Model Hold 'bios_controll'
-Slack : -5.247
-TNS   : -6.404
+Slack : -0.705
+TNS   : -3.176
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.336
+Slack : 0.356
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -11640.411
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bios_controll'
-Slack : -3.000
-TNS   : -156.677
+TNS   : -15.850
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -63.110
-TNS   : -105128.504
-
-Type  : Fast 1200mV 0C Model Setup 'bios_controll'
-Slack : -5.877
-TNS   : -109.287
-
-Type  : Fast 1200mV 0C Model Hold 'bios_controll'
-Slack : -3.058
-TNS   : -4.551
+Slack : -0.402
+TNS   : -1.077
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.146
+Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -9588.750
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bios_controll'
-Slack : -3.000
-TNS   : -146.954
+TNS   : -13.904
 
 ------------------------------------------------------------
