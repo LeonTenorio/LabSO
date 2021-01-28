@@ -93,7 +93,7 @@ begin
 	endcase
 end
 
-always @(negedge clk)
+always @(negedge clk)//Troca de estados da BIOS
 begin
 	case(state)
 		INV:
@@ -115,7 +115,10 @@ begin
 			end
 			else if(reg_quantum >= quantum)
 			begin
-				state = PROCESSINT;
+				if(lock_quantum==0)
+				begin
+					state = PROCESSINT;
+				end
 			end
 		end
 		PROCESSINT:
