@@ -17,7 +17,8 @@ output done_inst);
 wire[0:3] opcode, operation;
 wire reg_write, mem_write, in_req, pc_write;
 wire in_ready;
-wire new_out;	
+wire new_out;
+wire inst_write;
 
 wire[1:0] pc_orig, rd_orig, loc_read, op_b;
 wire[2:0] branch_comp, write_d_sel, loc_write;
@@ -49,7 +50,8 @@ unit_process unit_process(
 .dev_in(dev_in),
 .dev_out(dev_out),
 .enter_in(enter_in),
-.enter_out(enter_out));
+.enter_out(enter_out),
+.inst_write(inst_write));
 
 unit_control unit_control(
 .reg_write(reg_write),
@@ -68,6 +70,7 @@ unit_control unit_control(
 .opcode(opcode),
 .operation(operation),
 .wake_up(wake_up),
+.inst_write(inst_write),
 .clk(clk),
 .done_inst(done_inst));
 

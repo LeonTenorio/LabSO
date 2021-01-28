@@ -16,6 +16,7 @@ input[0:3] opcode,
 input[0:3] operation,
 input wake_up,
 input clk,
+output reg inst_write,
 output reg done_inst);
 
 parameter Inv=3'd0, A=3'd1, B=3'd2, C=3'd3, D=3'd4, E=3'd5, Halt=3'd6;
@@ -109,6 +110,7 @@ begin
 	in_req = 0;
 	new_out = 0;
 	pc_write = 0;
+	inst_write = 0;
 
 	case(estado)
 		A:
@@ -165,10 +167,23 @@ begin
 			else
 				reg_write = 0;
 			
-			if(opcode==4'b0101)//STORE
+			if(opcode==4'b0101)//STORE, STOREINST
+			begin
+				if(operation==4'b0001)//STOREINST
+					inst_write = 1;
+				else//STORE
+					mem_write = 1;
+			end
+			
+			/*if(opcode==4'b0101)//STORE
 				mem_write = 1;
 			else
 				mem_write = 0;
+				
+			if(opcode_operation==8'b10110110)//STOREINST
+				inst_write = 1;
+			else
+				inst_write = 0;*/
 			
 			if(opcode==4'b1010)//OUT
 				new_out = 1;

@@ -24,16 +24,13 @@ input clk,
 input[127:0] dev_in,
 output[127:0] dev_out,
 input[3:0] enter_in,
-output[3:0] enter_out);
+output[3:0] enter_out,
+input inst_write);
 
 parameter um = 32'd1;
 parameter zero = 32'd0;
 
-reg write_mem = 0;
-reg write_inst = 0;
-
 reg[31:0] pc = 32'd0;
-//reg[31:0] bios_pc = 32'd0;
 reg[0:31] reg_inst;
 reg[31:0] write_ra;
 
@@ -58,7 +55,7 @@ reg[31:0] process_pc;
 
 reg[0:31] instruction;
 
-data_inst data_inst(.address(data_inst_address), .write_data(read2), .write(write_inst), .instruction(internal_inst), .clk(clk));
+data_inst data_inst(.address(data_inst_address), .write_data(read2), .write(inst_write), .instruction(internal_inst), .clk(clk));
 
 udcpc udcpc(.pc(process_pc), 
 .inst(instruction), 
@@ -129,7 +126,7 @@ alu alu(.a(read1),
 
 memory memory(.adress(alu_result), 
 .write_data(read2), 
-.mem_write(write_mem), 
+.mem_write(mem_write), 
 .read(read), 
 .clk(clk));
 
@@ -175,26 +172,6 @@ begin
 		else
 		begin
 			pc = prox_pc;
-		end
-	end
-end
-
-always @(bios_controll, mem_write)
-begin
-	if(bios_controll)
-	begin
-		if(mem_write)
-		begin
-			write_mem = 0;
-			write_inst = 1;
-		end
-	end
-	else
-	begin
-		if(mem_write)
-		begin
-			write_mem = 1;
-			write_inst = 0;
 		end
 	end
 end
