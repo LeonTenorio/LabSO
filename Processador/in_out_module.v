@@ -7,10 +7,12 @@ input[8:0] address,
 input in_req, 
 input new_out, 
 output reg in_ready,
+output reg out_done,
 input[127:0] dev_in,
 output reg[127:0] dev_out,
 input[3:0] enter_in,
-output reg[3:0] enter_out);//Terao 4 dispositivos de entrada e 6 dispositivos de saida no maximo
+output reg[3:0] enter_out,
+input[3:0] done_out);//Terao 4 dispositivos de entrada e 6 dispositivos de saida no maximo
 
 reg[4:0] disp;
 
@@ -18,6 +20,14 @@ always @(posedge enter_in[disp])
 begin
 	if(in_req==1)
 		e_data <= dev_in[address +: 32];
+end
+
+always @(done_out[disp], disp, new_out)
+begin
+	if(new_out)
+		out_done <= done_out[disp];
+	else
+		out_done <= 0;
 end
 
 always @(enter_in[disp], disp, in_req)

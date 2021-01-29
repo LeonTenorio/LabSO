@@ -25,7 +25,9 @@ input[127:0] dev_in,
 output[127:0] dev_out,
 input[3:0] enter_in,
 output[3:0] enter_out,
-input inst_write);
+input inst_write,
+output out_done,
+input[3:0] done_out);
 
 parameter um = 32'd1;
 parameter zero = 32'd0;
@@ -142,7 +144,9 @@ in_out_module in_out_module(.p_data(read1),
 .dev_in(dev_in), 
 .dev_out(dev_out), 
 .enter_in(enter_in), 
-.enter_out(enter_out));
+.enter_out(enter_out),
+.done_out(done_out),
+.out_done(out_done));
 
 always @(clk)
 begin

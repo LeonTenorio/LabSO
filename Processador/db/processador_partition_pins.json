@@ -864,6 +864,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "bios_inst[24]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[23]",
+					"strict" : false
+				},
+				{
 					"name" : "bios_inst[28]",
 					"strict" : false
 				},
@@ -881,14 +889,6 @@
 				},
 				{
 					"name" : "bios_inst[29]",
-					"strict" : false
-				},
-				{
-					"name" : "bios_inst[24]",
-					"strict" : false
-				},
-				{
-					"name" : "bios_inst[23]",
 					"strict" : false
 				},
 				{
@@ -960,71 +960,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "done_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[3]",
+					"strict" : false
+				},
+				{
 					"name" : "bios_write_pc",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[108]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[44]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[76]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[12]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[92]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[28]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[124]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[60]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[68]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[100]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[36]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[84]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[20]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[116]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[52]",
 					"strict" : false
 				},
 				{
@@ -1089,6 +1041,70 @@
 				},
 				{
 					"name" : "dev_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[108]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[44]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[76]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[92]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[28]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[124]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[60]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[68]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[100]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[36]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[84]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[20]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[116]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[52]",
 					"strict" : false
 				},
 				{
@@ -1332,19 +1348,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "dev_in[97]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[33]",
-					"strict" : false
-				},
-				{
 					"name" : "dev_in[65]",
 					"strict" : false
 				},
 				{
 					"name" : "dev_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[97]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[33]",
 					"strict" : false
 				},
 				{
@@ -1473,10 +1489,6 @@
 				},
 				{
 					"name" : "dev_in[55]",
-					"strict" : false
-				},
-				{
-					"name" : "wake_up",
 					"strict" : false
 				},
 				{

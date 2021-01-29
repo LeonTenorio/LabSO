@@ -5,6 +5,7 @@ output reg in_req,
 output reg new_out,
 output reg pc_write,
 input in_ready,
+input out_done,
 output reg[1:0] pc_orig,
 output reg[1:0] rd_orig,
 output reg[2:0] loc_write,
@@ -14,20 +15,20 @@ output reg[3:0] write_d_sel,
 output reg[3:0] alu_op,
 input[0:3] opcode,
 input[0:3] operation,
-input wake_up,
+//input wake_up,
 input clk,
 output reg inst_write,
 output reg done_inst);
 
-parameter Inv=3'd0, A=3'd1, B=3'd2, C=3'd3, D=3'd4, E=3'd5, Halt=3'd6;
+parameter Inv=3'd0, A=3'd1, B=3'd2, C=3'd3, D=3'd4, Input=3'd5, Halt=3'd6, Output=3'd7;
 wire[7:0] opcode_operation;
 
 reg[2:0] estado=Inv;
 
 reg reg_in_ready;
-reg reg_wake_up;
+//reg reg_wake_up;
 
-always @(negedge clk)
+always @(negedge clk)//Troca de estado
 begin
 	case(estado)
 		Inv:
@@ -45,7 +46,9 @@ begin
 			else if(opcode==4'b0111)//LI
 				estado = D;
 			else if(opcode==4'b1001)//IN
-				estado = E;
+				estado = Input;
+			else if(opcode==4'b1010)//OUT
+				estado = Output;
 			else if(opcode_operation==8'b00000001)//HALT
 				estado = Halt;
 			else
@@ -70,15 +73,20 @@ begin
 		begin
 			estado = A;
 		end
-		E:
+		Input:
 		begin
 			if(reg_in_ready==1)
 				estado = D;
 		end
+		Output:
+		begin
+			if(out_done==1)
+				estado = D;
+		end
 		Halt:
 		begin
-			if(reg_wake_up==1)
-				estado = D;
+			//if(reg_wake_up==1)
+				//estado = D;
 		end
 		default:	
 		begin
@@ -89,15 +97,17 @@ end
 
 always @(posedge clk)
 begin
-	if(estado==E)
+	if(estado==Input)
 		reg_in_ready = in_ready;
 	else
 		reg_in_ready = 0;
-	if(estado==Halt)
-		reg_wake_up = wake_up;
-	else
-		reg_wake_up = 0;
+	//if(estado==Halt)
+		//reg_wake_up = wake_up;
+	//else
+		//reg_wake_up = 0;
 	if(estado==D)
+		done_inst = 1;
+	if(estado==Halt)
 		done_inst = 1;
 	else
 		done_inst = 0;
@@ -185,12 +195,16 @@ begin
 			else
 				inst_write = 0;*/
 			
-			if(opcode==4'b1010)//OUT
+			/*if(opcode==4'b1010)//OUT
 				new_out = 1;
 			else
-				new_out = 0;
+				new_out = 0;*/
 		end
-		E:
+		Output:
+		begin
+			new_out = 1;
+		end
+		Input:
 		begin
 			reg_write = 0;
 			mem_write = 0;

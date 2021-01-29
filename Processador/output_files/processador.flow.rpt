@@ -1,5 +1,5 @@
 Flow report for processador
-Thu Jan 28 20:42:33 2021
+Thu Jan 28 21:51:05 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jan 28 20:42:32 2021       ;
+; Flow Status                        ; Successful - Thu Jan 28 21:51:05 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; processador                                 ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 19,735                                      ;
-;     Total combinational functions  ; 12,277                                      ;
+; Total logic elements               ; 19,759                                      ;
+;     Total combinational functions  ; 12,301                                      ;
 ;     Dedicated logic registers      ; 8,842                                       ;
 ; Total registers                    ; 8842                                        ;
-; Total pins                         ; 405                                         ;
+; Total pins                         ; 408                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 131,072                                     ;
 ; Embedded Multiplier 9-bit elements ; 8                                           ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/28/2021 20:40:41 ;
+; Start date & time ; 01/28/2021 21:49:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 180747809987198.161187724135851        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 180747809987198.161188139940710        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -93,8 +93,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:48     ; 1.0                     ; 1093 MB             ; 00:02:18                           ;
-; Total                ; 00:01:48     ; --                      ; --                  ; 00:02:18                           ;
+; Analysis & Synthesis ; 00:01:04     ; 1.0                     ; 1065 MB             ; 00:01:25                           ;
+; Total                ; 00:01:04     ; --                      ; --                  ; 00:01:25                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
