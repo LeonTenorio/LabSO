@@ -87,6 +87,7 @@ begin
 		begin
 			//if(reg_wake_up==1)
 				//estado = D;
+			estado = D;
 		end
 		default:	
 		begin
@@ -150,7 +151,10 @@ begin
 		D:
 		begin
 			in_req = 0;
-			pc_write = 1;
+			if(opcode_operation==8'b00000001)//HALT
+				pc_write = 0;
+			else
+				pc_write = 1;
 			
 			if(opcode==4'b0001)//Operacoes da ULA com excessao de MULT e DIV
 				reg_write = 1;
