@@ -6,7 +6,6 @@ input[31:0] processor_info,
 input[0:7] processor_opcode_operation,
 output reg[0:31] instruction,
 output reg controll,
-output reg write_process_pc,
 output reg[31:0] bios_info
 );
 
@@ -22,7 +21,6 @@ reg[0:31] registers[255:0];//As instrucoes armazenadas tambem estao em BIG ENDIA
 reg lock_quantum = 0;
 reg release_exec = 0;
 reg program_done = 0;
-reg write_pc = 0;
 
 reg[31:0] quantum = 32'd0;
 reg[31:0] reg_quantum = 32'd0;
@@ -37,21 +35,12 @@ end
 
 always @(negedge clk)
 begin
-	if(write_pc)
-	begin
-		write_process_pc = 1;
-	end
-	else
-	begin
-		write_process_pc = 0;
-	end
 	instruction = registers[pc];
 end
 
 always @(posedge clk)//No meio do clock posso avaliar o que fazer com as instrucoes e dados do processador
 begin
 	release_exec = 0;
-	write_pc = 0;
 	program_done = 0;
 	case(processor_opcode_operation)
 		8'b10110001: //LOCK
@@ -77,10 +66,6 @@ begin
 		8'b10110011: //GETQUANTUM
 		begin
 			bios_info = reg_quantum;
-		end
-		8'b00000011: //SETPC
-		begin
-			write_pc = 1;
 		end
 		8'b00000001: //HALT
 		begin

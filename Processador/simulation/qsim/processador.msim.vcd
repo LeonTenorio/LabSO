@@ -3,7 +3,7 @@ $comment
 		vcd file processador.msim.vcd -direction
 $end
 $date
-	Wed Dec 30 12:02:03 2020
+	Sun Jan 31 15:57:27 2021
 $end
 $version
 	ModelSim Version 10.5b
@@ -17,172 +17,181 @@ $var reg 1 ! clk $end
 $var reg 1 " in_ready $end
 $var reg 4 # opcode [0:3] $end
 $var reg 4 $ operation [0:3] $end
-$var reg 1 % wake_up $end
+$var reg 1 % out_done $end
 $var wire 1 & alu_op [3] $end
 $var wire 1 ' alu_op [2] $end
 $var wire 1 ( alu_op [1] $end
 $var wire 1 ) alu_op [0] $end
-$var wire 1 * branch_comp [2] $end
-$var wire 1 + branch_comp [1] $end
-$var wire 1 , branch_comp [0] $end
-$var wire 1 - done_inst $end
-$var wire 1 . in_req $end
-$var wire 1 / loc_write [2] $end
-$var wire 1 0 loc_write [1] $end
-$var wire 1 1 loc_write [0] $end
-$var wire 1 2 mem_write $end
-$var wire 1 3 new_out $end
-$var wire 1 4 op_b [1] $end
-$var wire 1 5 op_b [0] $end
-$var wire 1 6 pc_orig [1] $end
-$var wire 1 7 pc_orig [0] $end
-$var wire 1 8 pc_write $end
-$var wire 1 9 rd_orig [1] $end
-$var wire 1 : rd_orig [0] $end
-$var wire 1 ; reg_write $end
-$var wire 1 < write_d_sel [3] $end
-$var wire 1 = write_d_sel [2] $end
-$var wire 1 > write_d_sel [1] $end
-$var wire 1 ? write_d_sel [0] $end
+$var wire 1 * bios_write_pc $end
+$var wire 1 + branch_comp [2] $end
+$var wire 1 , branch_comp [1] $end
+$var wire 1 - branch_comp [0] $end
+$var wire 1 . done_inst $end
+$var wire 1 / in_req $end
+$var wire 1 0 inst_write $end
+$var wire 1 1 loc_write [2] $end
+$var wire 1 2 loc_write [1] $end
+$var wire 1 3 loc_write [0] $end
+$var wire 1 4 mem_write $end
+$var wire 1 5 new_out $end
+$var wire 1 6 op_b [1] $end
+$var wire 1 7 op_b [0] $end
+$var wire 1 8 pc_orig [1] $end
+$var wire 1 9 pc_orig [0] $end
+$var wire 1 : pc_write $end
+$var wire 1 ; rd_orig [1] $end
+$var wire 1 < rd_orig [0] $end
+$var wire 1 = reg_write $end
+$var wire 1 > write_d_sel [3] $end
+$var wire 1 ? write_d_sel [2] $end
+$var wire 1 @ write_d_sel [1] $end
+$var wire 1 A write_d_sel [0] $end
 
 $scope module i1 $end
-$var wire 1 @ gnd $end
-$var wire 1 A vcc $end
-$var wire 1 B unknown $end
-$var tri1 1 C devclrn $end
-$var tri1 1 D devpor $end
-$var tri1 1 E devoe $end
-$var wire 1 F reg_write~output_o $end
-$var wire 1 G mem_write~output_o $end
-$var wire 1 H in_req~output_o $end
-$var wire 1 I new_out~output_o $end
-$var wire 1 J pc_write~output_o $end
-$var wire 1 K pc_orig[0]~output_o $end
-$var wire 1 L pc_orig[1]~output_o $end
-$var wire 1 M rd_orig[0]~output_o $end
-$var wire 1 N rd_orig[1]~output_o $end
-$var wire 1 O loc_write[0]~output_o $end
-$var wire 1 P loc_write[1]~output_o $end
-$var wire 1 Q loc_write[2]~output_o $end
-$var wire 1 R op_b[0]~output_o $end
-$var wire 1 S op_b[1]~output_o $end
-$var wire 1 T branch_comp[0]~output_o $end
-$var wire 1 U branch_comp[1]~output_o $end
-$var wire 1 V branch_comp[2]~output_o $end
-$var wire 1 W write_d_sel[0]~output_o $end
-$var wire 1 X write_d_sel[1]~output_o $end
-$var wire 1 Y write_d_sel[2]~output_o $end
-$var wire 1 Z write_d_sel[3]~output_o $end
-$var wire 1 [ alu_op[0]~output_o $end
-$var wire 1 \ alu_op[1]~output_o $end
-$var wire 1 ] alu_op[2]~output_o $end
-$var wire 1 ^ alu_op[3]~output_o $end
-$var wire 1 _ done_inst~output_o $end
-$var wire 1 ` opcode[1]~input_o $end
-$var wire 1 a opcode[0]~input_o $end
-$var wire 1 b opcode[3]~input_o $end
-$var wire 1 c opcode[2]~input_o $end
-$var wire 1 d reg_write~7_combout $end
-$var wire 1 e operation[3]~input_o $end
+$var wire 1 B gnd $end
+$var wire 1 C vcc $end
+$var wire 1 D unknown $end
+$var tri1 1 E devclrn $end
+$var tri1 1 F devpor $end
+$var tri1 1 G devoe $end
+$var wire 1 H reg_write~output_o $end
+$var wire 1 I mem_write~output_o $end
+$var wire 1 J in_req~output_o $end
+$var wire 1 K new_out~output_o $end
+$var wire 1 L pc_write~output_o $end
+$var wire 1 M pc_orig[0]~output_o $end
+$var wire 1 N pc_orig[1]~output_o $end
+$var wire 1 O rd_orig[0]~output_o $end
+$var wire 1 P rd_orig[1]~output_o $end
+$var wire 1 Q loc_write[0]~output_o $end
+$var wire 1 R loc_write[1]~output_o $end
+$var wire 1 S loc_write[2]~output_o $end
+$var wire 1 T op_b[0]~output_o $end
+$var wire 1 U op_b[1]~output_o $end
+$var wire 1 V branch_comp[0]~output_o $end
+$var wire 1 W branch_comp[1]~output_o $end
+$var wire 1 X branch_comp[2]~output_o $end
+$var wire 1 Y write_d_sel[0]~output_o $end
+$var wire 1 Z write_d_sel[1]~output_o $end
+$var wire 1 [ write_d_sel[2]~output_o $end
+$var wire 1 \ write_d_sel[3]~output_o $end
+$var wire 1 ] alu_op[0]~output_o $end
+$var wire 1 ^ alu_op[1]~output_o $end
+$var wire 1 _ alu_op[2]~output_o $end
+$var wire 1 ` alu_op[3]~output_o $end
+$var wire 1 a inst_write~output_o $end
+$var wire 1 b done_inst~output_o $end
+$var wire 1 c bios_write_pc~output_o $end
+$var wire 1 d opcode[2]~input_o $end
+$var wire 1 e opcode[0]~input_o $end
 $var wire 1 f operation[1]~input_o $end
 $var wire 1 g operation[0]~input_o $end
-$var wire 1 h Equal0~0_combout $end
+$var wire 1 h reg_write~3_combout $end
 $var wire 1 i operation[2]~input_o $end
-$var wire 1 j Equal0~1_combout $end
-$var wire 1 k reg_write~5_combout $end
-$var wire 1 l clk~input_o $end
-$var wire 1 m clk~inputclkctrl_outclk $end
-$var wire 1 n Equal7~4_combout $end
-$var wire 1 o Selector4~2_combout $end
-$var wire 1 p estado.Inv~feeder_combout $end
-$var wire 1 q estado.Inv~q $end
-$var wire 1 r estado~18_combout $end
-$var wire 1 s estado.A~q $end
-$var wire 1 t Equal7~3_combout $end
-$var wire 1 u estado~17_combout $end
-$var wire 1 v rd_orig~2_combout $end
-$var wire 1 w Selector2~0_combout $end
-$var wire 1 x estado.B~q $end
-$var wire 1 y Selector3~0_combout $end
-$var wire 1 z estado.C~q $end
-$var wire 1 { Selector4~0_combout $end
-$var wire 1 | wake_up~input_o $end
-$var wire 1 } reg_wake_up~0_combout $end
-$var wire 1 ~ reg_wake_up~q $end
-$var wire 1 !! Selector6~0_combout $end
-$var wire 1 "! Selector6~1_combout $end
-$var wire 1 #! estado.Halt~q $end
-$var wire 1 $! Equal7~0_combout $end
-$var wire 1 %! in_ready~input_o $end
-$var wire 1 &! reg_in_ready~0_combout $end
-$var wire 1 '! reg_in_ready~q $end
-$var wire 1 (! Selector5~0_combout $end
-$var wire 1 )! estado.E~q $end
+$var wire 1 j operation[3]~input_o $end
+$var wire 1 k opcode[3]~input_o $end
+$var wire 1 l opcode[1]~input_o $end
+$var wire 1 m reg_write~2_combout $end
+$var wire 1 n reg_write~4_combout $end
+$var wire 1 o reg_write~5_combout $end
+$var wire 1 p Equal8~4_combout $end
+$var wire 1 q reg_write~6_combout $end
+$var wire 1 r clk~input_o $end
+$var wire 1 s clk~inputclkctrl_outclk $end
+$var wire 1 t out_done~input_o $end
+$var wire 1 u Selector2~5_combout $end
+$var wire 1 v Equal8~0_combout $end
+$var wire 1 w Equal0~0_combout $end
+$var wire 1 x Equal10~0_combout $end
+$var wire 1 y reg_write~8_combout $end
+$var wire 1 z estado.Inv~feeder_combout $end
+$var wire 1 { estado.Inv~q $end
+$var wire 1 | estado~20_combout $end
+$var wire 1 } estado.A~q $end
+$var wire 1 ~ Equal0~1_combout $end
+$var wire 1 !! Selector2~7_combout $end
+$var wire 1 "! Selector2~6_combout $end
+$var wire 1 #! estado.B~q $end
+$var wire 1 $! estado~19_combout $end
+$var wire 1 %! Selector3~0_combout $end
+$var wire 1 &! estado.C~q $end
+$var wire 1 '! Equal8~7_combout $end
+$var wire 1 (! Selector7~0_combout $end
+$var wire 1 )! estado.Output~q $end
 $var wire 1 *! Selector4~1_combout $end
-$var wire 1 +! Selector4~3_combout $end
-$var wire 1 ,! estado.D~q $end
-$var wire 1 -! reg_write~2_combout $end
-$var wire 1 .! reg_write~3_combout $end
-$var wire 1 /! reg_write~4_combout $end
-$var wire 1 0! Equal7~1_combout $end
-$var wire 1 1! Equal10~0_combout $end
-$var wire 1 2! write_d_sel~0_combout $end
-$var wire 1 3! Equal7~2_combout $end
-$var wire 1 4! write_d_sel~1_combout $end
-$var wire 1 5! reg_write~6_combout $end
-$var wire 1 6! Equal7~5_combout $end
-$var wire 1 7! mem_write~0_combout $end
-$var wire 1 8! Equal7~6_combout $end
-$var wire 1 9! new_out~0_combout $end
-$var wire 1 :! Equal16~0_combout $end
-$var wire 1 ;! Equal9~0_combout $end
-$var wire 1 <! pc_orig~0_combout $end
-$var wire 1 =! pc_orig~1_combout $end
-$var wire 1 >! pc_orig~2_combout $end
-$var wire 1 ?! pc_orig~3_combout $end
-$var wire 1 @! rd_orig~0_combout $end
-$var wire 1 A! rd_orig~1_combout $end
-$var wire 1 B! loc_write~0_combout $end
-$var wire 1 C! Equal24~0_combout $end
-$var wire 1 D! loc_write~1_combout $end
-$var wire 1 E! loc_write~2_combout $end
-$var wire 1 F! Equal25~0_combout $end
-$var wire 1 G! Equal25~1_combout $end
-$var wire 1 H! alu_op~0_combout $end
-$var wire 1 I! pc_orig~4_combout $end
-$var wire 1 J! op_b~0_combout $end
-$var wire 1 K! op_b~1_combout $end
-$var wire 1 L! op_b~2_combout $end
-$var wire 1 M! Equal7~7_combout $end
-$var wire 1 N! WideOr4~0_combout $end
-$var wire 1 O! branch_comp~0_combout $end
-$var wire 1 P! branch_comp~1_combout $end
-$var wire 1 Q! branch_comp~2_combout $end
-$var wire 1 R! branch_comp~3_combout $end
-$var wire 1 S! branch_comp~4_combout $end
-$var wire 1 T! Equal10~1_combout $end
-$var wire 1 U! write_d_sel~5_combout $end
-$var wire 1 V! write_d_sel~4_combout $end
-$var wire 1 W! write_d_sel~3_combout $end
-$var wire 1 X! write_d_sel~2_combout $end
-$var wire 1 Y! write_d_sel~6_combout $end
-$var wire 1 Z! write_d_sel~7_combout $end
-$var wire 1 [! write_d_sel~8_combout $end
-$var wire 1 \! write_d_sel~9_combout $end
-$var wire 1 ]! write_d_sel~10_combout $end
-$var wire 1 ^! write_d_sel~11_combout $end
-$var wire 1 _! write_d_sel~12_combout $end
-$var wire 1 `! write_d_sel~13_combout $end
-$var wire 1 a! WideOr8~0_combout $end
-$var wire 1 b! alu_op~1_combout $end
-$var wire 1 c! WideOr7~0_combout $end
-$var wire 1 d! alu_op~2_combout $end
-$var wire 1 e! WideOr6~0_combout $end
-$var wire 1 f! alu_op~3_combout $end
-$var wire 1 g! alu_op~4_combout $end
-$var wire 1 h! WideOr5~0_combout $end
-$var wire 1 i! alu_op~5_combout $end
-$var wire 1 j! done_inst~reg0_q $end
+$var wire 1 +! Selector4~0_combout $end
+$var wire 1 ,! Selector2~4_combout $end
+$var wire 1 -! Selector4~2_combout $end
+$var wire 1 .! Equal8~1_combout $end
+$var wire 1 /! in_ready~input_o $end
+$var wire 1 0! reg_in_ready~0_combout $end
+$var wire 1 1! reg_in_ready~q $end
+$var wire 1 2! Selector5~0_combout $end
+$var wire 1 3! estado.Input~q $end
+$var wire 1 4! Selector6~2_combout $end
+$var wire 1 5! estado.Halt~q $end
+$var wire 1 6! Selector4~3_combout $end
+$var wire 1 7! Selector4~4_combout $end
+$var wire 1 8! estado.D~q $end
+$var wire 1 9! Equal8~2_combout $end
+$var wire 1 :! Equal8~3_combout $end
+$var wire 1 ;! write_d_sel~0_combout $end
+$var wire 1 <! write_d_sel~1_combout $end
+$var wire 1 =! reg_write~7_combout $end
+$var wire 1 >! Equal15~0_combout $end
+$var wire 1 ?! Equal8~5_combout $end
+$var wire 1 @! mem_write~0_combout $end
+$var wire 1 A! pc_write~2_combout $end
+$var wire 1 B! pc_orig~0_combout $end
+$var wire 1 C! pc_orig~1_combout $end
+$var wire 1 D! pc_orig~2_combout $end
+$var wire 1 E! pc_orig~3_combout $end
+$var wire 1 F! rd_orig~0_combout $end
+$var wire 1 G! rd_orig~1_combout $end
+$var wire 1 H! Equal26~0_combout $end
+$var wire 1 I! loc_write~0_combout $end
+$var wire 1 J! loc_write~1_combout $end
+$var wire 1 K! loc_write~2_combout $end
+$var wire 1 L! Equal27~1_combout $end
+$var wire 1 M! Equal27~0_combout $end
+$var wire 1 N! Equal27~2_combout $end
+$var wire 1 O! pc_orig~4_combout $end
+$var wire 1 P! alu_op~0_combout $end
+$var wire 1 Q! op_b~0_combout $end
+$var wire 1 R! op_b~1_combout $end
+$var wire 1 S! op_b~2_combout $end
+$var wire 1 T! WideOr4~0_combout $end
+$var wire 1 U! Equal8~6_combout $end
+$var wire 1 V! branch_comp~0_combout $end
+$var wire 1 W! branch_comp~1_combout $end
+$var wire 1 X! branch_comp~2_combout $end
+$var wire 1 Y! branch_comp~3_combout $end
+$var wire 1 Z! branch_comp~4_combout $end
+$var wire 1 [! write_d_sel~3_combout $end
+$var wire 1 \! write_d_sel~2_combout $end
+$var wire 1 ]! write_d_sel~5_combout $end
+$var wire 1 ^! Equal11~0_combout $end
+$var wire 1 _! Equal33~0_combout $end
+$var wire 1 `! write_d_sel~4_combout $end
+$var wire 1 a! write_d_sel~6_combout $end
+$var wire 1 b! write_d_sel~7_combout $end
+$var wire 1 c! write_d_sel~8_combout $end
+$var wire 1 d! write_d_sel~9_combout $end
+$var wire 1 e! write_d_sel~10_combout $end
+$var wire 1 f! write_d_sel~11_combout $end
+$var wire 1 g! WideOr8~0_combout $end
+$var wire 1 h! alu_op~1_combout $end
+$var wire 1 i! WideOr7~0_combout $end
+$var wire 1 j! alu_op~2_combout $end
+$var wire 1 k! WideOr6~0_combout $end
+$var wire 1 l! alu_op~3_combout $end
+$var wire 1 m! alu_op~4_combout $end
+$var wire 1 n! WideOr5~0_combout $end
+$var wire 1 o! alu_op~5_combout $end
+$var wire 1 p! inst_write~0_combout $end
+$var wire 1 q! done_inst~reg0feeder_combout $end
+$var wire 1 r! done_inst~reg0_q $end
+$var wire 1 s! Equal16~0_combout $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -197,36 +206,36 @@ b101 $
 0(
 0'
 0&
-0,
-0+
 0*
 0-
+0,
+0+
 0.
-01
-00
 0/
-02
+00
 03
-05
+02
+01
 04
+05
 07
 06
+09
 08
 0:
-09
+0<
 0;
+0=
+0A
+0@
 0?
 0>
-0=
-0<
-0@
-1A
-xB
+0B
 1C
-1D
+xD
 1E
-0F
-0G
+1F
+1G
 0H
 0I
 0J
@@ -252,34 +261,34 @@ xB
 0^
 0_
 0`
-1a
-1b
-1c
-0d
+0a
+0b
+0c
+1d
 1e
 1f
 0g
 0h
 0i
-0j
-0k
+1j
+1k
 0l
-0m
+1m
 0n
 0o
-1p
+0p
 0q
-1r
+0r
 0s
 0t
 0u
 0v
 0w
 0x
-0y
-0z
+1y
+1z
 0{
-0|
+1|
 0}
 0~
 0!!
@@ -293,31 +302,31 @@ xB
 0)!
 0*!
 0+!
-0,!
-1-!
+1,!
+0-!
 0.!
 0/!
 00!
 01!
-12!
+02!
 03!
-14!
+04!
 05!
 06!
 07!
 08!
 09!
 0:!
-0;!
-0<!
+1;!
+1<!
 0=!
 1>!
 0?!
 1@!
-0A!
+1A!
 0B!
 0C!
-0D!
+1D!
 0E!
 0F!
 0G!
@@ -329,415 +338,174 @@ xB
 0M!
 0N!
 0O!
-1P!
+0P!
 0Q!
 0R!
 0S!
 0T!
-1U!
-1V!
+0U!
+0V!
 1W!
 0X!
 0Y!
 0Z!
-0[!
-1\!
+1[!
+0\!
 0]!
 0^!
-1_!
+0_!
 0`!
 0a!
-0b!
+1b!
 0c!
-0d!
-1e!
-1f!
+1d!
+0e!
+0f!
 0g!
 0h!
 0i!
 0j!
+1k!
+1l!
+0m!
+0n!
+0o!
+0p!
+0q!
+0r!
+0s!
 $end
-#10000
+#25000
 1!
-1l
-1m
-#20000
-0!
-0l
-0m
-1q
-1s
-0r
-1w
-#30000
-1!
-1l
-1m
-#40000
-0!
-0l
-0m
-0s
-1x
-1{
-0w
-1+!
-#50000
-1!
-1l
-1m
-#60000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
 1r
-0+!
-#70000
-1!
-1l
-1m
-1j!
-1_
-1-
-#80000
-0!
-0l
-0m
 1s
-0,!
-0J
-08
-1w
+#50000
+0!
 0r
-#90000
+0s
+1{
+1}
+0|
+1"!
+#75000
 1!
-1l
-1m
-0j!
-0_
-0-
+1r
+1s
 #100000
 0!
-0l
-0m
-0s
-1x
-1{
-0w
-1+!
-#110000
-1!
-1l
-1m
-#120000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
-1r
-0+!
-#130000
-1!
-1l
-1m
-1j!
-1_
-1-
-#140000
-0!
-0l
-0m
-1s
-0,!
-0J
-08
-1w
 0r
-#150000
-1!
-1l
-1m
-0j!
-0_
-0-
-#160000
-0!
-0l
-0m
 0s
-1x
-1{
-0w
+0}
+1#!
 1+!
-#170000
+0"!
+17!
+#125000
 1!
-1l
-1m
-#180000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
 1r
+1s
+#150000
+0!
+0r
+0s
+0#!
+18!
 0+!
-#190000
+0A!
+1|
+1L
+1:
+07!
+#175000
 1!
-1l
-1m
-1j!
-1_
-1-
+1r
+1s
 #200000
 0!
-0l
-0m
-1s
-0,!
-0J
-08
-1w
 0r
-#210000
-1!
-1l
-1m
-0j!
-0_
-0-
-#220000
-0!
-0l
-0m
 0s
-1x
-1{
-0w
-1+!
-#230000
+1}
+08!
+1A!
+1"!
+0|
+0L
+0:
+#225000
 1!
-1l
-1m
-#240000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
 1r
-0+!
-#250000
-1!
-1l
-1m
-1j!
-1_
-1-
-#260000
-0!
-0l
-0m
 1s
-0,!
-0J
-08
-1w
-0r
-#270000
-1!
-1l
-1m
-0j!
-0_
-0-
-#280000
+#250000
 0!
-0l
-0m
+0r
 0s
-1x
-1{
-0w
+0}
+1#!
 1+!
-#290000
+0"!
+17!
+#275000
 1!
-1l
-1m
+1r
+1s
 #300000
 0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
-1r
-0+!
-#310000
-1!
-1l
-1m
-1j!
-1_
-1-
-#320000
-0!
-0l
-0m
-1s
-0,!
-0J
-08
-1w
 0r
-#330000
-1!
-1l
-1m
-0j!
-0_
-0-
-#340000
-0!
-0l
-0m
 0s
-1x
-1{
-0w
-1+!
-#350000
-1!
-1l
-1m
-#360000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
-1r
+0#!
+18!
 0+!
-#370000
+0A!
+1|
+1L
+1:
+07!
+#325000
 1!
-1l
-1m
-1j!
-1_
-1-
-#380000
-0!
-0l
-0m
+1r
 1s
-0,!
-0J
-08
-1w
+#350000
+0!
 0r
-#390000
+0s
+1}
+08!
+1A!
+1"!
+0|
+0L
+0:
+#375000
 1!
-1l
-1m
-0j!
-0_
-0-
+1r
+1s
 #400000
 0!
-0l
-0m
-0s
-1x
-1{
-0w
-1+!
-#410000
-1!
-1l
-1m
-#420000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
-1r
-0+!
-#430000
-1!
-1l
-1m
-1j!
-1_
-1-
-#440000
-0!
-0l
-0m
-1s
-0,!
-0J
-08
-1w
 0r
-#450000
-1!
-1l
-1m
-0j!
-0_
-0-
-#460000
-0!
-0l
-0m
 0s
-1x
-1{
-0w
+0}
+1#!
 1+!
-#470000
+0"!
+17!
+#425000
 1!
-1l
-1m
-#480000
-0!
-0l
-0m
-0x
-1,!
-1J
-0{
-18
 1r
+1s
+#450000
+0!
+0r
+0s
+0#!
+18!
 0+!
-#490000
+0A!
+1|
+1L
+1:
+07!
+#475000
 1!
-1l
-1m
-1j!
-1_
-1-
+1r
+1s
 #500000

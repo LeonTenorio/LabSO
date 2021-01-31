@@ -18,7 +18,8 @@ input[0:3] operation,
 //input wake_up,
 input clk,
 output reg inst_write,
-output reg done_inst);
+output reg done_inst,
+output reg bios_write_pc);
 
 parameter Inv=3'd0, A=3'd1, B=3'd2, C=3'd3, D=3'd4, Input=3'd5, Halt=3'd6, Output=3'd7;
 wire[7:0] opcode_operation;
@@ -114,7 +115,7 @@ begin
 		done_inst = 0;
 end
 
-always @(estado, opcode_operation)
+always @(estado, opcode, operation, opcode_operation)
 begin
 	reg_write = 0;
 	mem_write = 0;
@@ -227,7 +228,7 @@ begin
 	endcase
 end
 
-always @(opcode_operation)
+always @(opcode, operation, opcode_operation)
 begin
 	pc_orig = 2'b00;
 	rd_orig = 2'b00;
@@ -236,6 +237,10 @@ begin
 	branch_comp = 3'b000;
 	write_d_sel = 4'b0000;
 	alu_op = 4'b0000;
+	bios_write_pc = 0;
+	
+	if(opcode_operation==8'b00000011)//SETPC
+		bios_write_pc = 1;
 	
 	if(opcode_operation==8'b01000000)//B
 		pc_orig = 2'b01;

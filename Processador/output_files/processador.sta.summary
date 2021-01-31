@@ -3,39 +3,111 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -0.817
-TNS   : -4.139
+Slack : -132.197
+TNS   : -209373.320
+
+Type  : Slow 1200mV 85C Model Setup 'bios_controll'
+Slack : -9.429
+TNS   : -273.892
+
+Type  : Slow 1200mV 85C Model Setup 'unit_control:unit_control|estado.Output'
+Slack : -6.926
+TNS   : -761.117
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.405
+Slack : -0.040
+TNS   : -0.040
+
+Type  : Slow 1200mV 85C Model Hold 'bios_controll'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'unit_control:unit_control|estado.Output'
+Slack : 0.404
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -15.850
+TNS   : -11523.722
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bios_controll'
+Slack : -3.000
+TNS   : -374.964
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'unit_control:unit_control|estado.Output'
+Slack : -1.285
+TNS   : -164.480
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.705
-TNS   : -3.176
+Slack : -119.302
+TNS   : -191509.854
+
+Type  : Slow 1200mV 0C Model Setup 'bios_controll'
+Slack : -8.716
+TNS   : -256.563
+
+Type  : Slow 1200mV 0C Model Setup 'unit_control:unit_control|estado.Output'
+Slack : -6.525
+TNS   : -712.445
+
+Type  : Slow 1200mV 0C Model Hold 'bios_controll'
+Slack : -0.096
+TNS   : -0.178
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.356
+Slack : -0.026
+TNS   : -0.026
+
+Type  : Slow 1200mV 0C Model Hold 'unit_control:unit_control|estado.Output'
+Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -15.850
+TNS   : -11520.906
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bios_controll'
+Slack : -3.000
+TNS   : -337.181
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'unit_control:unit_control|estado.Output'
+Slack : -1.285
+TNS   : -164.480
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.402
-TNS   : -1.077
+Slack : -65.627
+TNS   : -108577.642
+
+Type  : Fast 1200mV 0C Model Setup 'bios_controll'
+Slack : -5.676
+TNS   : -154.981
+
+Type  : Fast 1200mV 0C Model Setup 'unit_control:unit_control|estado.Output'
+Slack : -3.718
+TNS   : -402.909
+
+Type  : Fast 1200mV 0C Model Hold 'bios_controll'
+Slack : -0.311
+TNS   : -1.446
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.180
+Slack : -0.147
+TNS   : -0.147
+
+Type  : Fast 1200mV 0C Model Hold 'unit_control:unit_control|estado.Output'
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -13.904
+TNS   : -9422.205
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bios_controll'
+Slack : -3.000
+TNS   : -203.284
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'unit_control:unit_control|estado.Output'
+Slack : -1.000
+TNS   : -128.000
 
 ------------------------------------------------------------

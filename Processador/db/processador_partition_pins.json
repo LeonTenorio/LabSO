@@ -976,74 +976,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_write_pc",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[104]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[40]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[72]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[8]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[88]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[24]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[120]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[56]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[80]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[16]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[112]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[48]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[96]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[32]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[64]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[0]",
-					"strict" : false
-				},
-				{
 					"name" : "dev_in[108]",
 					"strict" : false
 				},
@@ -1105,6 +1037,70 @@
 				},
 				{
 					"name" : "dev_in[52]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[104]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[40]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[72]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[88]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[24]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[120]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[56]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[80]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[16]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[112]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[48]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[64]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[96]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[32]",
 					"strict" : false
 				},
 				{
@@ -1348,19 +1344,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "dev_in[65]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[1]",
-					"strict" : false
-				},
-				{
 					"name" : "dev_in[97]",
 					"strict" : false
 				},
 				{
 					"name" : "dev_in[33]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[65]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[1]",
 					"strict" : false
 				},
 				{

@@ -1,6 +1,6 @@
 module processador(
 input bios_controll,
-input bios_write_pc,
+//input bios_write_pc,
 input[31:0] bios_info,
 output[31:0] processor_info,
 output[0:7] opcode_operation,
@@ -21,6 +21,7 @@ wire in_ready;
 wire new_out;
 wire inst_write;
 wire out_done;
+wire bios_write_pc;
 
 wire[1:0] pc_orig, rd_orig, loc_read, op_b;
 wire[2:0] branch_comp, write_d_sel, loc_write;
@@ -77,7 +78,8 @@ unit_control unit_control(
 .inst_write(inst_write),
 .clk(clk),
 .done_inst(done_inst),
-.out_done(out_done));
+.out_done(out_done),
+.bios_write_pc(bios_write_pc));
 
 	assign opcode_operation = {opcode, operation};
 	

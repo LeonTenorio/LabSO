@@ -148,7 +148,7 @@ in_out_module in_out_module(.p_data(read1),
 .done_out(done_out),
 .out_done(out_done));
 
-always @(clk)
+always @(clk, bios_controll, pc, bios_pc)
 begin
 	if(bios_controll)
 	begin
@@ -180,7 +180,7 @@ begin
 	end
 end
 
-always @(clk)//pc, bios_controll, alu_result
+always @(clk, bios_controll, alu_result, pc)//pc, bios_controll, alu_result
 begin
 	if(bios_controll)
 	begin
@@ -192,7 +192,7 @@ begin
 	end
 end
 
-always @(clk)//bios_controll, pc, bios_pc
+always @(clk, bios_controll, bios_pc, pc)//bios_controll, pc, bios_pc
 begin
 	if(bios_controll)
 	begin
@@ -204,7 +204,7 @@ begin
 	end
 end
 
-always @(clk)//bios_controll, bios_inst, internal_inst
+always @(clk, bios_controll, bios_inst, internal_inst)//bios_controll, bios_inst, internal_inst
 begin
 	if(bios_controll)
 	begin
