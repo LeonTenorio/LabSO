@@ -1,4 +1,8 @@
 module apresentacao(
+input bios_controll,
+output[0:7] opcode_operation,
+output[31:0] bios_pc,
+input[0:31] bios_inst,
 input clk, 
 input[5:0] valor,
 input enter,
@@ -19,8 +23,12 @@ wire[3:0] enter_devs;
 wire[127:0] out_devs;
 
 processador processador(
+.bios_controll(bios_controll),
 .clk(clk),
+.opcode_operation(opcode_operation),
 .wake_up(wake_up),
+.bios_pc(bios_pc),
+.bios_inst(bios_inst),
 .dev_in({122'd0, valor}),
 .dev_out(out_devs),
 .enter_in({3'd0, enter_est}),
