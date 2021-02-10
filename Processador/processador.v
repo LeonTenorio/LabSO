@@ -81,6 +81,4 @@ unit_control unit_control(
 .out_done(out_done),
 .bios_write_pc(bios_write_pc));
 
-	assign opcode_operation = {opcode, operation};
-	
 endmodule 

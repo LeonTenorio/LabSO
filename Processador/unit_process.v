@@ -39,7 +39,7 @@ reg[31:0] write_ra;
 wire[3:0] inst4_7;
 wire[4:0] rd_select;
 wire[0:31] internal_inst;
-wire[31:0] read1, read2, read3, prox_pc, wd_select, alu_result, alu_hi, alu_lo, b_select, read, e_data;
+wire[31:0] read1, read2, prox_pc, wd_select, alu_result, alu_hi, alu_lo, b_select, read, e_data;
 wire[4:0] inst4_8, inst8_12, inst13_17, inst18_22;
 wire[8:0] inst23_31;
 //wire[9:0] inst13_22;
@@ -105,7 +105,7 @@ bc_registers bc_registers(.rs(inst8_12),
 .write_ra(write_ra), 
 .read1(read1), 
 .read2(read2), 
-.read3(read3),
+//.read3(read3),
 .reg_write(reg_write), 
 .loc_write(loc_write), 
 .bc_hi(bc_hi), 
@@ -135,7 +135,7 @@ memory memory(.adress(alu_result),
 in_out_module in_out_module(.p_data(read1), 
 .e_data(e_data), 
 .drs(read2),
-.drt(read3),
+//.drt(read3),
 //.adress(inst13_22), 
 .address(inst23_31),
 .in_req(in_req), 
@@ -146,7 +146,8 @@ in_out_module in_out_module(.p_data(read1),
 .enter_in(enter_in), 
 .enter_out(enter_out),
 .done_out(done_out),
-.out_done(out_done));
+.out_done(out_done),
+.clk(clk));
 
 always @(clk, bios_controll, pc, bios_pc)
 begin

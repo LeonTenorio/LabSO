@@ -18,124 +18,322 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "01/31/2021 15:20:31"
+// Generated on "02/09/2021 20:31:38"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          unit_control
+// Verilog Test Bench (with test vectors) for design :                          disk_controller
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module unit_control_vlg_vec_tst();
+module disk_controller_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg [6:0] address_in_sector;
 reg clk;
-reg in_ready;
-reg [0:3] opcode;
-reg [0:3] operation;
-reg out_done;
+reg read;
+reg [4:0] sector;
+reg [2:0] track;
+reg write;
+reg [31:0] write_value;
 // wires                                               
-wire [3:0] alu_op;
-wire [2:0] branch_comp;
-wire done_inst;
-wire in_req;
-wire inst_write;
-wire [2:0] loc_write;
-wire mem_write;
-wire new_out;
-wire [1:0] op_b;
-wire [1:0] pc_orig;
-wire pc_write;
-wire [1:0] rd_orig;
-wire reg_write;
-wire [3:0] write_d_sel;
+wire read_done;
+wire [31:0] read_value;
+wire write_done;
 
 // assign statements (if any)                          
-unit_control i1 (
+disk_controller i1 (
 // port map - connection between master ports and signals/registers   
-	.alu_op(alu_op),
-	.branch_comp(branch_comp),
+	.address_in_sector(address_in_sector),
 	.clk(clk),
-	.done_inst(done_inst),
-	.in_ready(in_ready),
-	.in_req(in_req),
-	.inst_write(inst_write),
-	.loc_write(loc_write),
-	.mem_write(mem_write),
-	.new_out(new_out),
-	.op_b(op_b),
-	.opcode(opcode),
-	.operation(operation),
-	.out_done(out_done),
-	.pc_orig(pc_orig),
-	.pc_write(pc_write),
-	.rd_orig(rd_orig),
-	.reg_write(reg_write),
-	.write_d_sel(write_d_sel)
+	.read(read),
+	.read_done(read_done),
+	.read_value(read_value),
+	.sector(sector),
+	.track(track),
+	.write(write),
+	.write_done(write_done),
+	.write_value(write_value)
 );
 initial 
 begin 
-#500000 $finish;
+#1000000 $finish;
 end 
 
 // clk
-always
+initial
 begin
+	repeat(11)
+	begin
+		clk = 1'b0;
+		clk = #45000 1'b1;
+		# 45000;
+	end
 	clk = 1'b0;
-	clk = #25000 1'b1;
-	#25000;
-end 
-// opcode[ 3 ]
-initial
-begin
-	opcode[3] = 1'b0;
-end 
-// opcode[ 2 ]
-initial
-begin
-	opcode[2] = 1'b0;
-end 
-// opcode[ 1 ]
-initial
-begin
-	opcode[1] = 1'b0;
-end 
-// opcode[ 0 ]
-initial
-begin
-	opcode[0] = 1'b0;
-end 
-// operation[ 3 ]
-initial
-begin
-	operation[3] = 1'b1;
-end 
-// operation[ 2 ]
-initial
-begin
-	operation[2] = 1'b1;
-end 
-// operation[ 1 ]
-initial
-begin
-	operation[1] = 1'b0;
-end 
-// operation[ 0 ]
-initial
-begin
-	operation[0] = 1'b0;
 end 
 
-// in_ready
+// read
 initial
 begin
-	in_ready = 1'b0;
+	read = 1'b0;
+	read = #200000 1'b1;
+	read = #100000 1'b0;
+	read = #270000 1'b1;
+	read = #90000 1'b0;
 end 
 
-// out_done
+// write
 initial
 begin
-	out_done = 1'b0;
+	write = 1'b0;
+	write = #20000 1'b1;
+	write = #110000 1'b0;
+	write = #250000 1'b1;
+	write = #100000 1'b0;
+end 
+// write_value[ 31 ]
+initial
+begin
+	write_value[31] = 1'b0;
+end 
+// write_value[ 30 ]
+initial
+begin
+	write_value[30] = 1'b0;
+end 
+// write_value[ 29 ]
+initial
+begin
+	write_value[29] = 1'b0;
+end 
+// write_value[ 28 ]
+initial
+begin
+	write_value[28] = 1'b0;
+end 
+// write_value[ 27 ]
+initial
+begin
+	write_value[27] = 1'b0;
+end 
+// write_value[ 26 ]
+initial
+begin
+	write_value[26] = 1'b0;
+end 
+// write_value[ 25 ]
+initial
+begin
+	write_value[25] = 1'b0;
+end 
+// write_value[ 24 ]
+initial
+begin
+	write_value[24] = 1'b0;
+end 
+// write_value[ 23 ]
+initial
+begin
+	write_value[23] = 1'b0;
+end 
+// write_value[ 22 ]
+initial
+begin
+	write_value[22] = 1'b0;
+end 
+// write_value[ 21 ]
+initial
+begin
+	write_value[21] = 1'b0;
+end 
+// write_value[ 20 ]
+initial
+begin
+	write_value[20] = 1'b0;
+end 
+// write_value[ 19 ]
+initial
+begin
+	write_value[19] = 1'b0;
+end 
+// write_value[ 18 ]
+initial
+begin
+	write_value[18] = 1'b0;
+end 
+// write_value[ 17 ]
+initial
+begin
+	write_value[17] = 1'b0;
+end 
+// write_value[ 16 ]
+initial
+begin
+	write_value[16] = 1'b0;
+end 
+// write_value[ 15 ]
+initial
+begin
+	write_value[15] = 1'b0;
+end 
+// write_value[ 14 ]
+initial
+begin
+	write_value[14] = 1'b0;
+end 
+// write_value[ 13 ]
+initial
+begin
+	write_value[13] = 1'b0;
+end 
+// write_value[ 12 ]
+initial
+begin
+	write_value[12] = 1'b0;
+end 
+// write_value[ 11 ]
+initial
+begin
+	write_value[11] = 1'b0;
+end 
+// write_value[ 10 ]
+initial
+begin
+	write_value[10] = 1'b0;
+end 
+// write_value[ 9 ]
+initial
+begin
+	write_value[9] = 1'b0;
+end 
+// write_value[ 8 ]
+initial
+begin
+	write_value[8] = 1'b0;
+end 
+// write_value[ 7 ]
+initial
+begin
+	write_value[7] = 1'b0;
+end 
+// write_value[ 6 ]
+initial
+begin
+	write_value[6] = 1'b0;
+end 
+// write_value[ 5 ]
+initial
+begin
+	write_value[5] = 1'b0;
+end 
+// write_value[ 4 ]
+initial
+begin
+	write_value[4] = 1'b0;
+	write_value[4] = #380000 1'b1;
+	write_value[4] = #100000 1'b0;
+end 
+// write_value[ 3 ]
+initial
+begin
+	write_value[3] = 1'b0;
+	write_value[3] = #20000 1'b1;
+	write_value[3] = #110000 1'b0;
+end 
+// write_value[ 2 ]
+initial
+begin
+	write_value[2] = 1'b0;
+	write_value[2] = #380000 1'b1;
+	write_value[2] = #100000 1'b0;
+end 
+// write_value[ 1 ]
+initial
+begin
+	write_value[1] = 1'b0;
+	write_value[1] = #20000 1'b1;
+	write_value[1] = #110000 1'b0;
+end 
+// write_value[ 0 ]
+initial
+begin
+	write_value[0] = 1'b0;
+end 
+// sector[ 4 ]
+initial
+begin
+	sector[4] = 1'b0;
+end 
+// sector[ 3 ]
+initial
+begin
+	sector[3] = 1'b0;
+end 
+// sector[ 2 ]
+initial
+begin
+	sector[2] = 1'b0;
+end 
+// sector[ 1 ]
+initial
+begin
+	sector[1] = 1'b0;
+end 
+// sector[ 0 ]
+initial
+begin
+	sector[0] = 1'b0;
+end 
+// track[ 2 ]
+initial
+begin
+	track[2] = 1'b0;
+end 
+// track[ 1 ]
+initial
+begin
+	track[1] = 1'b0;
+end 
+// track[ 0 ]
+initial
+begin
+	track[0] = 1'b0;
+	track[0] = #350000 1'b1;
+end 
+// address_in_sector[ 6 ]
+initial
+begin
+	address_in_sector[6] = 1'b0;
+end 
+// address_in_sector[ 5 ]
+initial
+begin
+	address_in_sector[5] = 1'b0;
+end 
+// address_in_sector[ 4 ]
+initial
+begin
+	address_in_sector[4] = 1'b0;
+end 
+// address_in_sector[ 3 ]
+initial
+begin
+	address_in_sector[3] = 1'b0;
+end 
+// address_in_sector[ 2 ]
+initial
+begin
+	address_in_sector[2] = 1'b0;
+end 
+// address_in_sector[ 1 ]
+initial
+begin
+	address_in_sector[1] = 1'b0;
+end 
+// address_in_sector[ 0 ]
+initial
+begin
+	address_in_sector[0] = 1'b0;
 end 
 endmodule
 
