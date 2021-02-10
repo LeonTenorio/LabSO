@@ -8,29 +8,71 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim
-vhard_block
-Z1 !s110 1612119446
+vdisk_controller
+Z1 !s110 1612913499
 !i10b 1
-!s100 :U@Fj`WZmNcToC;7ag<oi0
-I[83==HHXTc6:Q;5[`zR=l1
+!s100 8_D6aReVSSDQY1PcXm8D@0
+Ioh2i]=B5o`HOAgJjT]Hdh3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1612119446
+Z3 w1612913499
 Z4 8processador.vo
 Z5 Fprocessador.vo
-L0 2503
-Z6 OV;L;10.5b;63
+Z6 L0 31
+Z7 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1612119446.000000
-Z8 !s107 processador.vo|
-Z9 !s90 -work|work|processador.vo|
+Z8 !s108 1612913499.000000
+Z9 !s107 processador.vo|
+Z10 !s90 -work|work|processador.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z11 o-work work
+Z12 tCvgOpt 0
+vdisk_controller_vlg_vec_tst
+R1
+!i10b 1
+!s100 F63WW`Y;JU:S9kUjeN_mK0
+I:_jL`lAbGIM>TLQ6?>A4Y2
+R2
+R0
+w1612913498
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+Z13 L0 29
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+R1
+!i10b 1
+!s100 OmQgZ3PJiKd2UYhf0>iB^0
+I;C[6l]5N05REo7McZPS4S1
+R2
+R0
+R3
+R4
+R5
+L0 1458
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
 vmemory
-Z12 !s110 1606139671
+Z14 !s110 1606139671
 !i10b 1
 !s100 @e05ANKQgP>FlC9eJLHlo3
 IKI7?>z1?Sg0PWA30lh8OM0
@@ -39,19 +81,19 @@ R0
 w1606139669
 R4
 R5
-Z13 L0 31
 R6
+R7
 r1
 !s85 0
 31
-Z14 !s108 1606139671.000000
-R8
+Z15 !s108 1606139671.000000
 R9
-!i113 1
 R10
+!i113 1
 R11
-vmemory_vlg_vec_tst
 R12
+vmemory_vlg_vec_tst
+R14
 !i10b 1
 !s100 >XEPAdAC>ELbFVJ`k3o_:2
 I`fF[LG]M1PFeT0]1R0meT1
@@ -60,40 +102,40 @@ R0
 w1606139667
 8Waveform63.vwf.vt
 FWaveform63.vwf.vt
-Z15 L0 29
-R6
+R13
+R7
 r1
 !s85 0
 31
-R14
+R15
 !s107 Waveform63.vwf.vt|
 !s90 -work|work|Waveform63.vwf.vt|
 !i113 1
-R10
 R11
+R12
 vunit_control
-R1
+Z16 !s110 1612119446
 !i10b 1
 !s100 S?U0m04<c`]V?PN][]U>k3
 IM3E_JjFRAQ84]]^9RSQgO2
 R2
 R0
-R3
+w1612119446
 R4
 R5
-R13
 R6
+R7
 r1
 !s85 0
 31
-R7
-R8
+Z17 !s108 1612119446.000000
 R9
-!i113 1
 R10
+!i113 1
 R11
+R12
 vunit_control_vlg_vec_tst
-R1
+R16
 !i10b 1
 !s100 g>8SdbFRHMU9J0=5<<<Mi3
 InXn?Gi_[3_Q>Q]d_7]UYN1
@@ -102,14 +144,14 @@ R0
 w1612119445
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-R15
-R6
+R13
+R7
 r1
 !s85 0
 31
-R7
+R17
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R10
 R11
+R12

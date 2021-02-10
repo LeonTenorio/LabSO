@@ -816,15 +816,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[23]",
-					"strict" : false
-				},
-				{
 					"name" : "bios_inst[31]",
 					"strict" : false
 				},
 				{
 					"name" : "bios_inst[24]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[23]",
 					"strict" : false
 				},
 				{
@@ -860,15 +860,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "bios_inst[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bios_inst[2]",
+					"strict" : false
+				},
+				{
 					"name" : "bios_inst[5]",
-					"strict" : false
-				},
-				{
-					"name" : "bios_inst[6]",
-					"strict" : false
-				},
-				{
-					"name" : "bios_inst[7]",
 					"strict" : false
 				},
 				{
@@ -880,11 +880,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[3]",
+					"name" : "bios_inst[6]",
 					"strict" : false
 				},
 				{
-					"name" : "bios_inst[2]",
+					"name" : "bios_inst[7]",
 					"strict" : false
 				},
 				{
@@ -932,15 +932,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "done_out[2]",
-					"strict" : false
-				},
-				{
 					"name" : "done_out[1]",
 					"strict" : false
 				},
 				{
 					"name" : "done_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[2]",
 					"strict" : false
 				},
 				{
@@ -1200,6 +1200,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "dev_in[73]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[105]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[41]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[89]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[25]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[121]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[57]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[81]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[17]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[113]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[49]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[97]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[33]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[65]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[1]",
+					"strict" : false
+				},
+				{
 					"name" : "dev_in[77]",
 					"strict" : false
 				},
@@ -1261,70 +1325,6 @@
 				},
 				{
 					"name" : "dev_in[53]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[73]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[105]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[41]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[9]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[89]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[25]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[121]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[57]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[81]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[17]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[113]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[49]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[65]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[97]",
-					"strict" : false
-				},
-				{
-					"name" : "dev_in[33]",
 					"strict" : false
 				},
 				{

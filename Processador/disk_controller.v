@@ -15,17 +15,21 @@ reg[31:0] values[14:0];
 
 always @(negedge clk)
 begin
+	read_done = 0;
 	if(read)
 	begin
-		read_value = values[{track, sector, address_in_sector}];
+		read_value <= values[{track, sector, address_in_sector}];
+		read_done = 1;
 	end
 end
 
 always @(posedge clk)
 begin
+	write_done = 0;
 	if(write)
 	begin
-		values[{track, sector, address_in_sector}] = write_value;
+		values[{track, sector, address_in_sector}] <= write_value;
+		write_done = 1;
 	end
 end
 

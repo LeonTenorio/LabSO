@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Sun Feb  7 20:12:10 2021
+Tue Feb  9 20:34:38 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -73,15 +73,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb  7 20:12:10 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb  9 20:34:38 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; processador                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 19,844                                      ;
-;     Total combinational functions  ; 12,354                                      ;
-;     Dedicated logic registers      ; 8,878                                       ;
-; Total registers                    ; 8878                                        ;
+; Total logic elements               ; 19,836                                      ;
+;     Total combinational functions  ; 12,346                                      ;
+;     Dedicated logic registers      ; 8,880                                       ;
+; Total registers                    ; 8880                                        ;
 ; Total pins                         ; 407                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 131,552                                     ;
@@ -184,12 +184,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.6%      ;
+;     Processor 2            ;   0.5%      ;
 ;     Processor 3            ;   0.5%      ;
 ;     Processor 4            ;   0.5%      ;
 +----------------------------+-------------+
@@ -248,20 +248,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 19,844    ;
+; Estimated Total logic elements              ; 19,836    ;
 ;                                             ;           ;
-; Total combinational functions               ; 12354     ;
+; Total combinational functions               ; 12346     ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 8803      ;
-;     -- 3 input functions                    ; 3260      ;
-;     -- <=2 input functions                  ; 291       ;
+;     -- 4 input functions                    ; 8808      ;
+;     -- 3 input functions                    ; 3248      ;
+;     -- <=2 input functions                  ; 290       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 10950     ;
+;     -- normal mode                          ; 10942     ;
 ;     -- arithmetic mode                      ; 1404      ;
 ;                                             ;           ;
-; Total registers                             ; 8878      ;
-;     -- Dedicated logic registers            ; 8878      ;
+; Total registers                             ; 8880      ;
+;     -- Dedicated logic registers            ; 8880      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 407       ;
@@ -271,7 +271,7 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 8750      ;
-; Total fan-out                               ; 72886     ;
+; Total fan-out                               ; 72872     ;
 ; Average fan-out                             ; 3.30      ;
 +---------------------------------------------+-----------+
 
@@ -281,14 +281,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                  ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |processador                                    ; 12354 (1)           ; 8878 (0)                  ; 131552      ; 8            ; 0       ; 4         ; 407  ; 0            ; |processador                                                                                                                                                         ; processador         ; work         ;
-;    |unit_control:unit_control|                  ; 76 (76)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_control:unit_control                                                                                                                               ; unit_control        ; work         ;
-;    |unit_process:unit_process|                  ; 12277 (109)         ; 8868 (64)                 ; 131552      ; 8            ; 0       ; 4         ; 0    ; 0            ; |processador|unit_process:unit_process                                                                                                                               ; unit_process        ; work         ;
-;       |alu:alu|                                 ; 2917 (725)          ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu                                                                                                                       ; alu                 ; work         ;
-;          |lpm_divide:Div0|                      ; 1062 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
-;             |lpm_divide_hkm:auto_generated|     ; 1062 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; lpm_divide_hkm      ; work         ;
-;                |sign_div_unsign_9nh:divider|    ; 1062 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; sign_div_unsign_9nh ; work         ;
-;                   |alt_u_div_6af:divider|       ; 1062 (1062)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; alt_u_div_6af       ; work         ;
+; |processador                                    ; 12346 (1)           ; 8880 (0)                  ; 131552      ; 8            ; 0       ; 4         ; 407  ; 0            ; |processador                                                                                                                                                         ; processador         ; work         ;
+;    |unit_control:unit_control|                  ; 75 (75)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_control:unit_control                                                                                                                               ; unit_control        ; work         ;
+;    |unit_process:unit_process|                  ; 12270 (109)         ; 8870 (64)                 ; 131552      ; 8            ; 0       ; 4         ; 0    ; 0            ; |processador|unit_process:unit_process                                                                                                                               ; unit_process        ; work         ;
+;       |alu:alu|                                 ; 2913 (725)          ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu                                                                                                                       ; alu                 ; work         ;
+;          |lpm_divide:Div0|                      ; 1058 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
+;             |lpm_divide_hkm:auto_generated|     ; 1058 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; lpm_divide_hkm      ; work         ;
+;                |sign_div_unsign_9nh:divider|    ; 1058 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; sign_div_unsign_9nh ; work         ;
+;                   |alt_u_div_6af:divider|       ; 1058 (1057)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; alt_u_div_6af       ; work         ;
+;                      |add_sub_7pc:add_sub_0|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_7pc:add_sub_0 ; add_sub_7pc         ; work         ;
 ;          |lpm_divide:Mod0|                      ; 1051 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0                                                                                                       ; lpm_divide          ; work         ;
 ;             |lpm_divide_kcm:auto_generated|     ; 1051 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated                                                                         ; lpm_divide_kcm      ; work         ;
 ;                |sign_div_unsign_9nh:divider|    ; 1051 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider                                             ; sign_div_unsign_9nh ; work         ;
@@ -296,11 +297,11 @@ refer to the applicable agreement for further details.
 ;                      |add_sub_8pc:add_sub_1|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc         ; work         ;
 ;          |lpm_mult:Mult0|                       ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_mult:Mult0                                                                                                        ; lpm_mult            ; work         ;
 ;             |mult_7dt:auto_generated|           ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |processador|unit_process:unit_process|alu:alu|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; mult_7dt            ; work         ;
-;       |bc_registers:bc_registers|               ; 2588 (2588)         ; 1216 (1216)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|bc_registers:bc_registers                                                                                                     ; bc_registers        ; work         ;
+;       |bc_registers:bc_registers|               ; 2585 (2585)         ; 1216 (1216)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|bc_registers:bc_registers                                                                                                     ; bc_registers        ; work         ;
 ;       |data_inst:data_inst|                     ; 5297 (5297)         ; 7392 (7392)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|data_inst:data_inst                                                                                                           ; data_inst           ; work         ;
-;       |in_out_module:in_out_module|             ; 956 (952)           ; 196 (160)                 ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                   ; in_out_module       ; work         ;
+;       |in_out_module:in_out_module|             ; 954 (950)           ; 198 (160)                 ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                   ; in_out_module       ; work         ;
 ;          |clk_divisor:clk_divisor|              ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor                                                                           ; clk_divisor         ; work         ;
-;          |disk_controller:disk_controller|      ; 0 (0)               ; 32 (32)                   ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller                                                                   ; disk_controller     ; work         ;
+;          |disk_controller:disk_controller|      ; 0 (0)               ; 34 (34)                   ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller                                                                   ; disk_controller     ; work         ;
 ;             |altsyncram:values_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:values_rtl_0                                           ; altsyncram          ; work         ;
 ;                |altsyncram_kvc1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:values_rtl_0|altsyncram_kvc1:auto_generated            ; altsyncram_kvc1     ; work         ;
 ;       |memory:memory|                           ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|memory:memory                                                                                                                 ; memory              ; work         ;
@@ -309,7 +310,7 @@ refer to the applicable agreement for further details.
 ;       |mux_op_b:mux_op_b|                       ; 66 (66)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|mux_op_b:mux_op_b                                                                                                             ; mux_op_b            ; work         ;
 ;       |mux_rd:mux_rd|                           ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|mux_rd:mux_rd                                                                                                                 ; mux_rd              ; work         ;
 ;       |mux_wd:mux_wd|                           ; 160 (160)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|mux_wd:mux_wd                                                                                                                 ; mux_wd              ; work         ;
-;       |udcpc:udcpc|                             ; 174 (174)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|udcpc:udcpc                                                                                                                   ; udcpc               ; work         ;
+;       |udcpc:udcpc|                             ; 176 (176)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processador|unit_process:unit_process|udcpc:udcpc                                                                                                                   ; udcpc               ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1208,7 +1209,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8878  ;
+; Total registers                              ; 8880  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 196   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -1227,49 +1228,49 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+----------------------------------------------------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |processador|unit_process:unit_process|in_out_module:in_out_module|e_data[1]       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |processador|unit_process:unit_process|pc[21]                                      ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|registers[31][16] ;
-; 32:1               ; 28 bits   ; 588 LEs       ; 588 LEs              ; 0 LEs                  ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|read2[21]         ;
-; 19:1               ; 32 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|reg_hi[0]         ;
-; 256:1              ; 32 bits   ; 5440 LEs      ; 5408 LEs             ; 32 LEs                 ; Yes        ; |processador|unit_process:unit_process|data_inst:data_inst|instruction[23]         ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|read1[31]         ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |processador|unit_control:unit_control|mem_write                                   ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux0                      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux26                     ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux27                     ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_rd:mux_rd|Mux2                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processador|unit_control:unit_control|op_b[1]                                     ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_wd:mux_wd|Mux31                         ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |processador|unit_control:unit_control|alu_op[3]                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1            ;
-; 32:1               ; 4 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|bc_registers:bc_registers|Mux1180           ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |processador|unit_control:unit_control|Selector7                                   ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |processador|unit_control:unit_control|write_d_sel[2]                              ;
-; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux21                               ;
-; 21:1               ; 8 bits    ; 112 LEs       ; 72 LEs               ; 40 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux13                               ;
-; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux26                               ;
-; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux7                                ;
-; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux28                               ;
-; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux2                                ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |processador|unit_control:unit_control|Selector2                                   ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 16 LEs               ; 80 LEs                 ; No         ; |processador|unit_process:unit_process|udcpc:udcpc|prox_pc[25]                     ;
-; 18:1               ; 10 bits   ; 120 LEs       ; 20 LEs               ; 100 LEs                ; No         ; |processador|unit_process:unit_process|udcpc:udcpc|prox_pc[23]                     ;
-; 18:1               ; 14 bits   ; 168 LEs       ; 28 LEs               ; 140 LEs                ; No         ; |processador|unit_process:unit_process|udcpc:udcpc|prox_pc[7]                      ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 22 LEs               ; 10 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux1                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |processador|unit_process:unit_process|in_out_module:in_out_module|e_data[14]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |processador|unit_process:unit_process|pc[5]                                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|registers[31][9] ;
+; 32:1               ; 28 bits   ; 588 LEs       ; 588 LEs              ; 0 LEs                  ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|read2[29]        ;
+; 19:1               ; 32 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|reg_hi[9]        ;
+; 256:1              ; 32 bits   ; 5440 LEs      ; 5408 LEs             ; 32 LEs                 ; Yes        ; |processador|unit_process:unit_process|data_inst:data_inst|instruction[13]        ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |processador|unit_process:unit_process|bc_registers:bc_registers|read1[23]        ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |processador|unit_control:unit_control|inst_write                                 ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux18                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux26                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux31                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_rd:mux_rd|Mux0                         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processador|unit_control:unit_control|op_b[1]                                    ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|mux_wd:mux_wd|Mux12                        ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |processador|unit_control:unit_control|alu_op[0]                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|in_out_module:in_out_module|Mux1           ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |processador|unit_process:unit_process|bc_registers:bc_registers|Mux1181          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |processador|unit_control:unit_control|Selector7                                  ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |processador|unit_control:unit_control|write_d_sel[0]                             ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux18                              ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 72 LEs               ; 40 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux8                               ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux27                              ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux4                               ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux29                              ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux2                               ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |processador|unit_control:unit_control|Selector6                                  ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 16 LEs               ; 80 LEs                 ; No         ; |processador|unit_process:unit_process|udcpc:udcpc|prox_pc[31]                    ;
+; 18:1               ; 10 bits   ; 120 LEs       ; 20 LEs               ; 100 LEs                ; No         ; |processador|unit_process:unit_process|udcpc:udcpc|prox_pc[21]                    ;
+; 18:1               ; 14 bits   ; 168 LEs       ; 28 LEs               ; 140 LEs                ; No         ; |processador|unit_process:unit_process|udcpc:udcpc|prox_pc[0]                     ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 22 LEs               ; 10 LEs                 ; No         ; |processador|unit_process:unit_process|alu:alu|Mux1                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -1715,26 +1716,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 407                         ;
-; cycloneiii_ff         ; 8878                        ;
+; cycloneiii_ff         ; 8880                        ;
 ;     ENA               ; 7496                        ;
 ;     ENA SLD           ; 196                         ;
-;     plain             ; 1186                        ;
-; cycloneiii_lcell_comb ; 12355                       ;
+;     plain             ; 1188                        ;
+; cycloneiii_lcell_comb ; 12347                       ;
 ;     arith             ; 1404                        ;
 ;         2 data inputs ; 132                         ;
 ;         3 data inputs ; 1272                        ;
-;     normal            ; 10951                       ;
+;     normal            ; 10943                       ;
 ;         0 data inputs ; 62                          ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 93                          ;
-;         3 data inputs ; 1988                        ;
-;         4 data inputs ; 8803                        ;
+;         2 data inputs ; 92                          ;
+;         3 data inputs ; 1976                        ;
+;         4 data inputs ; 8808                        ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 127.50                      ;
-; Average LUT depth     ; 29.69                       ;
+; Average LUT depth     ; 29.71                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1743,7 +1744,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:08     ;
+; Top            ; 00:00:44     ;
 +----------------+--------------+
 
 
@@ -1753,7 +1754,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Feb  7 20:10:40 2021
+    Info: Processing started: Tue Feb  9 20:33:41 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1811,8 +1812,6 @@ Info (12128): Elaborating entity "memory" for hierarchy "unit_process:unit_proce
 Info (12128): Elaborating entity "in_out_module" for hierarchy "unit_process:unit_process|in_out_module:in_out_module" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 150
 Warning (10036): Verilog HDL or VHDL warning at in_out_module.v(36): object "lixo" assigned a value but never read File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 36
 Info (12128): Elaborating entity "disk_controller" for hierarchy "unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 49
-Warning (10034): Output port "read_done" at disk_controller.v(9) has no driver File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 9
-Warning (10034): Output port "write_done" at disk_controller.v(10) has no driver File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 10
 Info (12128): Elaborating entity "clk_divisor" for hierarchy "unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 56
 Info (12128): Elaborating entity "unit_control" for hierarchy "unit_control:unit_control" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 82
 Info (10264): Verilog HDL Case Statement information at unit_control.v(127): all case item expressions in this case statement are onehot File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v Line: 127
@@ -1828,6 +1827,7 @@ Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer unit_process:unit_process|instruction[24] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 58
     Warning (19017): Found clock multiplexer unit_process:unit_process|instruction[23] File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 58
 Warning (276027): Inferred dual-clock RAM node "unit_process:unit_process|memory:memory|data_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|values_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "unit_process:unit_process|memory:memory|data_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -1986,17 +1986,17 @@ Warning (21074): Design contains 32 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "bios_info[29]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 4
     Warning (15610): No output dependent on input pin "bios_info[30]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 4
     Warning (15610): No output dependent on input pin "bios_info[31]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 4
-Info (21057): Implemented 20363 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 20357 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 202 input pins
     Info (21059): Implemented 205 output pins
-    Info (21061): Implemented 19884 logic cells
+    Info (21061): Implemented 19878 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 1097 megabytes
-    Info: Processing ended: Sun Feb  7 20:12:10 2021
-    Info: Elapsed time: 00:01:30
-    Info: Total CPU time (on all processors): 00:02:01
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 1079 megabytes
+    Info: Processing ended: Tue Feb  9 20:34:38 2021
+    Info: Elapsed time: 00:00:57
+    Info: Total CPU time (on all processors): 00:01:13
 
 
 +------------------------------------------+
