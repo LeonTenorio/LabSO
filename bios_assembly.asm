@@ -86,14 +86,17 @@ B .after_interrupt_load_reg
 
 .load_program 								//O ENDERECO BASE PARA CARREGAMENTO ESTA EM $k0
 									//A QUANTIDADE DE INSTRUCOES A SEREM CARREGADAS ESTARA EM $k1
-LI $t0 0
+//$t0 - Contador de quantidade de dados carregados para memoria de programa
+//$t1 - Posicao de carregamento atual de instrucoes da memoria principal
+//$t2 - Local de carregamento do dado da memoria principal
+MOV $zero $t0
 MOV $k0 $t1
 .load_program_loop
 	BGE $t0 $k1 .load_program_done
-		LOAD $k0 $t2 0
+		LOAD $t1 $t2 0
 		STOREINST $t0 $t2 0
-		ADDI $t0 1
-		ADDI $t1 1
+		ADDI $t0 $t0 1
+		ADDI $t1 $t1 1
 .load_program_done
 BR $ra
 
@@ -102,7 +105,7 @@ MOV $v0 $s2
 SL $v0 8 $v0
 ADD $v0 $v0 $s1
 SL $v0 8 $v0
-add $v0 $v0 $s0
+ADD $v0 $v0 $s0
 BR $ra
 
 
@@ -125,11 +128,10 @@ MOV $zero $s1
 MOV $zero $s2
 MOV $zero $s3
 LI $s2 1
-LI $s7 -1
+LI $t3 -1
 LI $t1 256
 LI $t2 127
 .load_system_main_program_loop
-	MOV $zero $s2
 	.load_system_main_loop_sector
 		BL .concat_disk_acess
 		IN $t0 $v0 128
@@ -141,6 +143,7 @@ LI $t2 127
 		MFLO $t0
 		DIV $t0 $t1
 		MFHI $s0
+		MOV $zero $s2
 		
 		B .load_system_main_program_loop
 		
