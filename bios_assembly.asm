@@ -8,7 +8,8 @@ BL .load_program
 BEQ $k0 $zero .after_interrupt_load_reg
 B .load_registers
 .after_interrupt_load_reg
-B .work_loop_after_interrupt
+BEQ $zero $k0 .work_loop_after_interrupt_program
+B .work_loop_after_interrupt_system
 
 .store_registers
 STORE $re $s0 0
@@ -123,7 +124,6 @@ MOV $zero $s0
 MOV $zero $s1
 MOV $zero $s2
 MOV $zero $s3
-
 LI $s2 1
 LI $s7 -1
 LI $t1 256
@@ -154,7 +154,8 @@ STORE $zero $s3 0
 B $s8
 
 .main
-LI $k0 1								//AGENDADOR DE PROCESSOS
+BL .load_system_main_program
+MOV $zero $k0								//AGENDADOR DE PROCESSOS
 LOAD $k1 $zero 0
 BL .load_program
 SETPC $zero
@@ -164,8 +165,10 @@ BIOSINT
 	MOV $zero $k0							//PARA CARREGAR O AGENDADOR DE PROGRAMAS
 	LOAD $zero $k1 0
 	B .after_interrupt
-	.work_loop_after_interrupt					
+	.work_loop_after_interrupt_program					
 	BIOSINT								//DEIXAR O ESCALONADOR EXECUTAR
 									//$k0 e $k1 estaram com os valores certos
+	.work_loop_after_interrupt_system
 	B .after_interrupt
+	BIOSINT
 	B .work_loop
