@@ -97,15 +97,16 @@ MOV $k0 $t1
 		STOREINST $t0 $t2 0
 		ADDI $t0 $t0 1
 		ADDI $t1 $t1 1
+		B .load_program_loop
 .load_program_done
 BR $ra
 
 .concat_disk_access
-MOV $v0 $s2
+MOV $s0 $v0
 SL $v0 8 $v0
 ADD $v0 $v0 $s1
 SL $v0 8 $v0
-ADD $v0 $v0 $s0
+ADD $v0 $v0 $s2
 BR $ra
 
 
@@ -125,7 +126,6 @@ BR $ra
 MOV $ra $s8
 MOV $zero $s0
 MOV $zero $s1
-MOV $zero $s2
 MOV $zero $s3
 LI $s2 1
 LI $t3 -1
@@ -154,12 +154,12 @@ LI $t2 127
 		B .load_system_main_loop_sector
 .load_system_main_program_loop_out
 STORE $zero $s3 0
-B $s8
+BR $s8
 
 .main
 BL .load_system_main_program
 MOV $zero $k0								//AGENDADOR DE PROCESSOS
-LOAD $k1 $zero 0
+LOAD $zero $k1 0
 BL .load_program
 SETPC $zero
 BIOSINT
@@ -171,7 +171,7 @@ BIOSINT
 	.work_loop_after_interrupt_program					
 	BIOSINT								//DEIXAR O ESCALONADOR EXECUTAR
 									//$k0 e $k1 estaram com os valores certos
-	.work_loop_after_interrupt_system
 	B .after_interrupt
+	.work_loop_after_interrupt_system
 	BIOSINT
 	B .work_loop
