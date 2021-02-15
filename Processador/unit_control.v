@@ -109,8 +109,6 @@ begin
 		//reg_wake_up = 0;
 	if(estado==D)
 		done_inst = 1;
-	if(estado==Halt)
-		done_inst = 1;
 	else
 		done_inst = 0;
 end

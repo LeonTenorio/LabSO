@@ -1412,15 +1412,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "dev_in[63]",
-					"strict" : false
-				},
-				{
 					"name" : "dev_in[31]",
 					"strict" : false
 				},
 				{
 					"name" : "dev_in[127]",
+					"strict" : false
+				},
+				{
+					"name" : "dev_in[63]",
 					"strict" : false
 				},
 				{
