@@ -10,6 +10,7 @@ input new_out,
 input pc_write,
 output in_ready,
 output reg[31:0] bios_pc,
+output reg[31:0] pc,
 input[0:31] bios_inst,
 input[1:0] pc_orig,
 input[1:0] rd_orig,
@@ -27,12 +28,14 @@ input[3:0] enter_in,
 output[3:0] enter_out,
 input inst_write,
 output out_done,
-input[3:0] done_out);
+input[3:0] done_out,
+output[31:0] k0,
+output[31:0] k1);
 
 parameter um = 32'd1;
 parameter zero = 32'd0;
 
-reg[31:0] pc = 32'd0;
+//reg[31:0] pc = 32'd0;
 reg[0:31] reg_inst;
 reg[31:0] write_ra;
 
@@ -110,7 +113,9 @@ bc_registers bc_registers(.rs(inst8_12),
 .loc_write(loc_write), 
 .bc_hi(bc_hi), 
 .bc_lo(bc_lo),
-.clk(clk));
+.clk(clk),
+.k0(k0),
+.k1(k1));
 
 mux_op_b mux_op_b(.deslocamento(inst23_31), 
 .b(read2), 

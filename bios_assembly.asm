@@ -154,9 +154,12 @@ LI $t2 127
 		B .load_system_main_loop_sector
 .load_system_main_program_loop_out
 STORE $zero $s3 0
+OUT $s3 $zero 0
 BR $s8
 
 .main
+LI $k0 100
+OUT $k0 $zero 0
 BL .load_system_main_program
 MOV $zero $k0								//AGENDADOR DE PROCESSOS
 LOAD $zero $k1 0

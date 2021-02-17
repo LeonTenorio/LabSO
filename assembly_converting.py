@@ -1,3 +1,4 @@
+
 def convert_to_inst(number, params):
 	ret = ""
 	for param in params:
@@ -13,7 +14,7 @@ def convert_to_inst(number, params):
 			ret = param_str
 		else:
 			ret = ret + ", " + param_str
-	return "registers["+str(number)+"] = {" + ret+ "}"
+	return "registers["+str(number)+"] = {" + ret+ "};"
 	
 def get_register(fonte):
 	if(fonte=="zero"):
@@ -87,7 +88,16 @@ def get_line_label(line, label_number):
 		line_bits = line_bits + len(line[i])
 	return str(32-line_bits)+"'d"+str(label_number)
 
+def check_bin_bits(line_string, line_number):
+	fields = line_string[:-1].split("{")[1]
+	fields = fields.split(", ")
+	bits = 0
+	for field in fields:
+		bits = bits + int(field.split("'")[0])
+	if(bits!=32):
+		raise Exception("ERROR BITS "+str(line_number))
 
+#bios program
 assembly_lines = [
 	["0100", "0000", ".main"],
 	".after_interrupt",
@@ -218,8 +228,15 @@ assembly_lines = [
 	["0100", "0000", ".load_system_main_loop_sector"],
 	".load_system_main_program_loop_out",
 	["0101", 4, get_register("zero"), get_register("s3"), 5, 9],
+	#for see informations in simulation
+	["1010", 4, get_register("s3"), 5, 5, 9],
+	#
 	["0100", "0010", get_register("s8"), 10, 9],
 	".main",
+	#for see informations in simulation
+	["0111", get_register("k0"), "00000000000000001100100"],
+	["1010", 4, get_register("k0"), 5, 5, 9],
+	#
 	["0100", "0001", ".load_system_main_program"],
 	["1000", "0000", get_register("zero"), 5, get_register("k0"), 9],
 	["0110", 4, get_register("zero"), 5, get_register("k1"), 9],
@@ -237,6 +254,23 @@ assembly_lines = [
 	["1011", "0101", 24],
 	["0100", "0000", ".work_loop"]
 ]
+
+#first program in hd
+'''
+assembly_lines = [
+	["1", "0", "0", "0", "000000000000", "00000001", ".done"],
+	["0100", "0000", ".main"],
+	".main",
+	#for see informations in simulation
+	["0111", get_register("k0"), "00000000000000001100101"],
+	["1010", 4, get_register("k0"), 5, 5, 9],
+	#
+	["1000", "0000", get_register("zero"), 5, get_register("k0"), 9],
+	["0111", get_register("k1"), ".done"],
+	["0000", "0001", 24],
+	".done"
+]
+'''
 
 dict_labels = {}
 
@@ -258,10 +292,12 @@ quartus_binnary = ""
 line = 0
 for line_params in lines_params:
 	if(isinstance(line_params, list)):
-		quartus_binnary = quartus_binnary + convert_to_inst(line, line_params) + "\n"
+		line_string = convert_to_inst(line, line_params)
+		check_bin_bits(line_string, line)
+		quartus_binnary = quartus_binnary + line_string + "\n"
 		line = line + 1
 	else:
-		quartus_binnary = quartus_binnary + line_params+ "\n"
+		quartus_binnary = quartus_binnary + "//" +line_params+ "\n"
 
 print(quartus_binnary)
 
