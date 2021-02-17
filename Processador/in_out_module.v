@@ -12,12 +12,11 @@ output reg[127:0] dev_out,
 input[3:0] enter_in,
 output reg[3:0] enter_out,
 input[3:0] done_out,
-input clk,
-output[4:0] devs_done_out,
-output[4:0] devs_enter_in);
+input clk
+);
 
-//wire[4:0] devs_done_out;
-//wire[4:0] devs_enter_in;
+wire[4:0] devs_done_out;
+wire[4:0] devs_enter_in;
 
 reg[4:0] disp;
 
@@ -99,12 +98,17 @@ begin
 	begin
 		if(disp < 5'd4)
 		begin
+			disk_write = 0;
 			dev_out[adress +: 32] <= p_data;
 		end
 		else
 		begin
-			disk_read = 1;
+			disk_write = 1;
 		end
+	end
+	else
+	begin
+		disk_write = 0;
 	end
 end
 
@@ -139,6 +143,21 @@ begin
 			input_state = input_state_none;
 		end
 	endcase
+	if(input_state==input_state_waiting)
+	begin
+		if(disp == 5'd4)
+		begin
+			disk_read = 1;
+		end
+		else
+		begin
+			disk_read = 0;
+		end
+	end
+	else
+	begin
+		disk_read = 0;
+	end
 	if(input_state==input_state_done)
 	begin
 		if(disp < 5'd4)
@@ -161,7 +180,6 @@ begin
 			enter_out[1] = 0;
 			enter_out[2] = 0;
 			enter_out[3] = 0;
-			disk_write = 0;
 		end
 		5'd1:
 		begin
@@ -169,7 +187,6 @@ begin
 			enter_out[1] = new_out;
 			enter_out[2] = 0;
 			enter_out[3] = 0;
-			disk_write = 0;
 		end
 		5'd2:
 		begin
@@ -177,7 +194,6 @@ begin
 			enter_out[1] = 0;
 			enter_out[2] = new_out;
 			enter_out[3] = 0;
-			disk_write = 0;
 		end
 		5'd3:
 		begin
@@ -185,7 +201,6 @@ begin
 			enter_out[1] = 0;
 			enter_out[2] = 0;
 			enter_out[3] = new_out;
-			disk_write = 0;
 		end
 		5'd4:
 		begin
@@ -193,7 +208,6 @@ begin
 			enter_out[1] = 0;
 			enter_out[2] = 0;
 			enter_out[3] = 0;
-			disk_write = new_out;
 		end
 		default:
 		begin
@@ -201,7 +215,6 @@ begin
 			enter_out[1] = 0;
 			enter_out[2] = 0;
 			enter_out[3] = 0;
-			disk_write = 0;
 		end
 	endcase
 end

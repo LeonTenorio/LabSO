@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Wed Feb 17 18:35:40 2021
+Wed Feb 17 18:46:01 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -54,16 +54,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 17 18:35:40 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 17 18:46:01 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; in_out_module                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 984                                         ;
-;     Total combinational functions  ; 983                                         ;
-;     Dedicated logic registers      ; 171                                         ;
-; Total registers                    ; 171                                         ;
-; Total pins                         ; 389                                         ;
+; Total logic elements               ; 988                                         ;
+;     Total combinational functions  ; 986                                         ;
+;     Dedicated logic registers      ; 172                                         ;
+; Total registers                    ; 172                                         ;
+; Total pins                         ; 379                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 480                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -202,31 +202,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 984             ;
+; Estimated Total logic elements              ; 988             ;
 ;                                             ;                 ;
-; Total combinational functions               ; 983             ;
+; Total combinational functions               ; 986             ;
 ; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 536             ;
-;     -- 3 input functions                    ; 428             ;
+;     -- 4 input functions                    ; 535             ;
+;     -- 3 input functions                    ; 432             ;
 ;     -- <=2 input functions                  ; 19              ;
 ;                                             ;                 ;
 ; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 983             ;
+;     -- normal mode                          ; 986             ;
 ;     -- arithmetic mode                      ; 0               ;
 ;                                             ;                 ;
-; Total registers                             ; 171             ;
-;     -- Dedicated logic registers            ; 171             ;
+; Total registers                             ; 172             ;
+;     -- Dedicated logic registers            ; 172             ;
 ;     -- I/O registers                        ; 0               ;
 ;                                             ;                 ;
-; I/O pins                                    ; 389             ;
+; I/O pins                                    ; 379             ;
 ; Total memory bits                           ; 480             ;
 ;                                             ;                 ;
 ; Embedded Multiplier 9-bit elements          ; 0               ;
 ;                                             ;                 ;
 ; Maximum fan-out node                        ; adress[5]~input ;
-; Maximum fan-out                             ; 242             ;
-; Total fan-out                               ; 5033            ;
-; Average fan-out                             ; 2.56            ;
+; Maximum fan-out                             ; 246             ;
+; Total fan-out                               ; 5023            ;
+; Average fan-out                             ; 2.58            ;
 +---------------------------------------------+-----------------+
 
 
@@ -235,7 +235,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |in_out_module                            ; 983 (983)           ; 171 (169)                 ; 480         ; 0            ; 0       ; 0         ; 389  ; 0            ; |in_out_module                                                                                        ; in_out_module   ; work         ;
+; |in_out_module                            ; 986 (986)           ; 172 (170)                 ; 480         ; 0            ; 0       ; 0         ; 379  ; 0            ; |in_out_module                                                                                        ; in_out_module   ; work         ;
 ;    |disk_controller:disk_controller|      ; 0 (0)               ; 2 (2)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller                                                        ; disk_controller ; work         ;
 ;       |altsyncram:values_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller|altsyncram:values_rtl_0                                ; altsyncram      ; work         ;
 ;          |altsyncram_4pd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller|altsyncram:values_rtl_0|altsyncram_4pd1:auto_generated ; altsyncram_4pd1 ; work         ;
@@ -281,7 +281,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 171   ;
+; Total registers                              ; 172   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 132   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -305,18 +305,18 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |in_out_module|e_data[17]~reg0 ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |in_out_module|e_data[23]~reg0 ;
 ; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
 ; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux0            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux1            ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |in_out_module|Mux2            ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |in_out_module|Mux2            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |in_out_module|Selector132     ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |in_out_module|Selector2       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |in_out_module|Selector131     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |in_out_module|Selector1       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
@@ -458,20 +458,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 389                         ;
-; cycloneiii_ff         ; 171                         ;
+; boundary_port         ; 379                         ;
+; cycloneiii_ff         ; 172                         ;
 ;     ENA               ; 8                           ;
 ;     ENA SLD           ; 132                         ;
-;     plain             ; 31                          ;
-; cycloneiii_lcell_comb ; 983                         ;
-;     normal            ; 983                         ;
+;     plain             ; 32                          ;
+; cycloneiii_lcell_comb ; 986                         ;
+;     normal            ; 986                         ;
 ;         2 data inputs ; 19                          ;
-;         3 data inputs ; 428                         ;
-;         4 data inputs ; 536                         ;
+;         3 data inputs ; 432                         ;
+;         4 data inputs ; 535                         ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 5.10                        ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 5.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -490,7 +490,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Feb 17 18:35:27 2021
+    Info: Processing started: Wed Feb 17 18:45:48 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -537,8 +537,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file clk_div
 Info (12021): Found 1 design units, including 1 entities, in source file machine.v
     Info (12023): Found entity 1: machine File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/machine.v Line: 1
 Info (12127): Elaborating entity "in_out_module" for the top level hierarchy
-Info (12128): Elaborating entity "disk_controller" for hierarchy "disk_controller:disk_controller" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 55
-Info (12128): Elaborating entity "clk_divisor" for hierarchy "clk_divisor:clk_divisor" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 65
+Info (12128): Elaborating entity "disk_controller" for hierarchy "disk_controller:disk_controller" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 54
+Info (12128): Elaborating entity "clk_divisor" for hierarchy "clk_divisor:clk_divisor" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 64
 Warning (276027): Inferred dual-clock RAM node "disk_controller:disk_controller|values_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "disk_controller:disk_controller|values_rtl_0" 
@@ -607,16 +607,16 @@ Warning (21074): Design contains 28 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "drs[29]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
     Warning (15610): No output dependent on input pin "drs[30]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
     Warning (15610): No output dependent on input pin "drs[31]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-Info (21057): Implemented 1414 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1407 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 213 input pins
-    Info (21059): Implemented 176 output pins
-    Info (21061): Implemented 993 logic cells
+    Info (21059): Implemented 166 output pins
+    Info (21061): Implemented 996 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 998 megabytes
-    Info: Processing ended: Wed Feb 17 18:35:40 2021
+    Info: Peak virtual memory: 1015 megabytes
+    Info: Processing ended: Wed Feb 17 18:46:01 2021
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+
