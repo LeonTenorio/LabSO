@@ -17,13 +17,14 @@ output[4:0] devs_done_out,
 output[4:0] devs_enter_in,
 output reg[1:0] output_state,
 output reg[1:0] input_state,
-output reg disk_read
+output reg disk_read,
+output reg[4:0] disp
 );
 
 //wire[4:0] devs_done_out;
 //wire[4:0] devs_enter_in;
 
-reg[4:0] disp;
+//reg[4:0] disp;
 
 parameter output_state_none = 2'd0, output_state_waiting = 2'd1, output_state_done = 2'd2, output_state_after=2'd3;
 //reg[1:0] output_state = output_state_none;

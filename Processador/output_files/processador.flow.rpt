@@ -1,5 +1,5 @@
 Flow report for processador
-Thu Feb 18 17:47:44 2021
+Thu Feb 18 18:43:59 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,21 +40,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Feb 18 17:47:44 2021       ;
+; Flow Status                        ; Successful - Thu Feb 18 18:43:59 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
-; Top-level Entity Name              ; in_out_module                               ;
+; Top-level Entity Name              ; machine                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,792                                       ;
-;     Total combinational functions  ; 1,364                                       ;
-;     Dedicated logic registers      ; 692                                         ;
-; Total registers                    ; 692                                         ;
-; Total pins                         ; 394                                         ;
+; Total logic elements               ; 7,866                                       ;
+;     Total combinational functions  ; 7,290                                       ;
+;     Dedicated logic registers      ; 2,043                                       ;
+; Total registers                    ; 2043                                        ;
+; Total pins                         ; 432                                         ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total memory bits                  ; 139,008                                     ;
+; Embedded Multiplier 9-bit elements ; 8                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
@@ -64,29 +64,29 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/18/2021 17:47:23 ;
+; Start date & time ; 02/18/2021 18:42:33 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador         ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                          ;
-+-------------------------------------+----------------------------------------+---------------+---------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name   ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+---------------+------------+
-; COMPILER_SIGNATURE_ID               ; 180747809987198.161368124317925        ; --            ; --            ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --            ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --            ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --            ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; in_out_module ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; in_out_module ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; in_out_module ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --            ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --            ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --            ; --         ;
-; TOP_LEVEL_ENTITY                    ; in_out_module                          ; processador   ; --            ; --         ;
-+-------------------------------------+----------------------------------------+---------------+---------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 180747809987198.161368455322120        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; machine     ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; machine     ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; machine     ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; machine                                ; processador   ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -94,10 +94,10 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 944 MB              ; 00:00:31                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1027 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1036 MB             ; 00:00:01                           ;
-; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:32                           ;
+; Analysis & Synthesis ; 00:00:39     ; 1.0                     ; 1031 MB             ; 00:00:57                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1040 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1056 MB             ; 00:00:02                           ;
+; Total                ; 00:00:41     ; --                      ; --                  ; 00:00:59                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,7 +116,7 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform11.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/Waveform11.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform12.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/Waveform12.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/ processador -c processador
 
 

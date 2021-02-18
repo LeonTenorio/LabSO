@@ -256,7 +256,7 @@ assembly_lines = [
 ]
 
 #first program in hd
-'''
+
 assembly_lines = [
 	["1", "0", "0", "0", "000000000000", "00000001", ".done"],
 	["0100", "0000", ".main"],
@@ -268,9 +268,10 @@ assembly_lines = [
 	["1000", "0000", get_register("zero"), 5, get_register("k0"), 9],
 	["0111", get_register("k1"), ".done"],
 	["0000", "0001", 24],
+	['1'*32],
 	".done"
 ]
-'''
+
 
 dict_labels = {}
 

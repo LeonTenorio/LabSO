@@ -17,7 +17,10 @@ output[31:0] k1,
 output[4:0] devs_done_out,
 output[4:0] devs_enter_in,
 output[1:0] output_state,
-output[1:0] input_state
+output[1:0] input_state,
+output in_ready,
+output disk_read,
+output[4:0] in_out_disp
 );
 
 //wire bios_controll;
@@ -49,7 +52,10 @@ processador processador(
 .devs_done_out(devs_done_out),
 .devs_enter_in(devs_enter_in),
 .output_state(output_state),
-.input_state(input_state)
+.input_state(input_state),
+.in_ready(in_ready),
+.disk_read(disk_read),
+.in_out_disp(in_out_disp)
 );
 
 bios_module bios_module(

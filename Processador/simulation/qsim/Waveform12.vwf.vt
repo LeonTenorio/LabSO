@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "02/18/2021 17:10:44"
+// Generated on "02/18/2021 18:43:57"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          machine
 // 
@@ -40,8 +40,11 @@ wire [2:0] controll_state;
 wire [127:0] dev_out;
 wire [4:0] devs_done_out;
 wire [4:0] devs_enter_in;
+wire disk_read;
 wire done_inst;
 wire [3:0] enter_out;
+wire [4:0] in_out_disp;
+wire in_ready;
 wire [1:0] input_state;
 wire [31:0] k0;
 wire [31:0] k1;
@@ -61,10 +64,13 @@ machine i1 (
 	.dev_out(dev_out),
 	.devs_done_out(devs_done_out),
 	.devs_enter_in(devs_enter_in),
+	.disk_read(disk_read),
 	.done_inst(done_inst),
 	.done_out(done_out),
 	.enter_in(enter_in),
 	.enter_out(enter_out),
+	.in_out_disp(in_out_disp),
+	.in_ready(in_ready),
 	.input_state(input_state),
 	.k0(k0),
 	.k1(k1),
@@ -75,7 +81,7 @@ machine i1 (
 );
 initial 
 begin 
-#1000000 $finish;
+#5000000 $finish;
 end 
 
 // clk

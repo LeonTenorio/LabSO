@@ -7,11 +7,11 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source="/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform11.vwf" --testbench_file="/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/Waveform11.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source="/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform12.vwf" --testbench_file="/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/Waveform12.vwf.vt"
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details.    Info: Processing started: Thu Feb 18 17:47:42 2021Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform11.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/Waveform11.vwf.vtInfo (119006): Selected device EP4CE115F29C7 for design "processador"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-arning (201005): Ignoring output pin "dev_out[106]" in vector source file when writing test bench files
- when writing test bench files
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details.    Info: Processing started: Thu Feb 18 18:43:57 2021Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform12.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/Waveform12.vwf.vtInfo (119006): Selected device EP4CE115F29C7 for design "processador"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+noring output pin "bios_pc[11]" in vector source file when writing test bench files
+arning (201005): Ignoring output pin "output_state[0]" in vector source file when writing test bench files
 Completed successfully. 
 
 Completed successfully. 
@@ -20,7 +20,7 @@ Completed successfully.
 
 quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/" processador -c processador
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details.    Info: Processing started: Thu Feb 18 17:47:43 2021Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/ processador -c processadorInfo (119006): Selected device EP4CE115F29C7 for design "processador"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file processador.vo in folder "/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 1036 megabytes    Info: Processing ended: Thu Feb 18 17:47:44 2021    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details.    Info: Processing started: Thu Feb 18 18:43:57 2021Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/ processador -c processadorInfo (119006): Selected device EP4CE115F29C7 for design "processador"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file processador.vo in folder "/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 1056 megabytes    Info: Processing ended: Thu Feb 18 18:43:59 2021    Info: Elapsed time: 00:00:02    Info: Total CPU time (on all processors): 00:00:02
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
@@ -38,30 +38,53 @@ Reading pref.tcl
 # do processador.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:47:44 on Feb 18,2021# vlog -work work processador.vo 
-# -- Compiling module in_out_module
+# Start time: 18:44:00 on Feb 18,2021# vlog -work work processador.vo 
+# -- Compiling module machine
 # 
-# Top level modules:# 	in_out_module# End time: 17:47:45 on Feb 18,2021, Elapsed time: 0:00:01# Errors: 0, Warnings: 0
+# Top level modules:# 	machine# End time: 18:44:01 on Feb 18,2021, Elapsed time: 0:00:01# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:47:45 on Feb 18,2021# vlog -work work Waveform11.vwf.vt 
-# -- Compiling module in_out_module_vlg_vec_tst
+# Start time: 18:44:01 on Feb 18,2021# vlog -work work Waveform12.vwf.vt 
+# -- Compiling module machine_vlg_vec_tst
 # 
-# Top level modules:# 	in_out_module_vlg_vec_tst# End time: 17:47:45 on Feb 18,2021, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.in_out_module_vlg_vec_tst # Start time: 17:47:45 on Feb 18,2021# Loading work.in_out_module_vlg_vec_tst# Loading work.in_out_module# Loading cycloneive_ver.cycloneive_io_obuf# Loading cycloneive_ver.cycloneive_io_ibuf# Loading cycloneive_ver.cycloneive_lcell_comb# Loading altera_ver.dffeas# Loading altera_ver.PRIM_GDFF_LOW
+# Top level modules:# 	machine_vlg_vec_tst
+# End time: 18:44:01 on Feb 18,2021, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.machine_vlg_vec_tst # Start time: 18:44:01 on Feb 18,2021# Loading work.machine_vlg_vec_tst# Loading work.machine# Loading cycloneive_ver.cycloneive_io_obuf# Loading cycloneive_ver.cycloneive_io_ibuf# Loading cycloneive_ver.cycloneive_ram_block# Loading cycloneive_ver.cycloneive_ram_register# Loading cycloneive_ver.cycloneive_ram_pulse_generator# Loading cycloneive_ver.cycloneive_lcell_comb# Loading altera_ver.dffeas# Loading cycloneive_ver.cycloneive_mac_mult# Loading cycloneive_ver.cycloneive_mac_data_reg# Loading cycloneive_ver.cycloneive_mac_sign_reg# Loading cycloneive_ver.cycloneive_mac_mult_internal# Loading cycloneive_ver.cycloneive_mac_out# Loading altera_ver.PRIM_GDFF_LOW# ** Warning: Design size of 23561 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.# Expect performance to be adversely affected.
 # after#25
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.# ** Note: $finish    : Waveform11.vwf.vt(78)#    Time: 1 us  Iteration: 0  Instance: /in_out_module_vlg_vec_tst
-# End time: 17:47:45 on Feb 18,2021, Elapsed time: 0:00:00# Errors: 0, Warnings: 8
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 2020000 ps
+# Simulation time: 3890000 ps
+# Simulation time: 3890000 ps
+# Simulation time: 3890000 ps
+# Simulation time: 3890000 ps
+# Simulation time: 3890000 ps
+# ** Note: $finish    : Waveform12.vwf.vt(84)#    Time: 5 us  Iteration: 0  Instance: /machine_vlg_vec_tst
+# End time: 18:44:55 on Feb 18,2021, Elapsed time: 0:00:54# Errors: 0, Warnings: 9
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform11.vwf...
+Reading /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/Waveform12.vwf...
 
 Reading /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/processador.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/processador_20210218174745.sim.vwf
+Writing the resulting VWF to /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/processador_20210218184455.sim.vwf
 
 Finished VCD to VWF conversion.
 

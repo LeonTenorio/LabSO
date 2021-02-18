@@ -34,7 +34,9 @@ output[31:0] k1,
 output[4:0] devs_done_out,
 output[4:0] devs_enter_in,
 output[1:0] output_state,
-output[1:0] input_state
+output[1:0] input_state,
+output disk_read,
+output[4:0] in_out_disp
 );
 
 parameter um = 32'd1;
@@ -81,6 +83,7 @@ udcpc udcpc(.pc(process_pc),
 .inst13_17(inst13_17), 
 .inst18_22(inst18_22), 
 .inst23_31(inst23_31), 
+.inst22_31(inst22_31),
 //.inst13_22(inst13_22), 
 .inst18_31(inst18_31), 
 .inst9_31(inst9_31));
@@ -164,7 +167,9 @@ in_out_module in_out_module(
 .devs_done_out(devs_done_out),
 .devs_enter_in(devs_enter_in),
 .output_state(output_state),
-.input_state(input_state)
+.input_state(input_state),
+.disk_read(disk_read),
+.disp(in_out_disp)
 );
 
 always @(clk, bios_controll, pc, bios_pc)
