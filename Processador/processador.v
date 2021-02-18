@@ -18,7 +18,12 @@ input[3:0] done_out,
 output[2:0] controll_state,
 output out_done,
 output[31:0] k0,
-output[31:0] k1);
+output[31:0] k1,
+output[4:0] devs_done_out,
+output[4:0] devs_enter_in,
+output[1:0] output_state,
+output[1:0] input_state
+);
 
 wire[0:3] opcode, operation;
 wire reg_write, mem_write, in_req, pc_write;
@@ -64,7 +69,12 @@ unit_process unit_process(
 .done_out(done_out),
 .out_done(out_done),
 .k0(k0),
-.k1(k1));
+.k1(k1),
+.devs_done_out(devs_done_out),
+.devs_enter_in(devs_enter_in),
+.output_state(output_state),
+.input_state(input_state)
+);
 
 unit_control unit_control(
 .reg_write(reg_write),

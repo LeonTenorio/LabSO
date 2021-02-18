@@ -12,26 +12,31 @@ output reg[127:0] dev_out,
 input[3:0] enter_in,
 output reg[3:0] enter_out,
 input[3:0] done_out,
-input clk
+input clk,
+output[4:0] devs_done_out,
+output[4:0] devs_enter_in,
+output reg[1:0] output_state,
+output reg[1:0] input_state,
+output reg disk_read
 );
 
-wire[4:0] devs_done_out;
-wire[4:0] devs_enter_in;
+//wire[4:0] devs_done_out;
+//wire[4:0] devs_enter_in;
 
 reg[4:0] disp;
 
-parameter output_state_none = 2'd0, output_state_waiting = 2'd1, output_state_done = 2'd2;
-reg[1:0] output_state = output_state_none;
+parameter output_state_none = 2'd0, output_state_waiting = 2'd1, output_state_done = 2'd2, output_state_after=2'd3;
+//reg[1:0] output_state = output_state_none;
 
-parameter input_state_none = 2'd0, input_state_waiting = 2'd1, input_state_done = 2'd2;
-reg[1:0] input_state = input_state_none;
+parameter input_state_none = 2'd0, input_state_waiting = 2'd1, input_state_done = 2'd2, input_state_after=2'd3;
+//reg[1:0] input_state = input_state_none;
 
 wire[2:0] track;
 wire[4:0] sector;
 wire[6:0] address_in_sector;
 
 reg disk_write = 0;
-reg disk_read = 0;
+//reg disk_read = 0;
 
 wire[31:0] disk_read_value;
 
@@ -50,11 +55,11 @@ disk_controller disk_controller(
 .read_value(disk_read_value),
 .read_done(disk_read_done),
 .write_done(disk_write_done),
-.clk(clk)
+.clk(disk_clk)
 );
 
-parameter disk_clk_high_time = 3'd2;
-parameter disk_clk_low_time = 3'd2;
+parameter disk_clk_high_time = 3'd1;
+parameter disk_clk_low_time = 3'd1;
 
 clk_divisor clk_divisor(
 .clk(clk),
@@ -85,9 +90,13 @@ begin
 		begin
 			if(devs_done_out[disp]==0)
 			begin
-				output_state = output_state_none;
+				output_state = output_state_after;
 				out_ready = 1;
 			end
+		end
+		output_state_after:
+		begin
+			output_state = output_state_none;
 		end
 		default: 
 		begin
@@ -115,6 +124,7 @@ end
 always @(posedge clk)
 begin
 	in_ready = 0;
+	disk_read = 0;
 	case(input_state)
 		input_state_none:
 		begin
@@ -129,21 +139,29 @@ begin
 			begin
 				input_state = input_state_done;
 			end
+			else
+			begin
+				disk_read = 1;
+			end
 		end
 		input_state_done:
 		begin
 			if(devs_enter_in[disp]==0)
 			begin
-				input_state = input_state_none;
+				input_state = input_state_after;
 				in_ready = 1;
 			end
+		end
+		input_state_after:
+		begin
+			input_state = input_state_none;
 		end
 		default:
 		begin
 			input_state = input_state_none;
 		end
 	endcase
-	if(input_state==input_state_waiting)
+	/*if(input_state==input_state_waiting)
 	begin
 		if(disp == 5'd4)
 		begin
@@ -157,7 +175,7 @@ begin
 	else
 	begin
 		disk_read = 0;
-	end
+	end*/
 	if(input_state==input_state_done)
 	begin
 		if(disp < 5'd4)

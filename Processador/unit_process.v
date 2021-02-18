@@ -30,7 +30,12 @@ input inst_write,
 output out_done,
 input[3:0] done_out,
 output[31:0] k0,
-output[31:0] k1);
+output[31:0] k1,
+output[4:0] devs_done_out,
+output[4:0] devs_enter_in,
+output[1:0] output_state,
+output[1:0] input_state
+);
 
 parameter um = 32'd1;
 parameter zero = 32'd0;
@@ -45,6 +50,7 @@ wire[0:31] internal_inst;
 wire[31:0] read1, read2, prox_pc, wd_select, alu_result, alu_hi, alu_lo, b_select, read, e_data;
 wire[4:0] inst4_8, inst8_12, inst13_17, inst18_22;
 wire[8:0] inst23_31;
+wire[9:0] inst22_31;
 //wire[9:0] inst13_22;
 wire[13:0] inst18_31;
 wire[22:0] inst9_31;
@@ -137,22 +143,29 @@ memory memory(.adress(alu_result),
 .read(read), 
 .clk(clk));
 
-in_out_module in_out_module(.p_data(read1), 
-.e_data(e_data), 
+in_out_module in_out_module(
+.p_data(read1), 
 .drs(read2),
+.e_data(e_data), 
 //.drt(read3),
 //.adress(inst13_22), 
-.address(inst23_31),
+//.address(inst23_31),
+.adress(inst22_31),
 .in_req(in_req), 
 .new_out(new_out), 
 .in_ready(in_ready), 
+.out_ready(out_done),
 .dev_in(dev_in), 
 .dev_out(dev_out), 
 .enter_in(enter_in), 
 .enter_out(enter_out),
 .done_out(done_out),
-.out_done(out_done),
-.clk(clk));
+.clk(clk),
+.devs_done_out(devs_done_out),
+.devs_enter_in(devs_enter_in),
+.output_state(output_state),
+.input_state(input_state)
+);
 
 always @(clk, bios_controll, pc, bios_pc)
 begin

@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "02/17/2021 16:22:45"
+// Generated on "02/18/2021 17:16:43"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          in_out_module
 // 
@@ -33,16 +33,21 @@ reg [9:0] adress;
 reg clk;
 reg [127:0] dev_in;
 reg [3:0] done_out;
+reg [31:0] drs;
 reg [3:0] enter_in;
 reg in_req;
 reg new_out;
 reg [31:0] p_data;
 // wires                                               
 wire [127:0] dev_out;
+wire [4:0] devs_done_out;
+wire [4:0] devs_enter_in;
 wire [31:0] e_data;
 wire [3:0] enter_out;
 wire in_ready;
+wire [1:0] input_state;
 wire out_ready;
+wire [1:0] output_state;
 
 // assign statements (if any)                          
 in_out_module i1 (
@@ -51,14 +56,19 @@ in_out_module i1 (
 	.clk(clk),
 	.dev_in(dev_in),
 	.dev_out(dev_out),
+	.devs_done_out(devs_done_out),
+	.devs_enter_in(devs_enter_in),
 	.done_out(done_out),
+	.drs(drs),
 	.e_data(e_data),
 	.enter_in(enter_in),
 	.enter_out(enter_out),
 	.in_ready(in_ready),
 	.in_req(in_req),
+	.input_state(input_state),
 	.new_out(new_out),
 	.out_ready(out_ready),
+	.output_state(output_state),
 	.p_data(p_data)
 );
 initial 

@@ -13,7 +13,11 @@ output[0:7] opcode_operation,
 output[2:0] controll_state,
 output out_done,
 output[31:0] k0,
-output[31:0] k1
+output[31:0] k1,
+output[4:0] devs_done_out,
+output[4:0] devs_enter_in,
+output[1:0] output_state,
+output[1:0] input_state
 );
 
 //wire bios_controll;
@@ -41,7 +45,11 @@ processador processador(
 .controll_state(controll_state),
 .out_done(out_done),
 .k0(k0),
-.k1(k1)
+.k1(k1),
+.devs_done_out(devs_done_out),
+.devs_enter_in(devs_enter_in),
+.output_state(output_state),
+.input_state(input_state)
 );
 
 bios_module bios_module(

@@ -668,6 +668,66 @@
 					"strict" : false
 				},
 				{
+					"name" : "devs_done_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_done_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_done_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_done_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_done_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_enter_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_enter_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_enter_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_enter_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "devs_enter_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "output_state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "output_state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "input_state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "input_state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "disk_read",
+					"strict" : false
+				},
+				{
 					"name" : "new_out",
 					"strict" : false
 				},
@@ -688,18 +748,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "adress[3]",
-					"strict" : false
-				},
-				{
-					"name" : "adress[4]",
-					"strict" : false
-				},
-				{
-					"name" : "adress[0]",
-					"strict" : false
-				},
-				{
 					"name" : "adress[1]",
 					"strict" : false
 				},
@@ -708,7 +756,51 @@
 					"strict" : false
 				},
 				{
+					"name" : "adress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[4]",
+					"strict" : false
+				},
+				{
 					"name" : "adress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "done_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "enter_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "enter_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "enter_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "enter_in[3]",
 					"strict" : false
 				},
 				{
@@ -1228,42 +1320,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "enter_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "enter_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "enter_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "enter_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "in_req",
-					"strict" : false
-				},
-				{
-					"name" : "done_out[1]",
-					"strict" : false
-				},
-				{
-					"name" : "done_out[2]",
-					"strict" : false
-				},
-				{
-					"name" : "done_out[0]",
-					"strict" : false
-				},
-				{
-					"name" : "done_out[3]",
-					"strict" : false
-				},
-				{
 					"name" : "p_data[0]",
 					"strict" : false
 				},
@@ -1392,11 +1448,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "drs[0]",
+					"name" : "in_req",
 					"strict" : false
 				},
 				{
 					"name" : "drs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[0]",
 					"strict" : false
 				},
 				{
@@ -1405,6 +1465,50 @@
 				},
 				{
 					"name" : "drs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[4]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[6]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[7]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[8]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[9]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[10]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[11]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[12]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[13]",
+					"strict" : false
+				},
+				{
+					"name" : "drs[14]",
 					"strict" : false
 				}
 			]

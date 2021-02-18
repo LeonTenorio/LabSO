@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Wed Feb 17 18:46:01 2021
+Thu Feb 18 17:47:37 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -13,22 +13,16 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. State Machine - |in_out_module|input_state
- 10. State Machine - |in_out_module|output_state
- 11. General Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for disk_controller:disk_controller|altsyncram:values_rtl_0|altsyncram_4pd1:auto_generated
- 15. Parameter Settings for User Entity Instance: Top-level Entity: |in_out_module
- 16. Parameter Settings for User Entity Instance: clk_divisor:clk_divisor
- 17. Parameter Settings for Inferred Entity Instance: disk_controller:disk_controller|altsyncram:values_rtl_0
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "clk_divisor:clk_divisor"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |in_out_module
+ 11. Parameter Settings for User Entity Instance: disk_controller:disk_controller
+ 12. Parameter Settings for User Entity Instance: clk_divisor:clk_divisor
+ 13. Port Connectivity Checks: "clk_divisor:clk_divisor"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,18 +48,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 17 18:46:01 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 18 17:47:37 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; in_out_module                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 988                                         ;
-;     Total combinational functions  ; 986                                         ;
-;     Dedicated logic registers      ; 172                                         ;
-; Total registers                    ; 172                                         ;
-; Total pins                         ; 379                                         ;
+; Total logic elements               ; 1,792                                       ;
+;     Total combinational functions  ; 1,364                                       ;
+;     Dedicated logic registers      ; 692                                         ;
+; Total registers                    ; 692                                         ;
+; Total pins                         ; 394                                         ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 480                                         ;
+; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -176,104 +170,59 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; in_out_module.v                  ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v        ;         ;
-; disk_controller.v                ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v      ;         ;
-; clk_divisor.v                    ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/clk_divisor.v          ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
-; aglobal180.inc                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/aglobal180.inc           ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altrom.inc               ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altram.inc               ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altdpram.inc             ;         ;
-; db/altsyncram_4pd1.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_4pd1.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; in_out_module.v                  ; yes             ; User Verilog HDL File  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v   ;         ;
+; disk_controller.v                ; yes             ; User Verilog HDL File  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v ;         ;
+; clk_divisor.v                    ; yes             ; User Verilog HDL File  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/clk_divisor.v     ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 988             ;
-;                                             ;                 ;
-; Total combinational functions               ; 986             ;
-; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 535             ;
-;     -- 3 input functions                    ; 432             ;
-;     -- <=2 input functions                  ; 19              ;
-;                                             ;                 ;
-; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 986             ;
-;     -- arithmetic mode                      ; 0               ;
-;                                             ;                 ;
-; Total registers                             ; 172             ;
-;     -- Dedicated logic registers            ; 172             ;
-;     -- I/O registers                        ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 379             ;
-; Total memory bits                           ; 480             ;
-;                                             ;                 ;
-; Embedded Multiplier 9-bit elements          ; 0               ;
-;                                             ;                 ;
-; Maximum fan-out node                        ; adress[5]~input ;
-; Maximum fan-out                             ; 246             ;
-; Total fan-out                               ; 5023            ;
-; Average fan-out                             ; 2.58            ;
-+---------------------------------------------+-----------------+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                ;
++---------------------------------------------+------------------------------+
+; Resource                                    ; Usage                        ;
++---------------------------------------------+------------------------------+
+; Estimated Total logic elements              ; 1,792                        ;
+;                                             ;                              ;
+; Total combinational functions               ; 1364                         ;
+; Logic element usage by number of LUT inputs ;                              ;
+;     -- 4 input functions                    ; 809                          ;
+;     -- 3 input functions                    ; 479                          ;
+;     -- <=2 input functions                  ; 76                           ;
+;                                             ;                              ;
+; Logic elements by mode                      ;                              ;
+;     -- normal mode                          ; 1364                         ;
+;     -- arithmetic mode                      ; 0                            ;
+;                                             ;                              ;
+; Total registers                             ; 692                          ;
+;     -- Dedicated logic registers            ; 692                          ;
+;     -- I/O registers                        ; 0                            ;
+;                                             ;                              ;
+; I/O pins                                    ; 394                          ;
+;                                             ;                              ;
+; Embedded Multiplier 9-bit elements          ; 0                            ;
+;                                             ;                              ;
+; Maximum fan-out node                        ; clk_divisor:clk_divisor|high ;
+; Maximum fan-out                             ; 521                          ;
+; Total fan-out                               ; 7764                         ;
+; Average fan-out                             ; 2.73                         ;
++---------------------------------------------+------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |in_out_module                            ; 986 (986)           ; 172 (170)                 ; 480         ; 0            ; 0       ; 0         ; 379  ; 0            ; |in_out_module                                                                                        ; in_out_module   ; work         ;
-;    |disk_controller:disk_controller|      ; 0 (0)               ; 2 (2)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller                                                        ; disk_controller ; work         ;
-;       |altsyncram:values_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller|altsyncram:values_rtl_0                                ; altsyncram      ; work         ;
-;          |altsyncram_4pd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 480         ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller|altsyncram:values_rtl_0|altsyncram_4pd1:auto_generated ; altsyncram_4pd1 ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name     ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+-----------------+--------------+
+; |in_out_module                       ; 1364 (983)          ; 692 (168)                 ; 0           ; 0            ; 0       ; 0         ; 394  ; 0            ; |in_out_module                                 ; in_out_module   ; work         ;
+;    |clk_divisor:clk_divisor|         ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|clk_divisor:clk_divisor         ; clk_divisor     ; work         ;
+;    |disk_controller:disk_controller| ; 377 (377)           ; 520 (520)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |in_out_module|disk_controller:disk_controller ; disk_controller ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
-+---------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+---------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; disk_controller:disk_controller|altsyncram:values_rtl_0|altsyncram_4pd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 15           ; 32           ; 15           ; 32           ; 480  ; None ;
-+---------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |in_out_module|input_state                                                                                      ;
-+---------------------------------+------------------------------+------------------------------+---------------------------------+
-; Name                            ; input_state.input_state_none ; input_state.input_state_done ; input_state.input_state_waiting ;
-+---------------------------------+------------------------------+------------------------------+---------------------------------+
-; input_state.input_state_none    ; 0                            ; 0                            ; 0                               ;
-; input_state.input_state_waiting ; 1                            ; 0                            ; 1                               ;
-; input_state.input_state_done    ; 1                            ; 1                            ; 0                               ;
-+---------------------------------+------------------------------+------------------------------+---------------------------------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |in_out_module|output_state                                                                                             ;
-+-----------------------------------+--------------------------------+--------------------------------+-----------------------------------+
-; Name                              ; output_state.output_state_none ; output_state.output_state_done ; output_state.output_state_waiting ;
-+-----------------------------------+--------------------------------+--------------------------------+-----------------------------------+
-; output_state.output_state_none    ; 0                              ; 0                              ; 0                                 ;
-; output_state.output_state_waiting ; 1                              ; 0                              ; 1                                 ;
-; output_state.output_state_done    ; 1                              ; 1                              ; 0                                 ;
-+-----------------------------------+--------------------------------+--------------------------------+-----------------------------------+
 
 
 +------------------------------------------------------+
@@ -281,52 +230,42 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 172   ;
+; Total registers                              ; 692   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 132   ;
+; Number of registers using Synchronous Load   ; 164   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 140   ;
+; Number of registers using Clock Enable       ; 652   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                            ;
-+---------------------------------------------------+----------------------------------------------+------+
-; Register Name                                     ; Megafunction                                 ; Type ;
-+---------------------------------------------------+----------------------------------------------+------+
-; disk_controller:disk_controller|read_value[0..31] ; disk_controller:disk_controller|values_rtl_0 ; RAM  ;
-+---------------------------------------------------+----------------------------------------------+------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |in_out_module|e_data[23]~reg0 ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux1            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux2            ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |in_out_module|Selector131     ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |in_out_module|Selector1       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------+
-; Source assignments for disk_controller:disk_controller|altsyncram:values_rtl_0|altsyncram_4pd1:auto_generated ;
-+---------------------------------+--------------------+------+-------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                              ;
-+---------------------------------+--------------------+------+-------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
-+---------------------------------+--------------------+------+-------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |in_out_module|e_data[3]~reg0                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[6][12] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[5][9]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[4][12] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[3][14] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[2][29] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[1][5]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |in_out_module|disk_controller:disk_controller|registers[0][2]  ;
+; 15:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |in_out_module|disk_controller:disk_controller|read_value[13]   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux3                                             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |in_out_module|Mux2                                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |in_out_module|Mux6                                             ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |in_out_module|Mux4                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -337,12 +276,25 @@ Encoding Type:  One-Hot
 ; output_state_none    ; 00    ; Unsigned Binary                                ;
 ; output_state_waiting ; 01    ; Unsigned Binary                                ;
 ; output_state_done    ; 10    ; Unsigned Binary                                ;
+; output_state_after   ; 11    ; Unsigned Binary                                ;
 ; input_state_none     ; 00    ; Unsigned Binary                                ;
 ; input_state_waiting  ; 01    ; Unsigned Binary                                ;
 ; input_state_done     ; 10    ; Unsigned Binary                                ;
-; disk_clk_high_time   ; 010   ; Unsigned Binary                                ;
-; disk_clk_low_time    ; 010   ; Unsigned Binary                                ;
+; input_state_after    ; 11    ; Unsigned Binary                                ;
+; disk_clk_high_time   ; 001   ; Unsigned Binary                                ;
+; disk_clk_low_time    ; 001   ; Unsigned Binary                                ;
 +----------------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: disk_controller:disk_controller ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; prepare_cycles ; 00011 ; Unsigned Binary                                     ;
+; um             ; 00001 ; Unsigned Binary                                     ;
++----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -357,100 +309,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: disk_controller:disk_controller|altsyncram:values_rtl_0 ;
-+------------------------------------+----------------------+----------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                         ;
-+------------------------------------+----------------------+----------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                      ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                   ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                 ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                 ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                               ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                      ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                      ;
-; WIDTH_A                            ; 32                   ; Untyped                                      ;
-; WIDTHAD_A                          ; 4                    ; Untyped                                      ;
-; NUMWORDS_A                         ; 15                   ; Untyped                                      ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                      ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                      ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                      ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                      ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                      ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                      ;
-; WIDTH_B                            ; 32                   ; Untyped                                      ;
-; WIDTHAD_B                          ; 4                    ; Untyped                                      ;
-; NUMWORDS_B                         ; 15                   ; Untyped                                      ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                      ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                      ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                      ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                      ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                      ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                      ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                      ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                      ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                      ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                      ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                      ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                      ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                      ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                      ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                      ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                      ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                      ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                      ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                      ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                      ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                      ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                      ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                      ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                      ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                      ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                      ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                      ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                      ;
-; CBXI_PARAMETER                     ; altsyncram_4pd1      ; Untyped                                      ;
-+------------------------------------+----------------------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                    ;
-+-------------------------------------------+---------------------------------------------------------+
-; Name                                      ; Value                                                   ;
-+-------------------------------------------+---------------------------------------------------------+
-; Number of entity instances                ; 1                                                       ;
-; Entity Instance                           ; disk_controller:disk_controller|altsyncram:values_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                               ;
-;     -- WIDTH_A                            ; 32                                                      ;
-;     -- NUMWORDS_A                         ; 15                                                      ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                            ;
-;     -- WIDTH_B                            ; 32                                                      ;
-;     -- NUMWORDS_B                         ; 15                                                      ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                  ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                            ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                    ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                               ;
-+-------------------------------------------+---------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "clk_divisor:clk_divisor"                                                                    ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; low_time[2]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; low_time[1]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; low_time[0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; high_time[2] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; high_time[1] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; high_time[0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; out_clk      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------+
+; Port Connectivity Checks: "clk_divisor:clk_divisor" ;
++-----------------+-------+----------+----------------+
+; Port            ; Type  ; Severity ; Details        ;
++-----------------+-------+----------+----------------+
+; low_time[2..1]  ; Input ; Info     ; Stuck at GND   ;
+; low_time[0]     ; Input ; Info     ; Stuck at VCC   ;
+; high_time[2..1] ; Input ; Info     ; Stuck at GND   ;
+; high_time[0]    ; Input ; Info     ; Stuck at VCC   ;
++-----------------+-------+----------+----------------+
 
 
 +-----------------------------------------------------+
@@ -458,20 +326,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 379                         ;
-; cycloneiii_ff         ; 172                         ;
-;     ENA               ; 8                           ;
-;     ENA SLD           ; 132                         ;
-;     plain             ; 32                          ;
-; cycloneiii_lcell_comb ; 986                         ;
-;     normal            ; 986                         ;
-;         2 data inputs ; 19                          ;
-;         3 data inputs ; 432                         ;
-;         4 data inputs ; 535                         ;
-; cycloneiii_ram_block  ; 32                          ;
+; boundary_port         ; 394                         ;
+; cycloneiii_ff         ; 692                         ;
+;     ENA               ; 488                         ;
+;     ENA SLD           ; 164                         ;
+;     plain             ; 40                          ;
+; cycloneiii_lcell_comb ; 1364                        ;
+;     normal            ; 1364                        ;
+;         2 data inputs ; 76                          ;
+;         3 data inputs ; 479                         ;
+;         4 data inputs ; 809                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.18                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 4.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -480,7 +347,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -490,7 +357,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Feb 17 18:45:48 2021
+    Info: Processing started: Thu Feb 18 17:47:23 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -537,59 +404,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file clk_div
 Info (12021): Found 1 design units, including 1 entities, in source file machine.v
     Info (12023): Found entity 1: machine File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/machine.v Line: 1
 Info (12127): Elaborating entity "in_out_module" for the top level hierarchy
-Info (12128): Elaborating entity "disk_controller" for hierarchy "disk_controller:disk_controller" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 54
-Info (12128): Elaborating entity "clk_divisor" for hierarchy "clk_divisor:clk_divisor" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 64
-Warning (276027): Inferred dual-clock RAM node "disk_controller:disk_controller|values_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
-Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "disk_controller:disk_controller|values_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 32
-        Info (286033): Parameter WIDTHAD_A set to 4
-        Info (286033): Parameter NUMWORDS_A set to 15
-        Info (286033): Parameter WIDTH_B set to 32
-        Info (286033): Parameter WIDTHAD_B set to 4
-        Info (286033): Parameter NUMWORDS_B set to 15
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-Info (12130): Elaborated megafunction instantiation "disk_controller:disk_controller|altsyncram:values_rtl_0"
-Info (12133): Instantiated megafunction "disk_controller:disk_controller|altsyncram:values_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "32"
-    Info (12134): Parameter "WIDTHAD_A" = "4"
-    Info (12134): Parameter "NUMWORDS_A" = "15"
-    Info (12134): Parameter "WIDTH_B" = "32"
-    Info (12134): Parameter "WIDTHAD_B" = "4"
-    Info (12134): Parameter "NUMWORDS_B" = "15"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4pd1.tdf
-    Info (12023): Found entity 1: altsyncram_4pd1 File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_4pd1.tdf Line: 27
+Info (12128): Elaborating entity "disk_controller" for hierarchy "disk_controller:disk_controller" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 59
+Info (12128): Elaborating entity "clk_divisor" for hierarchy "clk_divisor:clk_divisor" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 69
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/output_files/processador.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 28 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "drs[4]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[5]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[6]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[7]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[8]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[9]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[10]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[11]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[12]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[13]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-    Warning (15610): No output dependent on input pin "drs[14]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "drs[15]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
     Warning (15610): No output dependent on input pin "drs[16]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
     Warning (15610): No output dependent on input pin "drs[17]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
@@ -607,16 +427,16 @@ Warning (21074): Design contains 28 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "drs[29]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
     Warning (15610): No output dependent on input pin "drs[30]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
     Warning (15610): No output dependent on input pin "drs[31]" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 3
-Info (21057): Implemented 1407 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2236 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 213 input pins
-    Info (21059): Implemented 166 output pins
-    Info (21061): Implemented 996 logic cells
-    Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 1015 megabytes
-    Info: Processing ended: Wed Feb 17 18:46:01 2021
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21059): Implemented 181 output pins
+    Info (21061): Implemented 1842 logic cells
+Info (144001): Generated suppressed messages file /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/output_files/processador.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 988 megabytes
+    Info: Processing ended: Thu Feb 18 17:47:37 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+
