@@ -26,7 +26,8 @@ output[2:0] track,
 output[4:0] sector,
 output[6:0] address_in_sector,
 output[31:0] v0, 
-output[31:0] s2
+output[31:0] s2,
+output[31:0] t2
 );
 
 wire[0:3] opcode, operation;
@@ -78,6 +79,7 @@ unit_process unit_process(
 .t3(t3),
 .v0(v0),
 .s2(s2),
+.t2(t2),
 .track(track),
 .sector(sector),
 .address_in_sector(address_in_sector)

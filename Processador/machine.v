@@ -22,7 +22,8 @@ output[4:0] sector,
 output[6:0] address_in_sector,
 output[31:0] v0, 
 output[31:0] s2,
-output[1:0] bios_state
+output[1:0] bios_state,
+output[31:0] t2
 );
 
 //wire bios_controll;
@@ -55,6 +56,7 @@ processador processador(
 .t3(t3),
 .v0(v0),
 .s2(s2),
+.t2(t2),
 .in_ready(in_ready),
 .track(track),
 .sector(sector),

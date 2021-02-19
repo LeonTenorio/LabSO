@@ -25,7 +25,7 @@ begin
 	//REG[2] assumira a cada iteracao do loop o valor de Fn
 	//REG[2] terah o termo Fn-1
 	//REG[3] terah o termo Fn-2
-	registers[0] = {4'b1001, 4'd0, 5'd0, 10'd0, 9'd0};				//ENTRADA:	IN 0
+	/*registers[0] = {4'b1001, 4'd0, 5'd0, 10'd0, 9'd0};				//ENTRADA:	IN 0
 	registers[1] = {4'b0111, 5'd10, 23'd0};							//				LI 10, 0
 	registers[2] = {4'b0100, 4'b0011, 5'd0, 5'd10, 14'd11};		//				BEQ 0, 10, ZERO_UM
 	registers[3] = {4'b0111, 5'd10, 23'd1};							//				LI 10, 1
@@ -56,7 +56,7 @@ begin
 	registers[23] = {4'b1010, 4'd0, 5'd2, 10'd0, 9'd0};			//SAIDA: OUT 2
 	registers[24] = {4'b0100, 4'd0, 24'd0};							//			B ENTRADA
 	
-	registers[25] = {32'd0};
+	registers[25] = {32'd0};*/
 	
 	/*ALGORITMO DE TESTE*/
 	//Teste das instrucoes ainda nao utilizadas

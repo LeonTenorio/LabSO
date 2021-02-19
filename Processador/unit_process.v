@@ -37,7 +37,8 @@ output[2:0] track,
 output[4:0] sector,
 output[6:0] address_in_sector,
 output[31:0] v0, 
-output[31:0] s2
+output[31:0] s2,
+output[31:0] t2
 );
 
 parameter um = 32'd1;
@@ -129,7 +130,8 @@ bc_registers bc_registers(.rs(inst8_12),
 .t0(t0),
 .t3(t3),
 .v0(v0),
-.s2(s2)
+.s2(s2),
+.t2(t2)
 );
 
 mux_op_b mux_op_b(.deslocamento(inst23_31), 
