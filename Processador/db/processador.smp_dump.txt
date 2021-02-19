@@ -1,11 +1,4 @@
 
-State Machine - |machine|bios_module:bios_module|state
-Name state.PROCESSINT state.PROCESSEXEC state.BIOSEXEC state.INV 
-state.INV 0 0 0 0 
-state.BIOSEXEC 0 0 1 1 
-state.PROCESSEXEC 0 1 0 1 
-state.PROCESSINT 1 0 0 1 
-
 State Machine - |machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|input_state
 Name input_state.input_state_after input_state.input_state_done input_state.input_state_waiting input_state.input_state_none 
 input_state.input_state_none 0 0 0 0 

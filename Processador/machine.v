@@ -21,7 +21,8 @@ output[2:0] track,
 output[4:0] sector,
 output[6:0] address_in_sector,
 output[31:0] v0, 
-output[31:0] s2
+output[31:0] s2,
+output[1:0] bios_state
 );
 
 //wire bios_controll;
@@ -68,7 +69,8 @@ bios_module bios_module(
 .processor_opcode_operation(opcode_operation),
 .instruction(bios_inst),
 .controll(bios_controll),
-.bios_info(bios_info)
+.bios_info(bios_info),
+.state(bios_state)
 );
 
 endmodule 

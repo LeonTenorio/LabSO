@@ -107,4 +107,6 @@ unit_control unit_control(
 .bios_write_pc(bios_write_pc),
 .estado(controll_state));
 
+	assign opcode_operation = {opcode, operation};
+
 endmodule 
