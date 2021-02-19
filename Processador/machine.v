@@ -14,13 +14,14 @@ output[2:0] controll_state,
 output out_done,
 output[31:0] k0,
 output[31:0] k1,
-output[4:0] devs_done_out,
-output[4:0] devs_enter_in,
-output[1:0] output_state,
-output[1:0] input_state,
+output[31:0] t0,
+output[31:0] t3,
 output in_ready,
-output disk_read,
-output[4:0] in_out_disp
+output[2:0] track,
+output[4:0] sector,
+output[6:0] address_in_sector,
+output[31:0] v0, 
+output[31:0] s2
 );
 
 //wire bios_controll;
@@ -49,13 +50,14 @@ processador processador(
 .out_done(out_done),
 .k0(k0),
 .k1(k1),
-.devs_done_out(devs_done_out),
-.devs_enter_in(devs_enter_in),
-.output_state(output_state),
-.input_state(input_state),
+.t0(t0),
+.t3(t3),
+.v0(v0),
+.s2(s2),
 .in_ready(in_ready),
-.disk_read(disk_read),
-.in_out_disp(in_out_disp)
+.track(track),
+.sector(sector),
+.address_in_sector(address_in_sector)
 );
 
 bios_module bios_module(

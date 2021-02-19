@@ -13,31 +13,28 @@ input[3:0] enter_in,
 output reg[3:0] enter_out,
 input[3:0] done_out,
 input clk,
-output[4:0] devs_done_out,
-output[4:0] devs_enter_in,
-output reg[1:0] output_state,
-output reg[1:0] input_state,
-output reg disk_read,
-output reg[4:0] disp
+output[2:0] track,
+output[4:0] sector,
+output[6:0] address_in_sector
 );
 
-//wire[4:0] devs_done_out;
-//wire[4:0] devs_enter_in;
+wire[4:0] devs_done_out;
+wire[4:0] devs_enter_in;
 
-//reg[4:0] disp;
+reg[4:0] disp;
 
 parameter output_state_none = 2'd0, output_state_waiting = 2'd1, output_state_done = 2'd2, output_state_after=2'd3;
-//reg[1:0] output_state = output_state_none;
+reg[1:0] output_state = output_state_none;
 
 parameter input_state_none = 2'd0, input_state_waiting = 2'd1, input_state_done = 2'd2, input_state_after=2'd3;
-//reg[1:0] input_state = input_state_none;
+reg[1:0] input_state = input_state_none;
 
-wire[2:0] track;
-wire[4:0] sector;
-wire[6:0] address_in_sector;
+//wire[2:0] track;
+//wire[4:0] sector;
+//wire[6:0] address_in_sector;
 
 reg disk_write = 0;
-//reg disk_read = 0;
+reg disk_read = 0;
 
 wire[31:0] disk_read_value;
 

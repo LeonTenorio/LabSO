@@ -133,7 +133,7 @@ LI $t1 256
 LI $t2 127
 .load_system_main_program_loop
 	.load_system_main_loop_sector
-		BL .concat_disk_acess
+		BL .concat_disk_access
 		IN $t0 $v0 128
 		BEQ $t0 $t3 .load_system_main_program_loop_out
 		BNE $s2 $t2 .load_system_main_program_loop_sector_continue

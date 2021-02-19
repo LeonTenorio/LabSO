@@ -195,9 +195,9 @@ assembly_lines = [
 	".concat_disk_access",
 	["1000", "0000", get_register("s0"), 5, get_register("v0"), 9],
 	["0001", "1000", get_register("v0"), "01000", get_register("v0"), 9],
-	["0001", "0100", get_register("v0"), get_register("v0"), get_register("s1"), 9],
+	["0001", "0100", get_register("v0"), get_register("s1"), get_register("v0"), 9],
 	["0001", "1000", get_register("v0"), "01000", get_register("v0"), 9],
-	["0001", "0100", get_register("v0"), get_register("v0"), get_register("s2"), 9],
+	["0001", "0100", get_register("v0"), get_register("s2"), get_register("v0"), 9],
 	["0100", "0010", get_register("ra"), 19],
 	".load_system_main_program",
 	["1000", "0000", get_register("ra"), 5, get_register("s8"), 9],
@@ -256,7 +256,7 @@ assembly_lines = [
 ]
 
 #first program in hd
-
+'''
 assembly_lines = [
 	["1", "0", "0", "0", "000000000000", "00000001", ".done"],
 	["0100", "0000", ".main"],
@@ -271,7 +271,7 @@ assembly_lines = [
 	['1'*32],
 	".done"
 ]
-
+'''
 
 dict_labels = {}
 
