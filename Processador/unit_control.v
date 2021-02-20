@@ -19,14 +19,16 @@ input[0:3] operation,
 input clk,
 output reg inst_write,
 output reg done_inst,
-output reg bios_write_pc);
+output reg bios_write_pc,
+output reg[2:0] estado);
 
 parameter Inv=3'd0, A=3'd1, B=3'd2, C=3'd3, D=3'd4, Input=3'd5, Halt=3'd6, Output=3'd7;
 wire[7:0] opcode_operation;
 
-reg[2:0] estado=Inv;
+//reg[2:0] estado=Inv;
 
 reg reg_in_ready;
+reg reg_out_done;
 //reg reg_wake_up;
 
 always @(negedge clk)//Troca de estado
@@ -81,7 +83,7 @@ begin
 		end
 		Output:
 		begin
-			if(out_done==1)
+			if(reg_out_done==1)
 				estado = D;
 		end
 		Halt:
@@ -103,6 +105,10 @@ begin
 		reg_in_ready = in_ready;
 	else
 		reg_in_ready = 0;
+	if(estado==Output)
+		reg_out_done = out_done;
+	else
+		reg_out_done = 0;
 	//if(estado==Halt)
 		//reg_wake_up = wake_up;
 	//else

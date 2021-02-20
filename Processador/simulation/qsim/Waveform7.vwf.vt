@@ -1,0 +1,765 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "02/16/2021 18:40:12"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          machine
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module machine_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [127:0] dev_in;
+reg [3:0] done_out;
+reg [3:0] enter_in;
+// wires                                               
+wire bios_controll;
+wire [31:0] bios_pc;
+wire [2:0] controll_state;
+wire [127:0] dev_out;
+wire done_inst;
+wire [3:0] enter_out;
+wire [31:0] k0;
+wire [31:0] k1;
+wire [0:7] opcode_operation;
+wire out_done;
+wire [31:0] process_pc;
+
+// assign statements (if any)                          
+machine i1 (
+// port map - connection between master ports and signals/registers   
+	.bios_controll(bios_controll),
+	.bios_pc(bios_pc),
+	.clk(clk),
+	.controll_state(controll_state),
+	.dev_in(dev_in),
+	.dev_out(dev_out),
+	.done_inst(done_inst),
+	.done_out(done_out),
+	.enter_in(enter_in),
+	.enter_out(enter_out),
+	.k0(k0),
+	.k1(k1),
+	.opcode_operation(opcode_operation),
+	.out_done(out_done),
+	.process_pc(process_pc)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #2500 1'b1;
+	#2500;
+end 
+// done_out[ 3 ]
+initial
+begin
+	done_out[3] = 1'b0;
+	done_out[3] = #70000 1'b1;
+end 
+// done_out[ 2 ]
+initial
+begin
+	done_out[2] = 1'b0;
+	done_out[2] = #70000 1'b1;
+end 
+// done_out[ 1 ]
+initial
+begin
+	done_out[1] = 1'b0;
+	done_out[1] = #70000 1'b1;
+end 
+// done_out[ 0 ]
+initial
+begin
+	done_out[0] = 1'b0;
+	done_out[0] = #70000 1'b1;
+end 
+// dev_in[ 127 ]
+initial
+begin
+	dev_in[127] = 1'b0;
+end 
+// dev_in[ 126 ]
+initial
+begin
+	dev_in[126] = 1'b0;
+end 
+// dev_in[ 125 ]
+initial
+begin
+	dev_in[125] = 1'b0;
+end 
+// dev_in[ 124 ]
+initial
+begin
+	dev_in[124] = 1'b0;
+end 
+// dev_in[ 123 ]
+initial
+begin
+	dev_in[123] = 1'b0;
+end 
+// dev_in[ 122 ]
+initial
+begin
+	dev_in[122] = 1'b0;
+end 
+// dev_in[ 121 ]
+initial
+begin
+	dev_in[121] = 1'b0;
+end 
+// dev_in[ 120 ]
+initial
+begin
+	dev_in[120] = 1'b0;
+end 
+// dev_in[ 119 ]
+initial
+begin
+	dev_in[119] = 1'b0;
+end 
+// dev_in[ 118 ]
+initial
+begin
+	dev_in[118] = 1'b0;
+end 
+// dev_in[ 117 ]
+initial
+begin
+	dev_in[117] = 1'b0;
+end 
+// dev_in[ 116 ]
+initial
+begin
+	dev_in[116] = 1'b0;
+end 
+// dev_in[ 115 ]
+initial
+begin
+	dev_in[115] = 1'b0;
+end 
+// dev_in[ 114 ]
+initial
+begin
+	dev_in[114] = 1'b0;
+end 
+// dev_in[ 113 ]
+initial
+begin
+	dev_in[113] = 1'b0;
+end 
+// dev_in[ 112 ]
+initial
+begin
+	dev_in[112] = 1'b0;
+end 
+// dev_in[ 111 ]
+initial
+begin
+	dev_in[111] = 1'b0;
+end 
+// dev_in[ 110 ]
+initial
+begin
+	dev_in[110] = 1'b0;
+end 
+// dev_in[ 109 ]
+initial
+begin
+	dev_in[109] = 1'b0;
+end 
+// dev_in[ 108 ]
+initial
+begin
+	dev_in[108] = 1'b0;
+end 
+// dev_in[ 107 ]
+initial
+begin
+	dev_in[107] = 1'b0;
+end 
+// dev_in[ 106 ]
+initial
+begin
+	dev_in[106] = 1'b0;
+end 
+// dev_in[ 105 ]
+initial
+begin
+	dev_in[105] = 1'b0;
+end 
+// dev_in[ 104 ]
+initial
+begin
+	dev_in[104] = 1'b0;
+end 
+// dev_in[ 103 ]
+initial
+begin
+	dev_in[103] = 1'b0;
+end 
+// dev_in[ 102 ]
+initial
+begin
+	dev_in[102] = 1'b0;
+end 
+// dev_in[ 101 ]
+initial
+begin
+	dev_in[101] = 1'b0;
+end 
+// dev_in[ 100 ]
+initial
+begin
+	dev_in[100] = 1'b0;
+end 
+// dev_in[ 99 ]
+initial
+begin
+	dev_in[99] = 1'b0;
+end 
+// dev_in[ 98 ]
+initial
+begin
+	dev_in[98] = 1'b0;
+end 
+// dev_in[ 97 ]
+initial
+begin
+	dev_in[97] = 1'b0;
+end 
+// dev_in[ 96 ]
+initial
+begin
+	dev_in[96] = 1'b0;
+end 
+// dev_in[ 95 ]
+initial
+begin
+	dev_in[95] = 1'b0;
+end 
+// dev_in[ 94 ]
+initial
+begin
+	dev_in[94] = 1'b0;
+end 
+// dev_in[ 93 ]
+initial
+begin
+	dev_in[93] = 1'b0;
+end 
+// dev_in[ 92 ]
+initial
+begin
+	dev_in[92] = 1'b0;
+end 
+// dev_in[ 91 ]
+initial
+begin
+	dev_in[91] = 1'b0;
+end 
+// dev_in[ 90 ]
+initial
+begin
+	dev_in[90] = 1'b0;
+end 
+// dev_in[ 89 ]
+initial
+begin
+	dev_in[89] = 1'b0;
+end 
+// dev_in[ 88 ]
+initial
+begin
+	dev_in[88] = 1'b0;
+end 
+// dev_in[ 87 ]
+initial
+begin
+	dev_in[87] = 1'b0;
+end 
+// dev_in[ 86 ]
+initial
+begin
+	dev_in[86] = 1'b0;
+end 
+// dev_in[ 85 ]
+initial
+begin
+	dev_in[85] = 1'b0;
+end 
+// dev_in[ 84 ]
+initial
+begin
+	dev_in[84] = 1'b0;
+end 
+// dev_in[ 83 ]
+initial
+begin
+	dev_in[83] = 1'b0;
+end 
+// dev_in[ 82 ]
+initial
+begin
+	dev_in[82] = 1'b0;
+end 
+// dev_in[ 81 ]
+initial
+begin
+	dev_in[81] = 1'b0;
+end 
+// dev_in[ 80 ]
+initial
+begin
+	dev_in[80] = 1'b0;
+end 
+// dev_in[ 79 ]
+initial
+begin
+	dev_in[79] = 1'b0;
+end 
+// dev_in[ 78 ]
+initial
+begin
+	dev_in[78] = 1'b0;
+end 
+// dev_in[ 77 ]
+initial
+begin
+	dev_in[77] = 1'b0;
+end 
+// dev_in[ 76 ]
+initial
+begin
+	dev_in[76] = 1'b0;
+end 
+// dev_in[ 75 ]
+initial
+begin
+	dev_in[75] = 1'b0;
+end 
+// dev_in[ 74 ]
+initial
+begin
+	dev_in[74] = 1'b0;
+end 
+// dev_in[ 73 ]
+initial
+begin
+	dev_in[73] = 1'b0;
+end 
+// dev_in[ 72 ]
+initial
+begin
+	dev_in[72] = 1'b0;
+end 
+// dev_in[ 71 ]
+initial
+begin
+	dev_in[71] = 1'b0;
+end 
+// dev_in[ 70 ]
+initial
+begin
+	dev_in[70] = 1'b0;
+end 
+// dev_in[ 69 ]
+initial
+begin
+	dev_in[69] = 1'b0;
+end 
+// dev_in[ 68 ]
+initial
+begin
+	dev_in[68] = 1'b0;
+end 
+// dev_in[ 67 ]
+initial
+begin
+	dev_in[67] = 1'b0;
+end 
+// dev_in[ 66 ]
+initial
+begin
+	dev_in[66] = 1'b0;
+end 
+// dev_in[ 65 ]
+initial
+begin
+	dev_in[65] = 1'b0;
+end 
+// dev_in[ 64 ]
+initial
+begin
+	dev_in[64] = 1'b0;
+end 
+// dev_in[ 63 ]
+initial
+begin
+	dev_in[63] = 1'b0;
+end 
+// dev_in[ 62 ]
+initial
+begin
+	dev_in[62] = 1'b0;
+end 
+// dev_in[ 61 ]
+initial
+begin
+	dev_in[61] = 1'b0;
+end 
+// dev_in[ 60 ]
+initial
+begin
+	dev_in[60] = 1'b0;
+end 
+// dev_in[ 59 ]
+initial
+begin
+	dev_in[59] = 1'b0;
+end 
+// dev_in[ 58 ]
+initial
+begin
+	dev_in[58] = 1'b0;
+end 
+// dev_in[ 57 ]
+initial
+begin
+	dev_in[57] = 1'b0;
+end 
+// dev_in[ 56 ]
+initial
+begin
+	dev_in[56] = 1'b0;
+end 
+// dev_in[ 55 ]
+initial
+begin
+	dev_in[55] = 1'b0;
+end 
+// dev_in[ 54 ]
+initial
+begin
+	dev_in[54] = 1'b0;
+end 
+// dev_in[ 53 ]
+initial
+begin
+	dev_in[53] = 1'b0;
+end 
+// dev_in[ 52 ]
+initial
+begin
+	dev_in[52] = 1'b0;
+end 
+// dev_in[ 51 ]
+initial
+begin
+	dev_in[51] = 1'b0;
+end 
+// dev_in[ 50 ]
+initial
+begin
+	dev_in[50] = 1'b0;
+end 
+// dev_in[ 49 ]
+initial
+begin
+	dev_in[49] = 1'b0;
+end 
+// dev_in[ 48 ]
+initial
+begin
+	dev_in[48] = 1'b0;
+end 
+// dev_in[ 47 ]
+initial
+begin
+	dev_in[47] = 1'b0;
+end 
+// dev_in[ 46 ]
+initial
+begin
+	dev_in[46] = 1'b0;
+end 
+// dev_in[ 45 ]
+initial
+begin
+	dev_in[45] = 1'b0;
+end 
+// dev_in[ 44 ]
+initial
+begin
+	dev_in[44] = 1'b0;
+end 
+// dev_in[ 43 ]
+initial
+begin
+	dev_in[43] = 1'b0;
+end 
+// dev_in[ 42 ]
+initial
+begin
+	dev_in[42] = 1'b0;
+end 
+// dev_in[ 41 ]
+initial
+begin
+	dev_in[41] = 1'b0;
+end 
+// dev_in[ 40 ]
+initial
+begin
+	dev_in[40] = 1'b0;
+end 
+// dev_in[ 39 ]
+initial
+begin
+	dev_in[39] = 1'b0;
+end 
+// dev_in[ 38 ]
+initial
+begin
+	dev_in[38] = 1'b0;
+end 
+// dev_in[ 37 ]
+initial
+begin
+	dev_in[37] = 1'b0;
+end 
+// dev_in[ 36 ]
+initial
+begin
+	dev_in[36] = 1'b0;
+end 
+// dev_in[ 35 ]
+initial
+begin
+	dev_in[35] = 1'b0;
+end 
+// dev_in[ 34 ]
+initial
+begin
+	dev_in[34] = 1'b0;
+end 
+// dev_in[ 33 ]
+initial
+begin
+	dev_in[33] = 1'b0;
+end 
+// dev_in[ 32 ]
+initial
+begin
+	dev_in[32] = 1'b0;
+end 
+// dev_in[ 31 ]
+initial
+begin
+	dev_in[31] = 1'b0;
+end 
+// dev_in[ 30 ]
+initial
+begin
+	dev_in[30] = 1'b0;
+end 
+// dev_in[ 29 ]
+initial
+begin
+	dev_in[29] = 1'b0;
+end 
+// dev_in[ 28 ]
+initial
+begin
+	dev_in[28] = 1'b0;
+end 
+// dev_in[ 27 ]
+initial
+begin
+	dev_in[27] = 1'b0;
+end 
+// dev_in[ 26 ]
+initial
+begin
+	dev_in[26] = 1'b0;
+end 
+// dev_in[ 25 ]
+initial
+begin
+	dev_in[25] = 1'b0;
+end 
+// dev_in[ 24 ]
+initial
+begin
+	dev_in[24] = 1'b0;
+end 
+// dev_in[ 23 ]
+initial
+begin
+	dev_in[23] = 1'b0;
+end 
+// dev_in[ 22 ]
+initial
+begin
+	dev_in[22] = 1'b0;
+end 
+// dev_in[ 21 ]
+initial
+begin
+	dev_in[21] = 1'b0;
+end 
+// dev_in[ 20 ]
+initial
+begin
+	dev_in[20] = 1'b0;
+end 
+// dev_in[ 19 ]
+initial
+begin
+	dev_in[19] = 1'b0;
+end 
+// dev_in[ 18 ]
+initial
+begin
+	dev_in[18] = 1'b0;
+end 
+// dev_in[ 17 ]
+initial
+begin
+	dev_in[17] = 1'b0;
+end 
+// dev_in[ 16 ]
+initial
+begin
+	dev_in[16] = 1'b0;
+end 
+// dev_in[ 15 ]
+initial
+begin
+	dev_in[15] = 1'b0;
+end 
+// dev_in[ 14 ]
+initial
+begin
+	dev_in[14] = 1'b0;
+end 
+// dev_in[ 13 ]
+initial
+begin
+	dev_in[13] = 1'b0;
+end 
+// dev_in[ 12 ]
+initial
+begin
+	dev_in[12] = 1'b0;
+end 
+// dev_in[ 11 ]
+initial
+begin
+	dev_in[11] = 1'b0;
+end 
+// dev_in[ 10 ]
+initial
+begin
+	dev_in[10] = 1'b0;
+end 
+// dev_in[ 9 ]
+initial
+begin
+	dev_in[9] = 1'b0;
+end 
+// dev_in[ 8 ]
+initial
+begin
+	dev_in[8] = 1'b0;
+end 
+// dev_in[ 7 ]
+initial
+begin
+	dev_in[7] = 1'b0;
+end 
+// dev_in[ 6 ]
+initial
+begin
+	dev_in[6] = 1'b0;
+end 
+// dev_in[ 5 ]
+initial
+begin
+	dev_in[5] = 1'b0;
+end 
+// dev_in[ 4 ]
+initial
+begin
+	dev_in[4] = 1'b0;
+end 
+// dev_in[ 3 ]
+initial
+begin
+	dev_in[3] = 1'b0;
+end 
+// dev_in[ 2 ]
+initial
+begin
+	dev_in[2] = 1'b0;
+end 
+// dev_in[ 1 ]
+initial
+begin
+	dev_in[1] = 1'b0;
+end 
+// dev_in[ 0 ]
+initial
+begin
+	dev_in[0] = 1'b0;
+end 
+// enter_in[ 3 ]
+initial
+begin
+	enter_in[3] = 1'b0;
+end 
+// enter_in[ 2 ]
+initial
+begin
+	enter_in[2] = 1'b0;
+end 
+// enter_in[ 1 ]
+initial
+begin
+	enter_in[1] = 1'b0;
+end 
+// enter_in[ 0 ]
+initial
+begin
+	enter_in[0] = 1'b0;
+end 
+endmodule
+

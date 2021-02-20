@@ -10,6 +10,7 @@ input new_out,
 input pc_write,
 output in_ready,
 output reg[31:0] bios_pc,
+output reg[31:0] pc,
 input[0:31] bios_inst,
 input[1:0] pc_orig,
 input[1:0] rd_orig,
@@ -27,12 +28,23 @@ input[3:0] enter_in,
 output[3:0] enter_out,
 input inst_write,
 output out_done,
-input[3:0] done_out);
+input[3:0] done_out,
+output[31:0] k0,
+output[31:0] k1,
+output[31:0] t0,
+output[31:0] t3,
+output[2:0] track,
+output[4:0] sector,
+output[6:0] address_in_sector,
+output[31:0] v0, 
+output[31:0] s2,
+output[31:0] t2
+);
 
 parameter um = 32'd1;
 parameter zero = 32'd0;
 
-reg[31:0] pc = 32'd0;
+//reg[31:0] pc = 32'd0;
 reg[0:31] reg_inst;
 reg[31:0] write_ra;
 
@@ -42,6 +54,7 @@ wire[0:31] internal_inst;
 wire[31:0] read1, read2, prox_pc, wd_select, alu_result, alu_hi, alu_lo, b_select, read, e_data;
 wire[4:0] inst4_8, inst8_12, inst13_17, inst18_22;
 wire[8:0] inst23_31;
+wire[9:0] inst22_31;
 //wire[9:0] inst13_22;
 wire[13:0] inst18_31;
 wire[22:0] inst9_31;
@@ -72,6 +85,7 @@ udcpc udcpc(.pc(process_pc),
 .inst13_17(inst13_17), 
 .inst18_22(inst18_22), 
 .inst23_31(inst23_31), 
+.inst22_31(inst22_31),
 //.inst13_22(inst13_22), 
 .inst18_31(inst18_31), 
 .inst9_31(inst9_31));
@@ -110,7 +124,15 @@ bc_registers bc_registers(.rs(inst8_12),
 .loc_write(loc_write), 
 .bc_hi(bc_hi), 
 .bc_lo(bc_lo),
-.clk(clk));
+.clk(clk),
+.k0(k0),
+.k1(k1),
+.t0(t0),
+.t3(t3),
+.v0(v0),
+.s2(s2),
+.t2(t2)
+);
 
 mux_op_b mux_op_b(.deslocamento(inst23_31), 
 .b(read2), 
@@ -132,22 +154,28 @@ memory memory(.adress(alu_result),
 .read(read), 
 .clk(clk));
 
-in_out_module in_out_module(.p_data(read1), 
-.e_data(e_data), 
+in_out_module in_out_module(
+.p_data(read1), 
 .drs(read2),
+.e_data(e_data), 
 //.drt(read3),
 //.adress(inst13_22), 
-.address(inst23_31),
+//.address(inst23_31),
+.adress(inst22_31),
 .in_req(in_req), 
 .new_out(new_out), 
 .in_ready(in_ready), 
+.out_ready(out_done),
 .dev_in(dev_in), 
 .dev_out(dev_out), 
 .enter_in(enter_in), 
 .enter_out(enter_out),
 .done_out(done_out),
-.out_done(out_done),
-.clk(clk));
+.clk(clk),
+.track(track),
+.sector(sector),
+.address_in_sector(address_in_sector)
+);
 
 always @(clk, bios_controll, pc, bios_pc)
 begin

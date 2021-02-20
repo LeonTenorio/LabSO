@@ -1,14 +1,14 @@
 B .main
 
 .after_interrupt
-BNE $k0 $zero .after_interrupt_safe_reg
+BNE $fp $zero .after_interrupt_safe_reg
 B .store_registers
 .after_interrupt_safe_reg
 BL .load_program
-BEQ $k0 $zero .after_interrupt_load_reg
+BEQ $fp $zero .after_interrupt_load_reg
 B .load_registers
 .after_interrupt_load_reg
-BEQ $zero $k0 .work_loop_after_interrupt_program
+BEQ $zero $fp .work_loop_after_interrupt_program
 B .work_loop_after_interrupt_system
 
 .store_registers
@@ -131,9 +131,15 @@ LI $s2 1
 LI $t3 -1
 LI $t1 256
 LI $t2 127
+
+BL .concat_disk_access
+IN $t0 $v0 128
+STORE $zero $t0 0
+ADDI $s2 $s2 1
+
 .load_system_main_program_loop
 	.load_system_main_loop_sector
-		BL .concat_disk_acess
+		BL .concat_disk_access
 		IN $t0 $v0 128
 		BEQ $t0 $t3 .load_system_main_program_loop_out
 		BNE $s2 $t2 .load_system_main_program_loop_sector_continue
@@ -148,25 +154,32 @@ LI $t2 127
 		B .load_system_main_program_loop
 		
 		.load_system_main_program_loop_sector_continue
-		STORE $s3 $t0 1
+		STORE $s3 $t0 2
 		ADDI $s3 $s3 1
 		ADDI $s2 $s2 1
 		B .load_system_main_loop_sector
 .load_system_main_program_loop_out
-STORE $zero $s3 0
+STORE $zero $s3 1
+OUT $s3 $zero 0
 BR $s8
 
 .main
+LI $k0 100
+OUT $k0 $zero 0
 BL .load_system_main_program
-MOV $zero $k0								//AGENDADOR DE PROCESSOS
-LOAD $zero $k1 0
+LOAD $zero $t0 0
+SETQUANTUM $t0
+LI $k0 2								//AGENDADOR DE PROCESSOS
+LOAD $zero $k1 1
+MOV $zero $fp
 BL .load_program
 SETPC $zero
 BIOSINT
 .work_loop
 									//UM PROGRAMA FOI INTERROMPIDO
-	MOV $zero $k0							//PARA CARREGAR O AGENDADOR DE PROGRAMAS
-	LOAD $zero $k1 0
+	LI $k0 2							//PARA CARREGAR O AGENDADOR DE PROGRAMAS
+	LOAD $zero $k1 1
+	MOV $zero $fp
 	B .after_interrupt
 	.work_loop_after_interrupt_program					
 	BIOSINT								//DEIXAR O ESCALONADOR EXECUTAR

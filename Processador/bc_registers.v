@@ -1,4 +1,8 @@
-module bc_registers(rs, rt, srs, rd, write_data, write_hi, write_lo, write_ra, read1, read2, reg_write, loc_write, bc_hi, bc_lo, clk);
+module bc_registers(
+rs, rt, srs, rd, write_data, write_hi, 
+write_lo, write_ra, read1, read2, reg_write, 
+loc_write, bc_hi, bc_lo, clk, k0, k1, t0, t3,
+v0, s2, t2);
 
 input clk;
 input[4:0] rs;
@@ -23,6 +27,14 @@ output reg[31:0] read2;
 //output reg[31:0] read3;
 output reg[31:0] bc_hi;
 output reg[31:0] bc_lo;
+
+output reg[31:0] k0;
+output reg[31:0] k1;
+output reg[31:0] t0;
+output reg[31:0] t3;
+output reg[31:0] v0;
+output reg[31:0] s2;
+output reg[31:0] t2;
 
 parameter zero=32'b00000000000000000000000000000000;
 
@@ -67,6 +79,13 @@ begin
 	//read3 = registers[srs];
 	bc_hi = reg_hi;
 	bc_lo = reg_lo;
+	k0 = registers[5'd28];
+	k1 = registers[5'd29];
+	t0 = registers[5'd12];
+	t2 = registers[5'd14];
+	t3 = registers[5'd15];
+	v0 = registers[5'd24];
+	s2 = registers[5'd4];
 end
 
 endmodule 
