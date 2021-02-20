@@ -1,5 +1,5 @@
 Flow report for processador
-Fri Feb 19 18:25:25 2021
+Fri Feb 19 20:41:42 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 19 18:25:25 2021       ;
+; Flow Status                        ; Successful - Fri Feb 19 20:41:42 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; machine                                     ;
@@ -99,7 +99,9 @@ refer to the applicable agreement for further details.
 ; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 1061 MB             ; 00:00:03                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1048 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1062 MB             ; 00:00:02                           ;
-; Total                ; 00:00:39     ; --                      ; --                  ; 00:00:58                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1047 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1061 MB             ; 00:00:02                           ;
+; Total                ; 00:00:42     ; --                      ; --                  ; 00:01:00                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,6 +115,8 @@ refer to the applicable agreement for further details.
 ; EDA Netlist Writer   ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
 ; EDA Netlist Writer   ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
 ; EDA Netlist Writer   ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
 +----------------------+----------------------+----------------+------------+----------------+
 
 
@@ -120,6 +124,8 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/BiosLoadingProgram2.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/BiosLoadingProgram2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/ processador -c processador
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/BiosLoadingProgram2.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/BiosLoadingProgram2.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/ processador -c processador
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processador -c processador --vector_source=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/BiosLoadingProgram2.vwf --testbench_file=/mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/simulation/qsim/BiosLoadingProgram2.vwf.vt
