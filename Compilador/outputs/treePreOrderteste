@@ -6,20 +6,6 @@
      'child[0]': 
           {
           'Node': 'FUNCTION', 
-          }
-     },
-     {
-     'Node': 'output', 
-     'child[0]': 
-          {
-          'Node': 'FUNCTION', 
-          }
-     }     ,
-     {
-     'Node': 'int', 
-     'child[0]': 
-          {
-          'Node': 'FUNCTION', 
           'child[0]': 
                {
                'Node': 'int', 
@@ -177,7 +163,7 @@
                     }
                }
           }
-     }     ,
+     },
      {
      'Node': 'void', 
      'child[0]': 
@@ -185,14 +171,10 @@
           'Node': 'FUNCTION', 
           'child[1]': 
                {
-               'Node': 'CALL - output',
+               'Node': 'CALL - valor',
                'child[0]': 
                     {
-                    'Node': 'CALL - valor',
-                    'child[0]': 
-                         {
-                         'Node': 30
-                         }
+                    'Node': 30
                     }
                }
           }

@@ -33,6 +33,8 @@ void yyerror(char *);
 
 stack<string> savedIDs;
 
+vector<string> drivers;
+
 %}
 
 %start program
@@ -48,7 +50,8 @@ stack<string> savedIDs;
 program:
   declaration_list
     {
-      savedTree = (treeNode *) malloc(sizeof(treeNode));
+      savedTree = $1;
+      /*savedTree = (treeNode *) malloc(sizeof(treeNode));
       savedTree->nodeKind = TypeK;
       savedTree->name = "int";
       savedTree->child[0] = (treeNode *) malloc(sizeof(treeNode));
@@ -72,7 +75,7 @@ program:
       savedTree->sibling->child[0]->name = "output";
       for(int i = 0; i < 3; i ++)
         savedTree->sibling->child[0]->child[i] = NULL;
-      savedTree->sibling->sibling = $1;
+      savedTree->sibling->sibling = $1;*/
     }
   ;
 
@@ -627,7 +630,7 @@ int main(int argc, char **argv)
 
     ofstream assemblyFile;
     assemblyFile.open("./outputs/assembly"+outSufix);
-    assemblyFile << generateAssembly(quadCode, debug);
+    assemblyFile << generateAssembly(quadCode, drivers, debug);
     assemblyFile.close();
 
     showSymbTab();

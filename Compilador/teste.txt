@@ -9,5 +9,5 @@ int valor(int n){
 
 void main(void)
 {
-	output(valor(30));
+	valor(30);
 }

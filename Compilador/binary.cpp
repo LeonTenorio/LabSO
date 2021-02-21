@@ -39,6 +39,10 @@ string convertNumberToBinary9Size(int number){
     return std::bitset<9>(number).to_string();
 }
 
+string convertNumberToBinary10Size(int number){
+    return std::bitset<10>(number).to_string();
+}
+
 string convertNumberToBinary14Size(int number){
     return std::bitset<14>(number).to_string();
 }
@@ -52,11 +56,11 @@ string convertNumberToBinary24Size(int number){
 }
 
 int _getRegister(string loc_register){/*
-    $zero = [0] $at = [1]   $s0 = [2]  $s1 = [3]  $s2 = [4]  $s3 = [5]  $s4 = [6]  $s5 = [7]  $s6 = [8]  $s7 = [9]  $s8 = [10] 
+    $zero = [0] $re = [1]   $s0 = [2]  $s1 = [3]  $s2 = [4]  $s3 = [5]  $s4 = [6]  $s5 = [7]  $s6 = [8]  $s7 = [9]  $s8 = [10] 
     $s9 = [11]  $t0 = [12]  $t1 = [13] $t2 = [14] $t3 = [15] $t4 = [16] $t5 = [17] $t6 = [18] $t7 = [19] $t8 = [20] $t9 = [21]
     $t10 = [22] $t11 = [23] $v0 = [24] $sp = [25] $gp = [26] $sa = [27] $k0 = [28] $k1 = [29] $fp = [30] $ra = [31]*/
     if(loc_register.compare("$zero")==0)  return 0;
-    else if(loc_register.compare("$at")==0)     return 1;
+    else if(loc_register.compare("$re")==0)     return 1;
     else if(loc_register.compare("$s0")==0)     return 2;
     else if(loc_register.compare("$s1")==0)     return 3;
     else if(loc_register.compare("$s2")==0)     return 4;
@@ -105,7 +109,16 @@ string toFullBinaryInst(string instruction){
     return instruction;
 }
 
+void showParams(vector<string> params){
+    for(int i=0;i<params.size();i++){
+        cout << params[i] << " ";
+    }
+    cout << endl;
+}
+
 string lineToBinary(vector<string> params, vector<string> labels, map<string, int> labels_lines, bool showBinary){
+    cout << "convertendo para binário a linha ";
+    showParams(params);
     if(params[0].find(".")==0){//Ignorar essa linha
         if(showBinary)
             cout << params[0] << endl;
@@ -186,10 +199,12 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
         return convertNumberToBinary4Size(8)+convertNumberToBinary4Size(2)+"XXXXXXXXXX"+getRegister(params[1]);
     }
     else if(params[0].compare("IN")==0){
-        return convertNumberToBinary4Size(9)+"XXXX"+getRegister(params[1]);
+        return convertNumberToBinary4Size(9)+"XXXX"+getRegister(params[1])+getRegister(params[2])+"XXXX"+convertNumberToBinary10Size(stoi(params[3]));
+        //return convertNumberToBinary4Size(9)+"XXXX"+getRegister(params[1]);
     }
     else if(params[0].compare("OUT")==0){
-        return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1]);
+        return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1])+getRegister(params[2])+"XXXX"+convertNumberToBinary10Size(stoi(params[3]));
+        //return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1]);
     }
     else{
         cout << "Erro, linha de assembly não reconhecida" << endl;

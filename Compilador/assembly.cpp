@@ -534,7 +534,14 @@ void lineToAssembly(vector<string> params, bool debug){
     }
 }
 
-string generateAssembly(string quad, bool debug){
+void write_driver_functions(vector<string> drivers, bool debug){
+    for(int i=0;i<drivers.size();i++){
+        vector<string> params = getLineParams(drivers[i]);
+        lineToAssembly(params, debug);
+    }
+}
+
+string generateAssembly(string quad, vector<string> drivers, bool debug){
     string assemblyString = "";
     parseQuadCode(quad);
     cout << lines.size() << " linhas de código intermediário" << endl << endl;
@@ -557,6 +564,8 @@ string generateAssembly(string quad, bool debug){
             assembly.push_back("LOAD $sp $gp -2");
             assembly.push_back("LOAD $t8 $gp -1");
             assembly.push_back("BR $t8");
+
+            write_driver_functions(drivers, debug);
         }
     }
     cout << assembly.size() << " de linhas assembly" << endl;
