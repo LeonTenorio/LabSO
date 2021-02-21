@@ -1,38 +1,22 @@
 NOVAS INSTRUÇÕES: 
-	Hardware de interrupções: GETTIME (ms), LOCK, RELEASE, SETQUANTUM, GETQUANTUM (ciclos), UNBLOCKINST
-	Memória de programa: GETPC, SETPC, STORE (mesma STORE da memória principal, ela vai tomar conta do barramento)
-	No processador: SETHI, SETLO
+	Novas de interrupções: 	GETPC, SETPC, SETHI, SETLO, STOREINST, GETQUANTUM, SETQUANTUM, LOCK,
+							RELEASE, BIOSINT
 
-
-Necessário para o processador e o SO:
-
-- MMU (Unidade de gerenciamento de memória)
-	Transcreve endereço virtual para endereço real e é responsável pela alocação das páginas em memória principal ou em disco
-- Processador:
-	- Sinalizador de conclusão de instrução
-	- Criação de uma unidade de interrupção:
-		- Essa unidade terá que ter como ser resetada
-		- Executará um código (passando por cima da memória de programa) quando tiver que executar
-		- Terá uma instrução de bloqueio de mutex para não escalona (LOCK e RELEASE)
-		- Terá uma forma de serem carregadas instruções a ela uma unica vez
-		- Tratará o momento de escalonar (fim de programa ou tempo quantum) de acordo com o sinalizador de conclusão de instrução
-		- Contar as interrupções lançadas pelo relógio para contar o tempo "quantum"
-			50MHz = 2*10^(-8) = 20ns => Se uma instrução for executada em média em 4 ciclos 80ns = 0.08us
-			Contar a cada 10us? => Daria tempo de serem executadas 120 instruções
-		- Ter como obter o tempo ligado em ms
-	**INTRUÇÕES:
-		- GETTIME
-		- LOCK
-		- RELEASE
-		
-	**PENSAMENTO DE FUNCIONAMENTO:
-		- A unidade de interrução executaria um pequeno código de programa que substitui linha por linha da memória de programa do processador a partir de um registrador de kernel
-		- O ato de escalonar seria essa unidade chamar o kernel de SO para escalonamento, esse executaria em memória de programa (mutável) alternado o valor desse registrador de kernel, finalizaria o processo (atômico???) lançando interrupção o que colocaria em execução a unidade de interrupção que utilizaria o valor desse registrador de kernel para substituir a memória de programa e colocar lá o próximo programa a executar, antes de seu fim, sempre, a unidade de interrupção substituiria o registrador de kernel por um registrador específico que é o endereço do escalonador de processos do SO.
-	
-- Estados dos processos:
-	- Em execução
-	- Pronto
-	- Bloqueado
+Detalhes e próximas etapas:
+	- Garantir as etapas que a BIOS tem que exercer na troca de processos:
+		1. Chamada do agendador com base em $k0 e $k1 e sem desempilhar registradores 						- OK
+		2. Liberação do barramento para execução do agendador												- OK
+		3. O agendador precisa ser escrito para disponibilizar $k0, $k1, $re e sinalizar programa 0
+		4. A BIOS volta a executar e chama um trecho de código que trata interrupções:
+			- Se a interrupção tiver vindo do programa 0 ($fp==0) não empilhar registradores
+			- Se a interrupção não tiver vindo do programa 0 ($fp!=0) empilha os registradores usando $re
+			- Se a interrupção veio do programa 0 ($fp==0) e é para chamar programa ($re!=0) desempilha registradores
+	- O programa 0 tem que ser capaz de inicializar a tabela de processos
+	- O programa 0 tem que ser capaz de inserir na memoria principal o programa 1 que será o principal do SO
+	- O programa 0 tem que selecionar $k0, $k1, $re para colocar um processo em execução
+	- O programa 0 e 1 tem que ser capazes de inserir um processo na tabela de processos
+	- Na inserção de um processo na tabela de processos os programas tem que ZERAR a região de armazenamento de registradores na memória principal do processo
+	- Um processo, quando concluído (HALT) tem que entrar em estado de concluído
 		
 TAMANHO DA MEMÓRIA SECUNDÁRIA DA MINHA MÁQUINA: 32768 posições	=> Tempo de leitura = 4*20ns; Tempo de escrita = 4*20ns
 						8 trilhas, 32 setores, 128 valores cada setor
