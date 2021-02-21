@@ -2,6 +2,7 @@
 #include <iostream>
 #include <bits/stdc++.h> 
 #include "symtab.cpp"
+#include "call_drive.cpp"
 
 #define TEMPREGISTERSAMOUNT 12
 #define USETEMPREGISTERAMOUNT 8
@@ -537,7 +538,20 @@ void lineToAssembly(vector<string> params, bool debug){
 void write_driver_functions(vector<string> drivers, bool debug){
     cout << "indo incluir os drivers - " << drivers.size() << " linhas para incluir" << endl;
     for(int i=0;i<drivers.size();i++){
-        cout << drivers[i] << endl;
+        cout << "incluindo "<< drivers[i] << endl;
+        vector<string> driver_lines = getDriver(drivers[i]);
+        for(int j=0;j<driver_lines.size();j++){
+            cout << "uma linha de driver?? " << driver_lines[j] << endl;
+            if(driver_lines[j].at(0)=='.'){
+                writeDebugAssembly("LABEL", debug);
+                labels_lines[driver_lines[j]] = assembly.size() - labels.size();
+                assembly.push_back(driver_lines[j]);
+                labels.push_back(driver_lines[j]);
+            }
+            else{
+                assembly.push_back(driver_lines[j]);
+            }
+        }
     }
 }
 

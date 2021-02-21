@@ -117,8 +117,8 @@ void showParams(vector<string> params){
 }
 
 string lineToBinary(vector<string> params, vector<string> labels, map<string, int> labels_lines, bool showBinary){
-    cout << "convertendo para binário a linha ";
-    showParams(params);
+    //cout << "convertendo para binário a linha ";
+    //showParams(params);
     if(params[0].find(".")==0){//Ignorar essa linha
         if(showBinary)
             cout << params[0] << endl;

@@ -9,5 +9,7 @@ int valor(int n){
 
 void main(void)
 {
+    int buffer[100];
+    inputdisk(0, 1, buffer);
 	output(valor(30));
 }
