@@ -9,6 +9,7 @@
 #include "utils.c"
 #include "assembly.cpp"
 #include "binary.cpp"
+#include "call_drive.cpp"
 #define YYSTYPE treeNode *
 #define SIZE 523
 
@@ -33,7 +34,7 @@ void yyerror(char *);
 
 stack<string> savedIDs;
 
-vector<string> drivers;
+vector<string> drivers_names;
 
 %}
 
@@ -411,7 +412,13 @@ factor:
 
 call:
   erro ID {savedIDs.push(copyString(currentToken));} PRTO args PRTC{
-    if(!existID(savedIDs.top()," ")) {cout <<"Erro semântico no ID: " << savedIDs.top() << " na linha " << yylineno << " função não declarada"; exit(-1);}
+    if(isDriver(savedIDs.top())){
+      drivers_names.push_back(savedIDs.top());
+    }
+    else if(!existID(savedIDs.top()," ")) {
+      cout <<"Erro semântico no ID: " << savedIDs.top() << " na linha " << yylineno << " função não declarada"; 
+      exit(-1);
+    }
     $$ = newNode(CallK);
     $$->name = savedIDs.top();
     insertLineIDGlobal(savedIDs.top(), yylineno);
@@ -599,11 +606,12 @@ int main(int argc, char **argv)
   bool binaryToQuartus;
   obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary);
   debug = false;
+  inputName = "./inputs/" + inputName;
   cout << "\nBison em execução...\n";
   abrirArq(&inputName[0]);
   insertSymTab("GLOBAL", FuncType, " ", Void, 0, 0, false);
-  insertSymTab("input",FuncType," ",Int,0, 0, false);
-  insertSymTab("output",FuncType," ",Void,0, 0, false);
+  //insertSymTab("input",FuncType," ",Int,0, 0, false);
+  //insertSymTab("output",FuncType," ",Void,0, 0, false);
   yyparse();
   if(!checkMain()) {cout <<"Nao foi declarada uma funcao main"; exit(-1);}
   else{
@@ -630,7 +638,7 @@ int main(int argc, char **argv)
 
     ofstream assemblyFile;
     assemblyFile.open("./outputs/assembly"+outSufix);
-    assemblyFile << generateAssembly(quadCode, drivers, debug);
+    assemblyFile << generateAssembly(quadCode, drivers_names, debug);
     assemblyFile.close();
 
     showSymbTab();

@@ -535,9 +535,9 @@ void lineToAssembly(vector<string> params, bool debug){
 }
 
 void write_driver_functions(vector<string> drivers, bool debug){
+    cout << "indo incluir os drivers - " << drivers.size() << " linhas para incluir" << endl;
     for(int i=0;i<drivers.size();i++){
-        vector<string> params = getLineParams(drivers[i]);
-        lineToAssembly(params, debug);
+        cout << drivers[i] << endl;
     }
 }
 
