@@ -8,7 +8,7 @@
 #define USETEMPREGISTERAMOUNT 8
 #define USESTATICREGISTERAMOUNT 10
 
-#define STACKSIZE 62209 //Tamanho da memoria RAM utilizada
+#define STACKSIZE 4096 //Tamanho da memoria RAM utilizada
 
 //getRegisterLikeRead apenas usar um unico temporario - OK
 //getRegisterLikeWrite apenas usar um unico temporario - OK
@@ -555,14 +555,22 @@ void write_driver_functions(vector<string> drivers, bool debug){
     }
 }
 
-string generateAssembly(string quad, vector<string> drivers, bool debug){
+string generateAssembly(string quad, vector<string> drivers, bool debug, bool scheduler){
     string assemblyString = "";
     parseQuadCode(quad);
     cout << lines.size() << " linhas de código intermediário" << endl << endl;
     assembly.push_back("LI $zero 0");
-    assembly.push_back("MOV $zero $sp");
-    assembly.push_back("MOV $zero $gp");
-    assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
+    //assembly.push_back("MOV $zero $sp");
+    //assembly.push_back("MOV $zero $gp");
+    //assembly.push_back("MOV $gp $sp");
+    //assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
+    if(scheduler){
+        assembly.push_back("LI $fp 0");
+        assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
+    }
+    else{
+        assembly.push_back("LI $fp 1");
+    }
     BucketList bucketElement = getBucketElement("GLOBAL", " ");
     
     for(int i=0;i<bucketElement->variables.size();i++){

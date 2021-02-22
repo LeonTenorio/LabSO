@@ -144,8 +144,10 @@ assembly_lines = [
 	["0101", 4, get_register("re"), get_register("t0"), 5, "000011100"],#STORE $re $t0 28
 	["1000", "0010", 10, get_register("t0"), 9],#MFLO $t0
 	["0101", 4, get_register("re"), get_register("t0"), 5, "000011101"],#STORE $re $t0 29
+	["0101", 4, get_register("re"), get_register("fp"), 5, "000011110"],#STORE $re $fp 30
 	["0100", "0000", ".after_interrupt_safe_reg"],#B .after_interrupt_safe_reg
 	".load_registers",
+	["0110", 4, get_register("re"), 5, get_register("fp"), "000011101"],#LOAD $re $fp 30
 	["0110", 4, get_register("re"), 5, get_register("t0"), "000011011"],#LOAD $re $t0 27
 	["0000", "0011", get_register("t0"), 10, 9],#SETPC $t0
 	["0110", 4, get_register("re"), 5, get_register("t0"), "000011100"],#LOAD $re $t0 28

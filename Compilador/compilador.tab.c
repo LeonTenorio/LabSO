@@ -2445,12 +2445,13 @@ string getArg(string arg, string argv){
   return intermediate;
 }
 
-void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary){
+void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary, bool *scheduler){
   *inputName = "entrada.txt";
   *outSufix = "";
   *debug = true;
   *binaryToQuartus = false;
   *showBinary = false;
+  *scheduler = false;
   if(argc>1){
     for(int i=1;i<argc;i++){
       string actualString = string(argv[i]);
@@ -2493,6 +2494,15 @@ void obterParametros(int argc, char **argv, string *inputName, string *outSufix,
           *showBinary = true;
         }
       }
+      else if(actualString.find("scheduler")!=std::string::npos){
+        string ret = getArg("scheduler", actualString);
+        if(ret.compare("false")==0 && ret.length()>0){
+          *scheduler = false;
+        }
+        else if(ret.compare("true")==0 && ret.length()>0){
+          *scheduler = true;
+        }
+      }
     }
   }
 }
@@ -2504,7 +2514,8 @@ int main(int argc, char **argv)
   bool debug;
   bool showBinary;
   bool binaryToQuartus;
-  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary);
+  bool scheduler;
+  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary, &scheduler);
   debug = false;
   inputName = "./inputs/" + inputName;
   cout << "\nBison em execução...\n";
@@ -2538,7 +2549,7 @@ int main(int argc, char **argv)
 
     ofstream assemblyFile;
     assemblyFile.open("./outputs/assembly"+outSufix);
-    assemblyFile << generateAssembly(quadCode, drivers_names, debug);
+    assemblyFile << generateAssembly(quadCode, drivers_names, debug, scheduler);
     assemblyFile.close();
 
     showSymbTab();

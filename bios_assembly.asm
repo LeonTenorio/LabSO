@@ -45,10 +45,12 @@ MFHI $t0
 STORE $re $t0 28
 MFLO $t0
 STORE $re $t0 29
+STORE $re $fp 30
 B .after_interrupt_safe_reg
 
 
 .load_registers
+LOAD $re $fp 30
 LOAD $re $t0 27
 SETPC $t0
 LOAD $re $t0 28

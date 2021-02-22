@@ -13,7 +13,8 @@ static string driver_folder = "./drivers/";
 
 map<string,string> drivers_map ={
     {"inputdisk", "disk_input.asm"},
-    {"output", "external_output.asm"}
+    {"output", "external_output.asm"},
+    {"initializeprocessmemory", "initialize_process_memory.asm"}
 };
 
 bool isDriver(string function_name){
@@ -21,6 +22,10 @@ bool isDriver(string function_name){
         return false;
     }
     return true;
+}
+
+string getDriverName(string function_name){
+    return drivers_map[function_name];
 }
 
 vector<string> getDriver(string function_name){

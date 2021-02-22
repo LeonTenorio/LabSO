@@ -6,7 +6,7 @@ ADD $v0 $v0 $t5
 SL $v0 8 $v0
 ADD $v0 $v0 $t6
 BR $ra
-.disk_input
+.inputdisk
 MOV $ra $t8
 LOAD $t7 $sa 3
 LOAD $t5 $sa 2
@@ -39,4 +39,5 @@ ADDI $t9 $t9 1
 B .load_disk_program_loop
 .load_disk_loop_out
 STORE $t10 $t9 0
+MOV $t9 $v0
 BR $t8
