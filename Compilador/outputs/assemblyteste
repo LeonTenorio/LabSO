@@ -1,6 +1,9 @@
 LI $zero 0
 LI $fp 0
 LI $sa 4095
+LOAD $gp $zero 1
+ADDI $gp $gp 2
+MOV $gp $sp
 B .main
 .ENDFUN
 LOAD $sp $gp -2
