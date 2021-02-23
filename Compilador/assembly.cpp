@@ -133,6 +133,7 @@ string getRegisterLikeWrite(string id, string scope, int *temp_use, bool *in_mem
     BucketList bucketElement;
     if(id.compare(0, 2, "_t")==0){
         *in_mem = false;
+        int numberTempRegister = stoi(id.substr(2));
         return getTempRegister(id, scope, temp_use, in_mem);
     }
     else{
@@ -409,6 +410,8 @@ void lineToAssembly(vector<string> params, bool debug){
         string rd = getRegisterLikeWrite(params[1], scope, &temp_use, &in_mem);
         string rs = getRegisterLikeRead(params[2], scope, &temp_use);
         string rt = getRegisterLikeRead(params[3], scope, &temp_use);
+        cout << "aqui " << params[1] << " " << params[2] << " " << params[3] << endl;
+        cout << "SUB "+rd+" "+rs+" "+rt << endl;
         assembly.push_back("SUB "+rd+" "+rs+" "+rt);
         if(in_mem){
             storeStackElement(params[1], scope, rd, &temp_use, debug);
