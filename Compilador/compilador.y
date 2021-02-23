@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string.h>
 #include <stack>
+#include <algorithm>
 #include "arvore.cpp"
 #include "symtab.cpp"
 #include "utils.c"
@@ -35,6 +36,15 @@ void yyerror(char *);
 stack<string> savedIDs;
 
 vector<string> drivers_names;
+
+bool contais_driver(string func_name){
+  if(std::find(drivers_names.begin(), drivers_names.end(), func_name) != drivers_names.end()) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
 
 %}
 
@@ -289,7 +299,7 @@ return_stmt:
 expression:
   var ATR expression{
     if($3->nodeKind==CallK && isDriver($3->name)){
-      
+
     }
     else if(checkVoid($3)) {cout <<"Erro semântico no ID: " << $3->name << " na linha " << yylineno << ": Erro 10"; exit(-1);}
     $$ = newNode(AtrK);
@@ -416,7 +426,8 @@ factor:
 call:
   erro ID {savedIDs.push(copyString(currentToken));} PRTO args PRTC{
     if(isDriver(savedIDs.top())){
-      drivers_names.push_back(savedIDs.top());
+      if(contais_driver(savedIDs.top())==false)
+        drivers_names.push_back(savedIDs.top());
     }
     else if(!existID(savedIDs.top()," ")) {
       cout <<"Erro semântico no ID: " << savedIDs.top() << " na linha " << yylineno << " função não declarada"; 
