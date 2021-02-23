@@ -1,5 +1,0 @@
-ID: n        SCOPE: valor   PARAM: true  DATA TYPE: int  TYPE ID: var  LINES: 3 3 3 3 3 3 3 2 1                MEMLOC: 0      MEMPOS: -1     VARAMOUNT: 0   REG: $s0
-ID: valor    SCOPE:         PARAM: false DATA TYPE: int  TYPE ID: func LINES: 14 3 1                           MEMLOC: 0      MEMPOS: -1     VARAMOUNT: 0   VARS: []
-ID: main     SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 10                               MEMLOC: 100    MEMPOS: -1     VARAMOUNT: 1   VARS: [buffer]
-ID: GLOBAL   SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 0                                MEMLOC: 0      MEMPOS: -1     VARAMOUNT: 0   VARS: []
-ID: buffer   SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 13 12                            MEMLOC: 100    MEMPOS: 0      VARAMOUNT: 0   REG: mem[ ]

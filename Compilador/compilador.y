@@ -288,7 +288,10 @@ return_stmt:
 
 expression:
   var ATR expression{
-    if(checkVoid($3)) {cout <<"Erro semântico no ID: " << $3->name << " na linha " << yylineno << ": Erro 10"; exit(-1);}
+    if($3->nodeKind==CallK && isDriver($3->name)){
+      
+    }
+    else if(checkVoid($3)) {cout <<"Erro semântico no ID: " << $3->name << " na linha " << yylineno << ": Erro 10"; exit(-1);}
     $$ = newNode(AtrK);
     $$->name = "=";
     $$->child[0] = $1;
@@ -421,7 +424,9 @@ call:
     }
     $$ = newNode(CallK);
     $$->name = savedIDs.top();
-    insertLineIDGlobal(savedIDs.top(), yylineno);
+    if(isDriver(savedIDs.top())==false){
+      insertLineIDGlobal(savedIDs.top(), yylineno);
+    }
     savedIDs.pop();
     $$->child[0] = $5;
   }

@@ -1,0 +1,559 @@
+{
+'tree:'
+     [
+     {
+     'Node': 'int', 
+     'child[0]': 
+          {
+          'Node': 'directory', 
+          'child[0]': 
+               {
+               'Node': 21
+               }
+          }
+     },
+     {
+     'Node': 'int', 
+     'child[0]': 
+          {
+          'Node': 'processtab', 
+          'child[0]': 
+               {
+               'Node': 101
+               }
+          }
+     }     ,
+     {
+     'Node': 'int', 
+     'child[0]': 
+          {
+          'Node': 'processtabsize', 
+          }
+     }     ,
+     {
+     'Node': 'int', 
+     'child[0]': 
+          {
+          'Node': 'tracksector', 
+          'child[0]': 
+               {
+               'Node': 2
+               }
+          }
+     }     ,
+     {
+     'Node': 'void', 
+     'child[0]': 
+          {
+          'Node': 'FUNCTION', 
+          'child[1]': 
+               [
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'i', 
+                    }
+               },
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'memoryparticiontam', 
+                    }
+               }               ,
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'mempartitionbase', 
+                    }
+               }               ,
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'mempartitionlimit', 
+                    }
+               }               ,
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'programsize', 
+                    }
+               }               ,
+               {
+               'Node': '=', 
+               'child[0]': 
+                    {
+                    'Node': 'processtabsize', 
+                    }
+               'child[1]': 
+                    {
+                    'Node': 'processtab', 
+                    'child[0]': 
+                         {
+                         'Node': 0
+                         }
+                    }
+               }               ,
+               {
+               'Node': 'if', 
+               'child[0]': 
+                    {
+                    'Node': '==', 
+                    'child[0]': 
+                         {
+                         'Node': 'processtabsize', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 0
+                         }
+                    }
+               'child[1]': 
+                    [
+                    {
+                    'Node': 'CALL - inputdisk',
+                    'child[0]': 
+                         [
+                         {
+                         'Node': 1
+                         },
+                         {
+                         'Node': 0
+                         }                         ,
+                         {
+                         'Node': 'directory', 
+                         }
+                    },
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memoryparticiontam', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '/', 
+                         'child[0]': 
+                              {
+                              'Node': 4096
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'directory', 
+                                   'child[0]': 
+                                        {
+                                        'Node': 0
+                                        }
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 2
+                                   }
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'i', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 1
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'mempartitionbase', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 'memoryparticiontam', 
+                         }
+                    }                    ,
+                    {
+                    'Node': 'while', 
+                    'child[0]': 
+                         {
+                         'Node': '<', 
+                         'child[0]': 
+                              {
+                              'Node': 'i', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'directory', 
+                              'child[0]': 
+                                   {
+                                   'Node': 0
+                                   }
+                              }
+                         }
+                    'child[1]': 
+                         [
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'mempartitionlimit', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '-', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': 'mempartitionbase', 
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 'memoryparticiontam', 
+                                        }
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         },
+                         {
+                         'Node': 'CALL - inputdisktracksector',
+                         'child[0]': 
+                              {
+                              'Node': 'tracksector', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'programsize', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'CALL - inputdisk',
+                              'child[0]': 
+                                   [
+                                   {
+                                   'Node': 'tracksector', 
+                                   'child[0]': 
+                                        {
+                                        'Node': 0
+                                        }
+                                   },
+                                   {
+                                   'Node': 'tracksector', 
+                                   'child[0]': 
+                                        {
+                                        'Node': 1
+                                        }
+                                   }                                   ,
+                                   {
+                                   'Node': 'mempartitionbase', 
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 1
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'i', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 2
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 0
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 3
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'mempartitionbase', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 4
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'programsize', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 5
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'mempartitionbase', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 'programsize', 
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 6
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': 'mempartitionbase', 
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 'programsize', 
+                                        }
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 40
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': '+', 
+                                   'child[0]': 
+                                        {
+                                        'Node': '*', 
+                                        'child[0]': 
+                                             {
+                                             'Node': 'i', 
+                                             }
+                                        'child[1]': 
+                                             {
+                                             'Node': 7
+                                             }
+                                        }
+                                   'child[1]': 
+                                        {
+                                        'Node': 7
+                                        }
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'mempartitionlimit', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'i', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'i', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'mempartitionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'mempartitionlimit', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}

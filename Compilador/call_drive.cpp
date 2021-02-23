@@ -14,7 +14,8 @@ static string driver_folder = "./drivers/";
 map<string,string> drivers_map ={
     {"inputdisk", "disk_input.asm"},
     {"output", "external_output.asm"},
-    {"initializeprocessmemory", "initialize_process_memory.asm"}
+    {"initializeprocessmemory", "initialize_process_memory.asm"},
+    {"inputdisktracksector", "initialize_process_memory.asm"}
 };
 
 bool isDriver(string function_name){
