@@ -25,7 +25,9 @@ void main(void)
             inputdisktracksector(directory[i+1], tracksector);
             programsize = inputdisk(tracksector[0], tracksector[1], mempartitionbase);
             
-            insertinprocesstab(processtab, i, i+1, 0, mempartitionbase+1, programsize, mempartitionbase+1+programsize, mempartitionbase+1+programsize+40, mempartitionlimit);
+            aux = mempartitionbase+1;
+            auxdois = aux+programsize;
+            insertinprocesstab(processtab, i, i+1, 0, aux, programsize, auxdois, auxdois+40, mempartitionlimit);
 
             i = i + 1;
             mempartitionbase = mempartitionlimit + 1;

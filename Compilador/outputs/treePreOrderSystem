@@ -314,6 +314,44 @@
                               }
                          }                         ,
                          {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'mempartitionbase', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'auxdois', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 'programsize', 
+                                   }
+                              }
+                         }                         ,
+                         {
                          'Node': 'CALL - insertinprocesstab',
                          'child[0]': 
                               [
@@ -338,59 +376,19 @@
                               'Node': 0
                               }                              ,
                               {
-                              'Node': '+', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'mempartitionbase', 
-                                   }
-                              'child[1]': 
-                                   {
-                                   'Node': 1
-                                   }
+                              'Node': 'aux', 
                               }                              ,
                               {
                               'Node': 'programsize', 
                               }                              ,
                               {
-                              'Node': '+', 
-                              'child[0]': 
-                                   {
-                                   'Node': '+', 
-                                   'child[0]': 
-                                        {
-                                        'Node': 'mempartitionbase', 
-                                        }
-                                   'child[1]': 
-                                        {
-                                        'Node': 1
-                                        }
-                                   }
-                              'child[1]': 
-                                   {
-                                   'Node': 'programsize', 
-                                   }
+                              'Node': 'auxdois', 
                               }                              ,
                               {
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': '+', 
-                                   'child[0]': 
-                                        {
-                                        'Node': '+', 
-                                        'child[0]': 
-                                             {
-                                             'Node': 'mempartitionbase', 
-                                             }
-                                        'child[1]': 
-                                             {
-                                             'Node': 1
-                                             }
-                                        }
-                                   'child[1]': 
-                                        {
-                                        'Node': 'programsize', 
-                                        }
+                                   'Node': 'auxdois', 
                                    }
                               'child[1]': 
                                    {
