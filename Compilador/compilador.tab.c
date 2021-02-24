@@ -2596,7 +2596,7 @@ int main(int argc, char **argv)
     if(debug==false){
       ofstream binaryFile;
       binaryFile.open("./outputs/binary"+outSufix);
-      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary, systemfile, systemquantum);
+      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary, scheduler, systemfile, systemquantum);
       binaryFile.close();
 
       cout << "Binário gerado" << endl;
