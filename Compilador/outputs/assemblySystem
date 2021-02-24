@@ -112,6 +112,43 @@ LOAD $t3 $sa 9
 STORE $t2 $t3 6
 ADDI $sa $sa 9
 BR $ra
+.initializeprocessmemory
+LOAD $t0 $sa 1
+LOAD $t1 $sa 2
+LOAD $t2 $sa 3
+LOAD $t3 $sa 4
+ADDI $sa $sa 4
+STORE $t0 $zero 0
+STORE $t0 $zero 1
+STORE $t0 $zero 2
+STORE $t0 $zero 3
+STORE $t0 $zero 4
+STORE $t0 $zero 5
+STORE $t0 $zero 6
+STORE $t0 $zero 7
+STORE $t0 $zero 8
+STORE $t0 $zero 9
+STORE $t0 $zero 10
+STORE $t0 $zero 11
+STORE $t0 $zero 12
+STORE $t0 $zero 13
+STORE $t0 $zero 14
+STORE $t0 $zero 15
+STORE $t0 $zero 16
+STORE $t0 $zero 17
+STORE $t0 $zero 18
+STORE $t0 $zero 19
+STORE $t0 $zero 20
+STORE $t0 $zero 21
+STORE $t0 $zero 22
+STORE $t0 $zero 23
+STORE $t0 $t1 24
+STORE $t0 $t2 25
+STORE $t0 $zero 26
+STORE $t0 $zero 27
+STORE $t0 $zero 28
+STORE $t0 $zero 29
+STORE $t0 $t3 30
 .main
 MOV $sp $gp
 ADDI $sp $sp 21
@@ -145,13 +182,14 @@ STORE $sp $s4 4
 STORE $sp $s5 5
 STORE $sp $s6 6
 STORE $sp $s7 7
-ADDI $sp $sp 8
+STORE $sp $s8 8
+ADDI $sp $sp 9
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .inputdisk
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -8
+ADDI $sp $sp -9
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
 LOAD $s2 $sp 2
@@ -160,6 +198,7 @@ LOAD $s4 $sp 4
 LOAD $s5 $sp 5
 LOAD $s6 $sp 6
 LOAD $s7 $sp 7
+LOAD $s8 $sp 8
 LI $t8 0
 LI $t9 0
 ADD $t9 $t9 $gp
@@ -207,7 +246,8 @@ STORE $sp $s4 4
 STORE $sp $s5 5
 STORE $sp $s6 6
 STORE $sp $s7 7
-ADDI $sp $sp 8
+STORE $sp $s8 8
+ADDI $sp $sp 9
 STORE $sp $t0 0
 STORE $sp $t1 1
 STORE $sp $t2 2
@@ -221,7 +261,7 @@ ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
 LOAD $t2 $sp 2
-ADDI $sp $sp -8
+ADDI $sp $sp -9
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
 LOAD $s2 $sp 2
@@ -230,6 +270,7 @@ LOAD $s4 $sp 4
 LOAD $s5 $sp 5
 LOAD $s6 $sp 6
 LOAD $s7 $sp 7
+LOAD $s8 $sp 8
 LI $t8 0
 LI $t9 121
 ADD $t9 $t9 $gp
@@ -254,7 +295,8 @@ STORE $sp $s4 4
 STORE $sp $s5 5
 STORE $sp $s6 6
 STORE $sp $s7 7
-ADDI $sp $sp 8
+STORE $sp $s8 8
+ADDI $sp $sp 9
 STORE $sp $t0 0
 STORE $sp $t1 1
 STORE $sp $t2 2
@@ -268,7 +310,7 @@ ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
 LOAD $t2 $sp 2
-ADDI $sp $sp -8
+ADDI $sp $sp -9
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
 LOAD $s2 $sp 2
@@ -277,10 +319,13 @@ LOAD $s4 $sp 4
 LOAD $s5 $sp 5
 LOAD $s6 $sp 6
 LOAD $s7 $sp 7
+LOAD $s8 $sp 8
 MOV $v0 $s5
 LI $t8 1
 ADD $s6 $s3 $t8
 ADD $s7 $s6 $s5
+LI $t8 40
+ADD $s8 $s7 $t8
 LI $t8 21
 ADD $t8 $t8 $gp
 STORE $sa $t8 0
@@ -300,9 +345,7 @@ STORE $sa $s5 0
 ADDI $sa $sa -1
 STORE $sa $s7 0
 ADDI $sa $sa -1
-LI $t8 40
-ADD $t4 $s7 $t8
-STORE $sa $t4 0
+STORE $sa $s8 0
 ADDI $sa $sa -1
 STORE $sa $s4 0
 ADDI $sa $sa -1
@@ -314,25 +357,24 @@ STORE $sp $s4 4
 STORE $sp $s5 5
 STORE $sp $s6 6
 STORE $sp $s7 7
-ADDI $sp $sp 8
+STORE $sp $s8 8
+ADDI $sp $sp 9
 STORE $sp $t0 0
 STORE $sp $t1 1
 STORE $sp $t2 2
 STORE $sp $t3 3
-STORE $sp $t4 4
-ADDI $sp $sp 5
+ADDI $sp $sp 4
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .insertinprocesstab
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -5
+ADDI $sp $sp -4
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
 LOAD $t2 $sp 2
 LOAD $t3 $sp 3
-LOAD $t4 $sp 4
-ADDI $sp $sp -8
+ADDI $sp $sp -9
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
 LOAD $s2 $sp 2
@@ -341,11 +383,66 @@ LOAD $s4 $sp 4
 LOAD $s5 $sp 5
 LOAD $s6 $sp 6
 LOAD $s7 $sp 7
+LOAD $s8 $sp 8
+STORE $sa $s7 0
+ADDI $sa $sa -1
+STORE $sa $s8 0
+ADDI $sa $sa -1
+STORE $sa $s4 0
+ADDI $sa $sa -1
+LI $t8 1
+ADD $t4 $s1 $t8
+STORE $sa $t4 0
+ADDI $sa $sa -1
+STORE $sp $s0 0
+STORE $sp $s1 1
+STORE $sp $s2 2
+STORE $sp $s3 3
+STORE $sp $s4 4
+STORE $sp $s5 5
+STORE $sp $s6 6
+STORE $sp $s7 7
+STORE $sp $s8 8
+ADDI $sp $sp 9
+STORE $sp $t0 0
+STORE $sp $t1 1
+STORE $sp $t2 2
+STORE $sp $t3 3
+STORE $sp $t4 4
+ADDI $sp $sp 5
+STORE $sp $gp 0
+ADDI $sp $sp 1
+BL .initializeprocessmemory
+ADDI $sp $sp -1
+LOAD $gp $sp 0
+ADDI $sp $sp -5
+LOAD $t0 $sp 0
+LOAD $t1 $sp 1
+LOAD $t2 $sp 2
+LOAD $t3 $sp 3
+LOAD $t4 $sp 4
+ADDI $sp $sp -9
+LOAD $s0 $sp 0
+LOAD $s1 $sp 1
+LOAD $s2 $sp 2
+LOAD $s3 $sp 3
+LOAD $s4 $sp 4
+LOAD $s5 $sp 5
+LOAD $s6 $sp 6
+LOAD $s7 $sp 7
+LOAD $s8 $sp 8
 LI $t8 1
 ADD $s1 $s1 $t8
 LI $t8 1
 ADD $s3 $s4 $t8
 B ._l2
 ._l4
+LI $t8 0
+MOV $t8 $t9
+LI $t10 21
+ADD $t10 $t10 $gp
+LI $t11 0
+ADD $t11 $t10 $t11
+STORE $t11 $t9 0
 ._l1
 HALT

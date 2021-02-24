@@ -11,6 +11,7 @@ void main(void)
     int programsize;
     int aux;
     int auxdois;
+    int auxtres;
     processtabsize = processtab[1];
     if(processtabsize==0)
     {
@@ -27,10 +28,14 @@ void main(void)
             
             aux = mempartitionbase+1;
             auxdois = aux+programsize;
-            insertinprocesstab(processtab, i, i+1, 0, aux, programsize, auxdois, auxdois+40, mempartitionlimit);
+            auxtres = auxdois + 40;
+            insertinprocesstab(processtab, i, i+1, 0, aux, programsize, auxdois, auxtres, mempartitionlimit);
+
+            initializeprocessmemory(auxdois, auxtres, mempartitionlimit, i+1);
 
             i = i + 1;
             mempartitionbase = mempartitionlimit + 1;
         }
+        processtab[0] = 0;
     }
 }
