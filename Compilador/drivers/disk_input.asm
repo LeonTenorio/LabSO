@@ -1,4 +1,5 @@
 //Essa funcao recebera com argumento: track, sector, aonde colocar na memoria principal os valores
+//inputdisk(track, sector, buffer)
 .concat_disk_access
 MOV $t4 $v0
 SL $v0 8 $v0

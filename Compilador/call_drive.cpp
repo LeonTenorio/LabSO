@@ -34,16 +34,13 @@ string getDriverName(string function_name){
 vector<string> getDriver(string function_name){
     vector<string> driver_lines;
     ifstream input(driver_folder+drivers_map[function_name]);
-    bool first = true;
+    int lineCount = 0;
     for( std::string line; getline( input, line ); ){
-        if(first){
-            first = false;
-        }
-        else{
+        if(lineCount>1){
             string line_string = line;
             driver_lines.push_back(line_string);
-            //cout << line << " " << driver_lines.size() << endl;
         }
+        lineCount++;
     }
     return driver_lines;
 }

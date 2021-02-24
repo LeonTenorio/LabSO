@@ -1,4 +1,5 @@
 //Esse driver vai inserir os elementos na tabela de simbolos recebida como primeiro argumento
+//insertinprocesstab(processtab, process_index, process_id, process_state, inst_adr, inst_amt, reg_adr, begin_mem, end_mem)
 .insertinprocesstab
 LOAD $t0 $sa 1
 LOAD $t1 $sa 2
