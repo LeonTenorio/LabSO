@@ -2461,13 +2461,15 @@ string getArg(string arg, string argv){
   return intermediate;
 }
 
-void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary, bool *scheduler){
+void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary, bool *scheduler, bool *systemfile, int *systemquantum){
   *inputName = "entrada.txt";
   *outSufix = "";
   *debug = true;
   *binaryToQuartus = false;
   *showBinary = false;
   *scheduler = false;
+  *systemfile = false;
+  *systemquantum = 0;
   if(argc>1){
     for(int i=1;i<argc;i++){
       string actualString = string(argv[i]);
@@ -2519,6 +2521,19 @@ void obterParametros(int argc, char **argv, string *inputName, string *outSufix,
           *scheduler = true;
         }
       }
+      else if(actualString.find("systemfile")!=std::string::npos){
+        string ret = getArg("systemfile", actualString);
+        if(ret.compare("false")==0 && ret.length()>0){
+          *systemfile = false;
+        }
+        else if(ret.compare("true")==0 && ret.length()>0){
+          *systemfile = true;
+        }
+      }
+      else if(actualString.find("systemquantum")!=std::string::npos){
+        string ret = getArg("systemquantum", actualString);
+        *systemquantum = stoi(ret);
+      }
     }
   }
 }
@@ -2531,7 +2546,9 @@ int main(int argc, char **argv)
   bool showBinary;
   bool binaryToQuartus;
   bool scheduler;
-  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary, &scheduler);
+  bool systemfile;
+  int systemquantum;
+  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary, &scheduler, &systemfile, &systemquantum);
   debug = false;
   inputName = "./inputs/" + inputName;
   cout << "\nBison em execução...\n";
@@ -2579,7 +2596,7 @@ int main(int argc, char **argv)
     if(debug==false){
       ofstream binaryFile;
       binaryFile.open("./outputs/binary"+outSufix);
-      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary);
+      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary, systemfile, systemquantum);
       binaryFile.close();
 
       cout << "Binário gerado" << endl;

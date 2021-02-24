@@ -232,7 +232,7 @@ string lineToOutputFormat(int index){
     return ret;
 }
 
-string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary){
+string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool systemfile, int systemquantum){
     string assemblyString = "";
     for(int i=0;i<assembly_lines.size();i++){
         vector<string> params = getAssemblyLineParams(assembly_lines[i]);
@@ -257,13 +257,32 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
         }
     }
     cout << binaryCode.size() << " de linhas código binário" << endl;
+    int desloc = 0;
+    if(systemfile && binaryToQuartus){
+        assemblyString = assemblyString + "registers[0] = {16'd0, 16'd";
+        if(systemquantum!=0){
+            desloc = 2;
+            assemblyString = assemblyString + to_string(3+binaryCode.size());
+        }
+        else{
+            desloc = 1;
+            assemblyString = assemblyString + to_string(2+binaryCode.size());
+        }
+        assemblyString = assemblyString + "};\n";
+        if(systemquantum!=0){
+            assemblyString = assemblyString + "registers[1] = {32'd"+to_string(systemquantum)+"};\n";
+        }
+    }
     for(int i=0;i<binaryCode.size();i++){
         if(binaryToQuartus){
-            assemblyString = assemblyString + "registers["+to_string(i)+"] = {32'b" + binaryCode[i] + "};\n";
+            assemblyString = assemblyString + "registers["+to_string(i+desloc)+"] = {32'b" + binaryCode[i] + "};\n";
         }
         else{
             assemblyString = assemblyString + lineToOutputFormat(i) +": "+binaryCode[i] + "\n";
         }
+    }
+    if(systemfile && binaryToQuartus){
+        assemblyString = assemblyString + "registers["+to_string(binaryCode.size()+desloc)+"] = {32'b11111111111111111111111111111111};\n";
     }
     return assemblyString;
 }
