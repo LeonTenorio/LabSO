@@ -295,7 +295,7 @@ void storeStackElement(string id, string scope, string loc_register, int *temp_u
 
 static string func_name = "";
 
-void lineToAssembly(vector<string> params, bool debug){
+void lineToAssembly(vector<string> params, bool debug, bool scheduler){
     if(params[0].compare("goto")==0){
         assembly.push_back("B ."+params[1]);
     }
@@ -410,8 +410,6 @@ void lineToAssembly(vector<string> params, bool debug){
         string rd = getRegisterLikeWrite(params[1], scope, &temp_use, &in_mem);
         string rs = getRegisterLikeRead(params[2], scope, &temp_use);
         string rt = getRegisterLikeRead(params[3], scope, &temp_use);
-        cout << "aqui " << params[1] << " " << params[2] << " " << params[3] << endl;
-        cout << "SUB "+rd+" "+rs+" "+rt << endl;
         assembly.push_back("SUB "+rd+" "+rs+" "+rt);
         if(in_mem){
             storeStackElement(params[1], scope, rd, &temp_use, debug);
@@ -530,6 +528,8 @@ void lineToAssembly(vector<string> params, bool debug){
         }
     }
     else if(params[0].compare("end")==0){
+        if(scheduler)
+            assembly.push_back("RELEASE");
         assembly.push_back("HALT");
     }
     else{
@@ -568,14 +568,12 @@ string generateAssembly(string quad, vector<string> drivers, bool debug, bool sc
     //assembly.push_back("MOV $gp $sp");
     //assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
     if(scheduler){
+        assembly.push_back("LOCK");
         assembly.push_back("LI $fp 0");
         assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
         assembly.push_back("LOAD $gp $zero 1");
         assembly.push_back("ADDI $gp $gp 2");
         assembly.push_back("MOV $gp $sp");
-    }
-    else{
-        assembly.push_back("LI $fp 1");
     }
     BucketList bucketElement = getBucketElement("GLOBAL", " ");
     
@@ -584,7 +582,7 @@ string generateAssembly(string quad, vector<string> drivers, bool debug, bool sc
     }
     for(int i=0;i<lines.size();i++){
         vector<string> params = getLineParams(lines[i]);
-        lineToAssembly(params, debug);
+        lineToAssembly(params, debug, scheduler);
         if(params[0].compare("goto")==0 && params[1].compare("main")==0){
             labels_lines[".ENDFUN"] = assembly.size() - labels.size();
             assembly.push_back(".ENDFUN");

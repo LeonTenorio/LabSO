@@ -41,7 +41,7 @@ vector<string> getDriver(string function_name){
         else{
             string line_string = line;
             driver_lines.push_back(line_string);
-            cout << line << " " << driver_lines.size() << endl;
+            //cout << line << " " << driver_lines.size() << endl;
         }
     }
     return driver_lines;

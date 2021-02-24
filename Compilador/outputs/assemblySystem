@@ -1,4 +1,5 @@
 LI $zero 0
+LOCK
 LI $fp 0
 LI $sa 4095
 LOAD $gp $zero 1
@@ -445,4 +446,5 @@ LI $t11 0
 ADD $t11 $t10 $t11
 STORE $t11 $t9 0
 ._l1
+RELEASE
 HALT

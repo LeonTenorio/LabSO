@@ -212,6 +212,12 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
     else if(params[0].compare("SR")==0){
         return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(9)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
     }
+    else if(params[0].compare("LOCK")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(1);
+    }
+    else if(params[0].compare("RELEASE")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(2);
+    }
     else{
         cout << "Erro, linha de assembly não reconhecida " << params[0] << endl;
         return "";
@@ -237,7 +243,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             for(int i=0;i<params.size();i++){
                 lineParams = lineParams + params[i] + " ";
             }
-            while(lineParams.length()<20){
+            while(lineParams.length()<40){
                 lineParams = lineParams + " ";
             }
             if(showBinary){
