@@ -1,9 +1,11 @@
-//Essa funcao vai inicializar os valores do processo com zero, com excessao aos valores de $sa e $gp que sao o segmneto de memoria que o programa ira utilizar, entao recebera: endereco base dos registradores do processo, valor para $gp, valor para $sa
-.initialize_process_memory
-LOAD $t0 $sa 1
-LOAD $t1 $sa 2
-LOAD $t2 $sa 3
-ADDI $sa $sa 3
+//Essa funcao vai inicializar os valores do processo com zero, com excessao aos valores de $sa e $gp que sao o segmneto de memoria que o programa ira utilizar, entao recebera: endereco base dos registradores do processo, valor para $gp, valor para $sa, valor de $fp
+//initializeprocessmemory(re, gp, sa, fp)
+.initializeprocessmemory
+LOAD $t0 $sa 4
+LOAD $t1 $sa 3
+LOAD $t2 $sa 2
+LOAD $t3 $sa 1
+ADDI $sa $sa 4
 STORE $t0 $zero 0
 STORE $t0 $zero 1
 STORE $t0 $zero 2
@@ -34,3 +36,4 @@ STORE $t0 $zero 26
 STORE $t0 $zero 27
 STORE $t0 $zero 28
 STORE $t0 $zero 29
+STORE $t0 $t3 30

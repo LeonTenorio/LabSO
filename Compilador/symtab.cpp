@@ -162,7 +162,7 @@ string vectorString(vector<string> vectorString){
 static string symbTabString = "";
 
 string formatTabCeil(string info, int index){
-  int sizes[9] = {13, 15, 13, 16, 14, 40, 15, 15, 15};
+  int sizes[9] = {25, 15, 13, 16, 14, 40, 25, 15, 15};
   if(index<9){
     while(info.size()<sizes[index]){
       info = info + " ";
@@ -194,7 +194,7 @@ void showSymbTab(){
       if(l->value_in_register && stringTypeID(l->type_id)=="var")
         symbTabString = symbTabString + formatTabCeil("REG: "+l->loc_register, 9);
       else if(stringTypeID(l->type_id)=="var")
-        symbTabString = symbTabString + formatTabCeil("REG: mem["+l->loc_register+"]", 9);
+        symbTabString = symbTabString + formatTabCeil("MEM: "+to_string(l->mem_pos), 9);
       if(stringTypeID(l->type_id)=="func")
         symbTabString = symbTabString + formatTabCeil("VARS: ["+vectorString(l->variables)+"]", 9);
       symbTabString = symbTabString + "\n";

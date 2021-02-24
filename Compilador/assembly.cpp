@@ -8,7 +8,7 @@
 #define USETEMPREGISTERAMOUNT 8
 #define USESTATICREGISTERAMOUNT 10
 
-#define STACKSIZE 62209 //Tamanho da memoria RAM utilizada
+#define STACKSIZE 4096 //Tamanho da memoria RAM utilizada
 
 //getRegisterLikeRead apenas usar um unico temporario - OK
 //getRegisterLikeWrite apenas usar um unico temporario - OK
@@ -133,6 +133,7 @@ string getRegisterLikeWrite(string id, string scope, int *temp_use, bool *in_mem
     BucketList bucketElement;
     if(id.compare(0, 2, "_t")==0){
         *in_mem = false;
+        int numberTempRegister = stoi(id.substr(2));
         return getTempRegister(id, scope, temp_use, in_mem);
     }
     else{
@@ -294,7 +295,7 @@ void storeStackElement(string id, string scope, string loc_register, int *temp_u
 
 static string func_name = "";
 
-void lineToAssembly(vector<string> params, bool debug){
+void lineToAssembly(vector<string> params, bool debug, bool scheduler){
     if(params[0].compare("goto")==0){
         assembly.push_back("B ."+params[1]);
     }
@@ -527,6 +528,8 @@ void lineToAssembly(vector<string> params, bool debug){
         }
     }
     else if(params[0].compare("end")==0){
+        if(scheduler)
+            assembly.push_back("RELEASE");
         assembly.push_back("HALT");
     }
     else{
@@ -536,12 +539,12 @@ void lineToAssembly(vector<string> params, bool debug){
 }
 
 void write_driver_functions(vector<string> drivers, bool debug){
-    cout << "indo incluir os drivers - " << drivers.size() << " linhas para incluir" << endl;
+    //cout << "indo incluir os drivers - " << drivers.size() << " linhas para incluir" << endl;
     for(int i=0;i<drivers.size();i++){
-        cout << "incluindo "<< drivers[i] << endl;
+        //cout << "incluindo "<< drivers[i] << endl;
         vector<string> driver_lines = getDriver(drivers[i]);
         for(int j=0;j<driver_lines.size();j++){
-            cout << "uma linha de driver?? " << driver_lines[j] << endl;
+            //cout << "uma linha de driver?? " << driver_lines[j] << endl;
             if(driver_lines[j].at(0)=='.'){
                 writeDebugAssembly("LABEL", debug);
                 labels_lines[driver_lines[j]] = assembly.size() - labels.size();
@@ -555,14 +558,23 @@ void write_driver_functions(vector<string> drivers, bool debug){
     }
 }
 
-string generateAssembly(string quad, vector<string> drivers, bool debug){
+string generateAssembly(string quad, vector<string> drivers, bool debug, bool scheduler){
     string assemblyString = "";
     parseQuadCode(quad);
     cout << lines.size() << " linhas de código intermediário" << endl << endl;
     assembly.push_back("LI $zero 0");
-    assembly.push_back("MOV $zero $sp");
-    assembly.push_back("MOV $zero $gp");
-    assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
+    //assembly.push_back("MOV $zero $sp");
+    //assembly.push_back("MOV $zero $gp");
+    //assembly.push_back("MOV $gp $sp");
+    //assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
+    if(scheduler){
+        assembly.push_back("LOCK");
+        assembly.push_back("LI $fp 0");
+        assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
+        assembly.push_back("LOAD $gp $zero 1");
+        assembly.push_back("ADDI $gp $gp 2");
+        assembly.push_back("MOV $gp $sp");
+    }
     BucketList bucketElement = getBucketElement("GLOBAL", " ");
     
     for(int i=0;i<bucketElement->variables.size();i++){
@@ -570,7 +582,7 @@ string generateAssembly(string quad, vector<string> drivers, bool debug){
     }
     for(int i=0;i<lines.size();i++){
         vector<string> params = getLineParams(lines[i]);
-        lineToAssembly(params, debug);
+        lineToAssembly(params, debug, scheduler);
         if(params[0].compare("goto")==0 && params[1].compare("main")==0){
             labels_lines[".ENDFUN"] = assembly.size() - labels.size();
             assembly.push_back(".ENDFUN");

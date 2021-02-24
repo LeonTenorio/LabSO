@@ -206,8 +206,20 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
         return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1])+getRegister(params[2])+"XXXX"+convertNumberToBinary10Size(stoi(params[3]));
         //return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1]);
     }
+    else if(params[0].compare("SL")==0){
+        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(8)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
+    }
+    else if(params[0].compare("SR")==0){
+        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(9)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
+    }
+    else if(params[0].compare("LOCK")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(1);
+    }
+    else if(params[0].compare("RELEASE")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(2);
+    }
     else{
-        cout << "Erro, linha de assembly não reconhecida" << endl;
+        cout << "Erro, linha de assembly não reconhecida " << params[0] << endl;
         return "";
     }
 }
@@ -220,7 +232,7 @@ string lineToOutputFormat(int index){
     return ret;
 }
 
-string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary){
+string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool scheduler, bool systemfile, int systemquantum){
     string assemblyString = "";
     for(int i=0;i<assembly_lines.size();i++){
         vector<string> params = getAssemblyLineParams(assembly_lines[i]);
@@ -231,7 +243,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             for(int i=0;i<params.size();i++){
                 lineParams = lineParams + params[i] + " ";
             }
-            while(lineParams.length()<20){
+            while(lineParams.length()<40){
                 lineParams = lineParams + " ";
             }
             if(showBinary){
@@ -245,13 +257,34 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
         }
     }
     cout << binaryCode.size() << " de linhas código binário" << endl;
+    int desloc = 0;
+    if(systemfile && binaryToQuartus){
+        assemblyString = assemblyString + "registers[0] = {16'd0, 16'd";
+        if(scheduler){
+            if(systemquantum!=0){
+                desloc = 2;
+                assemblyString = assemblyString + to_string(3+binaryCode.size());
+            }
+            else{
+                desloc = 1;
+                assemblyString = assemblyString + to_string(2+binaryCode.size());
+            }
+            assemblyString = assemblyString + "};\n";
+        }
+        if(systemquantum!=0){
+            assemblyString = assemblyString + "registers[1] = {32'd"+to_string(systemquantum)+"};\n";
+        }
+    }
     for(int i=0;i<binaryCode.size();i++){
         if(binaryToQuartus){
-            assemblyString = assemblyString + "registers["+to_string(i)+"] = {32'b" + binaryCode[i] + "};\n";
+            assemblyString = assemblyString + "registers["+to_string(i+desloc)+"] = {32'b" + binaryCode[i] + "};\n";
         }
         else{
             assemblyString = assemblyString + lineToOutputFormat(i) +": "+binaryCode[i] + "\n";
         }
+    }
+    if(systemfile && binaryToQuartus){
+        assemblyString = assemblyString + "registers["+to_string(binaryCode.size()+desloc)+"] = {32'b11111111111111111111111111111111};\n";
     }
     return assemblyString;
 }

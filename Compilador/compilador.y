@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string.h>
 #include <stack>
+#include <algorithm>
 #include "arvore.cpp"
 #include "symtab.cpp"
 #include "utils.c"
@@ -35,6 +36,15 @@ void yyerror(char *);
 stack<string> savedIDs;
 
 vector<string> drivers_names;
+
+bool contais_driver(string func_name){
+  if(std::find(drivers_names.begin(), drivers_names.end(), func_name) != drivers_names.end()) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
 
 %}
 
@@ -288,7 +298,10 @@ return_stmt:
 
 expression:
   var ATR expression{
-    if(checkVoid($3)) {cout <<"Erro semântico no ID: " << $3->name << " na linha " << yylineno << ": Erro 10"; exit(-1);}
+    if($3->nodeKind==CallK && isDriver($3->name)){
+
+    }
+    else if(checkVoid($3)) {cout <<"Erro semântico no ID: " << $3->name << " na linha " << yylineno << ": Erro 10"; exit(-1);}
     $$ = newNode(AtrK);
     $$->name = "=";
     $$->child[0] = $1;
@@ -413,7 +426,8 @@ factor:
 call:
   erro ID {savedIDs.push(copyString(currentToken));} PRTO args PRTC{
     if(isDriver(savedIDs.top())){
-      drivers_names.push_back(savedIDs.top());
+      if(contais_driver(savedIDs.top())==false)
+        drivers_names.push_back(savedIDs.top());
     }
     else if(!existID(savedIDs.top()," ")) {
       cout <<"Erro semântico no ID: " << savedIDs.top() << " na linha " << yylineno << " função não declarada"; 
@@ -421,7 +435,9 @@ call:
     }
     $$ = newNode(CallK);
     $$->name = savedIDs.top();
-    insertLineIDGlobal(savedIDs.top(), yylineno);
+    if(isDriver(savedIDs.top())==false){
+      insertLineIDGlobal(savedIDs.top(), yylineno);
+    }
     savedIDs.pop();
     $$->child[0] = $5;
   }
@@ -545,12 +561,15 @@ string getArg(string arg, string argv){
   return intermediate;
 }
 
-void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary){
+void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary, bool *scheduler, bool *systemfile, int *systemquantum){
   *inputName = "entrada.txt";
   *outSufix = "";
   *debug = true;
   *binaryToQuartus = false;
   *showBinary = false;
+  *scheduler = false;
+  *systemfile = false;
+  *systemquantum = 0;
   if(argc>1){
     for(int i=1;i<argc;i++){
       string actualString = string(argv[i]);
@@ -593,6 +612,28 @@ void obterParametros(int argc, char **argv, string *inputName, string *outSufix,
           *showBinary = true;
         }
       }
+      else if(actualString.find("scheduler")!=std::string::npos){
+        string ret = getArg("scheduler", actualString);
+        if(ret.compare("false")==0 && ret.length()>0){
+          *scheduler = false;
+        }
+        else if(ret.compare("true")==0 && ret.length()>0){
+          *scheduler = true;
+        }
+      }
+      else if(actualString.find("systemfile")!=std::string::npos){
+        string ret = getArg("systemfile", actualString);
+        if(ret.compare("false")==0 && ret.length()>0){
+          *systemfile = false;
+        }
+        else if(ret.compare("true")==0 && ret.length()>0){
+          *systemfile = true;
+        }
+      }
+      else if(actualString.find("systemquantum")!=std::string::npos){
+        string ret = getArg("systemquantum", actualString);
+        *systemquantum = stoi(ret);
+      }
     }
   }
 }
@@ -604,7 +645,10 @@ int main(int argc, char **argv)
   bool debug;
   bool showBinary;
   bool binaryToQuartus;
-  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary);
+  bool scheduler;
+  bool systemfile;
+  int systemquantum;
+  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary, &scheduler, &systemfile, &systemquantum);
   debug = false;
   inputName = "./inputs/" + inputName;
   cout << "\nBison em execução...\n";
@@ -638,7 +682,7 @@ int main(int argc, char **argv)
 
     ofstream assemblyFile;
     assemblyFile.open("./outputs/assembly"+outSufix);
-    assemblyFile << generateAssembly(quadCode, drivers_names, debug);
+    assemblyFile << generateAssembly(quadCode, drivers_names, debug, scheduler);
     assemblyFile.close();
 
     showSymbTab();
@@ -652,7 +696,7 @@ int main(int argc, char **argv)
     if(debug==false){
       ofstream binaryFile;
       binaryFile.open("./outputs/binary"+outSufix);
-      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary);
+      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary, scheduler, systemfile, systemquantum);
       binaryFile.close();
 
       cout << "Binário gerado" << endl;

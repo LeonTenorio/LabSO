@@ -30,9 +30,12 @@ int main(){
     cout << "Esses parâmetros são: "<< endl << endl;
     cout << "inputName=<NOME DO ARQUIVO A SER COMPILADO>" << endl;
     cout << "outSufix=<SUFIXO UTILIZADO NOS ARQUIVOS DE SAÍDA NA PASTA OUTPUTS>" << endl;
+    cout << "scheduler=true para habilitar algumas alteracoes especificas para o gerenciador de processos do meu SO" << endl;
     //cout << "debug=false, para não visualizar os comentários e habilitar a saída do código BINARY" << endl;
     cout << "quartus=true, para habilitar a saída com a formatação específica para colocar o código no processador implementado no quartus e alvo desse compilador" << endl;
     cout << "showBinary=true, para sair no terminal o código assembly junto do código binário" << endl;
+    cout << "systemfile=true, para inserir um header e um footer para utilizacao como arquivo no sistema operacional" << endl;
+    cout << "systemquantum=NUM, para inserir o quantum no arquivo do scheduler em header do arquivo" << endl;
     cout << gerarTracos(150) << endl << endl;
     cout << "Para a explicação da execução deste compilador temos alguns diagramas que podem ser vistos nessa pasta" << endl;
     cout << "Diagrama de atividade - Análise: Explica as sequência que ocorre na fase de análise do compilador" << endl;
