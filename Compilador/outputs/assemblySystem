@@ -44,43 +44,19 @@ ADDI $s2 $s2 1
 STORE $s3 $s4 0
 MOV $s4 $v0
 BR $s8
-.initializeprocessmemory
+.inputdisktracksector
 LOAD $t0 $sa 1
 LOAD $t1 $sa 2
-LOAD $t2 $sa 3
-LOAD $t3 $sa 4
-ADDI $sa $sa 4
-STORE $t0 $zero 0
-STORE $t0 $zero 1
-STORE $t0 $zero 2
-STORE $t0 $zero 3
-STORE $t0 $zero 4
-STORE $t0 $zero 5
-STORE $t0 $zero 6
-STORE $t0 $zero 7
-STORE $t0 $zero 8
-STORE $t0 $zero 9
-STORE $t0 $zero 10
-STORE $t0 $zero 11
-STORE $t0 $zero 12
-STORE $t0 $zero 13
-STORE $t0 $zero 14
-STORE $t0 $zero 15
-STORE $t0 $zero 16
-STORE $t0 $zero 17
-STORE $t0 $zero 18
-STORE $t0 $zero 19
-STORE $t0 $zero 20
-STORE $t0 $zero 21
-STORE $t0 $zero 22
-STORE $t0 $zero 23
-STORE $t0 $t1 24
-STORE $t0 $t2 25
-STORE $t0 $zero 26
-STORE $t0 $zero 27
-STORE $t0 $zero 28
-STORE $t0 $zero 29
-STORE $t0 $t3 30
+ADDI $sa $sa 2
+LI $t2 256
+DIV $t0 $t2
+MFHI $t3
+STORE $t1 $t3 1
+MFLO $t0
+DIV $t0 $t2
+MFHI $t3
+STORE $t1 $t3 0
+BR $ra
 .insertinprocesstab
 LOAD $t0 $sa 1
 LOAD $t1 $sa 2
