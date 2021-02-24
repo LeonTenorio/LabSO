@@ -13,6 +13,17 @@ void main(void)
     int auxdois;
     int auxtres;
     processtabsize = processtab[1];
+    if(processtabsize!=0){
+        i = processtab[0];
+        aux = 7+i*7;
+        auxdois = processtab[aux];
+        auxtres = getupcodeoperation(auxdois);
+        if(auxtres==1){
+            /*Processo terminado*/
+            processtab[aux] = 2;
+            processtab[1] = processtabsize - 1;
+        }
+    }
     if(processtabsize==0)
     {
         inputdisk(1, 0, directory);
@@ -35,7 +46,22 @@ void main(void)
 
             i = i + 1;
             mempartitionbase = mempartitionlimit + 1;
+            aux = processtab[1];
+            processtab[1] = aux + 1;
         }
-        processtab[0] = 0;
+        aux = 0;
+        processtab[0] = aux - 1;
+    }
+    processtabsize = processtab[1];
+    
+    /*Varrer a tabela de simbolos procurando o proximo processo pronto para ser executado*/
+    i = processtab[0]+1;
+    aux = 1+i*7;
+    while(processtab[aux]!=1){
+        i = i + 1;
+        if(i>=processtabsize){
+            i = 0;
+        }
+        aux = 1+i*7;
     }
 }
