@@ -57,12 +57,16 @@ void main(void)
     
     /*Varrer a tabela de simbolos procurando o proximo processo pronto para ser executado*/
     i = processtab[0]+1;
-    aux = 4+i*7;
+    aux = 3+i*7;
     while(processtab[aux]!=0){
         i = i + 1;
         if(i>=processtabsize){
             i = 0;
         }
-        aux = 4+i*7;
+        aux = 3+i*7;
     }
+    aux = aux + 1;
+    auxdois = aux + 1;
+    auxtres = auxdois + 1;
+    selectprocesstorun(processtab[aux], processtab[auxdois], processtab[auxtres]);
 }

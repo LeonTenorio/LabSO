@@ -24,9 +24,9 @@ ADD $v0 $v0 $s2
 BR $ra
 .inputdisk
 MOV $ra $s8
-LOAD $s0 $sa 1
+LOAD $s0 $sa 3
 LOAD $s1 $sa 2
-LOAD $s3 $sa 3
+LOAD $s3 $sa 1
 ADDI $sa $sa 3
 LI $s2 1
 MOV $zero $s4
@@ -45,8 +45,8 @@ STORE $s3 $s4 0
 MOV $s4 $v0
 BR $s8
 .inputdisktracksector
-LOAD $t0 $sa 1
-LOAD $t1 $sa 2
+LOAD $t0 $sa 2
+LOAD $t1 $sa 1
 ADDI $sa $sa 2
 LI $t2 256
 DIV $t0 $t2
@@ -58,34 +58,34 @@ MFHI $t3
 STORE $t1 $t3 0
 BR $ra
 .insertinprocesstab
-LOAD $t0 $sa 1
-LOAD $t1 $sa 2
+LOAD $t0 $sa 9
+LOAD $t1 $sa 8
 LI $t2 7
 MULT $t1 $t2
 MFLO $t2
 ADDI $t2 $t2 2
 ADD $t2 $t2 $t0
-LOAD $t3 $sa 3
+LOAD $t3 $sa 7
 STORE $t2 $t3 0
-LOAD $t3 $sa 4
+LOAD $t3 $sa 6
 STORE $t2 $t3 1
 LOAD $t3 $sa 5
 STORE $t2 $t3 2
-LOAD $t3 $sa 6
+LOAD $t3 $sa 4
 STORE $t2 $t3 3
-LOAD $t3 $sa 7
+LOAD $t3 $sa 3
 STORE $t2 $t3 4
-LOAD $t3 $sa 8
+LOAD $t3 $sa 2
 STORE $t2 $t3 5
-LOAD $t3 $sa 9
+LOAD $t3 $sa 1
 STORE $t2 $t3 6
 ADDI $sa $sa 9
 BR $ra
 .initializeprocessmemory
-LOAD $t0 $sa 1
-LOAD $t1 $sa 2
-LOAD $t2 $sa 3
-LOAD $t3 $sa 4
+LOAD $t0 $sa 4
+LOAD $t1 $sa 3
+LOAD $t2 $sa 2
+LOAD $t3 $sa 1
 ADDI $sa $sa 4
 STORE $t0 $zero 0
 STORE $t0 $zero 1
@@ -118,6 +118,12 @@ STORE $t0 $zero 27
 STORE $t0 $zero 28
 STORE $t0 $zero 29
 STORE $t0 $t3 30
+.selectprocesstorun
+LOAD $k0 $sa 3
+LOAD $k1 $sa 2
+LOAD $re $sa 1
+ADDI $sa $sa 3
+BR $ra
 .main
 MOV $sp $gp
 ADDI $sp $sp 21
@@ -528,7 +534,7 @@ ADD $s1 $t9 $t10
 LI $t8 7
 MULT $s1 $t8
 MFLO $t6
-LI $t8 4
+LI $t8 3
 ADD $s6 $t8 $t6
 ._l9
 LI $t8 21
@@ -550,9 +556,76 @@ MOV $t8 $s1
 LI $t8 7
 MULT $s1 $t8
 MFLO $t7
-LI $t8 4
+LI $t8 3
 ADD $s6 $t8 $t7
 B ._l9
 ._l11
+LI $t8 1
+ADD $s6 $s6 $t8
+LI $t8 1
+ADD $s7 $s6 $t8
+LI $t8 1
+ADD $s8 $s7 $t8
+LI $t8 21
+ADD $t8 $t8 $gp
+ADD $t8 $t8 $s6
+LOAD $t8 $t8 0
+STORE $sa $t8 0
+ADDI $sa $sa -1
+LI $t8 21
+ADD $t8 $t8 $gp
+ADD $t8 $t8 $s7
+LOAD $t8 $t8 0
+STORE $sa $t8 0
+ADDI $sa $sa -1
+LI $t8 21
+ADD $t8 $t8 $gp
+ADD $t8 $t8 $s8
+LOAD $t8 $t8 0
+STORE $sa $t8 0
+ADDI $sa $sa -1
+STORE $sp $s0 0
+STORE $sp $s1 1
+STORE $sp $s2 2
+STORE $sp $s3 3
+STORE $sp $s4 4
+STORE $sp $s5 5
+STORE $sp $s6 6
+STORE $sp $s7 7
+STORE $sp $s8 8
+ADDI $sp $sp 9
+STORE $sp $t0 0
+STORE $sp $t1 1
+STORE $sp $t2 2
+STORE $sp $t3 3
+STORE $sp $t4 4
+STORE $sp $t5 5
+STORE $sp $t6 6
+STORE $sp $t7 7
+ADDI $sp $sp 8
+STORE $sp $gp 0
+ADDI $sp $sp 1
+BL .selectprocesstorun
+ADDI $sp $sp -1
+LOAD $gp $sp 0
+ADDI $sp $sp -8
+LOAD $t0 $sp 0
+LOAD $t1 $sp 1
+LOAD $t2 $sp 2
+LOAD $t3 $sp 3
+LOAD $t4 $sp 4
+LOAD $t5 $sp 5
+LOAD $t6 $sp 6
+LOAD $t7 $sp 7
+ADDI $sp $sp -9
+LOAD $s0 $sp 0
+LOAD $s1 $sp 1
+LOAD $s2 $sp 2
+LOAD $s3 $sp 3
+LOAD $s4 $sp 4
+LOAD $s5 $sp 5
+LOAD $s6 $sp 6
+LOAD $s7 $sp 7
+LOAD $s8 $sp 8
 RELEASE
 HALT

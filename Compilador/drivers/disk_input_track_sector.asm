@@ -1,8 +1,8 @@
 //Esse driver vai dividir um registrador que tem track, sector em dois registradores para acesso a um arquivo. Vai receber como parametros um valor e um vetor para jogar o retorno
 //inputdisktracksector(val, buffer)
 .inputdisktracksector
-LOAD $t0 $sa 1
-LOAD $t1 $sa 2
+LOAD $t0 $sa 2
+LOAD $t1 $sa 1
 ADDI $sa $sa 2
 LI $t2 256
 DIV $t0 $t2

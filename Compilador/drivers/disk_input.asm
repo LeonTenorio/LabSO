@@ -9,9 +9,9 @@ ADD $v0 $v0 $s2
 BR $ra
 .inputdisk
 MOV $ra $s8
-LOAD $s0 $sa 1
+LOAD $s0 $sa 3
 LOAD $s1 $sa 2
-LOAD $s3 $sa 3
+LOAD $s3 $sa 1
 ADDI $sa $sa 3
 LI $s2 1
 MOV $zero $s4
