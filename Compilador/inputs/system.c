@@ -12,10 +12,11 @@ void main(void)
     int aux;
     int auxdois;
     int auxtres;
+    /*Meus processos terao 3 estados: 0 pronto para execucao, 1 bloqueado, 2 terminado*/
     processtabsize = processtab[1];
     if(processtabsize!=0){
         i = processtab[0];
-        aux = 7+i*7;
+        aux = 4+i*7;
         auxdois = processtab[aux];
         auxtres = getupcodeoperation(auxdois);
         if(auxtres==1){
@@ -56,12 +57,12 @@ void main(void)
     
     /*Varrer a tabela de simbolos procurando o proximo processo pronto para ser executado*/
     i = processtab[0]+1;
-    aux = 1+i*7;
-    while(processtab[aux]!=1){
+    aux = 4+i*7;
+    while(processtab[aux]!=0){
         i = i + 1;
         if(i>=processtabsize){
             i = 0;
         }
-        aux = 1+i*7;
+        aux = 4+i*7;
     }
 }

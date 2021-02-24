@@ -179,7 +179,7 @@ MOV $t9 $s1
 LI $t8 7
 MULT $s1 $t8
 MFLO $t0
-LI $t8 7
+LI $t8 4
 ADD $s6 $t8 $t0
 LI $t8 21
 ADD $t8 $t8 $gp
@@ -565,14 +565,14 @@ ADD $s1 $t9 $t10
 LI $t8 7
 MULT $s1 $t8
 MFLO $t6
-LI $t8 1
+LI $t8 4
 ADD $s6 $t8 $t6
 ._l9
 LI $t8 21
 ADD $t8 $t8 $gp
 ADD $t8 $t8 $s6
 LOAD $t8 $t8 0
-LI $t9 1
+LI $t9 0
 BNE $t8 $t9 ._l10
 B ._l11
 ._l10
@@ -587,7 +587,7 @@ MOV $t8 $s1
 LI $t8 7
 MULT $s1 $t8
 MFLO $t7
-LI $t8 1
+LI $t8 4
 ADD $s6 $t8 $t7
 B ._l9
 ._l11
