@@ -180,7 +180,10 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
         return convertNumberToBinary4Size(4)+convertNumberToBinary4Size(8)+getRegister(params[1])+getRegister(params[2])+convertNumberToBinary14Size(labels_lines[params[3]]);
     }
     else if(params[0].compare("STORE")==0){
-        return convertNumberToBinary4Size(5)+"XXXX"+getRegister(params[1])+getRegister(params[2])+"XXXXX"+convertNumberToBinary9Size(stoi(params[3]));
+        return convertNumberToBinary4Size(5)+convertNumberToBinary4Size(0)+getRegister(params[1])+getRegister(params[2])+"XXXXX"+convertNumberToBinary9Size(stoi(params[3]));
+    }
+    else if(params[0].compare("STOREINST")==0){
+        return convertNumberToBinary4Size(5)+convertNumberToBinary4Size(1)+getRegister(params[1])+getRegister(params[2])+"XXXXX"+convertNumberToBinary9Size(stoi(params[3]));
     }
     else if(params[0].compare("LOAD")==0){
         //cout << params[0] +" " + params[1] +" "+params[2] + " "+params[3] << endl;
@@ -217,6 +220,21 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
     }
     else if(params[0].compare("RELEASE")==0){
         return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(2);
+    }
+    else if(params[0].compare("SETQUANTUM")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(4)+getRegister(params[1]);
+    }
+    else if(params[0].compare("SETPC")==0){
+        return convertNumberToBinary4Size(0)+convertNumberToBinary4Size(3)+getRegister(params[1]);
+    }
+    else if(params[0].compare("SETHI")==0){
+        return convertNumberToBinary4Size(8)+convertNumberToBinary4Size(3)+getRegister(params[1]);
+    }
+    else if(params[0].compare("SETLO")==0){
+        return convertNumberToBinary4Size(8)+convertNumberToBinary4Size(4)+getRegister(params[1]);
+    }
+    else if(params[0].compare("BIOSINT")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(5);
     }
     else{
         cout << "Erro, linha de assembly não reconhecida " << params[0] << endl;

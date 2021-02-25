@@ -118,6 +118,7 @@ STORE $t0 $zero 27
 STORE $t0 $zero 28
 STORE $t0 $zero 29
 STORE $t0 $t3 30
+BR $ra
 .selectprocesstorun
 LOAD $k0 $sa 3
 LOAD $k1 $sa 2
