@@ -236,6 +236,9 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
     else if(params[0].compare("BIOSINT")==0){
         return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(5);
     }
+    else if(params[0].compare("GETPC")==0){
+        return convertNumberToBinary4Size(0)+convertNumberToBinary4Size(2);
+    }
     else{
         cout << "Erro, linha de assembly não reconhecida " << params[0] << endl;
         return "";

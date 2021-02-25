@@ -13,11 +13,12 @@ B .after_interrupt_after_program
 MOV $k0 $s0
 MOV $zero $s1
 .load_program_loop
-    BEQ $s1 $k1 .load_program_done
-    LOAD $t0 $s0 0
-    STOREINST $s1 $t0 0
-    ADDI $s0 $s0 1
-    ADDI $s1 $s1 1
+BEQ $s1 $k1 .load_program_done
+LOAD $t0 $s0 0
+STOREINST $s1 $t0 0
+ADDI $s0 $s0 1
+ADDI $s1 $s1 1
+B .load_program_loop
 .load_program_done
 BR $ra
 
@@ -94,6 +95,26 @@ LOAD $sa $re 25
 LOAD $ra $re 26
 B .after_load_registers
 
+.load_system_main_program
+MOV $ra $s8
+LI $v0 1
+MOV $zero $s3
+LI $t3 -1
+LI $t1 256
+IN $t0 $v0 128
+STORE $zero $t0 0
+ADDI $v0 $v0 1
+.load_system_main_program_loop
+IN $t0 $v0 128
+BEQ $t0 $t3 .load_system_main_program_loop_out
+STORE $s3 $t0 2
+ADDI $s3 $s3 1
+ADDI $v0 $v0 1
+B .load_system_main_program_loop
+.load_system_main_program_loop_out
+STORE $zero $s3 1
+BR $s8
+
 .main
 BL .load_system_main_program
 LOAD $t0 $zero 0
@@ -105,12 +126,13 @@ BL .load_program
 SETPC $zero
 BIOSINT
 .work_loop
-    LI $k0 2
-    LOAD $k1 $zero 1
-    B .after_interrupt
-    .after_interrupt_after_scheduler
-    SETPC $zero
-    BIOSINT
-    B .after_interrupt
-    .after_interrupt_after_program
-    BIOSINT
+B .after_interrupt
+.after_interrupt_after_scheduler
+BIOSINT
+LI $k0 2
+LOAD $k1 $zero 1
+B .after_interrupt
+.after_interrupt_after_program
+SETPC $zero
+BIOSINT
+B .work_loop

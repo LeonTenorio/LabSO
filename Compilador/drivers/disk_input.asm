@@ -18,14 +18,15 @@ MOV $zero $s4
 MOV $s3 $s5
 LI $t1 256
 LI $t3 -1
-.load_disk_loop
 BL .concat_disk_access
+.load_disk_loop
 IN $t0 $v0 128
 BEQ $t0 $t3 .load_disk_loop_out
 STORE $s5 $t0 1
 ADDI $s5 $s5 1
 ADDI $s4 $s4 1
-ADDI $s2 $s2 1
+ADDI $v0 $v0 1
 STORE $s3 $s4 0
+B .load_disk_loop
 MOV $s4 $v0
 BR $s8
