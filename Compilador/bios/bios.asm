@@ -103,6 +103,7 @@ LI $t3 -1
 LI $t1 256
 IN $t0 $v0 128
 STORE $zero $t0 0
+OUT $t0 $zero 0
 ADDI $v0 $v0 1
 .load_system_main_program_loop
 IN $t0 $v0 128
@@ -112,6 +113,7 @@ ADDI $s3 $s3 1
 ADDI $v0 $v0 1
 B .load_system_main_program_loop
 .load_system_main_program_out
+OUT $s3 $zero 0
 STORE $zero $s3 1
 BR $s8
 

@@ -210,10 +210,10 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
         //return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1]);
     }
     else if(params[0].compare("SL")==0){
-        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(8)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
+        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(8)+getRegister(params[1])+convertNumberToBinary5Size(stoi(params[2]))+getRegister(params[3])+"XXXXXXXXX";
     }
     else if(params[0].compare("SR")==0){
-        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(9)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
+        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(9)+getRegister(params[1])+convertNumberToBinary5Size(stoi(params[2]))+getRegister(params[3])+"XXXXXXXXX";
     }
     else if(params[0].compare("LOCK")==0){
         return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(1);
@@ -280,7 +280,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
     cout << binaryCode.size() << " de linhas código binário" << endl;
     int desloc = 0;
     if(systemfile && binaryToQuartus){
-        assemblyString = assemblyString + "registers["+to_string(filedesloc)+"] = {16'd0, 16'd";
+        assemblyString = assemblyString + "assign registers["+to_string(filedesloc)+"] = {16'd0, 16'd";
         if(scheduler){
             if(systemquantum!=0){
                 desloc = 2;
@@ -293,19 +293,23 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             assemblyString = assemblyString + "};\n";
         }
         if(systemquantum!=0){
-            assemblyString = assemblyString + "registers["+to_string(1+filedesloc)+"] = {32'd"+to_string(systemquantum)+"};\n";
+            assemblyString = assemblyString + "assign registers["+to_string(1+filedesloc)+"] = {32'd"+to_string(systemquantum)+"};\n";
         }
     }
     for(int i=0;i<binaryCode.size();i++){
+        string prefix = "";
+        if(systemfile){
+            prefix = "assign ";
+        }
         if(binaryToQuartus){
-            assemblyString = assemblyString + "registers["+to_string(i+desloc+filedesloc)+"] = {32'b" + binaryCode[i] + "};\n";
+            assemblyString = assemblyString + prefix +"registers["+to_string(i+desloc+filedesloc)+"] = {32'b" + binaryCode[i] + "};\n";
         }
         else{
             assemblyString = assemblyString + lineToOutputFormat(i) +": "+binaryCode[i] + "\n";
         }
     }
     if(systemfile && binaryToQuartus){
-        assemblyString = assemblyString + "registers["+to_string(binaryCode.size()+desloc+filedesloc)+"] = {32'b11111111111111111111111111111111};\n";
+        assemblyString = assemblyString + "assign registers["+to_string(binaryCode.size()+desloc+filedesloc)+"] = {32'b11111111111111111111111111111111};\n";
     }
     return assemblyString;
 }
