@@ -6,8 +6,8 @@ BNE $fp $zero .store_registers
 BL .load_program
 BEQ $fp $zero .load_registers
 .after_load_registers
-BEQ $fp $zero .after_interrupt_after_scheduler
-B .after_interrupt_after_program
+BEQ $fp $zero .after_interrupt_scheduler
+B .after_interrupt_program
 
 .load_program
 MOV $k0 $s0
@@ -106,12 +106,12 @@ STORE $zero $t0 0
 ADDI $v0 $v0 1
 .load_system_main_program_loop
 IN $t0 $v0 128
-BEQ $t0 $t3 .load_system_main_program_loop_out
+BEQ $t0 $t3 .load_system_main_program_out
 STORE $s3 $t0 2
 ADDI $s3 $s3 1
 ADDI $v0 $v0 1
 B .load_system_main_program_loop
-.load_system_main_program_loop_out
+.load_system_main_program_out
 STORE $zero $s3 1
 BR $s8
 
@@ -127,12 +127,12 @@ SETPC $zero
 BIOSINT
 .work_loop
 B .after_interrupt
-.after_interrupt_after_scheduler
+.after_interrupt_scheduler
 BIOSINT
 LI $k0 2
 LOAD $k1 $zero 1
 B .after_interrupt
-.after_interrupt_after_program
+.after_interrupt_program
 SETPC $zero
 BIOSINT
 B .work_loop

@@ -253,7 +253,7 @@ string lineToOutputFormat(int index){
     return ret;
 }
 
-string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool scheduler, bool systemfile, int systemquantum){
+string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool scheduler, bool systemfile, int systemquantum, int filedesloc){
     string assemblyString = "";
     for(int i=0;i<assembly_lines.size();i++){
         vector<string> params = getAssemblyLineParams(assembly_lines[i]);
@@ -264,7 +264,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             for(int i=0;i<params.size();i++){
                 lineParams = lineParams + params[i] + " ";
             }
-            while(lineParams.length()<40){
+            while(lineParams.length()<45){
                 lineParams = lineParams + " ";
             }
             if(showBinary){
@@ -280,7 +280,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
     cout << binaryCode.size() << " de linhas código binário" << endl;
     int desloc = 0;
     if(systemfile && binaryToQuartus){
-        assemblyString = assemblyString + "registers[0] = {16'd0, 16'd";
+        assemblyString = assemblyString + "registers["+to_string(filedesloc)+"] = {16'd0, 16'd";
         if(scheduler){
             if(systemquantum!=0){
                 desloc = 2;
@@ -293,19 +293,19 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             assemblyString = assemblyString + "};\n";
         }
         if(systemquantum!=0){
-            assemblyString = assemblyString + "registers[1] = {32'd"+to_string(systemquantum)+"};\n";
+            assemblyString = assemblyString + "registers["+to_string(1+filedesloc)+"] = {32'd"+to_string(systemquantum)+"};\n";
         }
     }
     for(int i=0;i<binaryCode.size();i++){
         if(binaryToQuartus){
-            assemblyString = assemblyString + "registers["+to_string(i+desloc)+"] = {32'b" + binaryCode[i] + "};\n";
+            assemblyString = assemblyString + "registers["+to_string(i+desloc+filedesloc)+"] = {32'b" + binaryCode[i] + "};\n";
         }
         else{
             assemblyString = assemblyString + lineToOutputFormat(i) +": "+binaryCode[i] + "\n";
         }
     }
     if(systemfile && binaryToQuartus){
-        assemblyString = assemblyString + "registers["+to_string(binaryCode.size()+desloc)+"] = {32'b11111111111111111111111111111111};\n";
+        assemblyString = assemblyString + "registers["+to_string(binaryCode.size()+desloc+filedesloc)+"] = {32'b11111111111111111111111111111111};\n";
     }
     return assemblyString;
 }

@@ -561,7 +561,7 @@ string getArg(string arg, string argv){
   return intermediate;
 }
 
-void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary, bool *scheduler, bool *systemfile, int *systemquantum){
+void obterParametros(int argc, char **argv, string *inputName, string *outSufix, bool *debug, bool *binaryToQuartus, bool *showBinary, bool *scheduler, bool *systemfile, int *systemquantum, int *filedesloc){
   *inputName = "entrada.txt";
   *outSufix = "";
   *debug = true;
@@ -570,6 +570,7 @@ void obterParametros(int argc, char **argv, string *inputName, string *outSufix,
   *scheduler = false;
   *systemfile = false;
   *systemquantum = 0;
+  *filedesloc = 0;
   if(argc>1){
     for(int i=1;i<argc;i++){
       string actualString = string(argv[i]);
@@ -634,6 +635,10 @@ void obterParametros(int argc, char **argv, string *inputName, string *outSufix,
         string ret = getArg("systemquantum", actualString);
         *systemquantum = stoi(ret);
       }
+      else if(actualString.find("filedesloc")!=std::string::npos){
+        string ret = getArg("filedesloc", actualString);
+        *filedesloc = stoi(ret);
+      }
     }
   }
 }
@@ -648,7 +653,8 @@ int main(int argc, char **argv)
   bool scheduler;
   bool systemfile;
   int systemquantum;
-  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary, &scheduler, &systemfile, &systemquantum);
+  int filedesloc;
+  obterParametros(argc, argv, &inputName, &outSufix, &debug, &binaryToQuartus, &showBinary, &scheduler, &systemfile, &systemquantum, &filedesloc);
   debug = false;
   inputName = "./inputs/" + inputName;
   cout << "\nBison em execução...\n";
@@ -696,7 +702,7 @@ int main(int argc, char **argv)
     if(debug==false){
       ofstream binaryFile;
       binaryFile.open("./outputs/binary"+outSufix);
-      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary, scheduler, systemfile, systemquantum);
+      binaryFile << generateBinary(assembly, labels, labels_lines, binaryToQuartus, showBinary, scheduler, systemfile, systemquantum, filedesloc);
       binaryFile.close();
 
       cout << "Binário gerado" << endl;
