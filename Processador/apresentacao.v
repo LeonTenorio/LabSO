@@ -40,7 +40,7 @@ saida_display saida_display(
 
 //Para o algoritmo sintetico, em vez de "enter_est" como saida, temos "wake_up"
 press_button press_button(
-.button(enter), 
+.button(~enter), 
 .clk(clk), 
 .signal(enter_est));
 

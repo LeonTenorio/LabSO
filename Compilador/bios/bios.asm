@@ -11,6 +11,8 @@ BEQ $fp $zero .after_interrupt_scheduler
 B .after_interrupt_program
 
 .load_program
+OUT $k0 $zero 0
+OUT $k1 $zero 0
 MOV $k0 $s0
 MOV $zero $s1
 .load_program_loop
@@ -94,6 +96,7 @@ LOAD $sp $re 23
 LOAD $gp $re 24
 LOAD $sa $re 25
 LOAD $ra $re 26
+LOAD $fp $re 30
 B .after_load_registers
 
 .load_system_main_program
