@@ -1,6 +1,7 @@
 B .main
 
 .after_interrupt
+OUT $fp $zero 0
 BNE $fp $zero .store_registers
 .after_store_registers
 BL .load_program

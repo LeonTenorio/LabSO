@@ -1,6 +1,7 @@
 module apresentacao(
 input clk,
 input enter,
+output bios_controll,
 output[6:0] display1, 
 output[6:0] display2, 
 output[6:0] display3,
@@ -18,6 +19,7 @@ wire[3:0] enter_out;
 
 machine machine(
 .clk(clk),
+.bios_controll(bios_controll),
 .dev_out(dev_out),
 .enter_out(enter_out),
 .done_out(done_out)

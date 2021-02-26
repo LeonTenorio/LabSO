@@ -292,6 +292,10 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             }
             assemblyString = assemblyString + "};\n";
         }
+        else{
+            desloc = 1;
+            assemblyString = assemblyString + to_string(2+binaryCode.size())+"};\n";
+        }
         if(systemquantum!=0){
             assemblyString = assemblyString + "assign registers["+to_string(1+filedesloc)+"] = {32'd"+to_string(systemquantum)+"};\n";
         }

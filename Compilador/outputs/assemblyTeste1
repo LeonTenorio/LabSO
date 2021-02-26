@@ -1,0 +1,30 @@
+LI $zero 0
+B .main
+.ENDFUN
+LOAD $sp $gp -2
+LOAD $t8 $gp -1
+BR $t8
+.output
+ADDI $sa $sa 1
+LOAD $t1 $sa 0
+OUT $t1 $zero 0
+BR $ra
+.main
+MOV $sp $gp
+._l0
+LI $t8 1
+LI $t9 1
+BEQ $t8 $t9 ._l1
+B ._l2
+._l1
+LI $t8 10
+STORE $sa $t8 0
+ADDI $sa $sa -1
+STORE $sp $gp 0
+ADDI $sp $sp 1
+BL .output
+ADDI $sp $sp -1
+LOAD $gp $sp 0
+B ._l0
+._l2
+HALT
