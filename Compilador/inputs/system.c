@@ -13,38 +13,36 @@ void main(void)
     int auxdois;
     int auxtres;
     output(110);
-    /*Meus processos terao 3 estados: 0 pronto para execucao, 1 bloqueado, 2 terminado*/
-    processtabsize = processtab[1];
-    if(processtabsize!=0){
-        output(120);
-        i = processtab[0];
-        aux = 4+i*7;
-        auxdois = processtab[aux];
-        auxtres = getupcodeoperation(auxdois);
-        if(auxtres==1){
-            /*Processo terminado*/
-            processtab[aux] = 2;
-            processtab[1] = processtabsize - 1;
-        }
-    }
     if(processtabsize==0)
     {
-        output(130);
         inputdisk(1, 0, directory);
         memoryparticiontam = 4096/(directory[0]+2);
         i = 0;
         mempartitionbase = memoryparticiontam;
-        while(i+1 < directory[0])
+        output(directory[0]);
+        while(i < directory[0])
         {
             output(i);
             mempartitionlimit = mempartitionbase + memoryparticiontam;
             mempartitionlimit = mempartitionlimit - 1;
             inputdisktracksector(directory[i+1], tracksector);
+            output(tracksector[0]);
+            output(tracksector[1]);
             programsize = inputdisk(tracksector[0], tracksector[1], mempartitionbase);
             
+            output(mempartitionbase);
+            output(programsize);
             aux = mempartitionbase+1;
+            output(aux);
+
             auxdois = aux+programsize;
             auxtres = auxdois + 40;
+            output(i);
+            output(aux);
+            output(programsize);
+            output(auxdois);
+            output(auxtres);
+            output(mempartitionlimit);
             insertinprocesstab(processtab, i, i+1, 0, aux, programsize, auxdois, auxtres, mempartitionlimit);
 
             initializeprocessmemory(auxdois, auxtres, mempartitionlimit, i+1);
@@ -71,9 +69,13 @@ void main(void)
         }
         aux = 3+i*7;
     }
+    output(150);
     aux = aux + 1;
     auxdois = aux + 1;
     auxtres = auxdois + 1;
+    output(processtab[aux]);
+    output(processtab[auxdois]);
+    output(processtab[auxtres]);
     selectprocesstorun(processtab[aux], processtab[auxdois], processtab[auxtres]);
-    output(150);
+    
 }

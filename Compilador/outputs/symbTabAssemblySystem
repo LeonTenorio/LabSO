@@ -1,14 +1,14 @@
-ID: memoryparticiontam   SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 40 36 34 8                       MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s2
-ID: mempartitionbase     SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 53 45 43 40 36 9                 MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s3
-ID: directory            SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 42 37 34 33 3                    MEMLOC: 21               MEMPOS: 0      VARAMOUNT: 0   MEM: 0
-ID: tracksector          SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 43 43 42 6                       MEMLOC: 2                MEMPOS: 121    VARAMOUNT: 0   MEM: 121
-ID: auxdois              SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 77 76 75 50 48 47 46 23 22 13    MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s7
-ID: programsize          SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 48 46 43 11                      MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s5
-ID: i                    SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 72 70 69 68 68 67 65 64 52 52 50 48 48 42 39 37 35 21 20 7MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s1
-ID: aux                  SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 77 75 74 74 72 66 65 58 57 55 54 48 46 45 26 22 21 12MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s6
+ID: memoryparticiontam   SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 26 21 19 8                       MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s2
+ID: mempartitionbase     SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 51 35 33 31 26 21 9              MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s3
+ID: directory            SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 28 23 22 19 18 3                 MEMLOC: 21               MEMPOS: 0      VARAMOUNT: 0   MEM: 0
+ID: tracksector          SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 31 31 30 29 28 6                 MEMLOC: 2                MEMPOS: 121    VARAMOUNT: 0   MEM: 121
+ID: auxdois              SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 79 77 75 74 48 46 43 39 38 13    MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s7
+ID: programsize          SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 46 42 38 34 31 11                MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s5
+ID: i                    SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 70 68 67 66 66 65 63 62 50 50 48 46 46 40 28 25 23 20 7MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s1
+ID: aux                  SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 79 76 74 73 73 70 64 63 56 55 53 52 46 41 38 36 35 12MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s6
 ID: main                 SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 1                                MEMLOC: 123              MEMPOS: -1     VARAMOUNT: 12  VARS: [directory, processtab, processtabsize, tracksector, i, memoryparticiontam, mempartitionbase, mempartitionlimit, programsize, aux, auxdois, auxtres]
-ID: mempartitionlimit    SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 53 50 48 41 41 40 10             MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s4
-ID: processtabsize       SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 69 60 30 27 18 17 5              MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s0
+ID: mempartitionlimit    SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 51 48 46 45 27 27 26 10          MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s4
+ID: processtabsize       SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 67 58 16 5                       MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s0
 ID: GLOBAL               SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 0                                MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   VARS: []
-ID: processtab           SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 77 77 77 66 64 60 58 55 54 48 27 26 22 20 17 4MEMLOC: 100              MEMPOS: 21     VARAMOUNT: 0   MEM: 21
-ID: auxtres              SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 77 76 50 48 47 24 23 14          MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s8
+ID: processtab           SCOPE: main    PARAM: false DATA TYPE: int* TYPE ID: var  LINES: 79 79 79 78 77 76 64 62 58 56 53 52 46 4MEMLOC: 100              MEMPOS: 21     VARAMOUNT: 0   MEM: 21
+ID: auxtres              SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 79 78 75 48 46 44 39 14          MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s8
