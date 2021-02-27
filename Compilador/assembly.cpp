@@ -594,6 +594,9 @@ string generateAssembly(string quad, vector<string> drivers, bool debug, bool sc
             write_driver_functions(drivers, debug);
         }
     }
+    for(int i=0;i<labels.size();i++){
+        cout << labels[i] << " " << labels_lines[labels[i]] << endl;
+    }
     cout << assembly.size() << " de linhas assembly" << endl;
     for(int i=0;i<assembly.size();i++){
         assemblyString = assemblyString + assembly[i] + "\n";

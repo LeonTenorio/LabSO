@@ -2,9 +2,9 @@
 //inputdisk(track, sector, buffer_position)
 .concat_disk_access
 MOV $s0 $v0
-SL $v0 8 $v0
+SL $v0 5 $v0
 ADD $v0 $v0 $s1
-SL $v0 8 $v0
+SL $v0 7 $v0
 ADD $v0 $v0 $s2
 BR $ra
 .inputdisk
@@ -26,7 +26,8 @@ STORE $s5 $t0 1
 ADDI $s5 $s5 1
 ADDI $s4 $s4 1
 ADDI $v0 $v0 1
-STORE $s3 $s4 0
 B .load_disk_loop
+.load_disk_loop_out
+STORE $s3 $s4 0
 MOV $s4 $v0
 BR $s8

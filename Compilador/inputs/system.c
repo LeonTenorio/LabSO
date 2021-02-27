@@ -12,9 +12,11 @@ void main(void)
     int aux;
     int auxdois;
     int auxtres;
+    output(110);
     /*Meus processos terao 3 estados: 0 pronto para execucao, 1 bloqueado, 2 terminado*/
     processtabsize = processtab[1];
     if(processtabsize!=0){
+        output(120);
         i = processtab[0];
         aux = 4+i*7;
         auxdois = processtab[aux];
@@ -27,12 +29,14 @@ void main(void)
     }
     if(processtabsize==0)
     {
+        output(130);
         inputdisk(1, 0, directory);
         memoryparticiontam = 4096/(directory[0]+2);
         i = 0;
         mempartitionbase = memoryparticiontam;
         while(i+1 < directory[0])
         {
+            output(i);
             mempartitionlimit = mempartitionbase + memoryparticiontam;
             mempartitionlimit = mempartitionlimit - 1;
             inputdisktracksector(directory[i+1], tracksector);
@@ -54,11 +58,13 @@ void main(void)
         processtab[0] = aux - 1;
     }
     processtabsize = processtab[1];
+    output(140);
     
     /*Varrer a tabela de simbolos procurando o proximo processo pronto para ser executado*/
     i = processtab[0]+1;
     aux = 3+i*7;
     while(processtab[aux]!=0){
+        output(i);
         i = i + 1;
         if(i>=processtabsize){
             i = 0;
@@ -69,4 +75,5 @@ void main(void)
     auxdois = aux + 1;
     auxtres = auxdois + 1;
     selectprocesstorun(processtab[aux], processtab[auxdois], processtab[auxtres]);
+    output(150);
 }

@@ -2,6 +2,8 @@ module apresentacao(
 input clk,
 input enter,
 output bios_controll,
+output bios_state_led2,
+output bios_state_led1,
 output[6:0] display1, 
 output[6:0] display2, 
 output[6:0] display3,
@@ -16,6 +18,8 @@ wire[127:0] dev_out;
 wire[3:0] done_out;
 wire enter_est;
 wire[3:0] enter_out;
+
+wire[1:0] bios_state;
 
 machine machine(
 .clk(clk),
@@ -45,5 +49,6 @@ press_button press_button(
 .signal(enter_est));
 
 assign done_out = {3'd0, enter_est};
+assign {bios_state_led2, bios_state_led1} = bios_state;
 
 endmodule 

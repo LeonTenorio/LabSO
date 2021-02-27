@@ -104,6 +104,13 @@
                     }
                }               ,
                {
+               'Node': 'CALL - output',
+               'child[0]': 
+                    {
+                    'Node': 110
+                    }
+               }               ,
+               {
                'Node': '=', 
                'child[0]': 
                     {
@@ -135,6 +142,13 @@
                'child[1]': 
                     [
                     {
+                    'Node': 'CALL - output',
+                    'child[0]': 
+                         {
+                         'Node': 120
+                         }
+                    },
+                    {
                     'Node': '=', 
                     'child[0]': 
                          {
@@ -148,7 +162,7 @@
                               'Node': 0
                               }
                          }
-                    },
+                    }                    ,
                     {
                     'Node': '=', 
                     'child[0]': 
@@ -279,6 +293,13 @@
                'child[1]': 
                     [
                     {
+                    'Node': 'CALL - output',
+                    'child[0]': 
+                         {
+                         'Node': 130
+                         }
+                    },
+                    {
                     'Node': 'CALL - inputdisk',
                     'child[0]': 
                          [
@@ -291,7 +312,7 @@
                          {
                          'Node': 'directory', 
                          }
-                    },
+                    }                    ,
                     {
                     'Node': '=', 
                     'child[0]': 
@@ -374,6 +395,13 @@
                     'child[1]': 
                          [
                          {
+                         'Node': 'CALL - output',
+                         'child[0]': 
+                              {
+                              'Node': 'i', 
+                              }
+                         },
+                         {
                          'Node': '=', 
                          'child[0]': 
                               {
@@ -391,7 +419,7 @@
                                    'Node': 'memoryparticiontam', 
                                    }
                               }
-                         },
+                         }                         ,
                          {
                          'Node': '=', 
                          'child[0]': 
@@ -714,6 +742,13 @@
                     }
                }               ,
                {
+               'Node': 'CALL - output',
+               'child[0]': 
+                    {
+                    'Node': 140
+                    }
+               }               ,
+               {
                'Node': '=', 
                'child[0]': 
                     {
@@ -784,6 +819,13 @@
                'child[1]': 
                     [
                     {
+                    'Node': 'CALL - output',
+                    'child[0]': 
+                         {
+                         'Node': 'i', 
+                         }
+                    },
+                    {
                     'Node': '=', 
                     'child[0]': 
                          {
@@ -801,7 +843,7 @@
                               'Node': 1
                               }
                          }
-                    },
+                    }                    ,
                     {
                     'Node': 'if', 
                     'child[0]': 
@@ -938,6 +980,13 @@
                          {
                          'Node': 'auxtres', 
                          }
+                    }
+               }               ,
+               {
+               'Node': 'CALL - output',
+               'child[0]': 
+                    {
+                    'Node': 150
                     }
                }
           }

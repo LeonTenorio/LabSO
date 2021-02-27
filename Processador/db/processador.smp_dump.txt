@@ -1,18 +1,12 @@
 
-State Machine - |apresentacao|press_button:press_button|estado
-Name estado.00 estado.10 estado.01 
-estado.00 0 0 0 
-estado.01 1 0 1 
-estado.10 1 1 0 
-
-State Machine - |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|input_state
+State Machine - |processador|unit_process:unit_process|in_out_module:in_out_module|input_state
 Name input_state.input_state_after input_state.input_state_done input_state.input_state_waiting input_state.input_state_none 
 input_state.input_state_none 0 0 0 0 
 input_state.input_state_waiting 0 0 1 1 
 input_state.input_state_done 0 1 0 1 
 input_state.input_state_after 1 0 0 1 
 
-State Machine - |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|output_state
+State Machine - |processador|unit_process:unit_process|in_out_module:in_out_module|output_state
 Name output_state.output_state_after output_state.output_state_done output_state.output_state_waiting output_state.output_state_none 
 output_state.output_state_none 0 0 0 0 
 output_state.output_state_waiting 0 0 1 1 
