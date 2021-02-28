@@ -1,15 +1,5 @@
 B .main
 
-.after_interrupt
-OUT $fp $zero 0
-BNE $fp $zero .store_registers
-.after_store_registers
-BL .load_program
-BEQ $fp $zero .load_registers
-.after_load_registers
-BEQ $fp $zero .after_interrupt_scheduler
-B .after_interrupt_program
-
 .load_program
 OUT $k0 $zero 0
 OUT $k1 $zero 0
