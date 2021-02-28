@@ -138,10 +138,59 @@
                          }
                     'child[1]': 
                          {
+                         'Node': 4096
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticiontam', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '-', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticiontam', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'tracksector', 
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticiontam', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '-', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticiontam', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 200
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticiontam', 
+                         }
+                    'child[1]': 
+                         {
                          'Node': '/', 
                          'child[0]': 
                               {
-                              'Node': 4096
+                              'Node': 'memparticiontam', 
                               }
                          'child[1]': 
                               {
@@ -180,7 +229,45 @@
                          }
                     'child[1]': 
                          {
-                         'Node': 'memparticiontam', 
+                         'Node': 'tracksector', 
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticionbase', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 200
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticionbase', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticiontam', 
+                              }
                          }
                     }                    ,
                     {

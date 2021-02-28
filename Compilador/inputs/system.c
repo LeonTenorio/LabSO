@@ -20,9 +20,15 @@ void main(void)
     int tracksector[2];
     if(processtab[1]==0){
         inputdisk(1, 0, directory);
-        memparticiontam = 4096/(directory[0]+2);/*1024 para dois processos*/
+        memparticiontam = 4096;
+        memparticiontam = memparticiontam - tracksector;
+        memparticiontam = memparticiontam - 200;
+        memparticiontam = memparticiontam/(directory[0]+2);
+
         index = 0;
-        memparticionbase = memparticiontam;
+        memparticionbase = tracksector;
+        memparticionbase = memparticionbase + 200;
+        memparticionbase = memparticionbase + memparticiontam;
         while(index < directory[0]){
             memparticionlimit = memparticionbase + memparticiontam;
             memparticionlimit = memparticionlimit - 1;

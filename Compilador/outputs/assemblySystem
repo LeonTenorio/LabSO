@@ -88,7 +88,7 @@ STORE $t0 $zero 19
 STORE $t0 $zero 20
 STORE $t0 $zero 21
 STORE $t0 $zero 22
-STORE $t0 $zero 23
+STORE $t0 $t1 23
 STORE $t0 $t1 24
 STORE $t0 $t2 25
 STORE $t0 $zero 26
@@ -153,6 +153,13 @@ LOAD $s4 $sp 4
 LOAD $s5 $sp 5
 LOAD $s6 $sp 6
 LOAD $s7 $sp 7
+LI $t8 4096
+MOV $t8 $s2
+LI $t8 157
+ADD $t8 $t8 $gp
+SUB $s2 $s2 $t8
+LI $t8 200
+SUB $s2 $s2 $t8
 LI $t8 0
 LI $t9 0
 ADD $t9 $t9 $gp
@@ -160,12 +167,16 @@ ADD $t9 $t9 $t8
 LOAD $t9 $t9 0
 LI $t10 2
 ADD $t0 $t9 $t10
-LI $t8 4096
-DIV $t8 $t0
+DIV $s2 $t0
 MFLO $s2
 LI $t8 0
 MOV $t8 $s0
-MOV $s2 $s3
+LI $t8 157
+ADD $t8 $t8 $gp
+MOV $t8 $s3
+LI $t8 200
+ADD $s3 $s3 $t8
+ADD $s3 $s3 $s2
 ._l2
 LI $t8 0
 LI $t9 0
