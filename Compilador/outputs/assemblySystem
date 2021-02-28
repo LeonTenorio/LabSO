@@ -3,7 +3,7 @@ LOCK
 LI $fp 0
 LI $sa 4095
 LOAD $gp $zero 1
-ADDI $gp $gp 2
+ADDI $gp $gp 10
 MOV $gp $sp
 B .main
 .ENDFUN
@@ -570,15 +570,36 @@ LOAD $s4 $sp 4
 LOAD $s5 $sp 5
 LOAD $s6 $sp 6
 LOAD $s7 $sp 7
+LI $t8 7
+MULT $t8 $s0
+MFLO $s5
+LI $t8 7
+ADD $s5 $s5 $t8
 LI $t8 1
-ADD $s7 $s0 $t8
-STORE $sa $s6 0
+ADD $s6 $s5 $t8
+LI $t8 1
+ADD $s7 $s6 $t8
+LI $t8 21
+ADD $t8 $t8 $gp
+ADD $t8 $t8 $s5
+LOAD $t8 $t8 0
+STORE $sa $t8 0
 ADDI $sa $sa -1
-STORE $sa $s3 0
+LI $t8 21
+ADD $t8 $t8 $gp
+ADD $t8 $t8 $s6
+LOAD $t8 $t8 0
+STORE $sa $t8 0
 ADDI $sa $sa -1
-STORE $sa $s4 0
+LI $t8 21
+ADD $t8 $t8 $gp
+ADD $t8 $t8 $s7
+LOAD $t8 $t8 0
+STORE $sa $t8 0
 ADDI $sa $sa -1
-STORE $sa $s7 0
+LI $t8 1
+ADD $t2 $s0 $t8
+STORE $sa $t2 0
 ADDI $sa $sa -1
 STORE $sp $s0 0
 STORE $sp $s1 1
@@ -591,15 +612,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .initializeprocessmemory
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
@@ -646,15 +669,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .output
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
@@ -696,15 +721,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .output
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
@@ -745,15 +772,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .output
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
@@ -795,15 +824,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .output
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
@@ -851,15 +882,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .selectprocesstorun
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1
@@ -883,15 +916,17 @@ STORE $sp $s7 7
 ADDI $sp $sp 8
 STORE $sp $t0 0
 STORE $sp $t1 1
-ADDI $sp $sp 2
+STORE $sp $t2 2
+ADDI $sp $sp 3
 STORE $sp $gp 0
 ADDI $sp $sp 1
 BL .output
 ADDI $sp $sp -1
 LOAD $gp $sp 0
-ADDI $sp $sp -2
+ADDI $sp $sp -3
 LOAD $t0 $sp 0
 LOAD $t1 $sp 1
+LOAD $t2 $sp 2
 ADDI $sp $sp -8
 LOAD $s0 $sp 0
 LOAD $s1 $sp 1

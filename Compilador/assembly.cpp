@@ -572,7 +572,7 @@ string generateAssembly(string quad, vector<string> drivers, bool debug, bool sc
         assembly.push_back("LI $fp 0");
         assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
         assembly.push_back("LOAD $gp $zero 1");
-        assembly.push_back("ADDI $gp $gp 2");
+        assembly.push_back("ADDI $gp $gp 10");
         assembly.push_back("MOV $gp $sp");
     }
     BucketList bucketElement = getBucketElement("GLOBAL", " ");

@@ -10,24 +10,24 @@ input[31:0] address;
 
 output reg[0:31] instruction;//DATA INST sera a unica em EM BIG ENDIAN
 
-//reg[0:31] registers[1000:0];//As instrucoes armazenadas tambem estao em BIG ENDIAN
+reg[0:31] registers[1000:0];//As instrucoes armazenadas tambem estao em BIG ENDIAN
 
-wire[0:31] registers[1500:0];
+//wire[0:31] registers[1500:0];
 
-/*always @(posedge clk)
+always @(posedge clk)
 begin	
 	if(write)
 	begin
 		registers[address] <= write_data;
 	end
-end*/
+end
 
 always @(negedge clk)
 begin
 	instruction <= registers[address];
 end
 
-assign registers[0] = {32'b01110000000000000000000000000000};
+/*assign registers[0] = {32'b01110000000000000000000000000000};
 assign registers[1] = {32'b10110001XXXXXXXXXXXXXXXXXXXXXXXX};
 assign registers[2] = {32'b01111111000000000000000000000000};
 assign registers[3] = {32'b01111101100000000000111111111111};
@@ -915,6 +915,6 @@ assign registers[884] = {32'b0110XXXX11001XXXXX01000000000110};
 assign registers[885] = {32'b0110XXXX11001XXXXX01001000000111};
 assign registers[886] = {32'b10110010XXXXXXXXXXXXXXXXXXXXXXXX};
 assign registers[887] = {32'b00000001000000000000000000000000};
-assign registers[888] = {32'b11111111111111111111111111111111};
+assign registers[888] = {32'b11111111111111111111111111111111};*/
 
 endmodule 

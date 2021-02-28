@@ -708,6 +708,63 @@
                          'Node': '=', 
                          'child[0]': 
                               {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '*', 
+                              'child[0]': 
+                                   {
+                                   'Node': 7
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 'index', 
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 7
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'auxdois', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
                               'Node': 'auxtres', 
                               }
                          'child[1]': 
@@ -715,7 +772,7 @@
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': 'index', 
+                                   'Node': 'auxdois', 
                                    }
                               'child[1]': 
                                    {
@@ -728,16 +785,36 @@
                          'child[0]': 
                               [
                               {
-                              'Node': 'auxdois', 
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
                               },
                               {
-                              'Node': 'memparticionbase', 
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'auxdois', 
+                                   }
                               }                              ,
                               {
-                              'Node': 'memparticionlimit', 
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'auxtres', 
+                                   }
                               }                              ,
                               {
-                              'Node': 'auxtres', 
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'index', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
                               }
                          }                         ,
                          {

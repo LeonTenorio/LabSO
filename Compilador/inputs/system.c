@@ -56,8 +56,11 @@ void main(void)
             processtab[aux] = memparticionlimit;
             output(processtab[aux]);
 
-            auxtres = index + 1;
-            initializeprocessmemory(auxdois, memparticionbase, memparticionlimit, auxtres);
+            aux = 7*index;
+            aux = aux + 7;
+            auxdois = aux + 1;
+            auxtres = auxdois + 1;
+            initializeprocessmemory(processtab[aux], processtab[auxdois], processtab[auxtres], index + 1);
 
             index = index + 1;
             memparticionlimit = memparticionlimit + 1;

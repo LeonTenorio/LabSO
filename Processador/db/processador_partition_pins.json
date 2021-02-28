@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "bios_controll",
+					"strict" : false
+				},
+				{
 					"name" : "display1[0]",
 					"strict" : false
 				},

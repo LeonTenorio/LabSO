@@ -1,4 +1,4 @@
-module apresentacao(
+/*module apresentacao(
 input clk,
 input enter,
 output bios_controll,
@@ -53,10 +53,10 @@ begin
 	process_clk = ~process_clk;
 end
 
-endmodule 
+endmodule */
 
 
-/*module apresentacao(
+module apresentacao(
 input clk,
 input enter,
 output bios_controll,
@@ -79,8 +79,15 @@ wire[3:0] enter_out;
 
 wire[1:0] bios_state;
 
+reg process_clk = 0;
+
+always @(posedge clk)
+begin
+	process_clk = ~process_clk;
+end
+
 machine machine(
-.clk(clk),
+.clk(process_clk),
 .bios_controll(bios_controll),
 .dev_out(dev_out),
 .enter_out(enter_out),
@@ -88,7 +95,7 @@ machine machine(
 );
 
 saida_display saida_display(
-.clk(clk),
+.clk(process_clk),
 .dado(dev_out[25:0]),
 .enter_out(enter_out[0]),
 .display1(display1),
@@ -103,10 +110,10 @@ saida_display saida_display(
 //Para o algoritmo sintetico, em vez de "enter_est" como saida, temos "wake_up"
 press_button press_button(
 .button(~enter), 
-.clk(clk), 
+.clk(process_clk), 
 .signal(enter_est));
 
 assign done_out = {3'd0, enter_est};
 assign {bios_state_led2, bios_state_led1} = bios_state;
 
-endmodule */
+endmodule 
