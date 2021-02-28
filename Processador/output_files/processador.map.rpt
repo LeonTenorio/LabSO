@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Sun Feb 28 00:19:06 2021
+Sun Feb 28 01:23:30 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -81,13 +81,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 28 00:19:05 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Feb 28 01:23:29 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; apresentacao                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 8,868                                       ;
-;     Total combinational functions  ; 8,770                                       ;
+; Total logic elements               ; 9,550                                       ;
+;     Total combinational functions  ; 9,452                                       ;
 ;     Dedicated logic registers      ; 1,495                                       ;
 ; Total registers                    ; 1495                                        ;
 ; Total pins                         ; 59                                          ;
@@ -268,16 +268,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 8,868       ;
+; Estimated Total logic elements              ; 9,550       ;
 ;                                             ;             ;
-; Total combinational functions               ; 8770        ;
+; Total combinational functions               ; 9452        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 5527        ;
-;     -- 3 input functions                    ; 2916        ;
-;     -- <=2 input functions                  ; 327         ;
+;     -- 4 input functions                    ; 7166        ;
+;     -- 3 input functions                    ; 1943        ;
+;     -- <=2 input functions                  ; 343         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 7335        ;
+;     -- normal mode                          ; 8017        ;
 ;     -- arithmetic mode                      ; 1435        ;
 ;                                             ;             ;
 ; Total registers                             ; 1495        ;
@@ -291,8 +291,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; process_clk ;
 ; Maximum fan-out                             ; 1554        ;
-; Total fan-out                               ; 39902       ;
-; Average fan-out                             ; 3.77        ;
+; Total fan-out                               ; 43571       ;
+; Average fan-out                             ; 3.87        ;
 +---------------------------------------------+-------------+
 
 
@@ -301,28 +301,29 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                         ; Entity Name         ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |apresentacao                                      ; 8770 (1)            ; 1495 (1)                  ; 1343488     ; 8            ; 0       ; 4         ; 59   ; 0            ; |apresentacao                                                                                                                                                                                               ; apresentacao        ; work         ;
+; |apresentacao                                      ; 9452 (1)            ; 1495 (1)                  ; 1343488     ; 8            ; 0       ; 4         ; 59   ; 0            ; |apresentacao                                                                                                                                                                                               ; apresentacao        ; work         ;
 ;    |press_button:press_button|                     ; 91 (91)             ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|press_button:press_button                                                                                                                                                                     ; press_button        ; work         ;
-;    |processador:processador|                       ; 8232 (0)            ; 1400 (0)                  ; 1343488     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador                                                                                                                                                                       ; processador         ; work         ;
+;    |processador:processador|                       ; 8914 (0)            ; 1400 (0)                  ; 1343488     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador                                                                                                                                                                       ; processador         ; work         ;
 ;       |unit_control:unit_control|                  ; 76 (76)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_control:unit_control                                                                                                                                             ; unit_control        ; work         ;
-;       |unit_process:unit_process|                  ; 8156 (22)           ; 1395 (32)                 ; 1343488     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process                                                                                                                                             ; unit_process        ; work         ;
-;          |alu:alu|                                 ; 2752 (560)          ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu                                                                                                                                     ; alu                 ; work         ;
-;             |lpm_divide:Div0|                      ; 1050 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0                                                                                                                     ; lpm_divide          ; work         ;
-;                |lpm_divide_hkm:auto_generated|     ; 1050 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                                       ; lpm_divide_hkm      ; work         ;
-;                   |sign_div_unsign_9nh:divider|    ; 1050 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                                           ; sign_div_unsign_9nh ; work         ;
-;                      |alt_u_div_6af:divider|       ; 1050 (1050)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                                     ; alt_u_div_6af       ; work         ;
-;             |lpm_divide:Mod0|                      ; 1063 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0                                                                                                                     ; lpm_divide          ; work         ;
-;                |lpm_divide_kcm:auto_generated|     ; 1063 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated                                                                                       ; lpm_divide_kcm      ; work         ;
-;                   |sign_div_unsign_9nh:divider|    ; 1063 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider                                                           ; sign_div_unsign_9nh ; work         ;
-;                      |alt_u_div_6af:divider|       ; 1063 (1062)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                                     ; alt_u_div_6af       ; work         ;
+;       |unit_process:unit_process|                  ; 8838 (22)           ; 1395 (32)                 ; 1343488     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process                                                                                                                                             ; unit_process        ; work         ;
+;          |alu:alu|                                 ; 2747 (560)          ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu                                                                                                                                     ; alu                 ; work         ;
+;             |lpm_divide:Div0|                      ; 1051 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0                                                                                                                     ; lpm_divide          ; work         ;
+;                |lpm_divide_hkm:auto_generated|     ; 1051 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                                       ; lpm_divide_hkm      ; work         ;
+;                   |sign_div_unsign_9nh:divider|    ; 1051 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                                           ; sign_div_unsign_9nh ; work         ;
+;                      |alt_u_div_6af:divider|       ; 1051 (1051)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                                     ; alt_u_div_6af       ; work         ;
+;             |lpm_divide:Mod0|                      ; 1057 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0                                                                                                                     ; lpm_divide          ; work         ;
+;                |lpm_divide_kcm:auto_generated|     ; 1057 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated                                                                                       ; lpm_divide_kcm      ; work         ;
+;                   |sign_div_unsign_9nh:divider|    ; 1057 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider                                                           ; sign_div_unsign_9nh ; work         ;
+;                      |alt_u_div_6af:divider|       ; 1057 (1055)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                                     ; alt_u_div_6af       ; work         ;
+;                         |add_sub_7pc:add_sub_0|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_7pc:add_sub_0               ; add_sub_7pc         ; work         ;
 ;                         |add_sub_8pc:add_sub_1|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1               ; add_sub_8pc         ; work         ;
 ;             |lpm_mult:Mult0|                       ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_mult:Mult0                                                                                                                      ; lpm_mult            ; work         ;
 ;                |mult_7dt:auto_generated|           ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|alu:alu|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                              ; mult_7dt            ; work         ;
-;          |bc_registers:bc_registers|               ; 2589 (2589)         ; 1216 (1216)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|bc_registers:bc_registers                                                                                                                   ; bc_registers        ; work         ;
-;          |data_inst:data_inst|                     ; 1571 (1571)         ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|data_inst:data_inst                                                                                                                         ; data_inst           ; work         ;
-;          |in_out_module:in_out_module|             ; 704 (207)           ; 115 (70)                  ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                                 ; in_out_module       ; work         ;
+;          |bc_registers:bc_registers|               ; 2558 (2558)         ; 1216 (1216)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|bc_registers:bc_registers                                                                                                                   ; bc_registers        ; work         ;
+;          |data_inst:data_inst|                     ; 2287 (2287)         ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|data_inst:data_inst                                                                                                                         ; data_inst           ; work         ;
+;          |in_out_module:in_out_module|             ; 706 (208)           ; 115 (70)                  ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                                 ; in_out_module       ; work         ;
 ;             |clk_divisor:clk_divisor|              ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor                                                                                         ; clk_divisor         ; work         ;
-;             |disk_controller:disk_controller|      ; 493 (419)           ; 41 (35)                   ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller                                                                                 ; disk_controller     ; work         ;
+;             |disk_controller:disk_controller|      ; 494 (420)           ; 41 (35)                   ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller                                                                                 ; disk_controller     ; work         ;
 ;                |altsyncram:Mux0_rtl_0|             ; 0 (0)               ; 2 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:Mux0_rtl_0                                                           ; altsyncram          ; work         ;
 ;                   |altsyncram_of11:auto_generated| ; 0 (0)               ; 2 (2)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:Mux0_rtl_0|altsyncram_of11:auto_generated                            ; altsyncram_of11     ; work         ;
 ;                |altsyncram:not_initial_rtl_0|      ; 2 (0)               ; 2 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:not_initial_rtl_0                                                    ; altsyncram          ; work         ;
@@ -1174,22 +1175,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 84                          ;
 ;     SCLR              ; 96                          ;
 ;     plain             ; 1186                        ;
-; cycloneiii_lcell_comb ; 8787                        ;
+; cycloneiii_lcell_comb ; 9469                        ;
 ;     arith             ; 1435                        ;
 ;         2 data inputs ; 163                         ;
 ;         3 data inputs ; 1272                        ;
-;     normal            ; 7352                        ;
+;     normal            ; 8034                        ;
 ;         0 data inputs ; 62                          ;
 ;         1 data inputs ; 24                          ;
-;         2 data inputs ; 95                          ;
-;         3 data inputs ; 1644                        ;
-;         4 data inputs ; 5527                        ;
+;         2 data inputs ; 111                         ;
+;         3 data inputs ; 671                         ;
+;         4 data inputs ; 7166                        ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_ram_block  ; 180                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 126.40                      ;
-; Average LUT depth     ; 41.45                       ;
+; Max LUT depth         ; 127.50                      ;
+; Average LUT depth     ; 39.74                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1198,7 +1199,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:31     ;
+; Top            ; 00:01:40     ;
 +----------------+--------------+
 
 
@@ -1208,7 +1209,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Feb 28 00:17:11 2021
+    Info: Processing started: Sun Feb 28 01:21:27 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1259,7 +1260,7 @@ Warning (10034): Output port "bios_controll" at apresentacao.v(4) has no driver 
 Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v Line: 28
 Info (12128): Elaborating entity "unit_process" for hierarchy "processador:processador|unit_process:unit_process" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 86
 Info (12128): Elaborating entity "data_inst" for hierarchy "processador:processador|unit_process:unit_process|data_inst:data_inst" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 73
-Warning (10030): Net "registers[1500..628]" at data_inst.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/data_inst.v Line: 15
+Warning (10030): Net "registers[1500..889]" at data_inst.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/data_inst.v Line: 15
 Info (12128): Elaborating entity "udcpc" for hierarchy "processador:processador|unit_process:unit_process|udcpc:udcpc" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 91
 Info (12128): Elaborating entity "mux_rd" for hierarchy "processador:processador|unit_process:unit_process|mux_rd:mux_rd" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 98
 Info (12128): Elaborating entity "mux_wd" for hierarchy "processador:processador|unit_process:unit_process|mux_wd:mux_wd" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v Line: 110
@@ -1464,17 +1465,17 @@ Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/output_files/processador.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9160 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 9842 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 57 output pins
-    Info (21061): Implemented 8913 logic cells
+    Info (21061): Implemented 9595 logic cells
     Info (21064): Implemented 180 RAM segments
     Info (21062): Implemented 8 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 1116 megabytes
-    Info: Processing ended: Sun Feb 28 00:19:06 2021
-    Info: Elapsed time: 00:01:55
-    Info: Total CPU time (on all processors): 00:02:26
+    Info: Peak virtual memory: 1092 megabytes
+    Info: Processing ended: Sun Feb 28 01:23:30 2021
+    Info: Elapsed time: 00:02:03
+    Info: Total CPU time (on all processors): 00:02:33
 
 
 +------------------------------------------+

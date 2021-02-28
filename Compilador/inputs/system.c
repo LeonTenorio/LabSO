@@ -16,6 +16,7 @@ void main(void)
     int memparticionlimit;
     int aux;
     int auxdois;
+    int auxtres;
     int tracksector[2];
     if(processtab[1]==0){
         inputdisk(1, 0, directory);
@@ -44,6 +45,7 @@ void main(void)
             output(processtab[aux]);
             aux = aux + 1;
             memparticionbase = memparticionbase + programsize;
+            auxdois = memparticionbase;
             processtab[aux] = memparticionbase;
             output(processtab[aux]);
             aux = aux + 1;
@@ -53,6 +55,9 @@ void main(void)
             aux = aux + 1;
             processtab[aux] = memparticionlimit;
             output(processtab[aux]);
+
+            auxtres = index + 1;
+            initializeprocessmemory(auxdois, memparticionbase, memparticionlimit, auxtres);
 
             index = index + 1;
             memparticionlimit = memparticionlimit + 1;
@@ -68,6 +73,26 @@ void main(void)
             processtab[2] = aux;
             output(processtab[2]);
         }
+        aux = processtab[0];
+        aux = aux - 1;
+        processtab[0] = aux;
     }
     output(110);
+
+    index = processtab[0];
+    index = index + 1;
+
+    if(index>processtab[2]){
+        index = 0;
+    }
+
+    output(index);
+
+    aux = 7*index;
+    aux = aux + 5;
+    auxdois = aux + 1;
+    auxtres = auxdois + 1;
+
+    selectprocesstorun(processtab[aux], processtab[auxdois], processtab[auxtres]);
+    output(150);
 }
