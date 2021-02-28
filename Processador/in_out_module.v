@@ -56,8 +56,8 @@ disk_controller disk_controller(
 .clk(disk_clk)
 );
 
-parameter disk_clk_high_time = 3'd1;
-parameter disk_clk_low_time = 3'd1;
+parameter disk_clk_high_time = 3'd5;
+parameter disk_clk_low_time = 3'd5;
 
 clk_divisor clk_divisor(
 .clk(clk),
