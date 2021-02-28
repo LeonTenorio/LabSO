@@ -39,28 +39,28 @@ void main(void)
             aux = 7*index;
             aux = aux + 3;
             processtab[aux] = index + 1;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
             aux = aux + 1;
             processtab[aux] = 0;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
             aux = aux + 1;
             processtab[aux] = memparticionbase;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
             aux = aux + 1;
             processtab[aux] = programsize;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
             aux = aux + 1;
             memparticionbase = memparticionbase + programsize;
             auxdois = memparticionbase;
             processtab[aux] = memparticionbase;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
             aux = aux + 1;
             memparticionbase = memparticionbase + 40;
             processtab[aux] = memparticionbase;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
             aux = aux + 1;
             processtab[aux] = memparticionlimit;
-            output(processtab[aux]);
+            /*output(processtab[aux]);*/
 
             aux = 7*index;
             aux = aux + 7;
@@ -75,27 +75,28 @@ void main(void)
             aux = processtab[1];
             aux = aux + 1;
             processtab[1] = aux;
-            output(processtab[1]);
+            /*output(processtab[1]);*/
 
             aux = processtab[2];
             aux = aux + 1;
             processtab[2] = aux;
-            output(processtab[2]);
+            /*output(processtab[2]);*/
         }
         aux = processtab[0];
         aux = aux - 1;
         processtab[0] = aux;
     }
-    output(110);
+    /*output(110);*/
 
     index = processtab[0];
     index = index + 1;
 
-    if(index>processtab[2]){
+    if(index>=processtab[2]){
         index = 0;
     }
 
     output(index);
+    processtab[0] = index;
 
     aux = 7*index;
     aux = aux + 5;
