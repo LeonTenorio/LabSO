@@ -25,7 +25,7 @@
                     'Node': 'processtab', 
                     'child[0]': 
                          {
-                         'Node': 100
+                         'Node': 136
                          }
                     }
                }               ,
@@ -33,46 +33,7 @@
                'Node': 'int', 
                'child[0]': 
                     {
-                    'Node': 'processtabsize', 
-                    }
-               }               ,
-               {
-               'Node': 'int', 
-               'child[0]': 
-                    {
-                    'Node': 'tracksector', 
-                    'child[0]': 
-                         {
-                         'Node': 2
-                         }
-                    }
-               }               ,
-               {
-               'Node': 'int', 
-               'child[0]': 
-                    {
-                    'Node': 'i', 
-                    }
-               }               ,
-               {
-               'Node': 'int', 
-               'child[0]': 
-                    {
-                    'Node': 'memoryparticiontam', 
-                    }
-               }               ,
-               {
-               'Node': 'int', 
-               'child[0]': 
-                    {
-                    'Node': 'mempartitionbase', 
-                    }
-               }               ,
-               {
-               'Node': 'int', 
-               'child[0]': 
-                    {
-                    'Node': 'mempartitionlimit', 
+                    'Node': 'index', 
                     }
                }               ,
                {
@@ -80,6 +41,27 @@
                'child[0]': 
                     {
                     'Node': 'programsize', 
+                    }
+               }               ,
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'memparticiontam', 
+                    }
+               }               ,
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'memparticionbase', 
+                    }
+               }               ,
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'memparticionlimit', 
                     }
                }               ,
                {
@@ -104,175 +86,13 @@
                     }
                }               ,
                {
-               'Node': 'CALL - output',
+               'Node': 'int', 
                'child[0]': 
                     {
-                    'Node': 110
-                    }
-               }               ,
-               {
-               'Node': '=', 
-               'child[0]': 
-                    {
-                    'Node': 'processtabsize', 
-                    }
-               'child[1]': 
-                    {
-                    'Node': 'processtab', 
+                    'Node': 'tracksector', 
                     'child[0]': 
                          {
-                         'Node': 1
-                         }
-                    }
-               }               ,
-               {
-               'Node': 'if', 
-               'child[0]': 
-                    {
-                    'Node': '!=', 
-                    'child[0]': 
-                         {
-                         'Node': 'processtabsize', 
-                         }
-                    'child[1]': 
-                         {
-                         'Node': 0
-                         }
-                    }
-               'child[1]': 
-                    [
-                    {
-                    'Node': 'CALL - output',
-                    'child[0]': 
-                         {
-                         'Node': 120
-                         }
-                    },
-                    {
-                    'Node': '=', 
-                    'child[0]': 
-                         {
-                         'Node': 'i', 
-                         }
-                    'child[1]': 
-                         {
-                         'Node': 'processtab', 
-                         'child[0]': 
-                              {
-                              'Node': 0
-                              }
-                         }
-                    }                    ,
-                    {
-                    'Node': '=', 
-                    'child[0]': 
-                         {
-                         'Node': 'aux', 
-                         }
-                    'child[1]': 
-                         {
-                         'Node': '+', 
-                         'child[0]': 
-                              {
-                              'Node': 4
-                              }
-                         'child[1]': 
-                              {
-                              'Node': '*', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'i', 
-                                   }
-                              'child[1]': 
-                                   {
-                                   'Node': 7
-                                   }
-                              }
-                         }
-                    }                    ,
-                    {
-                    'Node': '=', 
-                    'child[0]': 
-                         {
-                         'Node': 'auxdois', 
-                         }
-                    'child[1]': 
-                         {
-                         'Node': 'processtab', 
-                         'child[0]': 
-                              {
-                              'Node': 'aux', 
-                              }
-                         }
-                    }                    ,
-                    {
-                    'Node': '=', 
-                    'child[0]': 
-                         {
-                         'Node': 'auxtres', 
-                         }
-                    'child[1]': 
-                         {
-                         'Node': 'CALL - getupcodeoperation',
-                         'child[0]': 
-                              {
-                              'Node': 'auxdois', 
-                              }
-                         }
-                    }                    ,
-                    {
-                    'Node': 'if', 
-                    'child[0]': 
-                         {
-                         'Node': '==', 
-                         'child[0]': 
-                              {
-                              'Node': 'auxtres', 
-                              }
-                         'child[1]': 
-                              {
-                              'Node': 1
-                              }
-                         }
-                    'child[1]': 
-                         [
-                         {
-                         'Node': '=', 
-                         'child[0]': 
-                              {
-                              'Node': 'processtab', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'aux', 
-                                   }
-                              }
-                         'child[1]': 
-                              {
-                              'Node': 2
-                              }
-                         },
-                         {
-                         'Node': '=', 
-                         'child[0]': 
-                              {
-                              'Node': 'processtab', 
-                              'child[0]': 
-                                   {
-                                   'Node': 1
-                                   }
-                              }
-                         'child[1]': 
-                              {
-                              'Node': '-', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'processtabsize', 
-                                   }
-                              'child[1]': 
-                                   {
-                                   'Node': 1
-                                   }
-                              }
+                         'Node': 2
                          }
                     }
                }               ,
@@ -283,7 +103,11 @@
                     'Node': '==', 
                     'child[0]': 
                          {
-                         'Node': 'processtabsize', 
+                         'Node': 'processtab', 
+                         'child[0]': 
+                              {
+                              'Node': 1
+                              }
                          }
                     'child[1]': 
                          {
@@ -292,13 +116,6 @@
                     }
                'child[1]': 
                     [
-                    {
-                    'Node': 'CALL - output',
-                    'child[0]': 
-                         {
-                         'Node': 130
-                         }
-                    },
                     {
                     'Node': 'CALL - inputdisk',
                     'child[0]': 
@@ -312,19 +129,68 @@
                          {
                          'Node': 'directory', 
                          }
+                    },
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticiontam', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 4096
+                         }
                     }                    ,
                     {
                     'Node': '=', 
                     'child[0]': 
                          {
-                         'Node': 'memoryparticiontam', 
+                         'Node': 'memparticiontam', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '-', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticiontam', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'tracksector', 
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticiontam', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '-', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticiontam', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 200
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticiontam', 
                          }
                     'child[1]': 
                          {
                          'Node': '/', 
                          'child[0]': 
                               {
-                              'Node': 4096
+                              'Node': 'memparticiontam', 
                               }
                          'child[1]': 
                               {
@@ -348,7 +214,7 @@
                     'Node': '=', 
                     'child[0]': 
                          {
-                         'Node': 'i', 
+                         'Node': 'index', 
                          }
                     'child[1]': 
                          {
@@ -359,11 +225,49 @@
                     'Node': '=', 
                     'child[0]': 
                          {
-                         'Node': 'mempartitionbase', 
+                         'Node': 'memparticionbase', 
                          }
                     'child[1]': 
                          {
-                         'Node': 'memoryparticiontam', 
+                         'Node': 'tracksector', 
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticionbase', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 200
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'memparticionbase', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticiontam', 
+                              }
                          }
                     }                    ,
                     {
@@ -373,15 +277,7 @@
                          'Node': '<', 
                          'child[0]': 
                               {
-                              'Node': '+', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'i', 
-                                   }
-                              'child[1]': 
-                                   {
-                                   'Node': 1
-                                   }
+                              'Node': 'index', 
                               }
                          'child[1]': 
                               {
@@ -395,43 +291,36 @@
                     'child[1]': 
                          [
                          {
-                         'Node': 'CALL - output',
-                         'child[0]': 
-                              {
-                              'Node': 'i', 
-                              }
-                         },
-                         {
                          'Node': '=', 
                          'child[0]': 
                               {
-                              'Node': 'mempartitionlimit', 
+                              'Node': 'memparticionlimit', 
                               }
                          'child[1]': 
                               {
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': 'mempartitionbase', 
+                                   'Node': 'memparticionbase', 
                                    }
                               'child[1]': 
                                    {
-                                   'Node': 'memoryparticiontam', 
+                                   'Node': 'memparticiontam', 
                                    }
                               }
-                         }                         ,
+                         },
                          {
                          'Node': '=', 
                          'child[0]': 
                               {
-                              'Node': 'mempartitionlimit', 
+                              'Node': 'memparticionlimit', 
                               }
                          'child[1]': 
                               {
                               'Node': '-', 
                               'child[0]': 
                                    {
-                                   'Node': 'mempartitionlimit', 
+                                   'Node': 'memparticionlimit', 
                                    }
                               'child[1]': 
                                    {
@@ -450,7 +339,7 @@
                                    'Node': '+', 
                                    'child[0]': 
                                         {
-                                        'Node': 'i', 
+                                        'Node': 'index', 
                                         }
                                    'child[1]': 
                                         {
@@ -488,7 +377,45 @@
                                         }
                                    }                                   ,
                                    {
-                                   'Node': 'mempartitionbase', 
+                                   'Node': 'memparticionbase', 
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'memparticionbase', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '*', 
+                              'child[0]': 
+                                   {
+                                   'Node': 7
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 'index', 
                                    }
                               }
                          }                         ,
@@ -503,11 +430,325 @@
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': 'mempartitionbase', 
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 3
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'index', 
                                    }
                               'child[1]': 
                                    {
                                    'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 0
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'programsize', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'memparticionbase', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 'programsize', 
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'auxdois', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'memparticionbase', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 40
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticionlimit', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '*', 
+                              'child[0]': 
+                                   {
+                                   'Node': 7
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 'index', 
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 7
                                    }
                               }
                          }                         ,
@@ -526,7 +767,7 @@
                                    }
                               'child[1]': 
                                    {
-                                   'Node': 'programsize', 
+                                   'Node': 1
                                    }
                               }
                          }                         ,
@@ -545,48 +786,8 @@
                                    }
                               'child[1]': 
                                    {
-                                   'Node': 40
-                                   }
-                              }
-                         }                         ,
-                         {
-                         'Node': 'CALL - insertinprocesstab',
-                         'child[0]': 
-                              [
-                              {
-                              'Node': 'processtab', 
-                              },
-                              {
-                              'Node': 'i', 
-                              }                              ,
-                              {
-                              'Node': '+', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'i', 
-                                   }
-                              'child[1]': 
-                                   {
                                    'Node': 1
                                    }
-                              }                              ,
-                              {
-                              'Node': 0
-                              }                              ,
-                              {
-                              'Node': 'aux', 
-                              }                              ,
-                              {
-                              'Node': 'programsize', 
-                              }                              ,
-                              {
-                              'Node': 'auxdois', 
-                              }                              ,
-                              {
-                              'Node': 'auxtres', 
-                              }                              ,
-                              {
-                              'Node': 'mempartitionlimit', 
                               }
                          }                         ,
                          {
@@ -594,19 +795,31 @@
                          'child[0]': 
                               [
                               {
-                              'Node': 'auxdois', 
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
                               },
                               {
-                              'Node': 'auxtres', 
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'auxdois', 
+                                   }
                               }                              ,
                               {
-                              'Node': 'mempartitionlimit', 
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'auxtres', 
+                                   }
                               }                              ,
                               {
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': 'i', 
+                                   'Node': 'index', 
                                    }
                               'child[1]': 
                                    {
@@ -618,14 +831,14 @@
                          'Node': '=', 
                          'child[0]': 
                               {
-                              'Node': 'i', 
+                              'Node': 'index', 
                               }
                          'child[1]': 
                               {
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': 'i', 
+                                   'Node': 'index', 
                                    }
                               'child[1]': 
                                    {
@@ -637,19 +850,30 @@
                          'Node': '=', 
                          'child[0]': 
                               {
-                              'Node': 'mempartitionbase', 
+                              'Node': 'memparticionlimit', 
                               }
                          'child[1]': 
                               {
                               'Node': '+', 
                               'child[0]': 
                                    {
-                                   'Node': 'mempartitionlimit', 
+                                   'Node': 'memparticionlimit', 
                                    }
                               'child[1]': 
                                    {
                                    'Node': 1
                                    }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'memparticionbase', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'memparticionlimit', 
                               }
                          }                         ,
                          {
@@ -671,11 +895,7 @@
                          'Node': '=', 
                          'child[0]': 
                               {
-                              'Node': 'processtab', 
-                              'child[0]': 
-                                   {
-                                   'Node': 1
-                                   }
+                              'Node': 'aux', 
                               }
                          'child[1]': 
                               {
@@ -689,6 +909,70 @@
                                    'Node': 1
                                    }
                               }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 2
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '+', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 2
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'aux', 
+                              }
                          }
                     }                    ,
                     {
@@ -699,18 +983,18 @@
                          }
                     'child[1]': 
                          {
-                         'Node': 0
+                         'Node': 'processtab', 
+                         'child[0]': 
+                              {
+                              'Node': 0
+                              }
                          }
                     }                    ,
                     {
                     'Node': '=', 
                     'child[0]': 
                          {
-                         'Node': 'processtab', 
-                         'child[0]': 
-                              {
-                              'Node': 0
-                              }
+                         'Node': 'aux', 
                          }
                     'child[1]': 
                          {
@@ -724,20 +1008,85 @@
                               'Node': 1
                               }
                          }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'processtab', 
+                         'child[0]': 
+                              {
+                              'Node': 0
+                              }
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 'aux', 
+                         }
                     }
                }               ,
                {
                'Node': '=', 
                'child[0]': 
                     {
-                    'Node': 'processtabsize', 
+                    'Node': 'index', 
                     }
                'child[1]': 
                     {
                     'Node': 'processtab', 
                     'child[0]': 
                          {
+                         'Node': 0
+                         }
+                    }
+               }               ,
+               {
+               'Node': '=', 
+               'child[0]': 
+                    {
+                    'Node': 'index', 
+                    }
+               'child[1]': 
+                    {
+                    'Node': '+', 
+                    'child[0]': 
+                         {
+                         'Node': 'index', 
+                         }
+                    'child[1]': 
+                         {
                          'Node': 1
+                         }
+                    }
+               }               ,
+               {
+               'Node': 'if', 
+               'child[0]': 
+                    {
+                    'Node': '>=', 
+                    'child[0]': 
+                         {
+                         'Node': 'index', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 'processtab', 
+                         'child[0]': 
+                              {
+                              'Node': 2
+                              }
+                         }
+                    }
+               'child[1]': 
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'index', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 0
                          }
                     }
                }               ,
@@ -745,157 +1094,40 @@
                'Node': 'CALL - output',
                'child[0]': 
                     {
-                    'Node': 140
+                    'Node': 'index', 
                     }
                }               ,
                {
                'Node': '=', 
                'child[0]': 
                     {
-                    'Node': 'i', 
-                    }
-               'child[1]': 
-                    {
-                    'Node': '+', 
+                    'Node': 'processtab', 
                     'child[0]': 
-                         {
-                         'Node': 'processtab', 
-                         'child[0]': 
-                              {
-                              'Node': 0
-                              }
-                         }
-                    'child[1]': 
-                         {
-                         'Node': 1
-                         }
-                    }
-               }               ,
-               {
-               'Node': '=', 
-               'child[0]': 
-                    {
-                    'Node': 'aux', 
-                    }
-               'child[1]': 
-                    {
-                    'Node': '+', 
-                    'child[0]': 
-                         {
-                         'Node': 3
-                         }
-                    'child[1]': 
-                         {
-                         'Node': '*', 
-                         'child[0]': 
-                              {
-                              'Node': 'i', 
-                              }
-                         'child[1]': 
-                              {
-                              'Node': 7
-                              }
-                         }
-                    }
-               }               ,
-               {
-               'Node': 'while', 
-               'child[0]': 
-                    {
-                    'Node': '!=', 
-                    'child[0]': 
-                         {
-                         'Node': 'processtab', 
-                         'child[0]': 
-                              {
-                              'Node': 'aux', 
-                              }
-                         }
-                    'child[1]': 
                          {
                          'Node': 0
                          }
                     }
                'child[1]': 
-                    [
                     {
-                    'Node': 'CALL - output',
+                    'Node': 'index', 
+                    }
+               }               ,
+               {
+               'Node': '=', 
+               'child[0]': 
+                    {
+                    'Node': 'aux', 
+                    }
+               'child[1]': 
+                    {
+                    'Node': '*', 
                     'child[0]': 
                          {
-                         'Node': 'i', 
-                         }
-                    },
-                    {
-                    'Node': '=', 
-                    'child[0]': 
-                         {
-                         'Node': 'i', 
+                         'Node': 7
                          }
                     'child[1]': 
                          {
-                         'Node': '+', 
-                         'child[0]': 
-                              {
-                              'Node': 'i', 
-                              }
-                         'child[1]': 
-                              {
-                              'Node': 1
-                              }
-                         }
-                    }                    ,
-                    {
-                    'Node': 'if', 
-                    'child[0]': 
-                         {
-                         'Node': '>=', 
-                         'child[0]': 
-                              {
-                              'Node': 'i', 
-                              }
-                         'child[1]': 
-                              {
-                              'Node': 'processtabsize', 
-                              }
-                         }
-                    'child[1]': 
-                         {
-                         'Node': '=', 
-                         'child[0]': 
-                              {
-                              'Node': 'i', 
-                              }
-                         'child[1]': 
-                              {
-                              'Node': 0
-                              }
-                         }
-                    }                    ,
-                    {
-                    'Node': '=', 
-                    'child[0]': 
-                         {
-                         'Node': 'aux', 
-                         }
-                    'child[1]': 
-                         {
-                         'Node': '+', 
-                         'child[0]': 
-                              {
-                              'Node': 3
-                              }
-                         'child[1]': 
-                              {
-                              'Node': '*', 
-                              'child[0]': 
-                                   {
-                                   'Node': 'i', 
-                                   }
-                              'child[1]': 
-                                   {
-                                   'Node': 7
-                                   }
-                              }
+                         'Node': 'index', 
                          }
                     }
                }               ,
@@ -914,7 +1146,7 @@
                          }
                     'child[1]': 
                          {
-                         'Node': 1
+                         'Node': 5
                          }
                     }
                }               ,
@@ -980,13 +1212,6 @@
                          {
                          'Node': 'auxtres', 
                          }
-                    }
-               }               ,
-               {
-               'Node': 'CALL - output',
-               'child[0]': 
-                    {
-                    'Node': 150
                     }
                }
           }

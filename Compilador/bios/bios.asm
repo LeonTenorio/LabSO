@@ -1,15 +1,5 @@
 B .main
 
-.after_interrupt
-OUT $fp $zero 0
-BNE $fp $zero .store_registers
-.after_store_registers
-BL .load_program
-BEQ $fp $zero .load_registers
-.after_load_registers
-BEQ $fp $zero .after_interrupt_scheduler
-B .after_interrupt_program
-
 .load_program
 OUT $k0 $zero 0
 OUT $k1 $zero 0
@@ -26,6 +16,7 @@ B .load_program_loop
 BR $ra
 
 .store_registers
+OUT $re $zero 0
 STORE $re $s0 0
 STORE $re $s1 1
 STORE $re $s2 2
@@ -63,6 +54,7 @@ STORE $re $fp 30
 B .after_store_registers
 
 .load_registers
+OUT $re $zero 0
 LOAD $t0 $re 27
 SETPC $t0
 LOAD $t0 $re 28
@@ -125,20 +117,22 @@ BR $s8
 BL .load_system_main_program
 LOAD $t0 $zero 0
 SETQUANTUM $t0
-LI $k0 2
-LOAD $k1 $zero 1
-MOV $zero $fp
-BL .load_program
-SETPC $zero
-BIOSINT
 .work_loop
-B .after_interrupt
-.after_interrupt_scheduler
-BIOSINT
+LI $zero 0
 LI $k0 2
 LOAD $k1 $zero 1
-B .after_interrupt
-.after_interrupt_program
 SETPC $zero
+BL .load_program
 BIOSINT
+BL .load_program
+B .load_registers
+.after_load_registers
+GETPC $t0
+OUT $t0 $zero 0
+OUT $s0 $zero 0
+OUT $ra $zero 0
+BIOSINT
+OUT $ra $zero 0
+B .store_registers
+.after_store_registers
 B .work_loop
