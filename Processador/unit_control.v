@@ -127,6 +127,8 @@ begin
 	new_out = 0;
 	pc_write = 0;
 	inst_write = 0;
+	
+	bios_write_pc = 0;
 
 	case(estado)
 		A:
@@ -194,6 +196,9 @@ begin
 					mem_write = 1;
 			end
 			
+			if(opcode_operation==8'b00000011)//SETPC
+				bios_write_pc = 1;
+			
 			/*if(opcode==4'b0101)//STORE
 				mem_write = 1;
 			else
@@ -241,10 +246,6 @@ begin
 	branch_comp = 3'b000;
 	write_d_sel = 4'b0000;
 	alu_op = 4'b0000;
-	bios_write_pc = 0;
-	
-	if(opcode_operation==8'b00000011)//SETPC
-		bios_write_pc = 1;
 	
 	if(opcode_operation==8'b01000000)//B
 		pc_orig = 2'b01;

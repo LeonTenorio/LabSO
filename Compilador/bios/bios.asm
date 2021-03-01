@@ -122,14 +122,17 @@ LI $zero 0
 LI $k0 2
 LOAD $k1 $zero 1
 SETPC $zero
-GETPC $t0
-OUT $t0 $zero 0
 BL .load_program
 BIOSINT
 BL .load_program
 B .load_registers
 .after_load_registers
+GETPC $t0
+OUT $t0 $zero 0
+OUT $s0 $zero 0
+OUT $ra $zero 0
 BIOSINT
+OUT $ra $zero 0
 B .store_registers
 .after_store_registers
 B .work_loop

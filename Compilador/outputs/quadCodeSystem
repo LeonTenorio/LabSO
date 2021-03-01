@@ -93,7 +93,5 @@
 (param, processtab[auxdois], , )
 (param, processtab[auxtres], , )
 (jal, selectprocesstorun, , )
-(param, 150, , )
-(jal, output, , )
 (end_fun, , , )
 (end, , , )

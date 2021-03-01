@@ -1213,13 +1213,6 @@
                          'Node': 'auxtres', 
                          }
                     }
-               }               ,
-               {
-               'Node': 'CALL - output',
-               'child[0]': 
-                    {
-                    'Node': 150
-                    }
                }
           }
      }

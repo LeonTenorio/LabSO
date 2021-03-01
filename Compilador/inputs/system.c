@@ -104,5 +104,5 @@ void main(void)
     auxtres = auxdois + 1;
 
     selectprocesstorun(processtab[aux], processtab[auxdois], processtab[auxtres]);
-    output(150);
+    /*output(150);*/
 }
