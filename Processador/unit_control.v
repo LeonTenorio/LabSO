@@ -1,4 +1,5 @@
 module unit_control(
+input bios_controll,
 output reg reg_write,
 output reg mem_write,
 output reg in_req,
@@ -29,6 +30,8 @@ wire[7:0] opcode_operation;
 
 reg reg_in_ready;
 reg reg_out_done;
+
+reg previous_bios_controll;
 //reg reg_wake_up;
 
 always @(negedge clk)//Troca de estado
@@ -97,6 +100,11 @@ begin
 			estado = Inv;
 		end
 	endcase
+	if(bios_controll!=previous_bios_controll)
+	begin
+		estado = Inv;
+	end
+	previous_bios_controll = bios_controll;
 end
 
 always @(posedge clk)

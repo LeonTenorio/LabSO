@@ -3,12 +3,12 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'process_clk'
-Slack : -130.224
-TNS   : -38009.234
+Slack : -129.470
+TNS   : -38103.181
 
 Type  : Slow 1200mV 85C Model Setup 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
-Slack : -6.135
-TNS   : -1455.062
+Slack : -6.858
+TNS   : -1357.826
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
 Slack : -0.574
@@ -23,12 +23,12 @@ Slack : 0.460
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
-Slack : 0.691
+Slack : 0.717
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'process_clk'
 Slack : -3.000
-TNS   : -2729.089
+TNS   : -2730.374
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
@@ -39,12 +39,12 @@ Slack : -2.693
 TNS   : -1146.289
 
 Type  : Slow 1200mV 0C Model Setup 'process_clk'
-Slack : -117.505
-TNS   : -34611.041
+Slack : -116.840
+TNS   : -34868.639
 
 Type  : Slow 1200mV 0C Model Setup 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
-Slack : -5.556
-TNS   : -1297.904
+Slack : -6.233
+TNS   : -1205.258
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
 Slack : -0.452
@@ -59,12 +59,12 @@ Slack : 0.390
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
-Slack : 0.675
+Slack : 0.696
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'process_clk'
 Slack : -3.000
-TNS   : -2719.717
+TNS   : -2721.002
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
@@ -75,27 +75,27 @@ Slack : -2.649
 TNS   : -1128.337
 
 Type  : Fast 1200mV 0C Model Setup 'process_clk'
-Slack : -64.017
-TNS   : -18411.549
+Slack : -63.887
+TNS   : -18458.777
 
 Type  : Fast 1200mV 0C Model Setup 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
-Slack : -2.577
-TNS   : -653.597
+Slack : -3.032
+TNS   : -604.720
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
 Slack : 0.015
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'process_clk'
+Slack : 0.157
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.163
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'process_clk'
-Slack : 0.172
-TNS   : 0.000
-
 Type  : Fast 1200mV 0C Model Hold 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
-Slack : 0.334
+Slack : 0.428
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -104,7 +104,7 @@ TNS   : -4.043
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'process_clk'
 Slack : -1.000
-TNS   : -1805.000
+TNS   : -1806.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
 Slack : -1.000

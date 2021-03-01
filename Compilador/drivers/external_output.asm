@@ -4,5 +4,4 @@
 ADDI $sa $sa 1
 LOAD $t1 $sa 0
 OUT $t1 $zero 0
-OUT $zero $zero 0
 BR $ra
