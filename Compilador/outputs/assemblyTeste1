@@ -19,8 +19,6 @@ LI $t9 1
 BEQ $t8 $t9 ._l1
 B ._l2
 ._l1
-LI $t8 2
-ADD $s0 $s0 $t8
 STORE $sa $s0 0
 ADDI $sa $sa -1
 STORE $sp $s0 0
@@ -32,6 +30,8 @@ ADDI $sp $sp -1
 LOAD $gp $sp 0
 ADDI $sp $sp -1
 LOAD $s0 $sp 0
+LI $t8 2
+ADD $s0 $s0 $t8
 B ._l0
 ._l2
 HALT

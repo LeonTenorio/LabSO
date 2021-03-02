@@ -109,7 +109,6 @@ ADDI $s3 $s3 1
 ADDI $v0 $v0 1
 B .load_system_main_program_loop
 .load_system_main_program_out
-OUT $s3 $zero 0
 STORE $zero $s3 1
 BR $s8
 
@@ -127,12 +126,7 @@ BIOSINT
 BL .load_program
 B .load_registers
 .after_load_registers
-GETPC $t0
-OUT $t0 $zero 0
-OUT $s0 $zero 0
-OUT $ra $zero 0
 BIOSINT
-OUT $ra $zero 0
 B .store_registers
 .after_store_registers
 B .work_loop
