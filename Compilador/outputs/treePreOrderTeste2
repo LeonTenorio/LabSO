@@ -6,26 +6,102 @@
           {
           'Node': 'FUNCTION', 
           'child[1]': 
+               [
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'index', 
+                    }
+               },
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'value', 
+                    }
+               }               ,
+               {
+               'Node': '=', 
+               'child[0]': 
+                    {
+                    'Node': 'index', 
+                    }
+               'child[1]': 
+                    {
+                    'Node': 0
+                    }
+               }               ,
+               {
+               'Node': '=', 
+               'child[0]': 
+                    {
+                    'Node': 'value', 
+                    }
+               'child[1]': 
+                    {
+                    'Node': 11
+                    }
+               }               ,
                {
                'Node': 'while', 
                'child[0]': 
                     {
-                    'Node': '==', 
+                    'Node': '<', 
                     'child[0]': 
                          {
-                         'Node': 1
+                         'Node': 'index', 
                          }
                     'child[1]': 
                          {
-                         'Node': 1
+                         'Node': 2
                          }
                     }
                'child[1]': 
+                    [
                     {
                     'Node': 'CALL - output',
                     'child[0]': 
                          {
-                         'Node': 20
+                         'Node': 'value', 
+                         }
+                    },
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'index', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'index', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 1
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'value', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'value', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 2
+                              }
                          }
                     }
                }

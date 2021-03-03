@@ -18,7 +18,8 @@ map<string,string> drivers_map ={
     {"inputdisktracksector", "disk_input_track_sector.asm"},
     {"insertinprocesstab", "process_tab_insert.asm"},
     {"getupcodeoperation", "get_upcode_operation.asm"},
-    {"selectprocesstorun", "select_process_to_run.asm"}
+    {"selectprocesstorun", "select_process_to_run.asm"},
+    {"getprocessopcodeoperation", "get_process_opcode_operation.asm"}
 };
 
 bool isDriver(string function_name){

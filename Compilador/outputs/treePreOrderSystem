@@ -100,6 +100,233 @@
                'Node': 'if', 
                'child[0]': 
                     {
+                    'Node': '!=', 
+                    'child[0]': 
+                         {
+                         'Node': 'processtab', 
+                         'child[0]': 
+                              {
+                              'Node': 1
+                              }
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 0
+                         }
+                    }
+               'child[1]': 
+                    [
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'index', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 'processtab', 
+                         'child[0]': 
+                              {
+                              'Node': 0
+                              }
+                         }
+                    },
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'aux', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '*', 
+                         'child[0]': 
+                              {
+                              'Node': 7
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'index', 
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'aux', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 5
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'auxdois', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 2
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'auxtres', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 'CALL - getprocessopcodeoperation',
+                         'child[0]': 
+                              [
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              },
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'auxdois', 
+                                   }
+                              }
+                         }
+                    }                    ,
+                    {
+                    'Node': 'if', 
+                    'child[0]': 
+                         {
+                         'Node': '==', 
+                         'child[0]': 
+                              {
+                              'Node': 'auxtres', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 1
+                              }
+                         }
+                    'child[1]': 
+                         [
+                         {
+                         'Node': 'CALL - output',
+                         'child[0]': 
+                              {
+                              'Node': 150
+                              }
+                         },
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '-', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 2
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': '-', 
+                              'child[0]': 
+                                   {
+                                   'Node': 'aux', 
+                                   }
+                              'child[1]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         }                         ,
+                         {
+                         'Node': '=', 
+                         'child[0]': 
+                              {
+                              'Node': 'processtab', 
+                              'child[0]': 
+                                   {
+                                   'Node': 1
+                                   }
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 'aux', 
+                              }
+                         }
+                    }
+               }               ,
+               {
+               'Node': 'if', 
+               'child[0]': 
+                    {
                     'Node': '==', 
                     'child[0]': 
                          {

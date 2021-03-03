@@ -18,6 +18,28 @@ void main(void)
     int auxdois;
     int auxtres;
     int tracksector[2];
+
+    if(processtab[1]!=0){
+        /*Verificacao se o ultimo processo em execucao terminou*/
+        index = processtab[0];
+
+        aux = 7*index;
+        aux = aux + 5;/*Indice para endereco das intrucoes*/
+        auxdois = aux + 2;/*Indice para endereco dos registradores*/
+        auxtres = getprocessopcodeoperation(processtab[aux], processtab[auxdois]);
+
+        if(auxtres==1){
+            output(150);
+            /*Instrucao de HALT, ultimo programa finalizou*/
+            aux = aux - 1; /*Acesso do estado do ultimo processo*/
+            processtab[aux] = 2;
+
+            aux = processtab[1];
+            aux = aux - 1;
+            processtab[1] = aux;
+        }
+    }
+
     if(processtab[1]==0){
         inputdisk(1, 0, directory);
         memparticiontam = 4096;
@@ -99,8 +121,6 @@ void main(void)
     aux = aux + 4;
 
     while(processtab[aux]!=0){
-        output(index);
-        output(processtab[aux]);
         index = index + 1;
         aux = aux + 7;
         if(index>=processtab[2]){
