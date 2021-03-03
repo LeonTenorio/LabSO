@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Mon Mar  1 22:44:51 2021
+Tue Mar  2 22:33:29 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -86,13 +86,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar  1 22:44:51 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar  2 22:33:29 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; apresentacao                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 8,606                                       ;
-;     Total combinational functions  ; 8,443                                       ;
+; Total logic elements               ; 8,802                                       ;
+;     Total combinational functions  ; 8,639                                       ;
 ;     Dedicated logic registers      ; 1,567                                       ;
 ; Total registers                    ; 1567                                        ;
 ; Total pins                         ; 61                                          ;
@@ -202,76 +202,74 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                   ;
-+-----------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                     ; Library ;
-+-----------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; saida_display.v                   ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/saida_display.v                      ;         ;
-; display.v                         ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/display.v                            ;         ;
-; alu.v                             ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/alu.v                                ;         ;
-; bc_registers.v                    ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/bc_registers.v                       ;         ;
-; mux_rd.v                          ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/mux_rd.v                             ;         ;
-; mux_wd.v                          ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/mux_wd.v                             ;         ;
-; mux_op_b.v                        ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/mux_op_b.v                           ;         ;
-; in_out_module.v                   ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v                      ;         ;
-; data_inst.v                       ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/data_inst.v                          ;         ;
-; memory.v                          ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/memory.v                             ;         ;
-; udcpc.v                           ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/udcpc.v                              ;         ;
-; unit_process.v                    ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v                       ;         ;
-; unit_control.v                    ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v                       ;         ;
-; processador.v                     ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v                        ;         ;
-; press_button.v                    ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/press_button.v                       ;         ;
-; apresentacao.v                    ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v                       ;         ;
-; bios_module.v                     ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/bios_module.v                        ;         ;
-; disk_controller.v                 ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v                    ;         ;
-; clk_divisor.v                     ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/clk_divisor.v                        ;         ;
-; machine.v                         ; yes             ; User Verilog HDL File                                 ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/machine.v                            ;         ;
-; dado_bcd.v                        ; yes             ; Auto-Found Verilog HDL File                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/dado_bcd.v                           ;         ;
-; altsyncram.tdf                    ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altsyncram.tdf                         ;         ;
-; stratix_ram_block.inc             ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc                  ;         ;
-; lpm_mux.inc                       ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_mux.inc                            ;         ;
-; lpm_decode.inc                    ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_decode.inc                         ;         ;
-; aglobal180.inc                    ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/aglobal180.inc                         ;         ;
-; a_rdenreg.inc                     ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                          ;         ;
-; altrom.inc                        ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altrom.inc                             ;         ;
-; altram.inc                        ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altram.inc                             ;         ;
-; altdpram.inc                      ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altdpram.inc                           ;         ;
-; db/altsyncram_68d1.tdf            ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_68d1.tdf               ;         ;
-; db/altsyncram_c9d1.tdf            ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_c9d1.tdf               ;         ;
-; db/altsyncram_0dd1.tdf            ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_0dd1.tdf               ;         ;
-; db/decode_msa.tdf                 ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/decode_msa.tdf                    ;         ;
-; db/decode_f8a.tdf                 ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/decode_f8a.tdf                    ;         ;
-; db/mux_job.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mux_job.tdf                       ;         ;
-; db/altsyncram_ulc1.tdf            ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_ulc1.tdf               ;         ;
-; db/mux_vmb.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mux_vmb.tdf                       ;         ;
-; db/altsyncram_of11.tdf            ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_of11.tdf               ;         ;
-; processador.apresentacao0.rtl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/processador.apresentacao0.rtl.mif ;         ;
-; db/mux_2nb.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mux_2nb.tdf                       ;         ;
-; db/altsyncram_0j01.tdf            ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_0j01.tdf               ;         ;
-; processador.apresentacao1.rtl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/processador.apresentacao1.rtl.mif ;         ;
-; lpm_mult.tdf                      ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_mult.tdf                           ;         ;
-; lpm_add_sub.inc                   ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;         ;
-; multcore.inc                      ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/multcore.inc                           ;         ;
-; bypassff.inc                      ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/bypassff.inc                           ;         ;
-; altshift.inc                      ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altshift.inc                           ;         ;
-; db/mult_7dt.tdf                   ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mult_7dt.tdf                      ;         ;
-; lpm_divide.tdf                    ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_divide.tdf                         ;         ;
-; abs_divider.inc                   ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/abs_divider.inc                        ;         ;
-; sign_div_unsign.inc               ; yes             ; Megafunction                                          ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/sign_div_unsign.inc                    ;         ;
-; db/lpm_divide_hkm.tdf             ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/lpm_divide_hkm.tdf                ;         ;
-; db/sign_div_unsign_9nh.tdf        ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/sign_div_unsign_9nh.tdf           ;         ;
-; db/alt_u_div_6af.tdf              ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/alt_u_div_6af.tdf                 ;         ;
-; db/add_sub_7pc.tdf                ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/add_sub_7pc.tdf                   ;         ;
-; db/add_sub_8pc.tdf                ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/add_sub_8pc.tdf                   ;         ;
-; db/lpm_divide_kcm.tdf             ; yes             ; Auto-Generated Megafunction                           ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/lpm_divide_kcm.tdf                ;         ;
-+-----------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; saida_display.v                  ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/saida_display.v            ;         ;
+; display.v                        ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/display.v                  ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/alu.v                      ;         ;
+; bc_registers.v                   ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/bc_registers.v             ;         ;
+; mux_rd.v                         ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/mux_rd.v                   ;         ;
+; mux_wd.v                         ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/mux_wd.v                   ;         ;
+; mux_op_b.v                       ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/mux_op_b.v                 ;         ;
+; in_out_module.v                  ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v            ;         ;
+; data_inst.v                      ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/data_inst.v                ;         ;
+; memory.v                         ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/memory.v                   ;         ;
+; udcpc.v                          ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/udcpc.v                    ;         ;
+; unit_process.v                   ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_process.v             ;         ;
+; unit_control.v                   ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/unit_control.v             ;         ;
+; processador.v                    ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v              ;         ;
+; press_button.v                   ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/press_button.v             ;         ;
+; apresentacao.v                   ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/apresentacao.v             ;         ;
+; bios_module.v                    ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/bios_module.v              ;         ;
+; disk_controller.v                ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v          ;         ;
+; clk_divisor.v                    ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/clk_divisor.v              ;         ;
+; machine.v                        ; yes             ; User Verilog HDL File        ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/machine.v                  ;         ;
+; dado_bcd.v                       ; yes             ; Auto-Found Verilog HDL File  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/dado_bcd.v                 ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/aglobal180.inc               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altrom.inc                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altram.inc                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
+; db/altsyncram_68d1.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_68d1.tdf     ;         ;
+; db/altsyncram_c9d1.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_c9d1.tdf     ;         ;
+; db/altsyncram_0dd1.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_0dd1.tdf     ;         ;
+; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/decode_msa.tdf          ;         ;
+; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/decode_f8a.tdf          ;         ;
+; db/mux_job.tdf                   ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mux_job.tdf             ;         ;
+; db/altsyncram_ulc1.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_ulc1.tdf     ;         ;
+; db/mux_vmb.tdf                   ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mux_vmb.tdf             ;         ;
+; db/altsyncram_of11.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_of11.tdf     ;         ;
+; db/mux_2nb.tdf                   ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mux_2nb.tdf             ;         ;
+; db/altsyncram_0j01.tdf           ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/altsyncram_0j01.tdf     ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_mult.tdf                 ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/multcore.inc                 ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/altshift.inc                 ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/mult_7dt.tdf            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/lpm_divide.tdf               ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/abs_divider.inc              ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/leon/intelFPGA/18.0/quartus/libraries/megafunctions/sign_div_unsign.inc          ;         ;
+; db/lpm_divide_hkm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/lpm_divide_hkm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/alt_u_div_6af.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_kcm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/db/lpm_divide_kcm.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -279,16 +277,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 8,606       ;
+; Estimated Total logic elements              ; 8,802       ;
 ;                                             ;             ;
-; Total combinational functions               ; 8443        ;
+; Total combinational functions               ; 8639        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 4976        ;
-;     -- 3 input functions                    ; 3002        ;
-;     -- <=2 input functions                  ; 465         ;
+;     -- 4 input functions                    ; 5146        ;
+;     -- 3 input functions                    ; 3026        ;
+;     -- <=2 input functions                  ; 467         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 6915        ;
+;     -- normal mode                          ; 7111        ;
 ;     -- arithmetic mode                      ; 1528        ;
 ;                                             ;             ;
 ; Total registers                             ; 1567        ;
@@ -302,7 +300,7 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; process_clk ;
 ; Maximum fan-out                             ; 1758        ;
-; Total fan-out                               ; 39202       ;
+; Total fan-out                               ; 39958       ;
 ; Average fan-out                             ; 3.78        ;
 +---------------------------------------------+-------------+
 
@@ -312,14 +310,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                         ; Entity Name         ; Library Name ;
 +-------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |apresentacao                                         ; 8443 (1)            ; 1567 (1)                  ; 1383712     ; 8            ; 0       ; 4         ; 61   ; 0            ; |apresentacao                                                                                                                                                                                                               ; apresentacao        ; work         ;
-;    |machine:machine|                                  ; 7905 (0)            ; 1472 (0)                  ; 1383712     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine                                                                                                                                                                                               ; machine             ; work         ;
+; |apresentacao                                         ; 8639 (1)            ; 1567 (1)                  ; 1383712     ; 8            ; 0       ; 4         ; 61   ; 0            ; |apresentacao                                                                                                                                                                                                               ; apresentacao        ; work         ;
+;    |machine:machine|                                  ; 8101 (0)            ; 1472 (0)                  ; 1383712     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine                                                                                                                                                                                               ; machine             ; work         ;
 ;       |bios_module:bios_module|                       ; 76 (76)             ; 70 (70)                   ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|bios_module:bios_module                                                                                                                                                                       ; bios_module         ; work         ;
 ;          |altsyncram:Mux31_rtl_0|                     ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|bios_module:bios_module|altsyncram:Mux31_rtl_0                                                                                                                                                ; altsyncram          ; work         ;
 ;             |altsyncram_0j01:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|bios_module:bios_module|altsyncram:Mux31_rtl_0|altsyncram_0j01:auto_generated                                                                                                                 ; altsyncram_0j01     ; work         ;
-;       |processador:processador|                       ; 7829 (0)            ; 1402 (0)                  ; 1375520     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador                                                                                                                                                                       ; processador         ; work         ;
+;       |processador:processador|                       ; 8025 (0)            ; 1402 (0)                  ; 1375520     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador                                                                                                                                                                       ; processador         ; work         ;
 ;          |unit_control:unit_control|                  ; 90 (90)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_control:unit_control                                                                                                                                             ; unit_control        ; work         ;
-;          |unit_process:unit_process|                  ; 7739 (111)          ; 1395 (64)                 ; 1375520     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process                                                                                                                                             ; unit_process        ; work         ;
+;          |unit_process:unit_process|                  ; 7935 (111)          ; 1395 (64)                 ; 1375520     ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process                                                                                                                                             ; unit_process        ; work         ;
 ;             |alu:alu|                                 ; 2745 (559)          ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|alu:alu                                                                                                                                     ; alu                 ; work         ;
 ;                |lpm_divide:Div0|                      ; 1053 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0                                                                                                                     ; lpm_divide          ; work         ;
 ;                   |lpm_divide_hkm:auto_generated|     ; 1053 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|alu:alu|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                                       ; lpm_divide_hkm      ; work         ;
@@ -336,9 +334,9 @@ refer to the applicable agreement for further details.
 ;             |data_inst:data_inst|                     ; 0 (0)               ; 0 (0)                     ; 32032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|data_inst:data_inst                                                                                                                         ; data_inst           ; work         ;
 ;                |altsyncram:registers_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 32032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|data_inst:data_inst|altsyncram:registers_rtl_0                                                                                              ; altsyncram          ; work         ;
 ;                   |altsyncram_68d1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 32032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|data_inst:data_inst|altsyncram:registers_rtl_0|altsyncram_68d1:auto_generated                                                               ; altsyncram_68d1     ; work         ;
-;             |in_out_module:in_out_module|             ; 1724 (214)          ; 115 (70)                  ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                                 ; in_out_module       ; work         ;
+;             |in_out_module:in_out_module|             ; 1920 (214)          ; 115 (70)                  ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module                                                                                                                 ; in_out_module       ; work         ;
 ;                |clk_divisor:clk_divisor|              ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor                                                                                         ; clk_divisor         ; work         ;
-;                |disk_controller:disk_controller|      ; 1506 (1432)         ; 41 (35)                   ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller                                                                                 ; disk_controller     ; work         ;
+;                |disk_controller:disk_controller|      ; 1702 (1628)         ; 41 (35)                   ; 1212416     ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller                                                                                 ; disk_controller     ; work         ;
 ;                   |altsyncram:Mux0_rtl_0|             ; 0 (0)               ; 2 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:Mux0_rtl_0                                                           ; altsyncram          ; work         ;
 ;                      |altsyncram_of11:auto_generated| ; 0 (0)               ; 2 (2)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:Mux0_rtl_0|altsyncram_of11:auto_generated                            ; altsyncram_of11     ; work         ;
 ;                   |altsyncram:not_initial_rtl_0|      ; 2 (0)               ; 2 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|altsyncram:not_initial_rtl_0                                                    ; altsyncram          ; work         ;
@@ -4184,11 +4182,11 @@ Encoding Type:  One-Hot
 ; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|bc_registers:bc_registers|registers[31][3]                                 ;
 ; 32:1               ; 17 bits   ; 357 LEs       ; 357 LEs              ; 0 LEs                  ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|bc_registers:bc_registers|read2[22]                                        ;
 ; 19:1               ; 32 bits   ; 384 LEs       ; 64 LEs               ; 320 LEs                ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|bc_registers:bc_registers|reg_hi[22]                                       ;
-; 32650:1            ; 4 bits    ; 87064 LEs     ; 1016 LEs             ; 86048 LEs              ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[25] ;
-; 32760:1            ; 5 bits    ; 109200 LEs    ; 1405 LEs             ; 107795 LEs             ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[23] ;
-; 32612:1            ; 4 bits    ; 86964 LEs     ; 968 LEs              ; 85996 LEs              ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[10] ;
-; 32615:1            ; 9 bits    ; 195687 LEs    ; 2610 LEs             ; 193077 LEs             ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[1]  ;
-; 32609:1            ; 5 bits    ; 108695 LEs    ; 1285 LEs             ; 107410 LEs             ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[18] ;
+; 32622:1            ; 4 bits    ; 86992 LEs     ; 1124 LEs             ; 85868 LEs              ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[25] ;
+; 32759:1            ; 5 bits    ; 109195 LEs    ; 1510 LEs             ; 107685 LEs             ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[23] ;
+; 32585:1            ; 4 bits    ; 86892 LEs     ; 1096 LEs             ; 85796 LEs              ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[10] ;
+; 32602:1            ; 9 bits    ; 195606 LEs    ; 2961 LEs             ; 192645 LEs             ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[1]  ;
+; 32579:1            ; 5 bits    ; 108595 LEs    ; 1470 LEs             ; 107125 LEs             ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|disk_controller:disk_controller|read_value[18] ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|bc_registers:bc_registers|read1[0]                                         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |apresentacao|machine:machine|processador:processador|unit_control:unit_control|inst_write                                                                 ;
 ; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |apresentacao|machine:machine|processador:processador|unit_process:unit_process|mux_op_b:mux_op_b|Mux0                                                     ;
@@ -5054,22 +5052,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 113                         ;
 ;     SCLR              ; 96                          ;
 ;     plain             ; 1194                        ;
-; cycloneiii_lcell_comb ; 8460                        ;
+; cycloneiii_lcell_comb ; 8656                        ;
 ;     arith             ; 1528                        ;
 ;         2 data inputs ; 225                         ;
 ;         3 data inputs ; 1303                        ;
-;     normal            ; 6932                        ;
+;     normal            ; 7128                        ;
 ;         0 data inputs ; 62                          ;
 ;         1 data inputs ; 27                          ;
-;         2 data inputs ; 168                         ;
-;         3 data inputs ; 1699                        ;
-;         4 data inputs ; 4976                        ;
+;         2 data inputs ; 170                         ;
+;         3 data inputs ; 1723                        ;
+;         4 data inputs ; 5146                        ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_ram_block  ; 244                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 127.50                      ;
-; Average LUT depth     ; 43.18                       ;
+; Average LUT depth     ; 42.59                       ;
 +-----------------------+-----------------------------+
 
 
@@ -5078,7 +5076,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:10     ;
+; Top            ; 00:01:02     ;
 +----------------+--------------+
 
 
@@ -5088,7 +5086,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Mar  1 22:43:02 2021
+    Info: Processing started: Tue Mar  2 22:32:03 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -5155,7 +5153,7 @@ Warning (10027): Verilog HDL or VHDL warning at the disk_controller.v(42): index
 Warning (10030): Net "registers[32767..8346]" at disk_controller.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 15
 Warning (10030): Net "registers[8319..8225]" at disk_controller.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 15
 Warning (10030): Net "registers[8191..4100]" at disk_controller.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 15
-Warning (10030): Net "registers[4095..551]" at disk_controller.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 15
+Warning (10030): Net "registers[4095..649]" at disk_controller.v(15) has no driver or initial value, using a default initial value '0' File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/disk_controller.v Line: 15
 Info (12128): Elaborating entity "clk_divisor" for hierarchy "machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 67
 Info (12128): Elaborating entity "unit_control" for hierarchy "machine:machine|processador:processador|unit_control:unit_control" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/processador.v Line: 111
 Info (12128): Elaborating entity "bios_module" for hierarchy "machine:machine|bios_module:bios_module" File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/machine.v Line: 76
@@ -5401,17 +5399,17 @@ Info (17049): 104 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/output_files/processador.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 8977 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 9173 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 8664 logic cells
+    Info (21061): Implemented 8860 logic cells
     Info (21064): Implemented 244 RAM segments
     Info (21062): Implemented 8 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 1405 megabytes
-    Info: Processing ended: Mon Mar  1 22:44:52 2021
-    Info: Elapsed time: 00:01:50
-    Info: Total CPU time (on all processors): 00:02:20
+    Info: Peak virtual memory: 1407 megabytes
+    Info: Processing ended: Tue Mar  2 22:33:29 2021
+    Info: Elapsed time: 00:01:26
+    Info: Total CPU time (on all processors): 00:01:43
 
 
 +------------------------------------------+

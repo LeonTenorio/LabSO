@@ -95,6 +95,20 @@ void main(void)
         index = 0;
     }
 
+    aux = 7*index;
+    aux = aux + 4;
+
+    while(processtab[aux]!=0){
+        output(index);
+        output(processtab[aux]);
+        index = index + 1;
+        aux = aux + 7;
+        if(index>=processtab[2]){
+            index = 0;
+            aux = 4;
+        }
+    }
+
     output(index);
     processtab[0] = index;
 
