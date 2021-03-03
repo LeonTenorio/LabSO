@@ -572,7 +572,7 @@ string generateAssembly(string quad, vector<string> drivers, bool debug, bool sc
         assembly.push_back("LI $fp 0");
         assembly.push_back("LI $sa "+to_string(STACKSIZE-1));
         assembly.push_back("LOAD $gp $zero 1");
-        assembly.push_back("ADDI $gp $gp 2");
+        assembly.push_back("ADDI $gp $gp 10");
         assembly.push_back("MOV $gp $sp");
     }
     BucketList bucketElement = getBucketElement("GLOBAL", " ");
@@ -593,6 +593,9 @@ string generateAssembly(string quad, vector<string> drivers, bool debug, bool sc
 
             write_driver_functions(drivers, debug);
         }
+    }
+    for(int i=0;i<labels.size();i++){
+        cout << labels[i] << " " << labels_lines[labels[i]] << endl;
     }
     cout << assembly.size() << " de linhas assembly" << endl;
     for(int i=0;i<assembly.size();i++){

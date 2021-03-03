@@ -180,7 +180,10 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
         return convertNumberToBinary4Size(4)+convertNumberToBinary4Size(8)+getRegister(params[1])+getRegister(params[2])+convertNumberToBinary14Size(labels_lines[params[3]]);
     }
     else if(params[0].compare("STORE")==0){
-        return convertNumberToBinary4Size(5)+"XXXX"+getRegister(params[1])+getRegister(params[2])+"XXXXX"+convertNumberToBinary9Size(stoi(params[3]));
+        return convertNumberToBinary4Size(5)+convertNumberToBinary4Size(0)+getRegister(params[1])+getRegister(params[2])+"XXXXX"+convertNumberToBinary9Size(stoi(params[3]));
+    }
+    else if(params[0].compare("STOREINST")==0){
+        return convertNumberToBinary4Size(5)+convertNumberToBinary4Size(1)+getRegister(params[1])+getRegister(params[2])+"XXXXX"+convertNumberToBinary9Size(stoi(params[3]));
     }
     else if(params[0].compare("LOAD")==0){
         //cout << params[0] +" " + params[1] +" "+params[2] + " "+params[3] << endl;
@@ -207,16 +210,34 @@ string lineToBinary(vector<string> params, vector<string> labels, map<string, in
         //return convertNumberToBinary4Size(10)+"XXXX"+getRegister(params[1]);
     }
     else if(params[0].compare("SL")==0){
-        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(8)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
+        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(8)+getRegister(params[1])+convertNumberToBinary5Size(stoi(params[2]))+getRegister(params[3])+"XXXXXXXXX";
     }
     else if(params[0].compare("SR")==0){
-        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(9)+getRegister(params[1])+params[2]+getRegister(params[3])+"XXXXXXXXX";
+        return convertNumberToBinary4Size(1)+convertNumberToBinary4Size(9)+getRegister(params[1])+convertNumberToBinary5Size(stoi(params[2]))+getRegister(params[3])+"XXXXXXXXX";
     }
     else if(params[0].compare("LOCK")==0){
         return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(1);
     }
     else if(params[0].compare("RELEASE")==0){
         return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(2);
+    }
+    else if(params[0].compare("SETQUANTUM")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(4)+getRegister(params[1]);
+    }
+    else if(params[0].compare("SETPC")==0){
+        return convertNumberToBinary4Size(0)+convertNumberToBinary4Size(3)+getRegister(params[1]);
+    }
+    else if(params[0].compare("SETHI")==0){
+        return convertNumberToBinary4Size(8)+convertNumberToBinary4Size(3)+getRegister(params[1]);
+    }
+    else if(params[0].compare("SETLO")==0){
+        return convertNumberToBinary4Size(8)+convertNumberToBinary4Size(4)+getRegister(params[1]);
+    }
+    else if(params[0].compare("BIOSINT")==0){
+        return convertNumberToBinary4Size(11)+convertNumberToBinary4Size(5);
+    }
+    else if(params[0].compare("GETPC")==0){
+        return convertNumberToBinary4Size(0)+convertNumberToBinary4Size(2)+convertNumberToBinary10Size(0)+getRegister(params[1]);
     }
     else{
         cout << "Erro, linha de assembly não reconhecida " << params[0] << endl;
@@ -232,7 +253,7 @@ string lineToOutputFormat(int index){
     return ret;
 }
 
-string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool scheduler, bool systemfile, int systemquantum){
+string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool scheduler, bool systemfile, int systemquantum, int filedesloc){
     string assemblyString = "";
     for(int i=0;i<assembly_lines.size();i++){
         vector<string> params = getAssemblyLineParams(assembly_lines[i]);
@@ -243,7 +264,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             for(int i=0;i<params.size();i++){
                 lineParams = lineParams + params[i] + " ";
             }
-            while(lineParams.length()<40){
+            while(lineParams.length()<45){
                 lineParams = lineParams + " ";
             }
             if(showBinary){
@@ -259,7 +280,7 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
     cout << binaryCode.size() << " de linhas código binário" << endl;
     int desloc = 0;
     if(systemfile && binaryToQuartus){
-        assemblyString = assemblyString + "registers[0] = {16'd0, 16'd";
+        assemblyString = assemblyString + "assign registers["+to_string(filedesloc)+"] = {16'd0, 16'd";
         if(scheduler){
             if(systemquantum!=0){
                 desloc = 2;
@@ -271,20 +292,28 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
             }
             assemblyString = assemblyString + "};\n";
         }
+        else{
+            desloc = 1;
+            assemblyString = assemblyString + to_string(2+binaryCode.size())+"};\n";
+        }
         if(systemquantum!=0){
-            assemblyString = assemblyString + "registers[1] = {32'd"+to_string(systemquantum)+"};\n";
+            assemblyString = assemblyString + "assign registers["+to_string(1+filedesloc)+"] = {32'd"+to_string(systemquantum)+"};\n";
         }
     }
     for(int i=0;i<binaryCode.size();i++){
+        string prefix = "";
+        if(systemfile){
+            prefix = "assign ";
+        }
         if(binaryToQuartus){
-            assemblyString = assemblyString + "registers["+to_string(i+desloc)+"] = {32'b" + binaryCode[i] + "};\n";
+            assemblyString = assemblyString + prefix +"registers["+to_string(i+desloc+filedesloc)+"] = {32'b" + binaryCode[i] + "};\n";
         }
         else{
             assemblyString = assemblyString + lineToOutputFormat(i) +": "+binaryCode[i] + "\n";
         }
     }
     if(systemfile && binaryToQuartus){
-        assemblyString = assemblyString + "registers["+to_string(binaryCode.size()+desloc)+"] = {32'b11111111111111111111111111111111};\n";
+        assemblyString = assemblyString + "assign registers["+to_string(binaryCode.size()+desloc+filedesloc)+"] = {32'b11111111111111111111111111111111};\n";
     }
     return assemblyString;
 }

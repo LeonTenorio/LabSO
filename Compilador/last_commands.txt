@@ -1,0 +1,4 @@
+./assembler ./bios/bios.asm ./bios/bios.bin
+./exec outSufix="Teste1" inputName="teste1.c" quartus=true showBinary=true systemfile=true filedesloc=8192
+./exec outSufix="Teste2" inputName="teste2.c" quartus=true showBinary=true systemfile=true filedesloc=8320
+./exec outSufix="System" inputName="system.c" quartus=true showBinary=true scheduler=true systemfile=true systemquantum=300

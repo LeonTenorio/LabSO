@@ -1,12 +1,7 @@
-module apresentacao(
-input bios_controll,
-output[0:7] opcode_operation,
-output[31:0] bios_pc,
-input[0:31] bios_inst,
-input clk, 
-input[5:0] valor,
+/*module apresentacao(
+input clk,
 input enter,
-output done_inst,
+output bios_controll,
 output[6:0] display1, 
 output[6:0] display2, 
 output[6:0] display3,
@@ -14,31 +9,95 @@ output[6:0] display4,
 output[6:0] display5,
 output[6:0] display6,
 output[6:0] display7,
-output[6:0] display8);
+output[6:0] display8
+);
 
-parameter wake_up = 1'd0;//Para o algoritmo sintetico eh necessario comentar essa linha
+wire[127:0] dev_out;
+wire[3:0] done_out;
+wire enter_est;
+wire[3:0] enter_out;
 
-wire enter_est;//Para o algoritmo sintetico "enter_est" vira um parameter com igualdade 1'd0
-wire[3:0] enter_devs;
-wire[127:0] out_devs;
+reg process_clk = 0;
 
 processador processador(
-.bios_controll(bios_controll),
-.clk(clk),
-.opcode_operation(opcode_operation),
-.wake_up(wake_up),
-.bios_pc(bios_pc),
-.bios_inst(bios_inst),
-.dev_in({122'd0, valor}),
-.dev_out(out_devs),
-.enter_in({3'd0, enter_est}),
-.enter_out(enter_devs),
-.done_inst(done_inst));
+.bios_controll(0),
+.clk(process_clk),
+.dev_out(dev_out),
+.enter_out(enter_out),
+.done_out(done_out)
+);
+
 
 saida_display saida_display(
-.clk(clk),
-.dado(out_devs[25:0]),
-.enter_out(enter_devs[0]),
+.clk(process_clk),
+.dado(dev_out[25:0]),
+.enter_out(enter_out[0]),
+.display1(display1),
+.display2(display2),
+.display3(display3),
+.display4(display4),
+.display5(display5),
+.display6(display6),
+.display7(display7),
+.display8(display8));
+
+press_button press_button(
+.button(~enter), 
+.clk(clk), 
+.signal(enter_est));
+
+assign done_out = {3'd0, enter_est};
+
+always @(posedge clk)
+begin
+	process_clk = ~process_clk;
+end
+
+endmodule */
+
+
+module apresentacao(
+input clk,
+input enter,
+output bios_controll,
+output bios_state_led2,
+output bios_state_led1,
+output[6:0] display1, 
+output[6:0] display2, 
+output[6:0] display3,
+output[6:0] display4,
+output[6:0] display5,
+output[6:0] display6,
+output[6:0] display7,
+output[6:0] display8
+);
+
+wire[127:0] dev_out;
+wire[3:0] done_out;
+wire enter_est;
+wire[3:0] enter_out;
+
+wire[1:0] bios_state;
+
+reg process_clk = 0;
+
+always @(posedge clk)
+begin
+	process_clk = ~process_clk;
+end
+
+machine machine(
+.clk(process_clk),
+.bios_controll(bios_controll),
+.dev_out(dev_out),
+.enter_out(enter_out),
+.done_out(done_out)
+);
+
+saida_display saida_display(
+.clk(process_clk),
+.dado(dev_out[25:0]),
+.enter_out(enter_out[0]),
 .display1(display1),
 .display2(display2),
 .display3(display3),
@@ -50,21 +109,11 @@ saida_display saida_display(
 
 //Para o algoritmo sintetico, em vez de "enter_est" como saida, temos "wake_up"
 press_button press_button(
-.button(enter), 
-.clk(clk), 
+.button(~enter), 
+.clk(process_clk), 
 .signal(enter_est));
 
-//Para o teste do algoritmo de FIbonacci foram utilizadas as 6 chaves do kit FPGA
-//a memoria de instrucoes esta carregada com as instrucoes necessarias para esse teste
-
-//Para o teste das instrucoes ainda nao utilizadas foi utilizado o algoritmo que esta comentado no arquivo "data_inst.v"
-//para a sua utilizacao, eh necessario seguir os comentarios presentes nesse modulo "apresentacao.v"
-
-//Para ambos os testes nesse arquivo, foi considerado que os botoes "push_buttons" do FPGA sao ativios em alta
-//de acordo com o que eh disponibilizado no FPGA remoto
-
-
-//o clock de 50 MHz da placa nao foi dividido, esta sendo usado como 50 MHz
-//estao sendo utilizados os 8 displays de 7 segmentos como saidas unicas do processador
+assign done_out = {3'd0, enter_est};
+assign {bios_state_led2, bios_state_led1} = bios_state;
 
 endmodule 

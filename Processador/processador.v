@@ -86,6 +86,7 @@ unit_process unit_process(
 );
 
 unit_control unit_control(
+.bios_controll(bios_controll),
 .reg_write(reg_write),
 .mem_write(mem_write),
 .in_req(in_req),

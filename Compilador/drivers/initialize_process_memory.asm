@@ -29,7 +29,7 @@ STORE $t0 $zero 19
 STORE $t0 $zero 20
 STORE $t0 $zero 21
 STORE $t0 $zero 22
-STORE $t0 $zero 23
+STORE $t0 $t1 23
 STORE $t0 $t1 24
 STORE $t0 $t2 25
 STORE $t0 $zero 26
@@ -37,3 +37,4 @@ STORE $t0 $zero 27
 STORE $t0 $zero 28
 STORE $t0 $zero 29
 STORE $t0 $t3 30
+BR $ra
