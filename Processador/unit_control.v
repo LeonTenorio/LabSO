@@ -1,4 +1,5 @@
 module unit_control(
+input bios_controll,
 output reg reg_write,
 output reg mem_write,
 output reg in_req,
@@ -29,6 +30,8 @@ wire[7:0] opcode_operation;
 
 reg reg_in_ready;
 reg reg_out_done;
+
+reg previous_bios_controll;
 //reg reg_wake_up;
 
 always @(negedge clk)//Troca de estado
@@ -97,6 +100,11 @@ begin
 			estado = Inv;
 		end
 	endcase
+	if(bios_controll!=previous_bios_controll)
+	begin
+		estado = Inv;
+	end
+	previous_bios_controll = bios_controll;
 end
 
 always @(posedge clk)
@@ -127,6 +135,8 @@ begin
 	new_out = 0;
 	pc_write = 0;
 	inst_write = 0;
+	
+	bios_write_pc = 0;
 
 	case(estado)
 		A:
@@ -194,6 +204,9 @@ begin
 					mem_write = 1;
 			end
 			
+			if(opcode_operation==8'b00000011)//SETPC
+				bios_write_pc = 1;
+			
 			/*if(opcode==4'b0101)//STORE
 				mem_write = 1;
 			else
@@ -241,10 +254,6 @@ begin
 	branch_comp = 3'b000;
 	write_d_sel = 4'b0000;
 	alu_op = 4'b0000;
-	bios_write_pc = 0;
-	
-	if(opcode_operation==8'b00000011)//SETPC
-		bios_write_pc = 1;
 	
 	if(opcode_operation==8'b01000000)//B
 		pc_orig = 2'b01;

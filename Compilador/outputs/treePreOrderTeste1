@@ -1,0 +1,73 @@
+{
+'tree:'
+     {
+     'Node': 'void', 
+     'child[0]': 
+          {
+          'Node': 'FUNCTION', 
+          'child[1]': 
+               [
+               {
+               'Node': 'int', 
+               'child[0]': 
+                    {
+                    'Node': 'i', 
+                    }
+               },
+               {
+               'Node': '=', 
+               'child[0]': 
+                    {
+                    'Node': 'i', 
+                    }
+               'child[1]': 
+                    {
+                    'Node': 2
+                    }
+               }               ,
+               {
+               'Node': 'while', 
+               'child[0]': 
+                    {
+                    'Node': '==', 
+                    'child[0]': 
+                         {
+                         'Node': 1
+                         }
+                    'child[1]': 
+                         {
+                         'Node': 1
+                         }
+                    }
+               'child[1]': 
+                    [
+                    {
+                    'Node': 'CALL - output',
+                    'child[0]': 
+                         {
+                         'Node': 'i', 
+                         }
+                    },
+                    {
+                    'Node': '=', 
+                    'child[0]': 
+                         {
+                         'Node': 'i', 
+                         }
+                    'child[1]': 
+                         {
+                         'Node': '+', 
+                         'child[0]': 
+                              {
+                              'Node': 'i', 
+                              }
+                         'child[1]': 
+                              {
+                              'Node': 2
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
