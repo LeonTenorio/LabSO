@@ -1,0 +1,3 @@
+ID: i                    SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 7 7 6 4 3                        MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   MEM: -1
+ID: main                 SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 1                                MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 1   VARS: [i]
+ID: GLOBAL               SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 0                                MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   VARS: []

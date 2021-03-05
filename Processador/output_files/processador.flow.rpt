@@ -1,5 +1,5 @@
 Flow report for processador
-Mon Nov 23 11:12:36 2020
+Thu Mar  4 20:31:08 2021
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Nov 23 11:10:55 2020       ;
+; Flow Status                        ; Successful - Thu Mar  4 20:30:28 2021       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; processador                                 ;
 ; Top-level Entity Name              ; apresentacao                                ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,396 / 114,480 ( 5 % )                     ;
-;     Total combinational functions  ; 5,145 / 114,480 ( 4 % )                     ;
-;     Dedicated logic registers      ; 1,131 / 114,480 ( < 1 % )                   ;
-; Total registers                    ; 1131                                        ;
-; Total pins                         ; 65 / 529 ( 12 % )                           ;
+; Total logic elements               ; 8,906 / 114,480 ( 8 % )                     ;
+;     Total combinational functions  ; 8,806 / 114,480 ( 8 % )                     ;
+;     Dedicated logic registers      ; 1,567 / 114,480 ( 1 % )                     ;
+; Total registers                    ; 1567                                        ;
+; Total pins                         ; 61 / 529 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 135,680 / 3,981,312 ( 3 % )                 ;
+; Total memory bits                  ; 1,383,712 / 3,981,312 ( 35 % )              ;
 ; Embedded Multiplier 9-bit elements ; 8 / 532 ( 2 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/23/2020 11:07:37 ;
+; Start date & time ; 03/04/2021 20:27:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+--------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+--------------+------------+
-; COMPILER_SIGNATURE_ID               ; 180747809987198.160614045709099        ; --            ; --           ; --         ;
+; COMPILER_SIGNATURE_ID               ; 180747809987198.161490042607892        ; --            ; --           ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --           ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --           ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --           ; --         ;
@@ -94,11 +94,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:43     ; 1.0                     ; 1020 MB             ; 00:01:13                           ;
-; Fitter               ; 00:02:25     ; 1.1                     ; 1830 MB             ; 00:03:56                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 816 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:01:41     ; 3.6                     ; 1166 MB             ; 00:01:43                           ;
-; Total                ; 00:04:55     ; --                      ; --                  ; 00:06:58                           ;
+; Analysis & Synthesis ; 00:01:23     ; 1.0                     ; 1411 MB             ; 00:01:36                           ;
+; Fitter               ; 00:01:51     ; 1.1                     ; 1830 MB             ; 00:03:23                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 830 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:40     ; 2.5                     ; 1206 MB             ; 00:00:42                           ;
+; Total                ; 00:03:57     ; --                      ; --                  ; 00:05:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,10 +107,10 @@ refer to the applicable agreement for further details.
 +----------------------+----------------------+----------------+------------+----------------+
 ; Module Name          ; Machine Hostname     ; OS Name        ; OS Version ; Processor type ;
 +----------------------+----------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; leon-Aspire-A515-52G ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
-; Fitter               ; leon-Aspire-A515-52G ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
-; Assembler            ; leon-Aspire-A515-52G ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
-; Timing Analyzer      ; leon-Aspire-A515-52G ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
+; Analysis & Synthesis ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
+; Fitter               ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
+; Assembler            ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
+; Timing Analyzer      ; leon-Aspire-A515-52G ; Ubuntu 20.04.2 ; 20         ; x86_64         ;
 +----------------------+----------------------+----------------+------------+----------------+
 
 

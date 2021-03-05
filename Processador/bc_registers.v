@@ -1,8 +1,13 @@
-module bc_registers(rs, rt, rd, write_data, write_hi, write_lo, write_ra, read1, read2, reg_write, loc_write, bc_hi, bc_lo, clk);
+module bc_registers(
+rs, rt, srs, rd, write_data, write_hi, 
+write_lo, write_ra, read1, read2, reg_write, 
+loc_write, bc_hi, bc_lo, clk, k0, k1, t0, t3,
+v0, s2, t2);
 
 input clk;
 input[4:0] rs;
 input[4:0] rt;
+input[4:0] srs;
 input[4:0] rd;
 input[31:0] write_data;
 input[31:0] write_hi;
@@ -11,7 +16,7 @@ input[31:0] write_ra;
 
 input reg_write;
 
-input[1:0] loc_write;
+input[2:0] loc_write;
 
 reg[31:0] registers[31:0];
 reg[31:0] reg_hi;
@@ -19,8 +24,17 @@ reg[31:0] reg_lo;
 
 output reg[31:0] read1;
 output reg[31:0] read2;
+//output reg[31:0] read3;
 output reg[31:0] bc_hi;
 output reg[31:0] bc_lo;
+
+output reg[31:0] k0;
+output reg[31:0] k1;
+output reg[31:0] t0;
+output reg[31:0] t3;
+output reg[31:0] v0;
+output reg[31:0] s2;
+output reg[31:0] t2;
 
 parameter zero=32'b00000000000000000000000000000000;
 
@@ -29,19 +43,26 @@ begin
 	if(reg_write==1)
 	begin
 		case(loc_write)
-			2'b00://Escrita nos 31 registradores normais
+			3'b000://Escrita nos 31 registradores normais
 			begin
-				if(rd<5'b11111)
-					registers[rd] = write_data;
+				registers[rd] = write_data;
 			end
-			2'b01://Escrita em hi e lo
+			3'b001://Escrita em hi e lo
 			begin
 				reg_hi = write_hi;
 				reg_lo = write_lo;
 			end
-			2'b10://Escrita em "ra" que eh "registers[31]"
+			3'b010://Escrita em "ra" que eh por BL
 			begin
 				registers[5'd31] = write_ra;
+			end
+			3'b011://Escrita em HI por SETHI
+			begin
+				reg_hi = write_data;
+			end
+			3'b100://Escrita em LO por SETLO
+			begin
+				reg_lo = write_data;
 			end
 			default:
 			begin
@@ -55,8 +76,16 @@ always @(negedge clk)
 begin
 	read1 = registers[rs];
 	read2 = registers[rt];
+	//read3 = registers[srs];
 	bc_hi = reg_hi;
 	bc_lo = reg_lo;
+	k0 = registers[5'd28];
+	k1 = registers[5'd29];
+	t0 = registers[5'd12];
+	t2 = registers[5'd14];
+	t3 = registers[5'd15];
+	v0 = registers[5'd24];
+	s2 = registers[5'd4];
 end
 
 endmodule 

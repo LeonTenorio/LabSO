@@ -1,7 +1,8 @@
 module press_button(input button, input clk, output reg signal);
 
-parameter[31:0] t_alta = 32'd1;
-parameter[31:0] t_baixa = 32'd120000000;
+parameter[31:0] t_alta = 32'd2;
+//parameter[31:0] t_baixa = 32'd120000000;
+parameter[31:0] t_baixa = 32'd50000000;
 parameter[31:0] um = 32'd1;
 
 reg[31:0] cont_baixa = 32'd0;

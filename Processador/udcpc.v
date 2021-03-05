@@ -12,7 +12,8 @@ output[4:0] inst8_12,
 output[4:0] inst13_17,
 output[4:0] inst18_22,
 output[8:0] inst23_31,
-output[9:0] inst13_22,
+//output[9:0] inst13_22,
+output[9:0] inst22_31,
 output[13:0] inst18_31,
 output[22:0] inst9_31);//Unidade de divisao e calculo do endereco do program counter
 
@@ -86,6 +87,7 @@ end
 	assign {inst4_8,inst9_31} = inst[4:31];
 	assign {inst8_12,inst13_17,inst18_31} = inst[8:31];
 	assign {inst18_22,inst23_31} = inst[18:31];
-	assign inst13_22 = inst[13:22];
+	assign inst22_31 = inst[22:31];
+	//assign inst13_22 = inst[13:22];
  
 endmodule 

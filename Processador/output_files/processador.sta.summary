@@ -2,112 +2,112 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'process_clk'
+Slack : -128.049
+TNS   : -37904.001
+
+Type  : Slow 1200mV 85C Model Setup 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : -6.585
+TNS   : -1536.972
+
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -127.325
-TNS   : -25911.044
+Slack : -0.574
+TNS   : -0.574
 
-Type  : Slow 1200mV 85C Model Setup 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -5.320
-TNS   : -122.099
-
-Type  : Slow 1200mV 85C Model Setup 'press_button:press_button|estado.01'
-Slack : -4.720
-TNS   : -26.181
-
-Type  : Slow 1200mV 85C Model Hold 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -0.092
-TNS   : -0.149
+Type  : Slow 1200mV 85C Model Hold 'process_clk'
+Slack : 0.385
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.403
+Slack : 0.460
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'press_button:press_button|estado.01'
-Slack : 0.404
+Type  : Slow 1200mV 85C Model Hold 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : 0.615
 TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'process_clk'
+Slack : -3.000
+TNS   : -2730.374
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -1784.953
+TNS   : -4.285
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -1.285
-TNS   : -33.410
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : -2.693
+TNS   : -1146.289
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'press_button:press_button|estado.01'
-Slack : -1.285
-TNS   : -7.710
+Type  : Slow 1200mV 0C Model Setup 'process_clk'
+Slack : -115.517
+TNS   : -34607.838
+
+Type  : Slow 1200mV 0C Model Setup 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : -5.997
+TNS   : -1371.336
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -114.896
-TNS   : -23797.728
+Slack : -0.452
+TNS   : -0.452
 
-Type  : Slow 1200mV 0C Model Setup 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -4.872
-TNS   : -112.376
-
-Type  : Slow 1200mV 0C Model Setup 'press_button:press_button|estado.01'
-Slack : -4.313
-TNS   : -23.979
-
-Type  : Slow 1200mV 0C Model Hold 'processador:processador|unit_control:unit_control|estado.D'
-Slack : 0.036
+Type  : Slow 1200mV 0C Model Hold 'process_clk'
+Slack : 0.338
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.355
+Slack : 0.390
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'press_button:press_button|estado.01'
-Slack : 0.394
+Type  : Slow 1200mV 0C Model Hold 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : 0.582
 TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'process_clk'
+Slack : -3.000
+TNS   : -2721.002
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -1782.049
+TNS   : -4.285
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -1.285
-TNS   : -33.410
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : -2.649
+TNS   : -1128.337
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'press_button:press_button|estado.01'
-Slack : -1.285
-TNS   : -7.710
+Type  : Fast 1200mV 0C Model Setup 'process_clk'
+Slack : -63.090
+TNS   : -18373.531
+
+Type  : Fast 1200mV 0C Model Setup 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : -2.806
+TNS   : -699.668
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -62.864
-TNS   : -12758.134
-
-Type  : Fast 1200mV 0C Model Setup 'processador:processador|unit_control:unit_control|estado.D'
-Slack : -2.395
-TNS   : -55.328
-
-Type  : Fast 1200mV 0C Model Setup 'press_button:press_button|estado.01'
-Slack : -2.148
-TNS   : -11.762
+Slack : 0.015
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.178
+Slack : 0.163
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'processador:processador|unit_control:unit_control|estado.D'
-Slack : 0.351
+Type  : Fast 1200mV 0C Model Hold 'process_clk'
+Slack : 0.172
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'press_button:press_button|estado.01'
-Slack : 0.775
+Type  : Fast 1200mV 0C Model Hold 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
+Slack : 0.276
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -1319.520
+TNS   : -4.043
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'processador:processador|unit_control:unit_control|estado.D'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'process_clk'
 Slack : -1.000
-TNS   : -26.000
+TNS   : -1806.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'press_button:press_button|estado.01'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'machine:machine|processador:processador|unit_process:unit_process|in_out_module:in_out_module|clk_divisor:clk_divisor|high'
 Slack : -1.000
-TNS   : -6.000
+TNS   : -445.000
 
 ------------------------------------------------------------

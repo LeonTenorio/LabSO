@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at in_out_module.v(69): always construct contains both blocking and non-blocking assignments File: /mnt/hdlinux/Documentos/Unifesp/8semestre/LabSO/Processador/in_out_module.v Line: 69

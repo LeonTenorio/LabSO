@@ -1,0 +1,4 @@
+ID: index                SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 9 9 7 5 3                        MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s0
+ID: main                 SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 1                                MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 2   VARS: [index, value]
+ID: value                SCOPE: main    PARAM: false DATA TYPE: int  TYPE ID: var  LINES: 10 10 8 6 4                      MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   REG: $s1
+ID: GLOBAL               SCOPE:         PARAM: false DATA TYPE: void TYPE ID: func LINES: 0                                MEMLOC: 0                MEMPOS: -1     VARAMOUNT: 0   VARS: []
