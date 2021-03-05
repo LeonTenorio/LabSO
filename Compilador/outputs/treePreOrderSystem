@@ -1376,24 +1376,6 @@
                'child[1]': 
                     [
                     {
-                    'Node': 'CALL - output',
-                    'child[0]': 
-                         {
-                         'Node': 'index', 
-                         }
-                    },
-                    {
-                    'Node': 'CALL - output',
-                    'child[0]': 
-                         {
-                         'Node': 'processtab', 
-                         'child[0]': 
-                              {
-                              'Node': 'aux', 
-                              }
-                         }
-                    }                    ,
-                    {
                     'Node': '=', 
                     'child[0]': 
                          {
@@ -1411,7 +1393,7 @@
                               'Node': 1
                               }
                          }
-                    }                    ,
+                    },
                     {
                     'Node': '=', 
                     'child[0]': 
