@@ -21,7 +21,9 @@ input clk,
 output reg inst_write,
 output reg done_inst,
 output reg bios_write_pc,
-output reg[2:0] estado);
+output reg[2:0] estado,
+output reg async_in_out
+);
 
 parameter Inv=3'd0, A=3'd1, B=3'd2, C=3'd3, D=3'd4, Input=3'd5, Halt=3'd6, Output=3'd7;
 wire[7:0] opcode_operation;
@@ -225,6 +227,14 @@ begin
 		Output:
 		begin
 			new_out = 1;
+			if(operation==4'b0001)//async OUT
+			begin
+				async_in_out = 1;
+			end
+			else
+			begin
+				async_in_out = 0;
+			end
 		end
 		Input:
 		begin
@@ -233,6 +243,14 @@ begin
 			in_req = 1;
 			new_out = 0;
 			pc_write = 0;
+			if(operation==4'b0001)//async IN
+			begin
+				async_in_out = 1;
+			end
+			else
+			begin
+				async_in_out = 0;
+			end
 		end
 		default:
 		begin

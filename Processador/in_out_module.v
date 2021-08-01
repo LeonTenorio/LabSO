@@ -15,7 +15,8 @@ input[3:0] done_out,
 input clk,
 output[2:0] track,
 output[4:0] sector,
-output[6:0] address_in_sector
+output[6:0] address_in_sector,
+input async_in_out // Flag to async IN or OUT, so with that flag the data is already read for processor
 );
 
 wire[4:0] devs_done_out;
@@ -69,120 +70,143 @@ clk_divisor clk_divisor(
 always @(posedge clk)
 begin
 	out_ready = 0;
-	case(output_state)
-		output_state_none: 
-		begin
-			if(new_out)
-			begin
-				output_state = output_state_waiting;
-			end
-		end
-		output_state_waiting:
-		begin
-			if(devs_done_out[disp])
-			begin
-				output_state = output_state_done;
-			end
-		end
-		output_state_done:
-		begin
-			if(devs_done_out[disp]==0)
-			begin
-				output_state = output_state_after;
-				out_ready = 1;
-			end
-		end
-		output_state_after:
-		begin
-			output_state = output_state_none;
-		end
-		default: 
-		begin
-			output_state = output_state_none;
-		end
-	endcase 
-	if(output_state==output_state_waiting)
+	if(async_in_out==1)
 	begin
-		if(disp < 5'd4)
+		if(new_out)
 		begin
-			disk_write = 0;
+			out_ready = 1;
 			dev_out[adress +: 32] <= p_data;
-		end
-		else
-		begin
-			disk_write = 1;
 		end
 	end
 	else
 	begin
-		disk_write = 0;
+		case(output_state)
+			output_state_none: 
+			begin
+				if(new_out)
+				begin
+					output_state = output_state_waiting;
+				end
+			end
+			output_state_waiting:
+			begin
+				if(devs_done_out[disp])
+				begin
+					output_state = output_state_done;
+				end
+			end
+			output_state_done:
+			begin
+				if(devs_done_out[disp]==0)
+				begin
+					output_state = output_state_after;
+					out_ready = 1;
+				end
+			end
+			output_state_after:
+			begin
+				output_state = output_state_none;
+			end
+			default: 
+			begin
+				output_state = output_state_none;
+			end
+		endcase 
+		if(output_state==output_state_waiting)
+		begin
+			if(disp < 5'd4)
+			begin
+				disk_write = 0;
+				dev_out[adress +: 32] <= p_data;
+			end
+			else
+			begin
+				disk_write = 1;
+			end
+		end
+		else
+		begin
+			disk_write = 0;
+		end
 	end
 end
+
 
 always @(posedge clk)
 begin
 	in_ready = 0;
 	disk_read = 0;
-	case(input_state)
-		input_state_none:
+	if(async_in_out==1)
+	begin
+		if(in_req)
 		begin
-			if(in_req)
-			begin
-				input_state = input_state_waiting;
-			end
+			in_ready = 1;
+			e_data = dev_in[adress +: 32];
 		end
-		input_state_waiting:
+	end
+	else
 		begin
-			if(devs_enter_in[disp])
+			case(input_state)
+			input_state_none:
 			begin
-				input_state = input_state_done;
+				if(in_req)
+				begin
+					input_state = input_state_waiting;
+				end
 			end
-			else
+			input_state_waiting:
+			begin
+				if(devs_enter_in[disp])
+				begin
+					input_state = input_state_done;
+				end
+				else
+				begin
+					disk_read = 1;
+				end
+			end
+			input_state_done:
+			begin
+				if(devs_enter_in[disp]==0)
+				begin
+					input_state = input_state_after;
+					in_ready = 1;
+				end
+			end
+			input_state_after:
+			begin
+				input_state = input_state_none;
+			end
+			default:
+			begin
+				input_state = input_state_none;
+			end
+		endcase
+		/*if(input_state==input_state_waiting)
+		begin
+			if(disp == 5'd4)
 			begin
 				disk_read = 1;
 			end
-		end
-		input_state_done:
-		begin
-			if(devs_enter_in[disp]==0)
+			else
 			begin
-				input_state = input_state_after;
-				in_ready = 1;
+				disk_read = 0;
 			end
-		end
-		input_state_after:
-		begin
-			input_state = input_state_none;
-		end
-		default:
-		begin
-			input_state = input_state_none;
-		end
-	endcase
-	/*if(input_state==input_state_waiting)
-	begin
-		if(disp == 5'd4)
-		begin
-			disk_read = 1;
 		end
 		else
 		begin
 			disk_read = 0;
-		end
-	end
-	else
-	begin
-		disk_read = 0;
-	end*/
-	if(input_state==input_state_done)
-	begin
-		if(disp < 5'd4)
+		end*/
+		if(input_state==input_state_done)
 		begin
-			e_data = dev_in[adress +: 32];
-		end
-		else
-		begin
-			e_data = disk_read_value;
+			if(disp < 5'd4)
+			begin
+				e_data = dev_in[adress +: 32];
+			end
+			else
+			begin
+				e_data = disk_read_value;
+			end
 		end
 	end
 end

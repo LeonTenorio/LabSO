@@ -42,6 +42,8 @@ wire[1:0] pc_orig, rd_orig, loc_read, op_b;
 wire[2:0] branch_comp, write_d_sel, loc_write;
 wire[3:0] alu_op;
 
+wire async_in_out;
+
 unit_process unit_process(
 .bios_controll(bios_controll),
 .bios_write_pc(bios_write_pc),
@@ -82,7 +84,8 @@ unit_process unit_process(
 .t2(t2),
 .track(track),
 .sector(sector),
-.address_in_sector(address_in_sector)
+.address_in_sector(address_in_sector),
+.async_in_out(async_in_out)
 );
 
 unit_control unit_control(
@@ -108,7 +111,9 @@ unit_control unit_control(
 .done_inst(done_inst),
 .out_done(out_done),
 .bios_write_pc(bios_write_pc),
-.estado(controll_state));
+.estado(controll_state)
+.async_in_out(async_in_out)
+);
 
 	assign opcode_operation = {opcode, operation};
 

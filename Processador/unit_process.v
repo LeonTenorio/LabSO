@@ -38,7 +38,8 @@ output[4:0] sector,
 output[6:0] address_in_sector,
 output[31:0] v0, 
 output[31:0] s2,
-output[31:0] t2
+output[31:0] t2,
+input async_in_out
 );
 
 parameter um = 32'd1;
@@ -174,7 +175,8 @@ in_out_module in_out_module(
 .clk(clk),
 .track(track),
 .sector(sector),
-.address_in_sector(address_in_sector)
+.address_in_sector(address_in_sector),
+.async_in_out(async_in_out)
 );
 
 always @(clk, bios_controll, pc, bios_pc)
