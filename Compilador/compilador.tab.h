@@ -1,4 +1,4 @@
-/* A Bison parser, made by GNU Bison 3.5.1.  */
+/* A Bison parser, made by GNU Bison 3.7.4.  */
 
 /* Bison interface for Yacc-like parsers in C
 
@@ -31,8 +31,9 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
 
 #ifndef YY_YY_COMPILADOR_TAB_H_INCLUDED
 # define YY_YY_COMPILADOR_TAB_H_INCLUDED
@@ -44,40 +45,45 @@
 extern int yydebug;
 #endif
 
-/* Token type.  */
+/* Token kinds.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
   enum yytokentype
   {
-    INT = 258,
-    VOID = 259,
-    IF = 260,
-    ELSE = 261,
-    WHILE = 262,
-    RETURN = 263,
-    NUM = 264,
-    ID = 265,
-    ADD = 266,
-    SUB = 267,
-    MUL = 268,
-    DIV = 269,
-    PRTO = 270,
-    PRTC = 271,
-    SBTO = 272,
-    SBTC = 273,
-    SCL = 274,
-    COM = 275,
-    KEYO = 276,
-    KEYC = 277,
-    ATR = 278,
-    LT = 279,
-    LTE = 280,
-    GT = 281,
-    GTE = 282,
-    EQ = 283,
-    NEQ = 284,
-    ERR = 285
+    YYEMPTY = -2,
+    YYEOF = 0,                     /* "end of file"  */
+    YYerror = 256,                 /* error  */
+    YYUNDEF = 257,                 /* "invalid token"  */
+    INT = 258,                     /* INT  */
+    VOID = 259,                    /* VOID  */
+    IF = 260,                      /* IF  */
+    ELSE = 261,                    /* ELSE  */
+    WHILE = 262,                   /* WHILE  */
+    RETURN = 263,                  /* RETURN  */
+    NUM = 264,                     /* NUM  */
+    ID = 265,                      /* ID  */
+    ADD = 266,                     /* ADD  */
+    SUB = 267,                     /* SUB  */
+    MUL = 268,                     /* MUL  */
+    DIV = 269,                     /* DIV  */
+    PRTO = 270,                    /* PRTO  */
+    PRTC = 271,                    /* PRTC  */
+    SBTO = 272,                    /* SBTO  */
+    SBTC = 273,                    /* SBTC  */
+    SCL = 274,                     /* SCL  */
+    COM = 275,                     /* COM  */
+    KEYO = 276,                    /* KEYO  */
+    KEYC = 277,                    /* KEYC  */
+    ATR = 278,                     /* ATR  */
+    LT = 279,                      /* LT  */
+    LTE = 280,                     /* LTE  */
+    GT = 281,                      /* GT  */
+    GTE = 282,                     /* GTE  */
+    EQ = 283,                      /* EQ  */
+    NEQ = 284,                     /* NEQ  */
+    ERR = 285                      /* ERR  */
   };
+  typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */
