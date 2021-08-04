@@ -96,9 +96,9 @@ int _getRegister(string loc_register)
         return 11;
     else if (loc_register.compare("$t0") == 0)
         return 12;
-    else if (loc_register.compare("$t1") == 0)
+    else if (loc_register.find("$t1") != string::npos)//Bug fix with $t1
         return 13;
-    else if (loc_register.compare("$t2") == 0)
+    else if (loc_register.find("$t2") != string::npos)//Bug fix with $t2
         return 14;
     else if (loc_register.compare("$t3") == 0)
         return 15;
