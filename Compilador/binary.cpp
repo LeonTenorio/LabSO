@@ -353,6 +353,17 @@ string lineToOutputFormat(int index)
     return ret;
 }
 
+string fix_string(string input){
+    string ret = "";
+    for(int i=0;i<input.length();i++){
+        if(input[i]=='\n' || input[i]=='\r'){
+            return ret;
+        }
+        ret = ret + input[i];
+    }
+    return ret;
+}
+
 string generateBinary(vector<string> assembly_lines, vector<string> labels, map<string, int> labels_lines, bool binaryToQuartus, bool showBinary, bool scheduler, bool systemfile, int systemquantum, int filedesloc)
 {
     string assemblyString = "";
@@ -363,18 +374,18 @@ string generateBinary(vector<string> assembly_lines, vector<string> labels, map<
         if (line.length() > 0)
         {
             line = toFullBinaryInst(line);
-            string lineParams = "";
-            for (int i = 0; i < params.size(); i++)
-            {
-                lineParams = lineParams + params[i] + " ";
-            }
-            while (lineParams.length() < 45)
-            {
-                lineParams = lineParams + " ";
-            }
-            if (showBinary)
-            {
-                cout << lineParams << " ";
+            if(showBinary){
+                int charAmount = 0;
+                for (int i = 0; i < params.size(); i++)
+                {
+                    cout << fix_string(params[i]) << " ";
+                    charAmount = charAmount + params[i].length() + 1;
+                }
+                while (charAmount < 45)
+                {
+                    cout << " ";
+                    charAmount++;
+                }
                 cout << " - " << line << " - " << binaryCode.size() << endl;
             }
             binaryCode.push_back(line);
