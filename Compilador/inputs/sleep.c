@@ -5,6 +5,6 @@ void main(void)
     while(1==1){
         output(i);
         i = i + 2;
-        sleep(1);
+        sleep(1000);
     }
 }

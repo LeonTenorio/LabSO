@@ -43,7 +43,7 @@ ADDI $sp $sp -1
 LOAD $s0 $sp 0
 LI $t8 2
 ADD $s0 $s0 $t8
-LI $t8 1
+LI $t8 1000
 STORE $sa $t8 0
 ADDI $sa $sa -1
 STORE $sp $s0 0
